@@ -12,7 +12,7 @@
 
 #main {
     position: absolute; top: 0; left: 0;
-    width: 1920px; height: 1080px;
+    width: 3840px; height: 2160px;
     background-image: url("../static/background.png");
     background-size: cover;
     font-family: "Coluna Rounded";
@@ -22,81 +22,79 @@
 /* ----- TOP SECTION ----- */
 /* Logo */
 #logo {
-    position: absolute; top: 41px; left: 52px;
-    width: 196px;
+    position: absolute; top: 82px; left: 104px;
+    width: 392px;
 }
 /* Round Name Showcase Text */
 #roundNameShowcaseText {
-    position: absolute; left: 397px;
-    letter-spacing: -0.1px;
-    width: 300px;
+    position: absolute; left: 794px;
+    letter-spacing: -0.25px;
+    width: 600px;
 }
 #roundName {
-    position: inherit; top: 35px;
-    font-size: 48px;
+    position: inherit; top: 70px;
+    font-size: 96px;
 }
 #showcaseText {
-    position: inherit; top: 83.5px;
-    font-size: 20px;
+    position: inherit; top: 168px;
+    font-size: 40px;
 }
 /* Mappool Sheet Info */
 #mappoolSheetInfo {
-    position: absolute; top: 59px; right: 53px;
+    position: absolute; top: 118px; right: 106px;
     display: flex;
-    font-size: 27px;
-    letter-spacing: 0.2px;
-    text-indent: 0.1px;
+    font-size: 54px;
+    letter-spacing: 0.4px;
+    text-indent: 0.2px;
 }
 #fullMapoolSheet {
-    margin-right: 18px;
-    letter-spacing: 0.1px;
+    margin-right: 38px;
+    letter-spacing: 0.2px;
 }
 
 /* ----- MAP SECTION ----- */
 #map {
-    position: absolute; top: 143px; right: 0;
-    width: 552px; height: 772px;
+    position: absolute; top: 286px; right: 0;
+    width: 1104px; height: 1154px;
 }
 /* Replayer Now Playing */
 #replayerNowPlaying {
-    position: absolute; top: -3px; right: 35px;
-    width: calc(100% - 35px);
+    position: absolute; top: -6px; right: 70px;
+    width: calc(100% - 70px);
     text-align: right;
 }
 #replayer {
-    font-size: 20px;
-    letter-spacing: 0.02px;
+    font-size: 40px;
+    letter-spacing: 0.04px;
 }
 #nowPlaying {
-    position: absolute; top: 23px; right: -3px;
-    font-size: 32px;
+    position: absolute; top: 46px; right: -3px;
+    font-size: 62px;
 }
 #nowPlayingNowText {
-    margin-right: 2.5px;
-    letter-spacing: -0.3px;
-    font-size: 32px;
+    margin-right: 5px;
 }
 #nowPlayingPlayingText {
-    letter-spacing: 2.7px;
+    letter-spacing: 6px;
 }
 /* Stats Title */
 #statsTitle {
-    position: absolute; top: 386px;
-    width: 521px; height: 40px;
+    position: absolute; top: 772px;
+    width: 1042px; height: 80px;
     display: flex;
     justify-content: center;
-    font-size: 31px;
-    letter-spacing: -0.2px;
+    font-size: 62px;
+    letter-spacing: -0.4px;
 }
 .statsHearts {
     display: flex;
     align-items: center;
-    height: 36px;
+    height: 72px;
 }
 .statsHeart {
-    width: 5px; height: 3px;
-    margin: 0 7.3px;
+    width: 10px; height: 6px;
+    margin: 0 14.6px;
 }
 #statsText {
-    margin: 0 25.2px;
+    margin: 0 50px;
 }
