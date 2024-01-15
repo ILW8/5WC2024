@@ -93,7 +93,7 @@
     position: absolute; top: 135px; left: 78px;
     width: 959px; height: 589px;
     border-radius: 20px;
-    /* background-color: var(--mainRed); */
+    background-color: var(--mainRed);
 }
 /* Now Playing Map */
 #nowPlayingMap {
@@ -135,6 +135,7 @@
     color: rgb(30,30,30);
     font-size: 54px;
     border-radius: 0 16px 16px 0;
+    background-color: white;
 }
 #nowPlayingMapSlotText {
     position: absolute; top: 8px; left: 188px;
