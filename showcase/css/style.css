@@ -1,5 +1,6 @@
 :root {
-    --mainRed: rgb(254, 36, 86)
+    --mainRed: rgb(254, 36, 86);
+    --nowPlayingCardWidth: 959px;
 }
 
 /* ----- GENERAL HELPER CLASSES ----- */
@@ -20,12 +21,14 @@
 }
 
 /* ----- TOP SECTION ----- */
-/* Logo */
+
+/* --- Logo --- */
 #logo {
     position: absolute; top: 82px; left: 104px;
     width: 392px;
 }
-/* Round Name Showcase Text */
+
+/* --- Round Name Showcase Text --- */
 #roundNameShowcaseText {
     position: absolute; left: 794px;
     letter-spacing: -0.25px;
@@ -39,7 +42,8 @@
     position: inherit; top: 168px;
     font-size: 40px;
 }
-/* Mappool Sheet Info */
+
+/* --- Mappool Sheet Info --- */
 #mappoolSheetInfo {
     position: absolute; top: 118px; right: 106px;
     display: flex;
@@ -52,12 +56,18 @@
     letter-spacing: 0.2px;
 }
 
+
 /* ----- MAP SECTION ----- */
 #map {
     position: absolute; top: 286px; right: 0;
     width: 1104px; height: 1154px;
 }
-/* Replayer Now Playing */
+
+#play_triangle {
+    position: absolute; top: 51px; left: 78px;
+}
+
+/* --- Replayer Now Playing --- */
 #replayerNowPlaying {
     position: absolute; top: -6px; right: 70px;
     width: calc(100% - 70px);
@@ -77,7 +87,97 @@
 #nowPlayingPlayingText {
     letter-spacing: 6px;
 }
-/* Stats Title */
+
+/* --- Now Playing Card --- */
+#nowPlayingCard {
+    position: absolute; top: 135px; left: 78px;
+    width: 959px; height: 589px;
+    border-radius: 20px;
+    /* background-color: var(--mainRed); */
+}
+/* Now Playing Map */
+#nowPlayingMap {
+    width: var(--nowPlayingCardWidth); height: 462px;
+    border-radius: 20px;
+    background-image: url("https://assets.ppy.sh/beatmaps/2067946/covers/cover.jpg");
+    background-size: cover;
+    background-position: center;
+}
+#nowPlayingMapLayer {
+    width: var(--nowPlayingCardWidth); height: inherit;
+    border-radius: inherit;
+    background-color: rgba(0,0,0,0.5)
+}
+.nowPlayingMapInformation {
+    position: absolute; 
+    left: 50%; transform: translateX(-50%);
+    width: calc(var(--nowPlayingCardWidth) - 100px);
+}
+.nowPlayingMapSingleInformation {
+    text-align: center;
+}
+.nowPlayingMapSongName {
+    top: 260px; 
+    font-size: 88px;
+}
+.nowPlayingMapDifficultyName {
+    top: 363px;
+    font-size: 48px;
+}
+#nowPlayingMapDifficultyNamesWrapper, #nowPlayingMapSongNamesWrapper {
+    display: none;
+    overflow: hidden;
+}
+/* Now Playing Mapslot */
+#nowPlayingMapSlot {
+    position: absolute; top: 489px; left: -77px;
+    width: 364px; height: 73px;
+    color: rgb(30,30,30);
+    font-size: 54px;
+    border-radius: 0 16px 16px 0;
+}
+#nowPlayingMapSlotText {
+    position: absolute; top: 8px; left: 188px;
+}
+/* Now Playing Mapslide */
+.mapSlideInvisibleLeft {
+    position: absolute; top: 525px; left: 327px;
+    font-size: 22px;
+    color: var(--mainRed);
+    opacity: 0
+}
+.mapSlideExtremeLeft {
+    position: absolute; top: 507px; left: 372px;
+    font-size: 39px;
+    color: rgb(255, 99, 135);
+    opacity: 1;
+}
+.mapSlideLeft {
+    position: absolute; top: 492px; left: 485px;
+    font-size: 62px;
+    color: rgb(255, 145, 170);
+    opacity: 1;
+}
+.mapSlideCurrent {
+    position: absolute; top: 480px; left: 643px;
+    font-size: 82px;
+    color: white;
+    opacity: 1;
+}
+.mapSlideRight {
+    position: absolute; top: 492px; left: 828px;
+    font-size: 62px;
+    color: rgb(255, 145, 170);
+    opacity: 1;
+}
+.mapSlideInvisibleRight {
+    position: absolute; top: 507px; left: 941px;
+    font-size: 39px;
+    color: var(--mainRed);
+    opacity: 0;
+}
+
+/* --- Stats Title --- */
 #statsTitle {
     position: absolute; top: 772px;
     width: 1042px; height: 80px;
