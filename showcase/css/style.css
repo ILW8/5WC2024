@@ -199,3 +199,35 @@
 #statsText {
     margin: 0 50px;
 }
+
+/* ----- BOTTOM SECTION ----- */
+#bottom {
+    position: absolute; bottom: 0; left: 0;
+    width: inherit; height: 335px;
+}
+#line {
+    position: absolute; top: 5px;
+    width: inherit; height: 4px;
+    color: rgb(130,130,103)
+}
+#chatText {
+    position: absolute; top: 164px; left: 182px;
+    font-size: 53.5px;
+    letter-spacing: 2.5px;
+}
+/* --- Sponsored by --- */
+#sponsoredByContainer {
+    position: absolute; top: 127px; left: 2973px;
+    width: 744px; height: 109px;
+    /* background-color: rgb(32,32,32); */
+    border-radius: 109px;
+}
+#sponsoredByText {
+    position: absolute; top: 27px; left: 80px;
+    font-size: 50px;
+    letter-spacing: 1.4px;
+}
+#momokaiSponsor {
+    position: absolute; top: 27px; left: 434px;
+    height: 52px;
+}
