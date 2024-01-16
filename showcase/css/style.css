@@ -94,6 +94,7 @@
     width: 959px; height: 589px;
     border-radius: 20px;
     background-color: var(--mainRed);
+    z-index: 1;
 }
 /* Now Playing Map */
 #nowPlayingMap {
@@ -184,13 +185,14 @@
     width: 9px; height: 737px;
     background-color: white;
     border-radius: 9px;
-    z-index: -1;
+    z-index: 0;
 }
 #heartContainer {
     position: absolute; top: 714px; right: 114px;
     width: 50px; height: 17px;
     border-radius: 17px;
     background-color: white;
+    z-index: 2;
 }
 #nowPlayingStatsConnectorHeartImage {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
