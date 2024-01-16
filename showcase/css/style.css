@@ -184,6 +184,7 @@
     width: 9px; height: 737px;
     background-color: white;
     border-radius: 9px;
+    z-index: -1;
 }
 #heartContainer {
     position: absolute; top: 714px; right: 114px;
@@ -215,6 +216,57 @@
 }
 #statsText {
     margin: 0 50px;
+}
+
+/* --- Stats --- */
+#stats {
+    position: absolute; top: 858px; left: 83px;
+    display: flex; flex-direction: column;
+}
+.statsContainer {
+    position: relative;
+    width: 850px; height: 74px;
+}
+.statsText {
+    font-size: 50px;
+}
+.statsNumber {
+    position: absolute; top: 0; right: 168px;
+    font-size: 50px;
+    letter-spacing: -0.25px;
+}
+#starRatingNumber {
+    right: 165px;
+}
+.statsPosition {
+    position: absolute; top: 24px; right: 7px;
+    display: flex;
+}
+.statsRectangle {
+    width: 18px; height: 4px;
+    border-radius: 4px;
+    background-color: white;
+    margin-left: 15px;
+}
+.statsRectangleRed {
+    background-color: var(--mainRed);
+}
+
+/* --- Strain Graph --- */
+#strainGraph {
+    position: absolute; top: 1172px; left: 78px;
+    width: 847px; height: 220px;
+    background-color: white;
+    border-radius: 17px;
+}
+
+/* --- BPM Length Stats --- */
+#bpmLenStats {
+    position: absolute; top: 1429px; left: 77px;
+    display: flex; justify-content: space-between;
+    width: 850px;
+    font-size: 53px;
+    letter-spacing: -0.4px;
 }
 
 /* ----- BOTTOM SECTION ----- */

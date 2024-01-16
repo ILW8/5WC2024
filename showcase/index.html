@@ -30,7 +30,7 @@
                 <div id="replayer">REPLAYER: <span id="replayerUsername">USERNAME</span></div>
                 <div id="nowPlaying"><span class="mainRedColour" id="nowPlayingNowText">NOW </span> <span id="nowPlayingPlayingText">PLAYING</span></div>
             </section>
-            <!-- <section id="nowPlayingCard">
+            <section id="nowPlayingCard">
                 <div id="nowPlayingMap">
                     <div id="nowPlayingMapLayer"></div>
                     <div class="nowPlayingMapInformation nowPlayingMapSongName nowPlayingMapSingleInformation" id="nowPlayingMapSongName">WRITING ON THE WALL</div>
@@ -51,7 +51,7 @@
                     <div class="mapSlideCurrent">HD2</div>
                     <div class="mapSlideRight">HD1</div>
                 </div>
-            </section> -->
+            </section>
             <section id="nowPlayingStatsConnector">
                 <div id="verticalLine"></div>
                 <div id="heartContainer"><img id="nowPlayingStatsConnectorHeartImage" src="static/red_heart.png"></div>
@@ -68,6 +68,53 @@
                     <img class="statsHeart" src="static/red_heart.png">
                     <img class="statsHeart" src="static/white_heart.png">
                 </div>
+            </section>
+            <section id="stats">
+                <div class="statsContainer">
+                    <div class="statsText"><span class="mainRedColour">S</span>TAR RATING</div>
+                    <div class="statsNumber" id="starRatingNumber">6.73*</div>
+                    <div class="statsPosition">
+                        <div class="statsRectangle statsRectangleRed"></div>
+                        <div class="statsRectangle"></div>
+                        <div class="statsRectangle"></div>
+                        <div class="statsRectangle"></div>
+                    </div>
+                </div>   
+                <div class="statsContainer">
+                    <div class="statsText"><span class="mainRedColour">C</span>IRCLE SIZE</div>
+                    <div class="statsNumber">4.3</div>
+                    <div class="statsPosition">
+                        <div class="statsRectangle"></div>
+                        <div class="statsRectangle statsRectangleRed"></div>
+                        <div class="statsRectangle"></div>
+                        <div class="statsRectangle"></div>
+                    </div>
+                </div>   
+                <div class="statsContainer">
+                    <div class="statsText"><span class="mainRedColour">A</span>PPROACH RATE</div>
+                    <div class="statsNumber">10</div>
+                    <div class="statsPosition">
+                        <div class="statsRectangle"></div>
+                        <div class="statsRectangle"></div>
+                        <div class="statsRectangle statsRectangleRed"></div>
+                        <div class="statsRectangle"></div>
+                    </div>
+                </div>
+                <div class="statsContainer">
+                    <div class="statsText"><span class="mainRedColour">O</span>VERALL DIFFICULTY</div>
+                    <div class="statsNumber">9.7</div>
+                    <div class="statsPosition">
+                        <div class="statsRectangle"></div>
+                        <div class="statsRectangle"></div>
+                        <div class="statsRectangle"></div>
+                        <div class="statsRectangle statsRectangleRed"></div>
+                    </div>
+                </div>      
+            </section>
+            <div id="strainGraph"></div>
+            <section id="bpmLenStats">
+                <div>BPM: <span id="bpmNumber">169</span></div>
+                <div>LENGTH: <span id="lengthNumber">3:54</span></div>
             </section>
         </section>
         <section id="bottom">
