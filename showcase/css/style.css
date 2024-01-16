@@ -302,21 +302,15 @@
     position: absolute; top: 27px; left: 434px;
     height: 52px;
     opacity: 0;
-    animation: momokaiSponsorAnimate 12s linear infinite forwards;
-}
-@keyframes momokaiSponsorAnimate {
-    0% { opacity: 0; }
-    50% { opacity: 0; }
-    58% { opacity: 1; }
-    92% { opacity: 1; }
-    100% { opacity: 0; }
+    animation: sponsorAnimate 12s linear infinite forwards;
+    animation-delay: 6s;
 }
 #blueberrySponsor {
     position: absolute; top: 27px; left: 424px;
     height: 52px;
     display: flex;
     opacity: 0;
-    animation: bluebunnySponsorAnimate 12s linear infinite forwards;
+    animation: sponsorAnimate 12s linear infinite forwards;
 }
 #bluebunnySponsorImage {
     height: 52px;
@@ -327,7 +321,7 @@
     font-size: 38px;
     margin-left: 10px;
 }
-@keyframes bluebunnySponsorAnimate {
+@keyframes sponsorAnimate {
     0% { opacity: 0; }
     8% { opacity: 1; }
     42% { opacity: 1; }
