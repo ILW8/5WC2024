@@ -178,9 +178,26 @@
     opacity: 0;
 }
 
+/* --- Now Playing Stats Connector --- */
+#verticalLine {
+    position: absolute; top: 702px; right: 135px;
+    width: 9px; height: 737px;
+    background-color: white;
+    border-radius: 9px;
+}
+#heartContainer {
+    position: absolute; top: 714px; right: 114px;
+    width: 50px; height: 17px;
+    border-radius: 17px;
+    background-color: white;
+}
+#nowPlayingStatsConnectorHeartImage {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+
 /* --- Stats Title --- */
 #statsTitle {
-    position: absolute; top: 772px;
+    position: absolute; top: 762px;
     width: 1042px; height: 80px;
     display: flex;
     justify-content: center;
