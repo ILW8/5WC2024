@@ -113,16 +113,18 @@
     position: absolute; 
     left: 50%; transform: translateX(-50%);
     width: calc(var(--nowPlayingCardWidth) - 100px);
-}
-.nowPlayingMapSingleInformation {
     text-align: center;
 }
-.nowPlayingMapSongName {
-    top: 260px; 
+#nowPlayingMapSongName {
+    top: 220px; 
     font-size: 88px;
 }
-.nowPlayingMapDifficultyName {
-    top: 363px;
+#nowPlayingMapDifficultyName {
+    top: 320px;
+    font-size: 48px;
+}
+#nowPlayingMapMapperName {
+    top: 383px;
     font-size: 48px;
 }
 #nowPlayingMapDifficultyNamesWrapper, #nowPlayingMapSongNamesWrapper {

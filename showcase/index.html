@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <script src="../deps/reconnecting-websocket.min.js"></script>
 </head>
 <body>
     <div id="main">
@@ -33,24 +35,12 @@
             <section id="nowPlayingCard">
                 <div id="nowPlayingMap">
                     <div id="nowPlayingMapLayer"></div>
-                    <div class="nowPlayingMapInformation nowPlayingMapSongName nowPlayingMapSingleInformation" id="nowPlayingMapSongName">WRITING ON THE WALL</div>
-                    <div class="nowPlayingMapInformation nowPlayingMapSongName" id="nowPlayingMapSongNamesWrapper">
-                        <div id="nowPlayingMapSongName2"></div>
-                        <div id="nowPlayingMapSongName3"></div>
-                    </div>
-                    <div class="nowPlayingMapInformation nowPlayingMapDifficultyName nowPlayingMapSingleInformation" id="nowPlayingMapDifficultyName">[EXPERT]</div>
-                    <div class="nowPlayingMapInformation nowPlayingMapDifficultyName" id="nowPlayingMapDifficultyNamesWrapper">
-                        <div id="nowPlayingMapDifficultyName2"></div>
-                        <div id="nowPlayingMapDifficultyName3"></div>
-                    </div>
+                    <div class="nowPlayingMapInformation" id="nowPlayingMapSongName">WRITING ON THE WALL</div>
+                    <div class="nowPlayingMapInformation" id="nowPlayingMapDifficultyName">[EXPERT]</div>
+                    <div class="nowPlayingMapInformation" id="nowPlayingMapMapperName">SushiKirbz</div>
                 </div>
                 <div id="nowPlayingMapSlot"><div id="nowPlayingMapSlotText">MAPSLOT</div></div>
-                <div id="nowPlayingMapSlide">
-                    <div class="mapSlideExtremeLeft">HD4</div>
-                    <div class="mapSlideLeft">HD3</div>
-                    <div class="mapSlideCurrent">HD2</div>
-                    <div class="mapSlideRight">HD1</div>
-                </div>
+                <div id="nowPlayingMapSlide"></div>
             </section>
             <section id="nowPlayingStatsConnector">
                 <div id="verticalLine"></div>
@@ -130,5 +120,7 @@
             </div>
         </section>
     </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
