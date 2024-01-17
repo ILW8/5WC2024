@@ -42,16 +42,21 @@ getMaps.then(showcaseMaps => {
 
 // Current map
 let currentSongTitle, currentSongDifficulty
+let isMapFound = false
+const replayerEl = document.getElementById("replayer")
 const nowPlayingMapEl = document.getElementById("nowPlayingMap")
 const replayerUsernameEl = document.getElementById("replayerUsername")
 const nowPlayingMapSongNameEl = document.getElementById("nowPlayingMapSongName")
 const nowPlayingMapDifficultyNameEl = document.getElementById("nowPlayingMapDifficultyName")
 const nowPlayingMapMapperNameEl = document.getElementById("nowPlayingMapMapperName")
+let currentSR, currentCS, currentAR, currentOD, currentMinBPM, currentMaxBPM, currentLen
 const starRatingNumberEl = document.getElementById("starRatingNumber")
 const circleSizeNumberEl = document.getElementById("circleSizeNumber")
 const approachRateNumberEl = document.getElementById("approachRateNumber")
 const overallDifficultyNumberEl = document.getElementById("overallDifficultyNumber")
-const bpmNumberEl = document.getElementById("bpmNumber")
+const bpmNumberMinEl = document.getElementById("bpmNumberMin")
+const bpmDashEl = document.getElementById("bpmDash")
+const bpmNumberMaxEl = document.getElementById("bpmNumberMax")
 const lengthNumberEl = document.getElementById("lengthNumber")
 
 socket.onmessage = async (event) => {
@@ -61,40 +66,50 @@ socket.onmessage = async (event) => {
     if (currentSongTitle !== data.menu.bm.metadata.title || currentSongDifficulty !== data.menu.bm.metadata.difficulty) {
         currentSongTitle = data.menu.bm.metadata.title
         currentSongDifficulty = data.menu.bm.metadata.difficulty
+        isMapFound = false
+
+        // set background image
+        const currentImage = data.menu.bm.path.full.replace(/#/g,'%23').replace(/%/g,'%25').replace(/\\/g,'/').replace(/'/g, "\\'");
+        nowPlayingMapEl.style.backgroundImage = `url('http://${location.host}/Songs/${currentImage}?a=${Math.random(10000)}')`
+
+        // set song name / difficulty / mapper
+        nowPlayingMapSongNameEl.innerText = `${data.menu.bm.metadata.artist} - ${currentSongTitle}`
+        nowPlayingMapDifficultyNameEl.innerText = `[${currentSongDifficulty}]`
+        nowPlayingMapMapperNameEl.innerText = data.menu.bm.metadata.mapper
+
+        // set textSlide class
+        nowPlayingDetailTextSlide(nowPlayingMapSongNameEl)
+        nowPlayingDetailTextSlide(nowPlayingMapDifficultyNameEl)
+        nowPlayingDetailTextSlide(nowPlayingMapMapperNameEl)
 
         for (let i = 0; i < showcaseMaps.length; i++) {
             if (currentSongTitle == showcaseMaps[i].songName && currentSongDifficulty == showcaseMaps[i].difficulty) {
                 // set to map slot for map slot scrolling
                 toMapSlot = i
-
-                // set background image
-                const currentImage = data.menu.bm.path.full.replace(/#/g,'%23').replace(/%/g,'%25').replace(/\\/g,'/').replace(/'/g, "\\'");
-                nowPlayingMapEl.style.backgroundImage = `url('http://${location.host}/Songs/${currentImage}?a=${Math.random(10000)}')`
+                isMapFound = true
 
                 // set replayer name
+                replayerEl.style.display = "block"
                 replayerUsernameEl.innerText = showcaseMaps[i].replayer.toUpperCase()
 
-                // set song name / difficulty / mapper
-                nowPlayingMapSongNameEl.innerText = `${showcaseMaps[i].artist.toUpperCase()} - ${showcaseMaps[i].songName.toUpperCase()}`
-                nowPlayingMapDifficultyNameEl.innerText = `[${showcaseMaps[i].difficulty.toUpperCase()}]`
-                nowPlayingMapMapperNameEl.innerText = showcaseMaps[i].mapper.toUpperCase()
-
-                // set textSlide class
-                nowPlayingDetailTextSlide(nowPlayingMapSongNameEl)
-                nowPlayingDetailTextSlide(nowPlayingMapDifficultyNameEl)
-                nowPlayingDetailTextSlide(nowPlayingMapMapperNameEl)
-
                 // Set main stats
-                starRatingNumberEl.innerText = `${Math.round(parseFloat(showcaseMaps[i].sr * 100)) / 100}*`
-                circleSizeNumberEl.innerText = Math.round(parseFloat(showcaseMaps[i].cs) * 10) / 10
-                approachRateNumberEl.innerText = Math.round(parseFloat(showcaseMaps[i].ar) * 10) / 10
-                overallDifficultyNumberEl.innerText = Math.round(parseFloat(showcaseMaps[i].od) * 10) / 10
-                bpmNumberEl.innerText = showcaseMaps[i].bpm
+                currentSR = Math.round(parseFloat(showcaseMaps[i].sr * 100)) / 100
+                currentCS = Math.round(parseFloat(showcaseMaps[i].cs) * 10) / 10
+                currentAR = Math.round(parseFloat(showcaseMaps[i].ar) * 10) / 10
+                currentOD = Math.round(parseFloat(showcaseMaps[i].od) * 10) / 10
+                currentMinBPM = showcaseMaps[i].bpm
+                currentMaxBPM = showcaseMaps[i].bpm
+
+                starRatingNumberEl.innerText = `${currentSR}*`
+                circleSizeNumberEl.innerText = currentCS
+                approachRateNumberEl.innerText = currentAR
+                overallDifficultyNumberEl.innerText = currentOD
+                setBPMStats()
 
                 // Length
-                const length = parseInt(showcaseMaps[i].len)
-                const secondsCounter = length % 60
-                lengthNumberEl.innerText = `${Math.floor(length / 60)}:${(secondsCounter < 10) ? '0': '' + secondsCounter}`
+                currentLen = parseInt(showcaseMaps[i].len)
+                const secondsCounter = currentLen % 60
+                lengthNumberEl.innerText = `${Math.floor(currentLen / 60)}:${(secondsCounter < 10) ? '0': '' + secondsCounter}`
                 break
             }
         }
@@ -187,6 +202,38 @@ socket.onmessage = async (event) => {
             }
         }
     }
+
+    if (!isMapFound) {
+        replayerEl.style.display = "none"
+        if (currentSR !== data.menu.bm.stats.SR) {
+            currentSR = data.menu.bm.stats.SR
+            starRatingNumberEl.innerText = currentSR
+        }
+        if (currentCS !== data.menu.bm.stats.CS) {
+            currentCS = data.menu.bm.stats.CS
+            circleSizeNumberEl.innerText = currentCS
+        }
+        if (currentAR !== data.menu.bm.stats.AR) {
+            currentAR = data.menu.bm.stats.AR
+            approachRateNumberEl.innerText = currentAR
+        }
+        if (currentOD !== data.menu.bm.stats.OD) {
+            currentOD = data.menu.bm.stats.OD
+            overallDifficultyNumberEl.innerText = currentOD
+        }
+        if (currentMinBPM !== data.menu.bm.stats.BPM.min || currentMaxBPM !== data.menu.bm.stats.BPM.max) {
+            currentMinBPM = data.menu.bm.stats.BPM.min
+            currentMaxBPM = data.menu.bm.stats.BPM.max
+
+            setBPMStats()
+        }
+        const currentSeconds = Math.round(data.menu.bm.time.full / 1000)
+        if (currentLen !== currentSeconds) {
+            currentLen = currentSeconds
+            const secondsCounter = currentLen % 60
+            lengthNumberEl.innerText = `${Math.floor(currentLen / 60)}:${(secondsCounter < 10) ? '0': '' + secondsCounter}`
+        }
+    }
 }
 
 // Add or remove textSlide class for each element
@@ -212,6 +259,20 @@ function removeAnimationClasses() {
         }
         resolve(showcaseMaps)
     })
+}
+
+// Set BPM Texts
+function setBPMStats() {
+    bpmNumberMinEl.innerText = currentMinBPM
+    bpmNumberMaxEl.innerText = currentMaxBPM
+
+    if (currentMinBPM == currentMaxBPM) {
+        bpmDashEl.style.display = "none"
+        bpmNumberMaxEl.style.display = "none"
+    } else {
+        bpmDashEl.style.display = "inline"
+        bpmNumberMaxEl.style.display = "inline"
+    }
 }
 
 // Sponsor animations
