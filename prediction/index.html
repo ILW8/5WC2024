@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+    <html lang="en">
+        
+    <head>
+        <meta charset="UTF-8">
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <script src="deps/reconnecting-websocket.min.js"></script>
+    </head>
+
+    <body>
+        <div id="main">
+            <img src="static/prediction.png" id="predictionOverlay">
+            <!-- <img src="static/cameraframeOverlay.png" id="cameraframeOverlay">-->
+            <div id="castingCouch">
+                <div class="castBox" id="caster1"></div>
+                <div class="castBox" id="caster2"></div>
+                <div class="castBox" id="caster3"></div>
+                <div class="castBox" id="caster4"></div>
+                <div class="castBox" id="caster5"></div>
+            </div>
+            <section id="currentCountry">
+                <button id="teamDisplaybuttonleft" onclick="teamDisplayleft();"></button>
+                <button id="teamDisplaybuttonright" onclick="teamDisplayright();"></button>
+                <div id="currentTeamName">United States</div>
+                <div id="currentTeamFlag"></div>
+            </section>
+            <section id="currentSong">
+                <div id="currentSongImage">
+                    <div id="currentSongImageLayer"></div>
+                </div>
+                <div class="currentSongTextWrappers" id="currentSongTitleWrapper"><div class="currentSongText" id="currentSongTitle">Hello</div></div>
+                <div class="currentSongTextWrappers" id="currentSongArtistWrapper"><div class="currentSongText" id="currentSongArtist">Goodbye </div></div>
+            </section>
+            <div id="lastyearplacement">Last Year: No Team </div>
+            <div id="tierList"></div>
+            <div id="compareBox">
+
+            </div>
+            <div id="tierList">
+                <div class="tierListRowTop" id="onePlaceRow"></div>
+                <div class="tierListRowTop" id="twoPlaceRow"></div>
+                <div class="tierListRowTop" id="threePlaceRow"></div>
+                <div class="tierListRowTop" id="fourPlaceRow"></div>
+                <div class="tierListRowTop" id="fivetosixPlaceRow"></div>
+                <div class="tierListRowMiddle" id="seventoeightPlaceRow"></div>
+                <div class="tierListRowMiddle" id="ninetotwelvePlaceRow"></div>
+                <div class="tierListRowMiddle" id="thirteentosixteenPlaceRow"></div>
+                <div class="tierListRowMiddle" id="seventeentotwentyfourPlaceRow"></div>
+                <div class="tierListRowMiddle" id="twentyfivetothrirtytwoPlaceRow"></div>
+                <div class="tierListRowBottom" id="dnqPlaceRow"></div>
+            </div>
+        </div>
+        <div id="controlPanel">
+            <section id="controlPanelSectionOne">
+                <div id="controlPanelAddRemovePlacesTitle">Add/Remove Places</div><br>
+                <div class="controlPanelAddRemoveSectionButtons">
+                    <button class="controlPanelButton controlPanelAddButton" onclick="changeFlagToLocation(1)">Add to 1st</button>
+                    <button class="controlPanelButton controlPanelRemoveButton" onclick="removeFlag(1)" >Remove From 1st</button>
+                </div>
+                <div class="controlPanelAddRemoveSectionButtons">
+                    <button class="controlPanelButton controlPanelAddButton" onclick="changeFlagToLocation(2)">Add to 2nd</button>
+                    <button class="controlPanelButton controlPanelRemoveButton" onclick="removeFlag(2)" >Remove From 2nd</button>
+                </div>
+                <div class="controlPanelAddRemoveSectionButtons">
+                    <button class="controlPanelButton controlPanelAddButton" onclick="changeFlagToLocation(3)">Add to 3rd</button>
+                    <button class="controlPanelButton controlPanelRemoveButton" onclick="removeFlag(3)" >Remove From 3rd</button>
+                </div>
+                <div class="controlPanelAddRemoveSectionButtons">
+                    <button class="controlPanelButton controlPanelAddButton" onclick="changeFlagToLocation(4)">Add to 4th</button>
+                    <button class="controlPanelButton controlPanelRemoveButton" onclick="removeFlag(4)" >Remove From 4th</button>
+                </div>
+                <div class="controlPanelAddRemoveSectionButtons">
+                    <button class="controlPanelButton controlPanelAddButton" onclick="changeFlagToLocation(5)">Add to 5th-6th</button>
+                    <button class="controlPanelButton controlPanelRemoveButton" onclick="removeFlag(5)" >Remove From 5th-6th</button>
+                </div>
+                <div class="controlPanelAddRemoveSectionButtons">
+                    <button class="controlPanelButton controlPanelAddButton" onclick="changeFlagToLocation(7)">Add to 7th - 8th</button>
+                    <button class="controlPanelButton controlPanelRemoveButton" onclick="removeFlag(7)" >Remove From 7th-8th</button>
+                </div>
+                <div class="controlPanelAddRemoveSectionButtons">
+                    <button class="controlPanelButton controlPanelAddButton" onclick="changeFlagToLocation(9)">Add to 9th-12th</button>
+                    <button class="controlPanelButton controlPanelRemoveButton" onclick="removeFlag(9)" >Remove From 9th-12th</button>
+                </div>
+                <div class="controlPanelAddRemoveSectionButtons">
+                    <button class="controlPanelButton controlPanelAddButton" onclick="changeFlagToLocation(13)">Add to 13th-16th</button>
+                    <button class="controlPanelButton controlPanelRemoveButton" onclick="removeFlag(13)" >Remove From 13th-16th</button>
+                </div>
+                <div class="controlPanelAddRemoveSectionButtons">
+                    <button class="controlPanelButton controlPanelAddButton" onclick="changeFlagToLocation(17)">Add to 17th-24th</button>
+                    <button class="controlPanelButton controlPanelRemoveButton" onclick="removeFlag(17)" >Remove From 17th-24th</button>
+                </div>
+                <div class="controlPanelAddRemoveSectionButtons">
+                    <button class="controlPanelButton controlPanelAddButton" onclick="changeFlagToLocation(25)">Add to 25th - 32nd</button>
+                    <button class="controlPanelButton controlPanelRemoveButton" onclick="removeFlag(25)" >Remove From 25th-32nd</button>
+                </div>
+                <div class="controlPanelAddRemoveSectionButtons">
+                    <button class="controlPanelButton controlPanelAddButton" onclick="changeFlagToLocation(33)">Add to DNQ</button>
+                    <button class="controlPanelButton controlPanelRemoveButton" onclick="removeFlag(33)" >Remove From DNQ</button>
+                </div>
+            </section>
+            <section id="controlPanelSectionTwo"></section>
+            <section id="controlPanelSectionThree">
+                <div id="firstcaster">
+                    <button id="first" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster1, `1st`)">1st</button>
+                    <button id="second" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster1, `2nd`)">2nd</button>
+                    <button id="third" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster1, `3rd`)">3rd</button>
+                    <button id="fourth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster1, `4th`)">4th</button>
+                    <button id="fifth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster1, `5th-6th`)">5th-6th</button>
+                    <button id="sixth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster1, `7th-8th`)">7th-8th</button>
+                    <button id="seventh" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster1, `9-12th`)">9-12th</button>
+                    <button id="eighth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster1, `13-16th`)">13-16th</button>
+                    <button id="nineth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster1, `17-24th`)">17-24th</button>
+                    <button id="tenth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster1, `25-32nd`)">25-32nd</button>
+                    <button id="eleventh" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster1, `DNQ`)">DNQ</button>
+                </div>
+                <div id="secondcaster">
+                    <button id="first" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster2, `1st`)">1st</button>
+                    <button id="second" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster2, `2nd`)">2nd</button>
+                    <button id="third" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster2, `3rd`)">3rd</button>
+                    <button id="fourth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster2, `4th`)">4th</button>
+                    <button id="fifth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster2, `5th-6th`)">5th-6th</button>
+                    <button id="sixth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster2, `7th-8th`)">7th-8th</button>
+                    <button id="seventh" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster2, `9-12th`)">9-12th</button>
+                    <button id="eighth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster2, `13-16th`)">13-16th</button>
+                    <button id="nineth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster2, `17-24th`)">17-24th</button>
+                    <button id="tenth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster2, `25-32nd`)">25-32nd</button>
+                    <button id="eleventh" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster2, `DNQ`)">DNQ</button>
+                </div>
+                <div id="thirdcaster">
+                    <button id="first" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster3, `1st`)">1st</button>
+                    <button id="second" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster3, `2nd`)">2nd</button>
+                    <button id="third" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster3, `3rd`)">3rd</button>
+                    <button id="fourth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster3, `4th`)">4th</button>
+                    <button id="fifth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster3, `5th-6th`)">5th-6th</button>
+                    <button id="sixth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster3, `7th-8th`)">7th-8th</button>
+                    <button id="seventh" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster3, `9-12th`)">9-12th</button>
+                    <button id="eighth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster3, `13-16th`)">13-16th</button>
+                    <button id="nineth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster3, `17-24th`)">17-24th</button>
+                    <button id="tenth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster3, `25-32nd`)">25-32nd</button>
+                    <button id="eleventh" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster3, `DNQ`)">DNQ</button>
+                </div>
+                <div id="fourthcaster">
+                    <button id="first" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster4, `1st`)">1st</button>
+                    <button id="second" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster4, `2nd`)">2nd</button>
+                    <button id="third" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster4, `3rd`)">3rd</button>
+                    <button id="fourth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster4, `4th`)">4th</button>
+                    <button id="fifth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster4, `5th-6th`)">5th-6th</button>
+                    <button id="sixth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster4, `7th-8th`)">7th-8th</button>
+                    <button id="seventh" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster4, `9-12th`)">9-12th</button>
+                    <button id="eighth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster4, `13-16th`)">13-16th</button>
+                    <button id="nineth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster4, `17-24th`)">17-24th</button>
+                    <button id="tenth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster4, `25-32nd`)">25-32nd</button>
+                    <button id="eleventh" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster4, `DNQ`)">DNQ</button>
+                </div>
+                <div id="fifthcaster">
+                    <button id="first" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster5, `1st`)">1st</button>
+                    <button id="second" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster5, `2nd`)">2nd</button>
+                    <button id="third" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster5, `3rd`)">3rd</button>
+                    <button id="fourth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster5, `4th`)">4th</button>
+                    <button id="fifth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster5, `5th-6th`)">5th-6th</button>
+                    <button id="sixth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster5, `7th-8th`)">7th-8th</button>
+                    <button id="seventh" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster5, `9-12th`)">9-12th</button>
+                    <button id="eighth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster5, `13-16th`)">13-16th</button>
+                    <button id="nineth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster5, `17-24th`)">17-24th</button>
+                    <button id="tenth" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster5, `25-32nd`)">25-32nd</button>
+                    <button id="eleventh" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster5, `DNQ`)">DNQ</button>
+                </div>
+                <div id="clearbutton">
+                    <button id="theclearbutton controlPanelAddRemoveSectionButtons" onclick="predictionClear()">Clear All</button>
+                </div>
+            </section>
+        </div>
+        <div id="sponsor">
+            <video loop autoplay width="400" height="130" >
+                <source src="static/sponsor.webm" type="video/webm">
+            </video>
+        </div>
+
+        <script src="index.js"></script>
+        <script src="js/particles/particles.js"></script>
+        <script src="js/particles/appMain.js"></script>
+    </body>    
+</html>

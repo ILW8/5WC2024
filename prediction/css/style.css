@@ -1,0 +1,388 @@
+:root {
+	--purple: #936bf7;
+	--purple75Opacity: #936bf77F;
+	--blue: #75c6ea;
+	--blue75Opacity: #75c7ea7F;
+	--green: #6ACE0C;
+	--red: #FF4141;
+	--darkGreen: #1F9B29;
+}
+@font-face {
+    font-family: "Round-Control";
+    src: url("../fonts/RoundControl-Regular.otf") format("opentype");
+}
+@font-face {
+	font-family: "Coolvetica";
+	src: url("../fonts/Coolvetica-Regular.otf") format("opentype");
+}
+@font-face {
+	font-family: "RenogareSoft-Regular";
+	src: url("../fonts/RenogareSoft-Regular.ttf") format("opentype");
+}
+body,html{
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+    overflow: hidden
+}
+
+#main{
+    font-family: Round-Control;
+    font-weight: normal;
+    color: white;
+	background-color: #000210;
+    width: 1920px;
+    height: 1080px;
+    z-index: 2;
+}
+#predictionOverlay {
+	position: absolute; top: 0; left: 0;
+    width: 1920px; height: 1080px;
+	z-index: 2;
+}
+
+#teamDisplaybuttonleft{
+    position: absolute;
+    left: 105px;
+    top: 487px;
+    width: 50px;
+    height: 50px;
+    border: transparent;
+    background-color: transparent;
+    z-index: 3;
+}
+#teamDisplaybuttonright{
+    position: absolute;
+    left: 497px;
+    top: 487px;
+    width: 50px;
+    height: 50px;
+    border: transparent;
+    background-color: transparent;
+    z-index: 3;
+}
+#currentTeamName{
+    position: absolute;
+    top: 600px;
+    left: 200px;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    background-color: transparent;
+    font-family: Round-Control;
+    color: white;
+    font-size: 30px;
+}
+#currentTeamFlag{
+    position: absolute;
+    top: 420px;
+    left: 230px;
+    height: 400px;
+    width: 200px;
+    background-size: contain;
+	background-repeat: no-repeat;
+    z-index: 3;
+}
+/* Cyrrent Song */
+#currentSongImage {
+    position: absolute; top: 925px; left: 95px;
+    background-color: white;
+    width: 141px; height: 73px;
+    background-size: cover;
+    background-position: 50%;
+}
+#currentSongImageLayer {
+    background-color: rgba(0,0,0,0.2);
+    width: inherit; height: inherit;
+}
+.currentSongTextWrappers {
+    position: absolute; left: 253px;
+    width: 323px; height: 35px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    font-size: 30px;
+    color: white;
+    font-family: Round-Control;
+}
+#currentSongTitleWrapper { top: 925px; }
+#currentSongArtistWrapper { top: 960px; }
+.currentSongText {
+    width: max-content;
+}
+.currentSongTextWrap {
+    transform: translate(323px);
+    animation: displaySlide 12s linear infinite;
+}
+@keyframes displaySlide {
+    0% {transform: translate(0px);}
+    11% {transform: translate(0px);}
+    80% { transform: translate(calc(-100% + 323px)); }
+    100% { transform: translate(calc(-100% + 323px)); }
+}
+
+/* Comparison Box */
+#compareBox {
+    position: absolute;
+    width: 515px;
+    height: 500px;
+    left: 720px;
+    top: 550px;
+    background-color:transparent; 
+    font-size: 17px;
+    font-family: Round-Control;
+    font-weight: normal;
+    color: white;
+    z-index: 10;
+}
+.rightbox {
+    position: absolute;
+    right: 20px;
+    border-radius: 15px;
+    height: 20px;
+    width: 190px;
+    border: 5px solid #54ff5d;
+    background: black;
+    text-align: center;
+    padding: 10px 0px;
+    text-shadow: 0 0 2px black, 0 0 4px black;
+}
+.leftbox {
+    position: absolute;
+    left: 20px;
+    border-radius: 15px;
+    height: 20px;
+    width: 190px;
+    border: 5px solid #ff5454;
+    background: black;
+    text-align: center;
+    padding: 10px 0px;
+    text-shadow: 0 0 2px black, 0 0 4px black;
+}
+.pointer {
+    position: absolute;
+    left: 249px;
+    border-top: 10px solid transparent;
+    border-left: 20px solid white;
+    border-bottom: 10px solid transparent;
+}
+
+/* Tier List */
+#tierList{
+    margin: 0;
+    position: absolute;
+    left: 1419px; top: 447px;
+    width: 500px; height: 500px;
+    z-index: 2;
+}
+.tierListRowTop {
+    background-color: transparent;
+    width: 428px; height: 51px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.tierListRowMiddle {
+    background-color: transparent;
+    width: 428px; height: 52.5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.tierListRowBottom {
+    width: 428px; height: 83px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.tierListStandardRowImage {
+    margin-left: 8px;
+    width: 45px; 
+    height: 32.4px;
+    background-image: url("../static/flags/Argentina.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.tierListBottomRowImage {
+    margin-left: 8px;
+    width: 30px; 
+    height: 21.4px;
+    background-image: url("../static/flags/Argentina.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Control Panel */
+#controlPanel {
+    position: absolute; left: 1920px; top: 0;
+    width: 950px;
+    height: 1080px;
+    background-color: rgb(46, 53, 90);
+    color: white;
+    font-family: RenogareSoft-Regular; 
+}
+#controlPanelSectionOne {
+    width: 250px;
+}
+#controlPanelSectionTwo {
+    position: absolute; right: 450px; top: 0px;
+    width: 250px;
+}
+#controlPanelSectionThree {
+    position: absolute; right: 0px; top: 0px;
+    width: 450px;
+}
+.controlPanelAddRemoveSectionButtons {
+    position: relative;
+    width: 60%;
+    height: 60px;
+}
+#controlPanelAddRemovePlacesTitle {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 24px;
+}
+.controlPanelButton {
+    position: absolute;
+    width: 60px; height: 50px;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+.controlPanelButton:active {
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+}
+.controlPanelAddButton {
+    top: 0px; left: 10px;
+}
+.controlPanelRemoveButton {
+    top: 0px; right: 10px;
+}
+#selectList {
+    font-family: RenogareSoft-Regular;
+    color: white;
+    background-color: transparent;
+    font-size: 13px;
+    border: none;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+#selectList option {
+    width: 210px;
+    text-align: center;
+    font-size: 9px;
+}
+
+#selectList::-webkit-scrollbar {
+    display: none;
+
+}
+
+
+/* Caster */
+
+#castingCouch {
+    position: absolute;
+    left: 0px;
+    top: 315px;
+    height: 40px;
+    width: 1920px; 
+    background-color: transparent;
+}
+.castBox {
+    position: inherit;
+    margin-top: 0px;
+    height: 15px;
+    width: 150px;
+    border: 3px solid white;
+    text-align: center;
+    font-size: 24px;
+    vertical-align: middle;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+#sponsor { position: absolute; left: 75px; bottom: -25px; z-index: 1; }
+#caster1{
+    left: 7%;
+}
+#caster2{
+    left: 22%;
+    transform: translateX(+55%);
+}
+#caster3{
+    left: 50%;
+    transform: translateX(-50%);
+}
+#caster4{
+    right: 22.5%;
+    transform: translateX(-40%);
+}
+#caster5{
+    right: 7%;
+}
+#firstcaster {
+    position: absolute;
+    left: 0px;
+}
+#secondcaster {
+    position: absolute;
+    left: 100px;
+}
+#thirdcaster {
+    position: absolute;
+    left: 200px;
+}
+#fourthcaster {
+    position: absolute;
+    left: 300px;
+}
+#fifthcaster {
+    position: absolute;
+    left: 400px;
+}
+
+#first {
+    top: 50px;
+}
+#second {
+    top: 100px;
+}
+#third {
+    top: 150px;
+}
+#fourth {
+    top: 200px;
+}
+#fifth {
+    top: 250px;
+}
+#sixth {
+    top: 300px;
+}
+#seventh {
+    top: 350px;
+}
+#eighth {
+    top: 400px;
+}
+#nineth {
+    top: 450px;
+}
+#tenth {
+    top: 500px;
+}
+#eleventh {
+    top: 550px;
+}
+
+#lastyearplacement{
+    position: absolute;
+    top: 467px;
+    left: 960px;
+    z-index: 2;
+    font-size: 20px;
+}
