@@ -1,0 +1,74 @@
+#mappoolTemplateGeneratorPage {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: skyblue;
+    border: 3px solid black;
+    padding: 5px 30px 30px;
+    width: 675px;
+    border-radius:25px;
+}
+.mappoolModTemplateGenerator {
+    text-align:center;
+}
+.mappoolModTemplateGenerator input, .mappoolModTemplateGenerator button {
+    margin: 5px;
+}
+.mappoolRemoveMod {
+    background-color: purple;
+    color: white;
+    width: 110px;
+}
+
+#mappoolModTemplateGeneratorButtons {
+    margin-top: 20px;
+}
+.mappoolModTemplateGeneratorButton {
+    background-color: teal;
+    color: white;
+    width: 200px;
+    margin: 0 5px;
+}
+.mappoolModTemplateGeneratorMappoolFormats {
+    background-color: #ff6ec7;
+    color: white;
+    width: 50px;
+}
+#mappoolModTemplateGeneratorTournamentTemplates button {
+    background-color: #ff8800;
+    color: white;
+    width: 250px;
+    margin: 0 5px;
+}
+#submitMappoolTemplateGenerator {
+    background-color: darkgreen;
+    color: white;
+    width: 250px;
+}
+.mappoolModTemplateGenerator input, #mappoolGeneratorPage input {
+    background-color: transparent;
+    border-bottom: 1px solid darkblue;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    text-align: center;
+    outline: none;
+}
+.mappoolModTemplateGenerator input[type=number]::-webkit-inner-spin-button {
+    opacity: 0;
+}
+#removeAllMappoolModTemplate {
+    background-color: #FF5C5C;
+}
+
+#mappoolDownloadPage {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: skyblue;
+    border: 3px solid black;
+    padding: 5px 30px 30px;
+    width: 675px;
+    border-radius:25px;
+    display: none;
+}

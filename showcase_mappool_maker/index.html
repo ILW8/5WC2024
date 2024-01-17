@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/mappoolTemplateGenerator.css">
+    <link rel="stylesheet" href="css/mappoolGenerator.css">
+</head>
+<body>
+    <div id="mappoolTemplateGeneratorPage">
+        <h1 class="templateContentPosition">Mappool Template</h1>
+        <div class="templateContentPosition" id="templateGeneratorButtons">
+            <button class="mappoolModTemplateGeneratorButton templateGeneratorButtons" id="addMappoolModTemplate">Add a Mod</button>
+            <button class="mappoolModTemplateGeneratorButton templateGeneratorButtons" id="removeMappoolModTemplate">Remove a Mod</button>
+            <button class="mappoolModTemplateGeneratorButton templateGeneratorButtons" id="removeAllMappoolModTemplate">Remove all Mods</button>
+        </div>
+        <div class="templateContentPosition" id="mappoolModTemplateGeneratorNormalMappool">
+            <button class="templateGeneratorButtons mappoolModTemplateGeneratorMappoolFormats" id="NM" onclick="addNewMappoolModTemplate('NM')">NM</button>
+            <button class="templateGeneratorButtons mappoolModTemplateGeneratorMappoolFormats" id="HD" onclick="addNewMappoolModTemplate('HD')">HD</button>
+            <button class="templateGeneratorButtons mappoolModTemplateGeneratorMappoolFormats" id="HR" onclick="addNewMappoolModTemplate('HR')">HR</button>
+            <button class="templateGeneratorButtons mappoolModTemplateGeneratorMappoolFormats" id="DT" onclick="addNewMappoolModTemplate('DT')">DT</button>
+            <button class="templateGeneratorButtons mappoolModTemplateGeneratorMappoolFormats" id="EZ" onclick="addNewMappoolModTemplate('EZ')">EZ</button>
+            <button class="templateGeneratorButtons mappoolModTemplateGeneratorMappoolFormats" id="FL" onclick="addNewMappoolModTemplate('FL')">FL</button>
+            <button class="templateGeneratorButtons mappoolModTemplateGeneratorMappoolFormats" id="FM" onclick="addNewMappoolModTemplate('FM')">FM</button>
+            <button class="templateGeneratorButtons mappoolModTemplateGeneratorMappoolFormats" id="TB" onclick="addNewMappoolModTemplate('TB')">TB</button>
+        </div>
+        <div class="templateContentPosition" id="mappoolModTemplateGeneratorManiaMappool">
+            <button class="templateGeneratorButtons mappoolModTemplateGeneratorMappoolFormats" id="RC" onclick="addNewMappoolModTemplate('RC')">RC</button>
+            <button class="templateGeneratorButtons mappoolModTemplateGeneratorMappoolFormats" id="HB" onclick="addNewMappoolModTemplate('HB')">HB</button>
+            <button class="templateGeneratorButtons mappoolModTemplateGeneratorMappoolFormats" id="LN" onclick="addNewMappoolModTemplate('LN')">LN</button>
+            <button class="templateGeneratorButtons mappoolModTemplateGeneratorMappoolFormats" id="SV" onclick="addNewMappoolModTemplate('SV')">SV</button>
+        </div>
+        <div class="templateContentPosition" id="mappoolModTemplateGeneratorTournamentTemplates">
+            <button class="templateGeneratorButtons" id="mappoolModTemplateManiaTournament" onclick="removeAllMappoolModTemplate(); addNewMappoolModTemplate('RC'); addNewMappoolModTemplate('HB'); addNewMappoolModTemplate('LN'); addNewMappoolModTemplate('SV'); addNewMappoolModTemplate('TB'); ">Maina Tournament Template</button>
+            <button class="templateGeneratorButtons" id="mappoolModTemplateOtherTournaments" onclick="removeAllMappoolModTemplate(); addNewMappoolModTemplate('NM'); addNewMappoolModTemplate('HD'); addNewMappoolModTemplate('HR'); addNewMappoolModTemplate('DT'); addNewMappoolModTemplate('FM'); addNewMappoolModTemplate('TB');">Other Tournament Templates</button>    
+        </div>
+        <br>
+        <p class="templateContentPosition">
+            - At least one mod is required.<br>
+            - Abbreviations must not be longer than 10 characters long.<br>
+            - Number of maps per mod must not exceed 15.
+        </p>
+        <button class="templateContentPosition templateGeneratorButtons nextPageButton" onclick="validateMappolModGenerator()">Next Page</button>
+    </div>
+
+    <div id="mappoolGeneratorPage"></div>
+
+    <div id="mappoolDownloadPage">
+        <p id="mappoolDownloadPageParagraph">Hello! The generation for the mappool is successful. The download should happen automatically. If not, click the download links below.<br><br>
+        </p>
+    </div>
+
+    <script src="js/index.js"></script>
+    <script src="js/mappoolModGeneratorPage.js"></script>
+    <script src="js/mappoolGeneratorPage.js"></script>
+</body>
+</html>

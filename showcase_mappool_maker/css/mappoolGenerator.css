@@ -1,0 +1,50 @@
+#mappoolGeneratorPage {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: skyblue;
+    border: 3px solid black;
+    padding: 5px 30px 30px;
+    width: 675px;
+    border-radius:25px;
+    display: none;
+}
+.mappoolGeneratorPageWrapper {
+    margin: 20px 0px;
+}
+.mappoolGeneratorPageModHeader {
+    margin-top: 10px;
+    position:relative;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align:center;
+}
+.modNumWrapper {
+    width: inherit;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.poolGenerator {
+    background-color: transparent;
+    border-bottom: 1px solid darkblue;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    text-align: center;
+    outline: none;
+    margin: 5px;
+    width:200px;
+}
+.poolGenerator[type=number]::-webkit-inner-spin-button {
+    opacity: 0;
+}
+
+.mappoolGeneratorPageButtonDiv {
+    display: flex;
+    justify-content: center;
+}
+
+#apiKeyInput {
+    margin-bottom: 10px;
+}
