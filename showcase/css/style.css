@@ -1,6 +1,7 @@
 :root {
     --mainRed: rgb(254, 36, 86);
     --nowPlayingCardWidth: 959px;
+    --nowPlayingWrapperWidth: calc(var(--nowPlayingCardWidth) - 100px);
 }
 
 /* ----- GENERAL HELPER CLASSES ----- */
@@ -63,9 +64,7 @@
     width: 1104px; height: 1154px;
 }
 
-#play_triangle {
-    position: absolute; top: 51px; left: 78px;
-}
+#play_triangle { position: absolute; top: 51px; left: 78px; }
 
 /* --- Replayer Now Playing --- */
 #replayerNowPlaying {
@@ -81,12 +80,8 @@
     position: absolute; top: 46px; right: -3px;
     font-size: 62px;
 }
-#nowPlayingNowText {
-    margin-right: 5px;
-}
-#nowPlayingPlayingText {
-    letter-spacing: 6px;
-}
+#nowPlayingNowText { margin-right: 5px; }
+#nowPlayingPlayingText { letter-spacing: 6px; }
 
 /* --- Now Playing Card --- */
 #nowPlayingCard {
@@ -109,23 +104,42 @@
     border-radius: inherit;
     background-color: rgba(0,0,0,0.5)
 }
-.nowPlayingMapInformation {
-    position: absolute; 
-    left: 50%; transform: translateX(-50%);
-    width: calc(var(--nowPlayingCardWidth) - 100px);
+.nowPlayingMapInformationWrapper {
+    position: absolute; left: 50%; transform: translateX(-50%);
+    width: var(--nowPlayingWrapperWidth);
     text-align: center;
+    margin: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
 }
-#nowPlayingMapSongName {
+#nowPlayingMapSongNameWrapper {
     top: 220px; 
     font-size: 88px;
 }
-#nowPlayingMapDifficultyName {
+#nowPlayingMapDifficultyNameWrapper {
     top: 320px;
     font-size: 48px;
 }
-#nowPlayingMapMapperName {
+#nowPlayingMapMapperNameWrapper {
     top: 383px;
     font-size: 48px;
+}
+.nowPlayingMapDetail {
+    position: relative;
+    display: inline-block;
+	width: max-content;
+}
+.textSlide {
+    transform: translate(var(--nowPlayingWrapperWidth));
+    animation: textSlide 12s linear infinite;
+}
+@keyframes textSlide {
+    0% {transform: translate(0px);}
+    11% {transform: translate(0px);}
+    80% { transform: translate(calc(-100% + var(--nowPlayingWrapperWidth))); }
+    100% { transform: translate(calc(-100% + var(--nowPlayingWrapperWidth))); }
+
 }
 #nowPlayingMapDifficultyNamesWrapper, #nowPlayingMapSongNamesWrapper {
     display: none;
@@ -140,9 +154,7 @@
     border-radius: 0 16px 16px 0;
     background-color: white;
 }
-#nowPlayingMapSlotText {
-    position: absolute; top: 8px; left: 188px;
-}
+#nowPlayingMapSlotText { position: absolute; top: 8px; left: 188px; }
 /* Now Playing Mapslide */
 .mapSlideInvisibleLeft {
     position: absolute; top: 525px; left: 327px;
@@ -179,6 +191,158 @@
     font-size: 39px;
     color: var(--mainRed);
     opacity: 0;
+}
+/* Going from left to right */
+.fromInvisibleLeftToExtremeLeft { animation-name: fromInvisibleLeftToExtremeLeft; }
+.fromExtremeLeftToLeft { animation-name: fromExtremeLeftToLeft; }
+.fromLeftToCurrent { animation-name: fromLeftToCurrent; }
+.fromCurrentToRight { animation-name: fromCurrentToRight; }
+.fromRightToInvisibleRight { animation-name: fromRightToInvisibleRight; }
+@keyframes fromInvisibleLeftToExtremeLeft {
+    0% {
+        top: 525px; left: 327px;
+        font-size: 22px;
+        color: var(--mainRed);
+        opacity: 0
+    }
+    100% {
+        top: 507px; left: 372px;
+        font-size: 39px;
+        color: rgb(255, 99, 135);
+        opacity: 1;
+    }
+}
+@keyframes fromExtremeLeftToLeft {
+    0% {
+        top: 507px; left: 372px;
+        font-size: 39px;
+        color: rgb(255, 99, 135);
+        opacity: 1;
+    }
+    100% {
+        top: 492px; left: 485px;
+        font-size: 62px;
+        color: rgb(255, 145, 170);
+        opacity: 1;
+    }
+}
+@keyframes fromLeftToCurrent {
+    0% {
+        top: 492px; left: 485px;
+        font-size: 62px;
+        color: rgb(255, 145, 170);
+        opacity: 1;
+    }
+    100% {
+        top: 480px; left: 643px;
+        font-size: 82px;
+        color: white;
+        opacity: 1;
+    }
+}
+@keyframes fromCurrentToRight {
+    0% {
+        top: 480px; left: 643px;
+        font-size: 82px;
+        color: white;
+        opacity: 1;
+    }
+    100% {
+        top: 492px; left: 828px;
+        color: rgb(255, 145, 170);
+        font-size: 62px;
+        opacity: 1;
+    }
+}
+@keyframes fromRightToInvisibleRight {
+    0% {
+        top: 492px; left: 828px;
+        color: rgb(255, 145, 170);
+        font-size: 62px;
+        opacity: 1;
+    }
+    100% {
+        top: 507px; left: 941px;
+        font-size: 39px;
+        color: var(--mainRed);
+        opacity: 0;
+    }
+}
+/* From Right to Left */
+.fromExtremeLeftToInvisibleLeft { animation-name: fromExtremeLeftToInvisibleLeft}
+.fromLeftToExtremeLeft { animation-name: fromLeftToExtremeLeft }
+.fromCurrentToLeft { animation-name: fromCurrentToLeft }
+.fromRightToCurrent { animation-name: fromRightToCurrent }
+.fromInvisibleRightToRight { animation-name: fromInvisibleRightToRight }
+@keyframes fromExtremeLeftToInvisibleLeft {
+    0% {
+        top: 507px; left: 372px;
+        font-size: 39px;
+        color: rgb(255, 99, 135);
+        opacity: 1;
+    }
+    100% {
+        top: 525px; left: 327px;
+        font-size: 22px;
+        color: var(--mainRed);
+        opacity: 0
+    }
+}
+@keyframes fromLeftToExtremeLeft {
+    0% {
+        top: 492px; left: 485px;
+        font-size: 62px;
+        color: rgb(255, 145, 170);
+        opacity: 1;
+    }
+    100% {
+        top: 507px; left: 372px;
+        font-size: 39px;
+        color: rgb(255, 99, 135);
+        opacity: 1;
+    }
+}
+@keyframes fromCurrentToLeft {
+    0% {
+        top: 480px; left: 643px;
+        font-size: 82px;
+        color: white;
+        opacity: 1;
+    }
+    100% {
+        top: 492px; left: 485px;
+        font-size: 62px;
+        color: rgb(255, 145, 170);
+        opacity: 1;
+    }
+}
+@keyframes fromRightToCurrent {
+    0% {
+        top: 492px; left: 828px;
+        color: rgb(255, 145, 170);
+        font-size: 62px;
+        opacity: 1;
+    }
+    100% {
+        top: 480px; left: 643px;
+        font-size: 82px;
+        color: white;
+        opacity: 1;
+    }
+}
+@keyframes fromInvisibleRightToRight {
+    0% {
+        top: 507px; left: 941px;
+        font-size: 39px;
+        color: var(--mainRed);
+        opacity: 0;
+    }
+    100% {
+        top: 492px; left: 828px;
+        color: rgb(255, 145, 170);
+        font-size: 62px;
+        opacity: 1;
+    }
 }
 
 /* --- Now Playing Stats Connector --- */
@@ -218,9 +382,7 @@
     width: 10px; height: 6px;
     margin: 0 14.6px;
 }
-#statsText {
-    margin: 0 50px;
-}
+#statsText { margin: 0 50px; }
 
 /* --- Stats --- */
 #stats {
@@ -231,17 +393,13 @@
     position: relative;
     width: 850px; height: 74px;
 }
-.statsText {
-    font-size: 50px;
-}
+.statsText { font-size: 50px; }
 .statsNumber {
     position: absolute; top: 0; right: 168px;
     font-size: 50px;
     letter-spacing: -0.25px;
 }
-#starRatingNumber {
-    right: 165px;
-}
+#starRatingNumber { right: 165px; }
 .statsPosition {
     position: absolute; top: 24px; right: 7px;
     display: flex;
