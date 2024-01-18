@@ -324,6 +324,8 @@ function removeAnimationClasses() {
 
 // Set BPM Texts
 function setBPMStats() {
+    currentMinBPM = Math.round(currentMinBPM * 100) / 100
+    currentMaxBPM = Math.round(currentMaxBPM * 100) / 100
     bpmNumberMinEl.innerText = currentMinBPM
     bpmNumberMaxEl.innerText = currentMaxBPM
 
