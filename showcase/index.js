@@ -12,18 +12,18 @@ let showcaseMaps
 let currentMapSlot = 0
 let toMapSlot = 0
 let mapSlotDifference = 0
-let animTime;
+let animTime
 const delay = ms => new Promise(res => setTimeout(res, ms))
 
 const getMaps = new Promise(async (resolve, reject) => {
-    const xhr = new XMLHttpRequest();
+    const xhr = new XMLHttpRequest()
     xhr.open("GET", `http://127.0.0.1:24050/5WC2024/_data/showcaseBeatmaps.json`, false)
     xhr.onload = function xhrLoad()  {
         if (this.status == 404) return
         if (this.status == 200) showcaseMaps = JSON.parse(this.responseText)
     }
-    xhr.send();
-    resolve(showcaseMaps); 
+    xhr.send()
+    resolve(showcaseMaps)
 })
 getMaps.then(showcaseMaps => {
     for (let i = 0; i < showcaseMaps.length; i++) {
@@ -59,6 +59,21 @@ const bpmDashEl = document.getElementById("bpmDash")
 const bpmNumberMaxEl = document.getElementById("bpmNumberMax")
 const lengthNumberEl = document.getElementById("lengthNumber")
 
+// Strains
+const progressChart = document.getElementById("progress")
+let tempStrains, seek, fullTime
+let changeStats = false
+let statsCheck = false
+let last_strain_update = 0
+
+window.onload = function () {
+	let ctx = document.getElementById('strain').getContext('2d')
+	window.strainGraph = new Chart(ctx, config)
+
+	let ctxProgress = document.getElementById('strainProgress').getContext('2d')
+	window.strainGraphProgress = new Chart(ctxProgress, configProgress)
+}
+
 socket.onmessage = async (event) => {
     const data = JSON.parse(event.data)
     console.log(data)
@@ -69,7 +84,7 @@ socket.onmessage = async (event) => {
         isMapFound = false
 
         // set background image
-        const currentImage = data.menu.bm.path.full.replace(/#/g,'%23').replace(/%/g,'%25').replace(/\\/g,'/').replace(/'/g, "\\'");
+        const currentImage = data.menu.bm.path.full.replace(/#/g,'%23').replace(/%/g,'%25').replace(/\\/g,'/').replace(/'/g, "\\'")
         nowPlayingMapEl.style.backgroundImage = `url('http://${location.host}/Songs/${currentImage}?a=${Math.random(10000)}')`
 
         // set song name / difficulty / mapper
@@ -109,7 +124,7 @@ socket.onmessage = async (event) => {
                 // Length
                 currentLen = parseInt(showcaseMaps[i].len)
                 const secondsCounter = currentLen % 60
-                lengthNumberEl.innerText = `${Math.floor(currentLen / 60)}:${(secondsCounter < 10) ? '0': '' + secondsCounter}`
+                lengthNumberEl.innerText = `${Math.floor(currentLen / 60)}:${(secondsCounter < 10) ? '0': ''}${secondsCounter}`
                 break
             }
         }
@@ -231,9 +246,55 @@ socket.onmessage = async (event) => {
         if (currentLen !== currentSeconds) {
             currentLen = currentSeconds
             const secondsCounter = currentLen % 60
-            lengthNumberEl.innerText = `${Math.floor(currentLen / 60)}:${(secondsCounter < 10) ? '0': '' + secondsCounter}`
+            console.log(secondsCounter)
+            lengthNumberEl.innerText = `${Math.floor(currentLen / 60)}:${(secondsCounter < 10) ? '0': ''}${secondsCounter}`
         }
     }
+
+    if (tempStrains != JSON.stringify(data.menu.pp.strains) && window.strainGraph) {
+        tempStrains = JSON.stringify(data.menu.pp.strains)
+        if (data.menu.pp.strains) {
+            let temp_strains = smooth(data.menu.pp.strains, 5)
+			let new_strains = []
+			for (let i = 0; i < 60; i++) {
+				new_strains.push(temp_strains[Math.floor(i * (temp_strains.length / 60))])
+			}
+			new_strains = [0, ...new_strains, 0]
+
+			config.data.datasets[0].data = new_strains
+			config.data.labels = new_strains
+			config.options.scales.y.max = Math.max(...new_strains)
+			configProgress.data.datasets[0].data = new_strains
+			configProgress.data.labels = new_strains
+			configProgress.options.scales.y.max = Math.max(...new_strains)
+			window.strainGraph.update()
+			window.strainGraphProgress.update()
+        } else {
+			config.data.datasets[0].data = []
+			config.data.labels = []
+			configProgress.data.datasets[0].data = []
+			configProgress.data.labels = []
+			window.strainGraph.update()
+			window.strainGraphProgress.update()
+		}
+    }
+
+    let now = Date.now()
+	if (fullTime !== data.menu.bm.time.mp3) { fullTime = data.menu.bm.time.mp3; onepart = 847 / fullTime }
+	if (seek !== data.menu.bm.time.current && fullTime && now - last_strain_update > 300) {
+		last_strain_update = now
+		seek = data.menu.bm.time.current
+
+		if (data.menu.state !== 2) {
+			progressChart.style.maskPosition = '-847px 0px'
+			progressChart.style.webkitMaskPosition = '-847px 0px'
+		}
+		else {
+			let maskPosition = `${-847 + onepart * seek}px 0px`
+			progressChart.style.maskPosition = maskPosition
+			progressChart.style.webkitMaskPosition = maskPosition
+		}
+	}
 }
 
 // Add or remove textSlide class for each element
@@ -290,3 +351,61 @@ function sponsorAnimations() {
     }, 6000)
 }
 sponsorAnimations()
+
+let config = {
+	type: 'line',
+	data: {
+		labels: [],
+		datasets: [{
+			borderColor: 'rgba(245, 245, 245, 0)',
+			backgroundColor: 'rgb(254, 147, 147)',
+			data: [],
+			fill: true,
+			stepped: false,
+		}]
+	},
+	options: {
+		tooltips: { enabled: false },
+		legend: { display: false, },
+		elements: { point: { radius: 0 } },
+		responsive: false,
+		scales: {
+			x: { display: false, },
+			y: {
+				display: false,
+				min: 0,
+				max: 100
+			}
+		},
+		animation: { duration: 0 }
+	}
+}
+
+let configProgress = {
+	type: 'line',
+	data: {
+		labels: [],
+		datasets: [{
+			borderColor: 'rgba(245, 245, 245, 0)',
+			backgroundColor: 'rgb(254, 36, 86)',
+			data: [],
+			fill: true,
+			stepped: false,
+		}]
+	},
+	options: {
+		tooltips: { enabled: false },
+		legend: { display: false, },
+		elements: { point: { radius: 0 } },
+		responsive: false,
+		scales: {
+			x: { display: false, },
+			y: {
+				display: false,
+				min: 0,
+				max: 100
+			}
+		},
+		animation: { duration: 0 }
+	}
+}

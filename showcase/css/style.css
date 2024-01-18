@@ -421,6 +421,19 @@
     background-color: white;
     border-radius: 17px;
 }
+.strainGraphDetail {
+    position: absolute; top: 20px;
+    border-radius: 17px;
+}
+#progress {
+	position: absolute; bottom: 0; left: 0;
+	width: 1694px; height: 220px;
+	padding: 0;
+	overflow: hidden;
+	transition: 100ms linear;
+	-webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 49.95%, transparent 50%);
+	mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 49.95%, transparent 50%);
+}
 
 /* --- BPM Length Stats --- */
 #bpmLenStats {

@@ -205,6 +205,7 @@ function requestMapData(mapid, api, modid, replay) {
                     else {singleMap.ar = ((1200-((1200-(map.diff_approach-5)*150)*2/3))/150)+5;}
                     if (map.diff_overall <= 5) {singleMap.od = (1800-((1800 - map.diff_overall)*2/3))/120;}
                     else {singleMap.od = ((1200-((1200-(map.diff_overall-5)*150)*2/3))/150)+5;}
+                    singleMap.len = Math.round(map.total_length / 3 * 2)
                 } else if (mapMod.includes("hr")) {
                     singleMap.cs = map.diff_size * 1.3;
                     singleMap.ar = map.diff_approach * 1.4; 
