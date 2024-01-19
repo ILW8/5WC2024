@@ -4,6 +4,10 @@
     --nowPlayingWrapperWidth: calc(var(--nowPlayingCardWidth) - 100px);
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 /* ----- GENERAL HELPER CLASSES ----- */
 .mainRedColour { color: var(--mainRed); }
 
@@ -454,14 +458,61 @@
     width: inherit; height: 4px;
     color: rgb(130,130,103)
 }
+#chatRectangle {
+    border-radius: 6px;
+    background-color: rgb(254, 36, 86);
+    position: absolute; top: 50%; transform:translateY(-50%); left: 129px;
+    width: 25px; height: 64px;
+}
 #chatText {
-    position: absolute; top: 164px; left: 182px;
+    position: absolute; top: 50%; transform:translateY(-50%); left: 182px;
     font-size: 53.5px;
     letter-spacing: 2.5px;
 }
+/* --- Twitch Chat --- */
+#twitchChatContainer {
+    position: absolute; bottom: 25px; left: 300px;
+    width: 2440px; height: 285px;
+    border-radius: 50px;
+    background-color: rgb(32,32,32);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+#twitchChatContainer::-webkit-scrollbar {
+    display: none;
+}
+.chatMessageContainer {
+    margin-left: 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: calc(100% - 100px);
+    display: flex
+}
+.flagIconsContainer {
+    display: flex;
+}
+.flagImage {
+    width: 50px; height: 50px;
+    margin-right: 10px;
+}
+.messageDetail {
+    line-height: 50px;
+    font-size: 45px;
+    letter-spacing: 2px;
+}
+.messageUser {
+    color:rgb(255, 145, 170);
+    margin-right: 20px;
+}
+.chatMessage {
+    color: white;
+    letter-spacing: 2px;
+}
+
 /* --- Sponsored by --- */
 #sponsoredByContainer {
-    position: absolute; top: 127px; left: 2973px;
+    position: absolute; top: 50%; transform:translateY(-50%); left: 2973px;
     width: 744px; height: 109px;
     background-color: rgb(32,32,32);
     border-radius: 109px;

@@ -13,7 +13,7 @@ let currentMapSlot = 0
 let toMapSlot = 0
 let mapSlotDifference = 0
 let animTime
-const delay = ms => new Promise(res => setTimeout(res, ms))
+const sleep = ms => new Promise(res => setTimeout(res, ms))
 
 const getMaps = new Promise(async (resolve, reject) => {
     const xhr = new XMLHttpRequest()
@@ -171,7 +171,7 @@ socket.onmessage = async (event) => {
                     searchMap.style.animationDuration = `${animTime}ms`
                 }
 
-                await delay(animTime)
+                await sleep(animTime)
                 currentMapSlot++
             }
         } else if (currentMapSlot > toMapSlot) {
@@ -212,7 +212,7 @@ socket.onmessage = async (event) => {
                     searchMap.style.animationDuration = `${animTime}ms`
                 }
 
-                await delay(animTime)
+                await sleep(animTime)
                 currentMapSlot--
             }
         }
@@ -346,11 +346,11 @@ function sponsorAnimations() {
         if (sponsors.childElementCount <= currentSponsorIndex) currentSponsorIndex = 0
         const currentSponsor = sponsors.children[currentSponsorIndex]
         currentSponsor.style.opacity = 1
-        await delay(5000)
+        await sleep(5000)
         currentSponsor.style.opacity = 0
-        await delay(1000)
+        await sleep(1000)
         currentSponsorIndex++
-    }, 6000)
+    }, 6100)
 }
 sponsorAnimations()
 
@@ -411,3 +411,48 @@ let configProgress = {
 		animation: { duration: 0 }
 	}
 }
+
+// Twitch Chat
+const twitchChatContainer = document.getElementById("twitchChatContainer")
+ComfyJS.onChat = ( user, message, flags, self, extra ) => {
+    console.log( flags, user, message );
+    // Set up message container
+    const chatMessageContainer = document.createElement("div")
+    chatMessageContainer.classList.add("chatMessageContainer")
+
+    // Flags
+    const flagIconsContainer = document.createElement("div")
+    flagIconsContainer.classList.add("flagIconsContainer")
+
+    // Individual flags
+    const badgeTypes = ["broadcaster", "mod", "vip", "founder", "subscriber"]
+    badgeTypes.forEach(badgeType => {
+        if (flags[badgeType]) {
+            const flagImage = document.createElement("img")
+            flagImage.classList.add("flagImage")
+            flagImage.setAttribute("src", `../static/twitch_badges/${badgeType}.png`)
+            flagIconsContainer.append(flagImage)
+        }
+    })
+
+    // Only append flagIconsContainer if it has child elements
+    if (flagIconsContainer.childElementCount > 0) {
+        chatMessageContainer.append(flagIconsContainer)
+    }
+
+    // Message user
+    const messageUser = document.createElement("div")
+    messageUser.classList.add("messageDetail", "messageUser")
+    messageUser.innerText = `${user}:`
+
+    // Message
+    const chatMessage = document.createElement("div")
+    chatMessage.classList.add("messageDetail", "chatMessage")
+    chatMessage.innerText = message
+
+    // Append everything together
+    chatMessageContainer.append(messageUser, chatMessage)
+    twitchChatContainer.append(chatMessageContainer)
+    twitchChatContainer.scrollTop = twitchChatContainer.scrollHeight
+}
+ComfyJS.Init( "stagetournaments" )
