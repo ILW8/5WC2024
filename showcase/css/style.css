@@ -26,7 +26,6 @@ body::-webkit-scrollbar {
 }
 
 /* ----- TOP SECTION ----- */
-
 /* --- Logo --- */
 #logo {
     position: absolute; top: 82px; left: 104px;
@@ -470,7 +469,7 @@ body::-webkit-scrollbar {
     letter-spacing: 2.5px;
 }
 /* --- Twitch Chat --- */
-#twitchChatContainer {
+#chatContainer {
     position: absolute; bottom: 25px; left: 300px;
     width: 2440px; height: 285px;
     border-radius: 50px;
@@ -479,7 +478,7 @@ body::-webkit-scrollbar {
     overflow-y: scroll;
     scroll-behavior: smooth;
 }
-#twitchChatContainer::-webkit-scrollbar {
+#chatContainer::-webkit-scrollbar {
     display: none;
 }
 .chatMessageContainer {
