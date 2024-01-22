@@ -1,3 +1,12 @@
+:root {
+    --NMColour: rgb(172,172,172);
+    --HDColour: rgb(254,154,36);
+    --HRColour: rgb(254,36,86);
+    --DTColour: rgb(36,231,254);
+    --FMColour: rgb(255,77,186);
+    --TBColour: rgb(36,254,67);
+}
+
 @font-face {
     font-family: "Coluna Rounded";
     src: url("../../shared/fonts/Coluna_Rounded.otf")
@@ -15,17 +24,20 @@
 
 /* ----- TOP SECTION ----- */
 /* --- Team Sections --- */
+/* Team Section */
 .teamSection {
     position: absolute; top: 77px;
     width: 550px; height: 125px;
 }
 #redTeam { left: 1192px; }
 #blueTeam { right: 1192px; }
+/* Team Flag */
 .teamFlag {
     width: 181px; height: 114px;
     border-radius: 15px;
 }
 #blueTeamFlag { position: absolute; top: 0; right: 0; }
+/* Team Bar */
 .teamBar {
     position: absolute; top: 4px;
     width: 168px; height: 18px;
@@ -38,11 +50,13 @@
     right: 212px;
     background-color: rgb(36, 196, 254);
 }
+/* Team Name */
 .teamName {
     position: absolute; top: 32px; 
     font-size: 53px;
     letter-spacing: 0.05px;
 }
+/* Team Stars */
 .teamStars { position: absolute; top: 97px; }
 .teamStars > * { margin-right: 9.5px;}
 #redTeamStars { left: 212px; }
@@ -59,6 +73,66 @@
     width: 343px;
 }
 
+
+/* ----- MAPPOOL SECTION ----- */
+#mappool {
+    position: absolute; top: 300px;
+    width: 100%; height: 1480px;
+}
+/* --- Rectangles ---- */
+#modHeaderRectangles > * { position: absolute; }
+.leftSideModRectangle {
+    left: 0;
+    width: 32px; height: 53px;
+    border-radius: 0px 5px 5px 0px;
+}
+#NMRectangle {
+    top: 95px; 
+    background-color: var(--NMColour);
+}
+#HDRectangle {
+    top: 458px;
+    background-color: var(--HDColour);
+}
+#HRRectangle {
+    top: 485px; left: 1906px;
+    width: 24px; height: 53px;
+    background-color: var(--HRColour);
+    border-radius: 5px;
+}
+#DTRectangle {
+    top: 821px; 
+    background-color: var(--DTColour);
+}
+#FMRectangle {
+    top: 1179px; 
+    background-color: var(--FMColour);
+}
+#TBRectangle {
+    top: 856px; left: 2587px;
+    width: 23px; height: 283px;
+    background-color: var(--TBColour);
+    border-radius: 5px;
+}
+/* --- Header --- */
+#modHeaderNames { font-size: 49px; }
+#modHeaderNames > * {
+    position: absolute;
+    letter-spacing: 3.5px;
+}
+.leftSideModHeader { left: 55px; }
+#NMHeader { top: 95px; }
+#HDHeader { top: 458px; }
+#HRHeader { 
+    top: 485px; 
+    left: 1952px;
+}
+#DTHeader { top: 821px; }
+#FMHeader { top: 1179px; }
+#TBHeader { 
+    top: 979px; 
+    left: 2634px;
+}
 
 /* ----- BOTTOM SECTION ----- */
 #bottom {
