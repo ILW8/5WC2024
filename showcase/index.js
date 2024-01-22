@@ -341,8 +341,11 @@ function setBPMStats() {
 // Sponsor animations
 const sponsors = document.getElementById("sponsors")
 let currentSponsorIndex = 0
-function sponsorAnimations() {
-    setInterval(async () => {
+let intervalId
+function startInterval() {
+    if (intervalId) clearInterval(intervalId)
+  
+    intervalId = setInterval(async () => {
         if (sponsors.childElementCount <= currentSponsorIndex) currentSponsorIndex = 0
         const currentSponsor = sponsors.children[currentSponsorIndex]
         currentSponsor.style.opacity = 1
@@ -350,9 +353,12 @@ function sponsorAnimations() {
         currentSponsor.style.opacity = 0
         await sleep(1000)
         currentSponsorIndex++
-    }, 6100)
+    }, 6000)
 }
-sponsorAnimations()
+startInterval();
+setInterval(function() {
+    startInterval()
+}, 120000)
 
 let config = {
 	type: 'line',
