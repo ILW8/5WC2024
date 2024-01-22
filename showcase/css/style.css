@@ -13,7 +13,7 @@ body::-webkit-scrollbar {
 
 @font-face {
     font-family: "Coluna Rounded";
-    src: url("../../fonts/Coluna_Rounded.otf")
+    src: url("../../shared/fonts/Coluna_Rounded.otf")
 }
 
 #main {

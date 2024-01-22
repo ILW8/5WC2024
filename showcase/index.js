@@ -430,7 +430,7 @@ ComfyJS.onChat = ( user, message, flags, self, extra ) => {
         if (flags[badgeType]) {
             const flagImage = document.createElement("img")
             flagImage.classList.add("flagImage")
-            flagImage.setAttribute("src", `../static/twitch_badges/${badgeType}.png`)
+            flagImage.setAttribute("src", `../shared/static/twitch_badges/${badgeType}.png`)
             flagIconsContainer.append(flagImage)
         }
     })
