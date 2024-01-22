@@ -167,6 +167,11 @@
 .nmExtendedMapCard { width: 530px; }
 .bottom3MapsMapCard { width: 658px; }
 .fm2MapsMapCard { width: 1032px; }
+#TBContainer {
+    position: absolute; top: 796px; left: 2739px;
+    width: 955px; height: 608px;
+    border-radius: 17px 17px 0 0;
+}
 
 /* --- Map Card Rectangles --- */
 .mapCardRectangle {
@@ -175,16 +180,27 @@
     background-color: rgb(22,22,22);
     border-radius: 10px;
 }
+#tbCardRectangle {
+    position: absolute; bottom: 0; right: -72px;
+    width: 138px; height: 281px;
+    background-color: rgb(22,22,22);
+    border-radius: 10px;
+}
 
 /* --- Map Card Images --- */
 .mapCardImage {
     position: absolute; width: 100%; height: 200px;
-    border-radius: 17px;
+    border-radius: inherit;
+    background-size: cover;
+    background-position: center;
+}
+#tbMapCardImage {
+    height: 403px;
 }
 .mapCardLayer {
-    position: absolute; width: 100%; height: 100%;
+    position: absolute; width: 100%; height: 403px;
     background-color: rgba(0,0,0,0.5);
-    border-radius: 17px;
+    border-radius: inherit;
 }
 
 /* --- Map Card Name --- */
@@ -199,6 +215,11 @@
 .nmExtendedMapCardNameWrapper { width: 433px; }
 .bottom3MapsMapCardNameWrapper { width: 561px; }
 .fm2MapsMapCardNameWrapper { width: 935px; }
+#tbMapCardNameWrapper {
+    top: 438px;
+    font-size: 78px;
+    letter-spacing: 0.8px;
+}
 
 /* --- Map Card Difficulty --- */
 .normalMapCardDifficulty {
@@ -206,12 +227,23 @@
     font-size: 21px;
     letter-spacing: 1.3px;
 }
+#tbMapCardDifficulty {
+    top: 926px;
+    font-size: 42px;
+    letter-spacing: 2.6px;
+}
 
 /* --- Map Card Mod --- */
-#normalMapCardMod {
+.normalMapCardMod {
     position: absolute; bottom: 7px; right: 0px;
     font-size: 64px;
     letter-spacing: 2.5px;
+}
+#tbMapCardMod {
+    position: absolute; bottom: 14px; right: 0px;
+    font-size: 128px;
+    letter-spacing: 5px;
+    color: var(--TBColour)
 }
 
 /* ----- BOTTOM SECTION ----- */
