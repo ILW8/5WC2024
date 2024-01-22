@@ -23,6 +23,10 @@
 
 
 /* ----- TOP SECTION ----- */
+/* --- Large White Star --- */
+#whiteStarLarge {
+    position: absolute; top: 145px; left: 134px;
+}
 /* --- Team Sections --- */
 /* Team Section */
 .teamSection {
