@@ -471,7 +471,7 @@ body::-webkit-scrollbar {
 /* --- Twitch Chat --- */
 #chatContainer {
     position: absolute; bottom: 25px; left: 300px;
-    width: 2440px; height: 285px;
+    width: 2440px; height: 280px;
     border-radius: 50px;
     background-color: rgb(32,32,32);
     overflow-x: hidden;

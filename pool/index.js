@@ -1,4 +1,5 @@
 // Sponsor animations
+const sleep = ms => new Promise(res => setTimeout(res, ms))
 const sponsors = document.getElementById("sponsors")
 let currentSponsorIndex = 0
 function sponsorAnimations() {
