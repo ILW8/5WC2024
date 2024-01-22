@@ -135,7 +135,12 @@
 }
 
 /* --- Card Containers --- */
-.ThreeCardSmallContainer {
+#FiveNMMapContainer { 
+    position: absolute; top: 10px; left: 158px; 
+    width: 3580px;
+    display: flex; justify-content: space-between;
+}
+.ThreeCardnormalContainer {
     position: absolute; 
     width: 1680px;
     display: flex; justify-content: space-between;
@@ -151,47 +156,63 @@
 }
 #DTMapContainer { top: 737px; }
 #FMMapContainer { top: 1098px; }
-/* --- Sample Map Card --- */
-#smallMapCard {
+
+/* --- Map Card Containers --- */
+.mapCard {
     position: relative;
-    width: 474px; height: 304px;
+    height: 304px;
     border-radius: 17px 17px 0 0;
 }
-#smallMapCardImage {
-    position: absolute; width: 100%; height: 200px;
-    border-radius: 17px;
-}
-#smallMapCardLayer {
-    position: absolute; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.5);
-    border-radius: 17px;
-}
-#smallMapCardNameWrapper {
-    position: absolute; top: 219px;
-    font-size: 39px;
-    width: 377px;
-    letter-spacing: 0.4px;
-    white-space: nowrap;
-    overflow: hidden;
-}
-#smallMapCardDifficulty {
-    position: absolute; top: 263px;
-    font-size: 21px;
-    letter-spacing: 1.3px;
-}
-#smallMapCardMod {
-    position: absolute; bottom: 7px; right: 0px;
-    font-size: 64px;
-    color: var(--NMColour);
-    letter-spacing: 2.5px;
-}
-#smallMapCardRectangle {
+.normalMapCard { width: 474px;  }
+.nmExtendedMapCard { width: 530px; }
+.bottom3MapsMapCard { width: 658px; }
+.fm2MapsMapCard { width: 1032px; }
+
+/* --- Map Card Rectangles --- */
+.mapCardRectangle {
     position: absolute; bottom: 0; right: -36px;
     width: 69px; height: 140px;
     background-color: rgb(22,22,22);
     border-radius: 10px;
 }
 
+/* --- Map Card Images --- */
+.mapCardImage {
+    position: absolute; width: 100%; height: 200px;
+    border-radius: 17px;
+}
+.mapCardLayer {
+    position: absolute; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 17px;
+}
+
+/* --- Map Card Name --- */
+.mapCardNameWrapper {
+    position: relative; top: 219px;
+    font-size: 39px;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.normalMapCardNameWrapper { width: 377px; }
+.nmExtendedMapCardNameWrapper { width: 433px; }
+.bottom3MapsMapCardNameWrapper { width: 561px; }
+.fm2MapsMapCardNameWrapper { width: 935px; }
+
+/* --- Map Card Difficulty --- */
+.normalMapCardDifficulty {
+    position: absolute; top: 263px;
+    font-size: 21px;
+    letter-spacing: 1.3px;
+}
+
+/* --- Map Card Mod --- */
+#normalMapCardMod {
+    position: absolute; bottom: 7px; right: 0px;
+    font-size: 64px;
+    letter-spacing: 2.5px;
+}
 
 /* ----- BOTTOM SECTION ----- */
 #bottom {
