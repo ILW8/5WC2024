@@ -246,7 +246,6 @@ socket.onmessage = async (event) => {
         if (currentLen !== currentSeconds) {
             currentLen = currentSeconds
             const secondsCounter = currentLen % 60
-            console.log(secondsCounter)
             lengthNumberEl.innerText = `${Math.floor(currentLen / 60)}:${(secondsCounter < 10) ? '0': ''}${secondsCounter}`
         }
     }
@@ -419,9 +418,8 @@ let configProgress = {
 }
 
 // Twitch Chat
-const twitchChatContainer = document.getElementById("twitchChatContainer")
+const twitchChatContainer = document.getElementById("chatContainer")
 ComfyJS.onChat = ( user, message, flags, self, extra ) => {
-    console.log( flags, user, message );
     // Set up message container
     const chatMessageContainer = document.createElement("div")
     chatMessageContainer.classList.add("chatMessageContainer")
