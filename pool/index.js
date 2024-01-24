@@ -5,6 +5,100 @@ socket.onopen = () => { console.log("Successfully Connected") }
 socket.onclose = event => { console.log("Socket Closed Connection: ", event); socket.send("Client Closed!") }
 socket.onerror = error => { console.log("Socket Error: ", error) }
 
+// Load mappool data
+let modOrder
+let modOrderXhr = new XMLHttpRequest()
+modOrderXhr.open("GET", "http://127.0.0.1:24050/5WC2024/_data/modOrder.json", false)
+modOrderXhr.onload = function () {
+    if (this.status == 404) return
+    if (this.status == 200) modOrder = JSON.parse(this.responseText)
+}
+modOrderXhr.send()
+
+let allMaps
+let allMapsXhr = new XMLHttpRequest()
+allMapsXhr.open("GET", "http://127.0.0.1:24050/5WC2024/_data/beatmaps.json", false)
+allMapsXhr.onload = function () {
+    if (this.status == 404) return
+    if (this.status == 200) allMaps = JSON.parse(this.responseText)
+}
+allMapsXhr.send()
+
+let allBeatmaps = []
+for (let i = 0; i < modOrder.length; i++) allBeatmaps[i] = allMaps.filter(x => x.mod.toLowerCase() == modOrder[i].toLowerCase())
+// sort maps by order
+for (let i = 0; i < allBeatmaps.length; i++) allBeatmaps[i].sort((map1, map2) => map1.order - map2.order)
+
+const FiveNMMapContainerEl = document.getElementById("FiveNMMapContainer")
+const SixNMMapContainer1El = document.getElementById("SixNMMapContainer1")
+const SixNMMapContainer2El = document.getElementById("SixNMMapContainer2")
+const HDMapContainerEl = document.getElementById("HDMapContainer")
+const HRMapContainerEl = document.getElementById("HRMapContainer")
+const DTMapContainerEl = document.getElementById("DTMapContainer")
+const FMMapContainerEl = document.getElementById("FMMapContainer")
+const tbMapCardImageEl = document.getElementById("tbMapCardImage")
+const tbMapCardNameEl = document.getElementById("tbMapCardName")
+const tbMapCardDifficultyEl = document.getElementById("tbMapCardDifficulty")
+
+const containers = [FiveNMMapContainerEl, SixNMMapContainer2El, HDMapContainerEl, HRMapContainerEl, DTMapContainerEl, FMMapContainerEl]
+
+function createMapCard(currentMap, cardClass, nameClass, container) {
+    const newMapCard = document.createElement("div")
+    newMapCard.classList.add("mapCard", cardClass)
+
+    const newMapCardRectangle = document.createElement("div")
+    newMapCardRectangle.classList.add("mapCardRectangle")
+
+    const mapCardImage = document.createElement("div")
+    mapCardImage.classList.add("mapCardImage")
+    mapCardImage.style.backgroundImage = `url("${currentMap.imgURL}")`
+
+    const mapCardImageLayer = document.createElement("div")
+    mapCardImageLayer.classList.add("mapCardLayer")
+    mapCardImage.appendChild(mapCardImageLayer)
+
+    const mapCardName = document.createElement("div")
+    mapCardName.classList.add("mapCardName", nameClass)
+    mapCardName.innerText = `${currentMap.artist} - ${currentMap.songName}`
+
+    const mapCardDifficulty = document.createElement("div")
+    mapCardDifficulty.classList.add("normalMapCardDifficulty")
+    mapCardDifficulty.innerText = currentMap.difficultyname
+
+    const mapCardMod = document.createElement("div")
+    mapCardMod.classList.add("normalMapCardMod")
+    mapCardMod.innerText = `${currentMap.mod.toUpperCase()}${currentMap.order}`
+    mapCardMod.style.color = `var(--${currentMap.mod.toUpperCase()}Colour)`
+
+    newMapCard.append(newMapCardRectangle, mapCardImage, mapCardName, mapCardDifficulty, mapCardMod)
+    container.append(newMapCard)
+}
+
+allBeatmaps.forEach((maps, i) => {
+    if (i === 0 && maps.length === 5) {
+        maps.forEach(map => createMapCard(map, "nmExtendedMapCard", "nmExtendedMapCardName", FiveNMMapContainerEl))
+    } else if (i === 0 && maps.length === 6) {
+        const container1 = maps.slice(0, 3)
+        const container2 = maps.slice(3)
+        container1.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", SixNMMapContainer1El))
+        container2.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", SixNMMapContainer2El))
+    } else if (i === 1 || i === 2) {
+        maps.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", (i === 1)? HDMapContainerEl : HRMapContainerEl))
+    } else if (i === 3) {
+        maps.forEach(map => {
+            createMapCard(map, (maps.length === 3)? "bottom3MapsMapCard" : "normalMapCard", (maps.length === 3)? "bottom3MapsMapCardName" : "normalMapCardName", DTMapContainerEl)
+        })
+    } else if (i === 4) {
+        maps.forEach(map => createMapCard(map, (maps.length === 2) ? "fm2MapsMapCard" : "bottom3MapsMapCard", (maps.length === 2) ? "fm2MapsMapCardName" : "bottom3MapsMapCardName", FMMapContainerEl))
+    } else if (i === 5) {
+        maps.forEach(map => {
+            tbMapCardImageEl.style.backgroundImage = `url("${map.imgURL}")`
+            tbMapCardNameEl.innerText = `${map.artist} - ${map.songName}`
+            tbMapCardDifficultyEl.innerText = map.difficultyname
+        })
+    }
+})
+
 // Load country data
 let allCountries
 let allCountriesXhr = new XMLHttpRequest()
@@ -49,7 +143,6 @@ socket.onmessage = async (event) => {
         // Check for ISO country code
         
         for (let i = 0; i < allCountries.length; i++) {
-            console.log(currentTeam.toLowerCase(), allCountries[i].name.toLowerCase())
             if (currentTeam.toLowerCase() === allCountries[i].name.toLowerCase()) {
                 teamFlagEl.style.display = "block"
                 teamFlagEl.style.backgroundImage = `url("https://osuflags.omkserver.nl/${allCountries[i].code}-181.png")`
