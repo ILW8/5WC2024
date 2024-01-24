@@ -22,13 +22,22 @@ const blueTeamNameEl = document.getElementById("blueTeamName")
 const blueTeamFlagEl = document.getElementById("blueTeamFlag")
 let currentRedTeam, currentBlueTeam
 
+// Team Stars
+const redTeamStarsEl = document.getElementById("redTeamStars")
+const teamMiddleStarLeftEl = document.getElementById("teamMiddleStarLeft")
+const blueTeamStarsEl = document.getElementById("blueTeamStars")
+const teamMiddleStarRightEl = document.getElementById("teamMiddleStarRight")
+let currentBestOf = 0
+let currentFirstTo = 0
+let currentRedStars = 0
+let currentBlueStars = 0
+
 socket.onmessage = async (event) => {
     const data = JSON.parse(event.data)
     console.log(data)
 
     // Update team data
-    function updateTeamData(teamNameSide, teamFlagEl, teamNameEl, currentTeam) {
-        currentTeam = data.tourney.manager.teamName[teamNameSide]
+    function updateTeamData(teamFlagEl, teamNameEl, currentTeam) {
         teamNameEl.innerText = currentTeam
     
         // Check if team name is anything
@@ -38,16 +47,64 @@ socket.onmessage = async (event) => {
         }
 
         // Check for ISO country code
+        
         for (let i = 0; i < allCountries.length; i++) {
+            console.log(currentTeam.toLowerCase(), allCountries[i].name.toLowerCase())
             if (currentTeam.toLowerCase() === allCountries[i].name.toLowerCase()) {
                 teamFlagEl.style.display = "block"
-                teamFlagEl.style.bacgroundImage = `url("https://osuflags.omkserver.nl/${allCountries[i].code}-181.png")`
-                break;
+                teamFlagEl.style.backgroundImage = `url("https://osuflags.omkserver.nl/${allCountries[i].code}-181.png")`
+                break
             }
         }
     }
-    if (currentRedTeam !== data.tourney.manager.teamName.left) updateTeamData("left", redTeamFlagEl, redTeamNameEl, currentRedTeam)
-    if (currentBlueTeam !== data.tourney.manager.teamName.right) updateTeamData("right", blueTeamFlagEl, blueTeamNameEl, currentBlueTeam)
+    if (currentRedTeam !== data.tourney.manager.teamName.left) {
+        currentRedTeam = data.tourney.manager.teamName.left
+        updateTeamData(redTeamFlagEl, redTeamNameEl, currentRedTeam)
+    }
+    if (currentBlueTeam !== data.tourney.manager.teamName.right) {
+        currentBlueTeam = data.tourney.manager.teamName.right
+        updateTeamData(blueTeamFlagEl, blueTeamNameEl, currentBlueTeam)
+    }
+
+    // Update star information
+    if (currentBestOf !== data.tourney.manager.bestOF ||
+        currentRedStars !== data.tourney.manager.stars.left ||
+        currentBlueStars !== data.tourney.manager.stars.right) {
+
+            currentBestOf = data.tourney.manager.bestOF
+            currentFirstTo = Math.ceil(currentBestOf / 2)
+            currentRedStars = data.tourney.manager.stars.left
+            currentBlueStars = data.tourney.manager.stars.right
+
+            // Middle elements
+            teamMiddleStarLeftEl.innerText = currentRedStars
+            teamMiddleStarRightEl.innerText = currentBlueStars
+
+            redTeamStarsEl.innerHTML = ""
+            let i
+            for (i = 0; i < currentRedStars; i++) {
+                const starImage = document.createElement("img")
+                starImage.setAttribute("src", "static/red_star.png")
+                redTeamStarsEl.append(starImage)
+            }
+            for (i; i < currentFirstTo; i++) {
+                const starImage = document.createElement("img")
+                starImage.setAttribute("src", "static/white_star.png")
+                redTeamStarsEl.append(starImage)
+            }
+
+            blueTeamStarsEl.innerHTML = ""
+            for (i = 0; i < currentFirstTo - currentBlueStars; i++) {
+                const starImage = document.createElement("img")
+                starImage.setAttribute("src", "static/white_star.png")
+                blueTeamStarsEl.append(starImage)
+            }
+            for (i; i < currentFirstTo; i++) {
+                const starImage = document.createElement("img")
+                starImage.setAttribute("src", "static/blue_star.png")
+                blueTeamStarsEl.append(starImage)
+            }
+    }
 }
 
 // Sponsor animations

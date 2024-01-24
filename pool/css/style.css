@@ -81,9 +81,16 @@
 }
 /* Team Stars */
 .teamStars { position: absolute; top: 97px; }
-.teamStars > * { margin-right: 9.5px;}
+.teamStars > * { 
+    margin-right: 17.1px;
+    width: 28.8px; height: 27px;
+}
 #redTeamStars { left: 212px; }
 #blueTeamStars { right: 212px; }
+#blueTeamStars > * {
+    margin-left: 17.1px;
+    margin-right: 0;
+}
 /* --- Middle Score --- */
 #teamMiddleStar {
     position: absolute; top: 87px; left: 50%; transform:translateX(-50%);
