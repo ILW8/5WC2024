@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <script src="../shared/deps/reconnecting-websocket.min.js"></script>
 </head>
 <body>
     <div id="main">
@@ -22,7 +24,7 @@
                 <div id="poolText">POOL</div>
             </div>
             <div class="teamSection" id="redTeam">
-                <img class="teamFlag" id="redTeamFlag">
+                <div class="teamFlag" id="redTeamFlag"></div>
                 <div class="teamBar teamLeftDetail" id="redTeamBar"></div>
                 <div class="teamName teamLeftDetail" id="redTeamName">RUSSIAN FEDERATION</div>
                 <div id="redTeamStars"></div>
@@ -31,7 +33,7 @@
             <div id="teamMiddleStar"><span id="teamMiddleStarLeft">1</span><span id="teamMiddleStarDash"> - </span><span id="teamMiddleStarRight"></span>2</div>
             
             <div class="teamSection" id="blueTeam">
-                <img class="teamFlag" id="blueTeamFlag">
+                <div class="teamFlag" id="blueTeamFlag"></div>
                 <div class="teamBar teamRightDetail" id="blueTeamBar"></div>
                 <div class="teamName teamRightDetail" id="blueTeamName">FRANCE</div>
                 <div id="blueTeamStars"></div>

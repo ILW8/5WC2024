@@ -54,8 +54,10 @@
 #blueTeam { right: 1192px; }
 /* Team Flag */
 .teamFlag {
-    width: 181px; height: 114px;
+    width: 181px; height: 131px;
     border-radius: 15px;
+    background-position: center;
+    background-size: cover;
 }
 #blueTeamFlag { position: absolute; top: 0; right: 0; }
 /* Team Bar */

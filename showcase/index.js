@@ -15,10 +15,10 @@ let mapSlotDifference = 0
 let animTime
 const sleep = ms => new Promise(res => setTimeout(res, ms))
 
-const getMaps = new Promise(async (resolve, reject) => {
+const getMaps = new Promise(async resolve => {
     const xhr = new XMLHttpRequest()
     xhr.open("GET", `http://127.0.0.1:24050/5WC2024/_data/showcaseBeatmaps.json`, false)
-    xhr.onload = function xhrLoad()  {
+    xhr.onload = function () {
         if (this.status == 404) return
         if (this.status == 200) showcaseMaps = JSON.parse(this.responseText)
     }
