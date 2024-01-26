@@ -64,8 +64,8 @@
     position: absolute; top: 77px;
     width: 550px; height: 125px;
 }
-#redTeam { left: 1192px; }
-#blueTeam { right: 1192px; }
+#redTeam { left: 792px; }
+#blueTeam { right: 792px; }
 /* Team Flag */
 .teamFlag {
     width: 181px; height: 131px;
@@ -89,9 +89,9 @@
 }
 /* Team Name */
 .teamName {
-    position: absolute; top: 32px; 
-    font-size: 53px;
-    letter-spacing: 0.05px;
+    position: absolute; top: 28px; 
+    font-size: 63px;
+    letter-spacing: 2px;
 }
 /* Team Stars */
 .teamStars { position: absolute; top: 97px; }
