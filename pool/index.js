@@ -55,7 +55,12 @@ function createMapCard(currentMap, cardClass, nameClass, container) {
 
     const mapCardImageLayer = document.createElement("div")
     mapCardImageLayer.classList.add("mapCardLayer")
-    mapCardImage.appendChild(mapCardImageLayer)
+    
+    const mapCardMod = document.createElement("div")
+    mapCardMod.classList.add("normalMapCardMod")
+    mapCardMod.innerText = `${currentMap.mod.toUpperCase()}${currentMap.order}`
+    mapCardMod.style.color = `var(--${currentMap.mod.toUpperCase()}Colour)`
+    mapCardMod.style.textShadow = `0 0 30px var(--${currentMap.mod.toUpperCase()}Colour-60), 0 0 35px var(--${currentMap.mod.toUpperCase()}Colour-80)`
 
     const mapCardName = document.createElement("div")
     mapCardName.classList.add("mapCardName", nameClass)
@@ -65,12 +70,8 @@ function createMapCard(currentMap, cardClass, nameClass, container) {
     mapCardDifficulty.classList.add("normalMapCardDifficulty")
     mapCardDifficulty.innerText = currentMap.difficultyname
 
-    const mapCardMod = document.createElement("div")
-    mapCardMod.classList.add("normalMapCardMod")
-    mapCardMod.innerText = `${currentMap.mod.toUpperCase()}${currentMap.order}`
-    mapCardMod.style.color = `var(--${currentMap.mod.toUpperCase()}Colour)`
-
-    newMapCard.append(newMapCardRectangle, mapCardImage, mapCardName, mapCardDifficulty, mapCardMod)
+    mapCardImage.append(mapCardImageLayer, mapCardMod)
+    newMapCard.append(newMapCardRectangle, mapCardImage, mapCardName, mapCardDifficulty)
     container.append(newMapCard)
 }
 

@@ -1,10 +1,24 @@
 :root {
-    --NMColour: rgb(172,172,172);
-    --HDColour: rgb(254,154,36);
-    --HRColour: rgb(254,36,86);
-    --DTColour: rgb(36,231,254);
-    --FMColour: rgb(255,77,186);
-    --TBColour: rgb(36,254,67);
+    --NMColour: rgb(172, 172, 172);
+    --HDColour: rgb(254, 154, 36);
+    --HRColour: rgb(254, 36, 86);
+    --DTColour: rgb(36, 231, 254);
+    --FMColour: rgb(255, 77, 186);
+    --TBColour: rgb(36, 254, 67);
+  
+    --NMColour-60: rgb(69, 69, 69);   
+    --HDColour-60: rgb(102, 59, 14);  
+    --HRColour-60: rgb(102, 14, 34);  
+    --DTColour-60: rgb(14, 93, 102);  
+    --FMColour-60: rgb(102, 25, 74);  
+    --TBColour-60: rgb(14, 102, 28);  
+  
+    --NMColour-80: rgb(34, 34, 34);   
+    --HDColour-80: rgb(51, 29, 7);    
+    --HRColour-80: rgb(51, 7, 17);    
+    --DTColour-80: rgb(7, 46, 51);    
+    --FMColour-80: rgb(51, 12, 37);   
+    --TBColour-80: rgb(7, 51, 14);    
 }
 
 @font-face {
@@ -125,7 +139,7 @@
     background-color: var(--HDColour);
 }
 #HRRectangle {
-    top: 485px; left: 1906px;
+    top: 458px; left: 1906px;
     width: 24px; height: 53px;
     background-color: var(--HRColour);
     border-radius: 5px;
@@ -154,7 +168,7 @@
 #NMHeader { top: 95px; }
 #HDHeader { top: 458px; }
 #HRHeader { 
-    top: 485px; 
+    top: 458px; 
     left: 1952px;
 }
 #DTHeader { top: 821px; }
@@ -204,14 +218,14 @@
 
 /* --- Map Card Rectangles --- */
 .mapCardRectangle {
-    position: absolute; bottom: 0; right: -36px;
-    width: 69px; height: 140px;
+    position: absolute; bottom: -15px; left: -36px;
+    width: 69px; height: 155px;
     background-color: rgb(22,22,22);
     border-radius: 10px;
 }
 #tbCardRectangle {
-    position: absolute; bottom: 0; right: -72px;
-    width: 138px; height: 281px;
+    position: absolute; bottom: -30px; left: -72px;
+    width: 138px; height: 310px;
     background-color: rgb(22,22,22);
     border-radius: 10px;
 }
@@ -222,6 +236,7 @@
     border-radius: inherit;
     background-size: cover;
     background-position: center;
+    overflow: hidden;
 }
 #tbMapCardImage {
     height: 403px;
@@ -235,46 +250,44 @@
 /* --- Map Card Name --- */
 .mapCardName {
     position: relative; top: 219px;
-    font-size: 39px;
+    font-size: 50px;
     letter-spacing: 0.4px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    width: 100%;
 }
-.normalMapCardName { width: 377px; }
-.nmExtendedMapCardName { width: 433px; }
-.bottom3MapsMapCardName { width: 561px; }
-.fm2MapsMapCardName { width: 935px; }
 #tbMapCardName {
     top: 438px;
-    font-size: 78px;
+    font-size: 100px;
     letter-spacing: 0.8px;
-    width: 850px;
 }
 
 /* --- Map Card Difficulty --- */
 .normalMapCardDifficulty {
     position: absolute; top: 263px;
-    font-size: 21px;
+    font-size: 36px;
     letter-spacing: 1.3px;
 }
 #tbMapCardDifficulty {
     position: absolute; top: 526px;
-    font-size: 42px;
+    font-size: 72px;
     letter-spacing: 2.6px;
 }
 
 /* --- Map Card Mod --- */
 .normalMapCardMod {
-    position: absolute; bottom: 7px; right: 0px;
+    position: absolute; bottom: 0; right: 10px;
     font-size: 64px;
     letter-spacing: 2.5px;
 }
 #tbMapCardMod {
-    position: absolute; bottom: 14px; right: 0px;
+    position: absolute; bottom: 0; right: 20px;
     font-size: 128px;
     letter-spacing: 5px;
-    color: var(--TBColour)
+    text-shadow: 0 0 60px var(--TBColour-60),
+                 0 0 70px var(--TBColour-80);
+    color: var(--TBColour);
 }
 
 /* ----- BOTTOM SECTION ----- */
@@ -301,9 +314,9 @@
 /* --- Twitch Chat --- */
 #chatContainer {
     position: absolute; bottom: 25px; left: 300px;
-    width: 2440px; height: 280px;
+    width: 1220px; height: 280px;
     border-radius: 50px;
-    background-color: rgb(32,32,32);
+    background-color: rgb(30,30,30);
     overflow-x: hidden;
     overflow-y: scroll;
     scroll-behavior: smooth;
@@ -343,7 +356,7 @@
 #sponsoredByContainer {
     position: absolute; top: 50%; transform:translateY(-50%); left: 2973px;
     width: 744px; height: 109px;
-    background-color: rgb(32,32,32);
+    background-color: rgb(30,30,30);
     border-radius: 109px;
 }
 #sponsoredByText {
