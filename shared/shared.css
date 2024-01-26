@@ -1,0 +1,88 @@
+:root {
+    --mainRed: rgb(254, 36, 86);
+}
+
+@font-face {
+    font-family: "Coluna Rounded";
+    src: url("fonts/Coluna_Rounded.otf")
+}
+@font-face {
+    font-family: "Colatera Soft";
+    src: url("fonts/ColateraSoft.ttf")
+}
+
+#main {
+    position: absolute; top: 0; left: 0;
+    width: 3840px; height: 2160px;
+    background-size: cover;
+    font-family: "Coluna Rounded";
+    color: white;
+}
+
+/* ----- BOTTOM SECTION ----- */
+#bottom {
+    position: absolute; bottom: 0; left: 0;
+    width: inherit; height: 335px;
+}
+#line {
+    position: absolute; top: 5px;
+    width: inherit; height: 4px;
+    color: rgb(130,130,103)
+}
+#chatRectangle {
+    border-radius: 6px;
+    background-color: var(--mainRed);
+    position: absolute; top: 50%; transform:translateY(-50%); left: 129px;
+    width: 25px; height: 64px;
+}
+#chatText {
+    position: absolute; top: 50%; transform:translateY(-50%); left: 182px;
+    font-size: 53.5px;
+    letter-spacing: 2.5px;
+}
+#chatContainer {
+    position: absolute; bottom: 25px; left: 300px;
+    width: 1220px; height: 280px;
+    border-radius: 50px;
+    background-color: rgb(30,30,30);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+#chatContainer::-webkit-scrollbar {
+    display: none;
+}
+
+/* --- Sponsored by --- */
+#sponsoredByContainer {
+    position: absolute; top: 50%; transform:translateY(-50%); left: 2973px;
+    width: 744px; height: 109px;
+    background-color: rgb(30,30,30);
+    border-radius: 109px;
+}
+#sponsoredByText {
+    position: absolute; top: 27px; left: 80px;
+    font-size: 50px;
+    letter-spacing: 1.4px;
+}
+#sponsors > * { transition: 1s ease-in-out }
+#momokaiSponsor {
+    position: absolute; top: 27px; left: 434px;
+    height: 52px;
+    opacity: 0;
+}
+#blueberrySponsor {
+    position: absolute; top: 27px; left: 424px;
+    height: 52px;
+    display: flex;
+    opacity: 0;
+}
+#bluebunnySponsorImage {
+    height: 52px;
+}
+#bluebunnySponsorText {
+    font-family: Montserrat;
+    line-height: 52px;
+    font-size: 38px;
+    margin-left: 10px;
+}
