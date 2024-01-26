@@ -10,7 +10,7 @@ body::-webkit-scrollbar {
 /* ----- GENERAL HELPER CLASSES ----- */
 .mainRedColour { color: var(--mainRed); }
 
-#main { background-image: url("../static/background.png"); }
+#main { background-image: url("static/background.png"); }
 
 /* ----- TOP SECTION ----- */
 /* --- Logo --- */
@@ -85,7 +85,6 @@ body::-webkit-scrollbar {
 #nowPlayingMap {
     width: var(--nowPlayingCardWidth); height: 462px;
     border-radius: 20px;
-    background-image: url("https://assets.ppy.sh/beatmaps/2067946/covers/cover.jpg");
     background-size: cover;
     background-position: center;
 }
