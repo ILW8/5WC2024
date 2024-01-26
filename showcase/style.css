@@ -439,9 +439,6 @@ body::-webkit-scrollbar {
     margin-left: 50px;
     margin-top: 15px;
     margin-bottom: 15px;
-    width: calc(100% - 100px);
-    display: flex;
-    font-family: "Colatera Soft";
 }
 .flagIconsContainer { display: flex; }
 .flagImage {

@@ -52,6 +52,12 @@
 #chatContainer::-webkit-scrollbar {
     display: none;
 }
+.chatMessageContainer {
+    margin-left: 50px;
+    display: flex;
+    font-family: "Colatera Soft";
+    width: calc(100% - 75px);
+}
 
 /* --- Sponsored by --- */
 #sponsoredByContainer {

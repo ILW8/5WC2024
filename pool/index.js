@@ -127,6 +127,10 @@ let currentFirstTo = 0
 let currentRedStars = 0
 let currentBlueStars = 0
 
+// Chat 
+const chatContainer = document.getElementById("chatContainer")
+let chatLen
+
 socket.onmessage = async (event) => {
     const data = JSON.parse(event.data)
     console.log(data)
@@ -165,39 +169,84 @@ socket.onmessage = async (event) => {
         currentRedStars !== data.tourney.manager.stars.left ||
         currentBlueStars !== data.tourney.manager.stars.right) {
 
-            currentBestOf = data.tourney.manager.bestOF
-            currentFirstTo = Math.ceil(currentBestOf / 2)
-            currentRedStars = data.tourney.manager.stars.left
-            currentBlueStars = data.tourney.manager.stars.right
+        currentBestOf = data.tourney.manager.bestOF
+        currentFirstTo = Math.ceil(currentBestOf / 2)
+        currentRedStars = data.tourney.manager.stars.left
+        currentBlueStars = data.tourney.manager.stars.right
 
-            // Middle elements
-            teamMiddleStarLeftEl.innerText = currentRedStars
-            teamMiddleStarRightEl.innerText = currentBlueStars
+        // Middle elements
+        teamMiddleStarLeftEl.innerText = currentRedStars
+        teamMiddleStarRightEl.innerText = currentBlueStars
+        redTeamStarsEl.innerHTML = ""
 
-            redTeamStarsEl.innerHTML = ""
-            let i
-            for (i = 0; i < currentRedStars; i++) {
-                const starImage = document.createElement("img")
-                starImage.setAttribute("src", "static/red_star.png")
-                redTeamStarsEl.append(starImage)
-            }
-            for (i; i < currentFirstTo; i++) {
-                const starImage = document.createElement("img")
-                starImage.setAttribute("src", "static/white_star.png")
-                redTeamStarsEl.append(starImage)
-            }
+        let i
+        for (i = 0; i < currentRedStars; i++) {
+            const starImage = document.createElement("img")
+            starImage.setAttribute("src", "static/red_star.png")
+            redTeamStarsEl.append(starImage)
+        }
+        for (i; i < currentFirstTo; i++) {
+            const starImage = document.createElement("img")
+            starImage.setAttribute("src", "static/white_star.png")
+            redTeamStarsEl.append(starImage)
+        }
 
-            blueTeamStarsEl.innerHTML = ""
-            for (i = 0; i < currentFirstTo - currentBlueStars; i++) {
-                const starImage = document.createElement("img")
-                starImage.setAttribute("src", "static/white_star.png")
-                blueTeamStarsEl.append(starImage)
-            }
-            for (i; i < currentFirstTo; i++) {
-                const starImage = document.createElement("img")
-                starImage.setAttribute("src", "static/blue_star.png")
-                blueTeamStarsEl.append(starImage)
-            }
+        blueTeamStarsEl.innerHTML = ""
+        for (i = 0; i < currentFirstTo - currentBlueStars; i++) {
+            const starImage = document.createElement("img")
+            starImage.setAttribute("src", "static/white_star.png")
+            blueTeamStarsEl.append(starImage)
+        }
+        for (i; i < currentFirstTo; i++) {
+            const starImage = document.createElement("img")
+            starImage.setAttribute("src", "static/blue_star.png")
+            blueTeamStarsEl.append(starImage)
+        }
+    }
+
+    // Chat Stuff
+    // This is also mostly taken from Victim Crasher: https://github.com/VictimCrasher/static/tree/master/WaveTournament
+        
+    if (chatLen !== data.tourney.manager.chat.length) {
+        (chatLen === 0 || chatLen > data.tourney.manager.chat.length) ? (chatContainer.innerHTML = "", chatLen = 0) : null;
+        const fragment = document.createDocumentFragment()
+
+        console.log("hello")
+
+        for (let i = chatLen; i < data.tourney.manager.chat.length; i++) {
+            const chatColour = data.tourney.manager.chat[i].team
+
+            // Chat message container
+            const chatMessageContainer = document.createElement("div")
+            chatMessageContainer.classList.add("chatMessageContainer")
+
+            // Time
+            const chatDisplayTime = document.createElement("div")
+            chatDisplayTime.classList.add("chatDisplayTime")
+            chatDisplayTime.innerText = data.tourney.manager.chat[i].time
+
+            // Whole Message
+            const chatDisplayWholeMessage = document.createElement("div")
+            chatDisplayWholeMessage.classList.add("chatDisplayWholeMessage")  
+            
+            // Name
+            const chatDisplayName = document.createElement("span")
+            chatDisplayName.classList.add("chatDisplayName", chatColour)
+            chatDisplayName.innerText = data.tourney.manager.chat[i].name + ": "
+
+            // Message
+            const chatDisplayMessage = document.createElement("span")
+            chatDisplayMessage.classList.add("chatDisplayMessage")
+            chatDisplayMessage.innerText = data.tourney.manager.chat[i].messageBody
+
+            chatDisplayWholeMessage.append(chatDisplayName, chatDisplayMessage)
+            chatMessageContainer.append(chatDisplayTime, chatDisplayWholeMessage)
+            fragment.append(chatMessageContainer)
+        }
+
+        chatContainer.append(fragment)
+        chatLen = data.tourney.manager.chat.length;
+        chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 }
 

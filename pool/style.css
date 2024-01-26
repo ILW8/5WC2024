@@ -6,24 +6,25 @@
     --FMColour: rgb(255, 77, 186);
     --TBColour: rgb(36, 254, 67);
   
-    --NMColour-60: rgb(69, 69, 69);   
-    --HDColour-60: rgb(102, 59, 14);  
-    --HRColour-60: rgb(102, 14, 34);  
-    --DTColour-60: rgb(14, 93, 102);  
-    --FMColour-60: rgb(102, 25, 74);  
-    --TBColour-60: rgb(14, 102, 28);  
+    --NMColour-60: rgb(69, 69, 69);
+    --HDColour-60: rgb(102, 59, 14);
+    --HRColour-60: rgb(102, 14, 34);
+    --DTColour-60: rgb(14, 93, 102);
+    --FMColour-60: rgb(102, 25, 74);
+    --TBColour-60: rgb(14, 102, 28);
   
-    --NMColour-80: rgb(34, 34, 34);   
-    --HDColour-80: rgb(51, 29, 7);    
-    --HRColour-80: rgb(51, 7, 17);    
-    --DTColour-80: rgb(7, 46, 51);    
-    --FMColour-80: rgb(51, 12, 37);   
-    --TBColour-80: rgb(7, 51, 14);    
+    --NMColour-80: rgb(34, 34, 34);
+    --HDColour-80: rgb(51, 29, 7);
+    --HRColour-80: rgb(51, 7, 17);
+    --DTColour-80: rgb(7, 46, 51);
+    --FMColour-80: rgb(51, 12, 37);
+    --TBColour-80: rgb(7, 51, 14);
+
+    --mainRed: rgb(254, 36, 86);
+    --mainBlue: rgb(36, 196, 254);
 }
 
-
 #main { background-image: url("static/background.png"); }
-
 
 /* ----- TOP SECTION ----- */
 /* --- Large White Star --- */
@@ -71,10 +72,10 @@
 }
 .teamLeftDetail { left: 212px; }
 .teamRightDetail { right: 212px; }
-#redTeamBar { background-color: rgb(254, 36, 86); }
+#redTeamBar { background-color: var(--mainRed); }
 #blueTeamBar {
     right: 212px;
-    background-color: rgb(36, 196, 254);
+    background-color: var(--mainBlue);
 }
 /* Team Name */
 .teamName {
@@ -283,8 +284,21 @@
 /* --- Chat --- */
 .chatMessageContainer {
     margin-left: 50px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    width: calc(100% - 100px);
-    display: flex
+    margin-top: 7.5px;
+    margin-bottom: 5.5px;
+    font-size: 36px;
 }
+.chatDisplayTime {
+    color: darkgray;
+    width: 11%;
+}
+.chatDisplayWholeMessage { width: 89%; }
+.chatDisplayMessage {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+.bot { color: hotpink;}
+.unknown { color: yellow; }
+.left { color: var(--mainRed); }
+.right { color: var(--mainBlue); }
