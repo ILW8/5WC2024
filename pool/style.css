@@ -206,7 +206,7 @@
 .nmExtendedMapCard { width: 530px; }
 .bottom3MapsMapCard { width: 658px; }
 .fm2MapsMapCard { width: 1032px; }
-#TBContainer {
+.TBContainer {
     position: absolute; top: 836px; left: 2739px;
     width: 955px; height: 528px;
     border-radius: 17px 17px 0 0;
@@ -220,6 +220,7 @@
     border-radius: 18px;
     background-color: var(--pickColour);
     box-shadow: 0 0 20px var(--pickColour);
+    display: none;
 }
 #tiebreakerTriggeredElement {
     top: -92px;
@@ -234,7 +235,6 @@
     width: 41.5px; height: 30px;
     background-size: cover;
     background-position: center;
-    background-image: url("https://osuflags.omkserver.nl/AU-42.png")
 }
 /* Pick Ban Protecxt Text */
 .pickBanProtectText {

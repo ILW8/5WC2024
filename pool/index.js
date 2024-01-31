@@ -36,6 +36,7 @@ const HDMapContainerEl = document.getElementById("HDMapContainer")
 const HRMapContainerEl = document.getElementById("HRMapContainer")
 const DTMapContainerEl = document.getElementById("DTMapContainer")
 const FMMapContainerEl = document.getElementById("FMMapContainer")
+const TBContainerEl = document.getElementsByClassName("TBContainer")[0]
 const tbMapCardImageEl = document.getElementById("tbMapCardImage")
 const tbMapCardNameEl = document.getElementById("tbMapCardName")
 const tbMapCardDifficultyEl = document.getElementById("tbMapCardDifficulty")
@@ -47,11 +48,20 @@ const svgs = {
     ban: `<svg class="pickBanProtectSVG" xmlns="http://www.w3.org/2000/svg" height="32" width="24" viewBox="0 0 384 512"><path fill="#ffffff" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>`,
     pick: `<svg class="pickBanProtectSVG" xmlns="http://www.w3.org/2000/svg" height="32" width="28" viewBox="0 0 448 512"><path fill="#ffffff" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>`
 }
-
 function createMapCard(currentMap, cardClass, nameClass, container) {
+	// Create new card
     const newMapCard = document.createElement("div")
     newMapCard.classList.add("mapCard", cardClass)
-
+    newMapCard.addEventListener("click", function (event) {
+		event.preventDefault()
+		handleTeamAction(event, currentRedTeamCode, this)
+	})
+    newMapCard.addEventListener("contextmenu", function (event) {
+		event.preventDefault()
+		handleTeamAction(event, currentBlueTeamCode, this)
+	})
+    
+	// Top pick ban protect elements
     const pickBanProtectElement = document.createElement("div")
     pickBanProtectElement.classList.add("pickBanProtectElement")
 
@@ -59,14 +69,14 @@ function createMapCard(currentMap, cardClass, nameClass, container) {
     pickBanProtectFlag.classList.add("pickBanProtectFlag")
 
     const pickBanProtectText = document.createElement("div")
-    pickBanProtectText.innerText = "PICK"
     pickBanProtectText.classList.add("pickBanProtectText")
     pickBanProtectElement.append(pickBanProtectFlag, pickBanProtectText)
-    pickBanProtectElement.innerHTML += svgs["pick"]
 
+	// Bottom left rectangle
     const newMapCardRectangle = document.createElement("div")
     newMapCardRectangle.classList.add("mapCardRectangle")
 
+	// Image and layer
     const mapCardImage = document.createElement("div")
     mapCardImage.classList.add("mapCardImage")
     mapCardImage.style.backgroundImage = `url("${currentMap.imgURL}")`
@@ -74,49 +84,99 @@ function createMapCard(currentMap, cardClass, nameClass, container) {
     const mapCardImageLayer = document.createElement("div")
     mapCardImageLayer.classList.add("mapCardLayer")
     
+	// Mod
     const mapCardMod = document.createElement("div")
     mapCardMod.classList.add("normalMapCardMod")
     mapCardMod.innerText = `${currentMap.mod.toUpperCase()}${currentMap.order}`
     mapCardMod.style.color = `var(--${currentMap.mod.toUpperCase()}Colour)`
     mapCardMod.style.textShadow = `0 0 30px var(--${currentMap.mod.toUpperCase()}Colour-60), 0 0 35px var(--${currentMap.mod.toUpperCase()}Colour-80)`
 
+	// Map name
     const mapCardName = document.createElement("div")
     mapCardName.classList.add("mapCardName", nameClass)
     mapCardName.innerText = `${currentMap.artist} - ${currentMap.songName}`
 
+	// Map difficulty
     const mapCardDifficulty = document.createElement("div")
     mapCardDifficulty.classList.add("normalMapCardDifficulty")
     mapCardDifficulty.innerText = currentMap.difficultyname
 
+	// Append everything together
     mapCardImage.append(mapCardImageLayer, mapCardMod)
     newMapCard.append(pickBanProtectElement, newMapCardRectangle, mapCardImage, mapCardName, mapCardDifficulty)
     container.append(newMapCard)
 }
-
 allBeatmaps.forEach((maps, i) => {
     if (i === 0 && maps.length === 5) {
+		// 5 Map NM
         maps.forEach(map => createMapCard(map, "nmExtendedMapCard", "nmExtendedMapCardName", FiveNMMapContainerEl))
     } else if (i === 0 && maps.length === 6) {
+		// 6 Map NM
         const container1 = maps.slice(0, 3)
         const container2 = maps.slice(3)
         container1.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", SixNMMapContainer1El))
         container2.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", SixNMMapContainer2El))
     } else if (i === 1 || i === 2) {
+		// HD / HR
         maps.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", (i === 1)? HDMapContainerEl : HRMapContainerEl))
     } else if (i === 3) {
+		// DT
         maps.forEach(map => {
             createMapCard(map, (maps.length === 3)? "bottom3MapsMapCard" : "normalMapCard", (maps.length === 3)? "bottom3MapsMapCardName" : "normalMapCardName", DTMapContainerEl)
         })
     } else if (i === 4) {
+		// FM
         maps.forEach(map => createMapCard(map, (maps.length === 2) ? "fm2MapsMapCard" : "bottom3MapsMapCard", (maps.length === 2) ? "fm2MapsMapCardName" : "bottom3MapsMapCardName", FMMapContainerEl))
     } else if (i === 5) {
+		// TB
         maps.forEach(map => {
+			TBContainerEl.setAttribute("id", map.beatmapID)
             tbMapCardImageEl.style.backgroundImage = `url("${map.imgURL}")`
             tbMapCardNameEl.innerText = `${map.artist} - ${map.songName}`
             tbMapCardDifficultyEl.innerText = map.difficultyname
+
+			TBContainerEl.addEventListener("click", function (event) {
+				event.preventDefault()
+				handleTeamAction(event, currentRedTeamCode, this)
+			})
+			TBContainerEl.addEventListener("contextmenu", function (event) {
+				event.preventDefault()
+				handleTeamAction(event, currentBlueTeamCode, this)
+			})
         })
     }
 })
+// Red Team
+function handleTeamAction(event, teamCode, element) {
+	const pickBanProtectElement = element.children[0]
+
+	// Remove map
+	if (event.altKey) {		
+		pickBanProtectElement.style.display = "none"
+		return
+	}
+	
+	// Show block
+	pickBanProtectElement.style.display = "block"
+
+	// Tiebreaker map
+	if (element.id == TBContainerEl.id) return
+
+	// Pick ban Protect String
+	let pickBanProtectString
+	if (event.ctrlKey) pickBanProtectString = "ban"
+    else if (event.shiftKey) pickBanProtectString = "protect"
+    else pickBanProtectString = "pick"
+
+	// Apply information
+	pickBanProtectElement.style.backgroundColor = `var(--${pickBanProtectString}Colour)`
+	pickBanProtectElement.style.boxShadow = `0 0 20px var(--${pickBanProtectString}Colour)`
+
+	pickBanProtectElement.children[0].style.backgroundImage = `url("https://osuflags.omkserver.nl/${teamCode}-42.png")`
+	pickBanProtectElement.children[1].innerText = pickBanProtectString.toUpperCase()
+	if (pickBanProtectElement.childElementCount > 2) pickBanProtectElement.children[2].remove()
+	pickBanProtectElement.innerHTML += svgs[pickBanProtectString]
+}
 
 // Load country data
 let allCountries
@@ -134,6 +194,7 @@ const redTeamNameEl = document.getElementById("redTeamName")
 const blueTeamNameEl = document.getElementById("blueTeamName")
 const blueTeamFlagEl = document.getElementById("blueTeamFlag")
 let currentRedTeam, currentBlueTeam
+let currentRedTeamCode, currentBlueTeamCode
 
 // Team Stars
 const redTeamStarsEl = document.getElementById("redTeamStars")
@@ -164,15 +225,17 @@ socket.onmessage = async (event) => {
         }
 
         // Check for ISO country code
-        
         for (let i = 0; i < allCountries.length; i++) {
             if (currentTeam.toLowerCase() === allCountries[i].name.toLowerCase()) {
                 teamFlagEl.style.display = "block"
+				if (currentTeam == currentRedTeam) currentRedTeamCode = allCountries[i].code
+				else if (currentTeam == currentBlueTeam) currentBlueTeamCode = allCountries[i].code
                 teamFlagEl.style.backgroundImage = `url("https://osuflags.omkserver.nl/${allCountries[i].code}-181.png")`
                 break
             }
         }
     }
+	// Update red and blue teams
     if (currentRedTeam !== data.tourney.manager.teamName.left) {
         currentRedTeam = data.tourney.manager.teamName.left
         updateTeamData(redTeamFlagEl, redTeamNameEl, currentRedTeam)
@@ -187,6 +250,7 @@ socket.onmessage = async (event) => {
         currentRedStars !== data.tourney.manager.stars.left ||
         currentBlueStars !== data.tourney.manager.stars.right) {
 
+		// Set star information
         currentBestOf = data.tourney.manager.bestOF
         currentFirstTo = Math.ceil(currentBestOf / 2)
         currentRedStars = data.tourney.manager.stars.left
@@ -197,6 +261,8 @@ socket.onmessage = async (event) => {
         teamMiddleStarRightEl.innerText = currentBlueStars
         redTeamStarsEl.innerHTML = ""
 
+		// Set star images
+		// Red Team
         let i
         for (i = 0; i < currentRedStars; i++) {
             const starImage = document.createElement("img")
@@ -209,6 +275,7 @@ socket.onmessage = async (event) => {
             redTeamStarsEl.append(starImage)
         }
 
+		// Blue Team
         blueTeamStarsEl.innerHTML = ""
         for (i = 0; i < currentFirstTo - currentBlueStars; i++) {
             const starImage = document.createElement("img")
@@ -227,8 +294,6 @@ socket.onmessage = async (event) => {
     if (chatLen !== data.tourney.manager.chat.length) {
         (chatLen === 0 || chatLen > data.tourney.manager.chat.length) ? (chatContainer.innerHTML = "", chatLen = 0) : null;
         const fragment = document.createDocumentFragment()
-
-        console.log("hello")
 
         for (let i = chatLen; i < data.tourney.manager.chat.length; i++) {
             const chatColour = data.tourney.manager.chat[i].team
