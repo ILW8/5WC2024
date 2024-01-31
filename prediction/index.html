@@ -9,21 +9,29 @@
 
     <body>
         <div id="main">
-            <img src="static/prediction.png" id="predictionOverlay">
+            <img src="static/predictiondesign.png" id="predictionOverlay">
             <!-- <img src="static/cameraframeOverlay.png" id="cameraframeOverlay">-->
-            <div id="castingCouch">
+            <!-- <div id="castingCouch">
                 <div class="castBox" id="caster1"></div>
                 <div class="castBox" id="caster2"></div>
                 <div class="castBox" id="caster3"></div>
                 <div class="castBox" id="caster4"></div>
                 <div class="castBox" id="caster5"></div>
-            </div>
+            </div> -->
+            <section id="pastviewCountry">
+                <div id="pastviewName">United States</div>
+                <div id="pastviewFlag"></div>
+            </section>
             <section id="currentCountry">
-                <button id="teamDisplaybuttonleft" onclick="teamDisplayleft();"></button>
-                <button id="teamDisplaybuttonright" onclick="teamDisplayright();"></button>
                 <div id="currentTeamName">United States</div>
                 <div id="currentTeamFlag"></div>
             </section>
+            <section id="previewCountry">
+                <div id="previewName">United States</div>
+                <div id="previewFlag"></div>
+            </section>
+            <button id="teamDisplaybuttonleft" onclick="teamDisplayleft();"></button>
+            <button id="teamDisplaybuttonright" onclick="teamDisplayright();"></button>
             <section id="currentSong">
                 <div id="currentSongImage">
                     <div id="currentSongImageLayer"></div>
@@ -99,6 +107,7 @@
                 </div>
             </section>
             <section id="controlPanelSectionTwo"></section>
+
             <section id="controlPanelSectionThree">
                 <div id="firstcaster">
                     <button id="first" class="controlPanelAddRemoveSectionButtons controlPanelButton" onclick="predictionPlacement(caster1, `1st`)">1st</button>
@@ -172,12 +181,10 @@
         </div>
         <div id="sponsor">
             <video loop autoplay width="400" height="130" >
-                <source src="static/sponsor.webm" type="video/webm">
+                <!-- <source src="static/sponsor.webm" type="video/webm"> -->
             </video>
         </div>
 
         <script src="index.js"></script>
-        <script src="js/particles/particles.js"></script>
-        <script src="js/particles/appMain.js"></script>
     </body>    
 </html>

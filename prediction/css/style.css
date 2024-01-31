@@ -1,24 +1,12 @@
 :root {
-	--purple: #936bf7;
-	--purple75Opacity: #936bf77F;
-	--blue: #75c6ea;
-	--blue75Opacity: #75c7ea7F;
-	--green: #6ACE0C;
-	--red: #FF4141;
-	--darkGreen: #1F9B29;
+	--red: #fd2664;
 }
+
 @font-face {
-    font-family: "Round-Control";
-    src: url("../fonts/RoundControl-Regular.otf") format("opentype");
+    font-family: Coluna Rounded;
+    src: url(../static/fonts/Coluna_Rounded.otf);
 }
-@font-face {
-	font-family: "Coolvetica";
-	src: url("../fonts/Coolvetica-Regular.otf") format("opentype");
-}
-@font-face {
-	font-family: "RenogareSoft-Regular";
-	src: url("../fonts/RenogareSoft-Regular.ttf") format("opentype");
-}
+
 body,html{
     padding: 0;
     margin: 0;
@@ -27,65 +15,147 @@ body,html{
 }
 
 #main{
-    font-family: Round-Control;
+    font-family: Coluna Rounded;
     font-weight: normal;
     color: white;
 	background-color: #000210;
     width: 1920px;
     height: 1080px;
-    z-index: 2;
+    z-index: 1;
 }
 #predictionOverlay {
 	position: absolute; top: 0; left: 0;
     width: 1920px; height: 1080px;
-	z-index: 2;
+	z-index: 0;
 }
 
 #teamDisplaybuttonleft{
     position: absolute;
-    left: 105px;
-    top: 487px;
-    width: 50px;
-    height: 50px;
+    left: 940px;
+    top: 880px;
+    width: 80px;
+    height: 88px;
     border: transparent;
     background-color: transparent;
     z-index: 3;
 }
 #teamDisplaybuttonright{
     position: absolute;
-    left: 497px;
-    top: 487px;
-    width: 50px;
-    height: 50px;
+    left: 1250px;
+    top: 880px;
+    width: 80px;
+    height: 88px;
     border: transparent;
     background-color: transparent;
     z-index: 3;
 }
-#currentTeamName{
+#pastviewCountry{
     position: absolute;
-    top: 600px;
-    left: 200px;
-    width: 250px;
-    height: 50px;
-    text-align: center;
+    top: 865px;
+    left: 800px;
     background-color: transparent;
-    font-family: Round-Control;
-    color: white;
-    font-size: 30px;
+    opacity: 0.75;
+    height: 175px;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-#currentTeamFlag{
+#pastviewName{
     position: absolute;
-    top: 420px;
-    left: 230px;
-    height: 400px;
-    width: 200px;
+    width: fit-content;
+    height: 70px;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    bottom: 0px;
+    line-height: 30px;
+    text-align: center;
+}
+#pastviewFlag{
+    position: absolute;
+    height: 100%;
+    width: 120px;
     background-size: contain;
 	background-repeat: no-repeat;
     z-index: 3;
 }
+
+#currentCountry{
+    position: absolute;
+    background-color: var(--red);
+    width: 210px;
+    height: 250px;
+    top: 820px;
+    left: 1031px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#currentTeamName{
+    position: absolute;
+    bottom: 0px;
+    width: fit-content;
+    height: 90px;
+    text-align: center;
+    color: white;
+    background-color: transparent;
+    font-family: Coluna Rounded;
+    font-size: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 50px /* Center vertically */
+}
+#currentTeamFlag{
+    position: absolute;
+    height: 100%;
+    width: 200px;
+    background-size: contain;
+	background-repeat: no-repeat;
+    z-index: 3;
+    top: -23px;
+
+}
+
+#previewCountry{
+    position: absolute;
+    top: 865px;
+    left: 1332px;
+    background-color: transparent;
+    opacity: 0.75;
+    height: 175px;
+    width: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#previewName{
+    position: absolute;
+    width: fit-content;
+    height: 70px;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    bottom: 0px;
+    line-height: 30px;
+    text-align: center;
+}
+#previewFlag{
+    position: absolute;
+    height: 100%;
+    width: 120px;
+    background-size: contain;
+	background-repeat: no-repeat;
+    z-index: 3;
+}
+
 /* Cyrrent Song */
 #currentSongImage {
-    position: absolute; top: 925px; left: 95px;
+    position: absolute; top: 965px; left: 95px;
     background-color: white;
     width: 141px; height: 73px;
     background-size: cover;
@@ -103,10 +173,10 @@ body,html{
     display: inline-block;
     font-size: 30px;
     color: white;
-    font-family: Round-Control;
+    font-family: Coluna Rounded;
 }
-#currentSongTitleWrapper { top: 925px; }
-#currentSongArtistWrapper { top: 960px; }
+#currentSongTitleWrapper { top: 965px; }
+#currentSongArtistWrapper { top: 1000px; }
 .currentSongText {
     width: max-content;
 }
@@ -124,13 +194,14 @@ body,html{
 /* Comparison Box */
 #compareBox {
     position: absolute;
-    width: 515px;
-    height: 500px;
-    left: 720px;
-    top: 550px;
-    background-color:transparent; 
+    width: 670px;
+    height: 575px;
+    left: 800px;
+    top: 225px;
+    background-color: transparent; 
+    opacity: 0.5;
     font-size: 17px;
-    font-family: Round-Control;
+    font-family: Coluna Rounded;
     font-weight: normal;
     color: white;
     z-index: 10;
@@ -171,26 +242,26 @@ body,html{
 #tierList{
     margin: 0;
     position: absolute;
-    left: 1419px; top: 447px;
-    width: 500px; height: 500px;
+    left: 230px; top: 90px;
+    width: 460px; height: 840px;
     z-index: 2;
 }
 .tierListRowTop {
     background-color: transparent;
-    width: 428px; height: 51px;
+    width: 428px; height: 71px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 .tierListRowMiddle {
     background-color: transparent;
-    width: 428px; height: 52.5px;
+    width: 428px; height: 74px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 }
 .tierListRowBottom {
-    width: 428px; height: 83px;
+    width: 428px; height: 118px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -220,7 +291,7 @@ body,html{
     height: 1080px;
     background-color: rgb(46, 53, 90);
     color: white;
-    font-family: RenogareSoft-Regular; 
+    /* font-family: RenogareSoft-Regular; */
 }
 #controlPanelSectionOne {
     width: 250px;
@@ -263,7 +334,7 @@ body,html{
     top: 0px; right: 10px;
 }
 #selectList {
-    font-family: RenogareSoft-Regular;
+    /*font-family: RenogareSoft-Regular;*/
     color: white;
     background-color: transparent;
     font-size: 13px;

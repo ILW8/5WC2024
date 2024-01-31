@@ -2,8 +2,8 @@
     {
         "country_name": "Argentina",
         "flag_code": "AR",
-        "last_seed": "1",
-        "last_placement": "5-6th",
+        "last_seed": "18th",
+        "last_placement": "13-16th",
         "played_before": true,
         "last_year": [
             [
@@ -53,8 +53,8 @@
     {
         "country_name": "Australia",
         "flag_code": "AU",
-        "last_seed": "3",
-        "last_placement": "2nd",
+        "last_seed": "14th",
+        "last_placement": "13-16th",
         "played_before": true,
         "last_year": [
             [
@@ -91,21 +91,21 @@
             ]
         ],
         "current_year": [
-            "Fairy Bread",
-            "Vegemite",
-            "Kangaroo",
-            "Mrekk",
-            "Naur",
-            "Down Under",
-            "Alligator",
-            "Emu"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
         "country_name": "Austria",
         "flag_code": "AT",
-        "last_seed": "DNQ",
-        "last_placement": "DNQ",
+        "last_seed": "29th",
+        "last_placement": "25-32nd",
         "played_before": true,
         "last_year": [
             [
@@ -142,21 +142,21 @@
             ]
         ],
         "current_year": [
-            "AustrianPlayer1",
-            "AustrianPlayer2",
-            "AustrianPlayer3",
-            "AustrianPlayer4",
-            "AustrianPlayer5",
-            "AustrianPlayer6",
-            "AustrianPlayer7",
-            "AustrianPlayer8"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
         "country_name": "Belarus",
         "flag_code": "BY",
-        "last_seed": "DNP",
-        "last_placement": "DNP",
+        "last_seed": "11th",
+        "last_placement": "17-24th",
         "played_before": true,
         "last_year": [
             [
@@ -193,14 +193,2740 @@
             ]
         ],
         "current_year": [
-            "BelarusPlayer1",
-            "BelarusPlayer2",
-            "BelarusPlayer3",
-            "BelarusPlayer4",
-            "BelarusPlayer5",
-            "BelarusPlayer6",
-            "BelarusPlayer7",
-            "BelarusPlayer8"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Belgium",
+        "flag_code": "BE",
+        "last_seed": "41st",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "Salter",
+                false
+            ],
+            [
+                "Uyaz",
+                false
+            ],
+            [
+                "arnevdh",
+                false
+            ],
+            [
+                "KajaSumthing",
+                false
+            ],
+            [
+                "floppaosu",
+                false
+            ],
+            [
+                "Kayziix",
+                false
+            ],
+            [
+                "MentalMoose",
+                false
+            ],
+            [
+                "Z3nix",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Bolivia",
+        "flag_code": "BO",
+        "last_seed": "53rd",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "-Rizu",
+                false
+            ],
+            [
+                "Ganthar",
+                false
+            ],
+            [
+                "Im_Emilio",
+                false
+            ],
+            [
+                "Jhozhe",
+                false
+            ],
+            [
+                "Pankeso",
+                false
+            ],
+            [
+                "SammyM4t",
+                false
+            ],
+            [
+                "ZETAJOTA",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Brazil",
+        "flag_code": "BR",
+        "last_seed": "21st",
+        "last_placement": "17-24th",
+        "played_before": true,
+        "last_year": [
+            [
+                "DoTrO",
+                false
+            ],
+            [
+                "Kyulke",
+                false
+            ],
+            [
+                "-Kettei-",
+                false
+            ],
+            [
+                "999kalel999",
+                false
+            ],
+            [
+                "iFactor",
+                false
+            ],
+            [
+                "KakirM",
+                false
+            ],
+            [
+                "luscajooj",
+                false
+            ],
+            [
+                "snek0070",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Canada",
+        "flag_code": "CA",
+        "last_seed": "3rd",
+        "last_placement": "4th",
+        "played_before": true,
+        "last_year": [
+            [
+                "deflateddolphin",
+                false
+            ],
+            [
+                "Birchman",
+                false
+            ],
+            [
+                "FluffyEcho",
+                false
+            ],
+            [
+                "Jolly Ranchers",
+                false
+            ],
+            [
+                "Kevorc",
+                false
+            ],
+            [
+                "Lexic",
+                false
+            ],
+            [
+                "ploot",
+                false
+            ],
+            [
+                "Speed of Snail",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Chile",
+        "flag_code": "CL",
+        "last_seed": "19th",
+        "last_placement": "25-32nd",
+        "played_before": true,
+        "last_year": [
+            [
+                "-Misaka Mikoto-",
+                false
+            ],
+            [
+                "Chirno",
+                false
+            ],
+            [
+                "l Akemi l",
+                false
+            ],
+            [
+                "- Kaze-",
+                false
+            ],
+            [
+                "DPL",
+                false
+            ],
+            [
+                "Nevzz",
+                false
+            ],
+            [
+                "Siiphs",
+                false
+            ],
+            [
+                "SwENeMbO",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "China",
+        "flag_code": "CN",
+        "last_seed": "25th",
+        "last_placement": "17-24th",
+        "played_before": true,
+        "last_year": [
+            [
+                "Michka",
+                false
+            ],
+            [
+                "gxytcgxytc",
+                false
+            ],
+            [
+                "Dnwings",
+                false
+            ],
+            [
+                "Eiko Tokura",
+                false
+            ],
+            [
+                "-Hermit-",
+                false
+            ],
+            [
+                "[Crz]xz1z1z",
+                false
+            ],
+            [
+                "Azureus",
+                false
+            ],
+            [
+                "WorthlessPlayer",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Colombia",
+        "flag_code": "CO",
+        "last_seed": "38th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "hlv",
+                false
+            ],
+            [
+                "Phel",
+                false
+            ],
+            [
+                "ElMick25",
+                false
+            ],
+            [
+                "Goold",
+                false
+            ],
+            [
+                "xSalcedo",
+                false
+            ],
+            [
+                "Pinwii",
+                false
+            ],
+            [
+                "Sewerslvt",
+                false
+            ],
+            [
+                "Xeanex",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Czechia",
+        "flag_code": "CZ",
+        "last_seed": "34th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "-Jajamaru-",
+                false
+            ],
+            [
+                "JoReDa",
+                false
+            ],
+            [
+                "dad0ja",
+                false
+            ],
+            [
+                "parno abuser",
+                false
+            ],
+            [
+                "Aishyu",
+                false
+            ],
+            [
+                "Dejw27",
+                false
+            ],
+            [
+                "holub",
+                false
+            ],
+            [
+                "Mthia",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Denmark",
+        "flag_code": "DK",
+        "last_seed": "37th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "Cittasnaf",
+                false
+            ],
+            [
+                "MENDES",
+                false
+            ],
+            [
+                "Faur",
+                false
+            ],
+            [
+                "razzrat",
+                false
+            ],
+            [
+                "[THEDUCK]",
+                false
+            ],
+            [
+                "Big PP Jo",
+                false
+            ],
+            [
+                "PandaguinDK",
+                false
+            ],
+            [
+                "tjukas",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Estonia",
+        "flag_code": "EE",
+        "last_seed": "54th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "den1k0",
+                false
+            ],
+            [
+                "R0mi",
+                false
+            ],
+            [
+                "HowlingBolt",
+                false
+            ],
+            [
+                "Kaimokene",
+                false
+            ],
+            [
+                "Lamy-",
+                false
+            ],
+            [
+                "megahello",
+                false
+            ],
+            [
+                "Randver",
+                false
+            ],
+            [
+                "sprei",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Finland",
+        "flag_code": "FI",
+        "last_seed": "23rd",
+        "last_placement": "25-32nd",
+        "played_before": true,
+        "last_year": [
+            [
+                "CardiuM",
+                false
+            ],
+            [
+                "CPU_Cartel",
+                false
+            ],
+            [
+                "Jerezz",
+                false
+            ],
+            [
+                "Musa",
+                false
+            ],
+            [
+                "Asairan",
+                false
+            ],
+            [
+                "Mara",
+                false
+            ],
+            [
+                "Stiffu",
+                false
+            ],
+            [
+                "VaiskiKP",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "France",
+        "flag_code": "FR",
+        "last_seed": "4th",
+        "last_placement": "1st",
+        "played_before": true,
+        "last_year": [
+            [
+                "Drakkles",
+                false
+            ],
+            [
+                "____________",
+                false
+            ],
+            [
+                "Afmun",
+                false
+            ],
+            [
+                "BioTyC",
+                false
+            ],
+            [
+                "Draxarta",
+                false
+            ],
+            [
+                "MyzeJD",
+                false
+            ],
+            [
+                "Nuage",
+                false
+            ],
+            [
+                "Qumania",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Germany",
+        "flag_code": "DE",
+        "last_seed": "10th",
+        "last_placement": "9-12th",
+        "played_before": true,
+        "last_year": [
+            [
+                "JobeHobe",
+                false
+            ],
+            [
+                "tplc",
+                false
+            ],
+            [
+                "BlonderDennis",
+                false
+            ],
+            [
+                "Nyura",
+                false
+            ],
+            [
+                "-Jayden",
+                false
+            ],
+            [
+                "Boden",
+                false
+            ],
+            [
+                "Mankichiro",
+                false
+            ],
+            [
+                "POLANDTRUCKER13",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Greece",
+        "flag_code": "GR",
+        "last_seed": "40th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "TSM L9 PAOK[HR]",
+                false
+            ],
+            [
+                "snap",
+                false
+            ],
+            [
+                "[Teo]",
+                false
+            ],
+            [
+                "Erilya",
+                false
+            ],
+            [
+                "SpokenAway",
+                false
+            ],
+            [
+                "BilboNP",
+                false
+            ],
+            [
+                "KittyLikeme",
+                false
+            ],
+            [
+                "Knee Cutter",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Guatemala",
+        "flag_code": "GT",
+        "last_seed": "52nd",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "a1496366rhc",
+                false
+            ],
+            [
+                "Chuerk UwU",
+                false
+            ],
+            [
+                "GrxOmg10",
+                false
+            ],
+            [
+                "OreoMishi",
+                false
+            ],
+            [
+                "Ricardo93",
+                false
+            ],
+            [
+                "Tishin",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Hong Kong",
+        "flag_code": "HK",
+        "last_seed": "16th",
+        "last_placement": "7-8th",
+        "played_before": true,
+        "last_year": [
+            [
+                "Dragbit 5",
+                false
+            ],
+            [
+                "- PPanDoRaA -",
+                false
+            ],
+            [
+                "whyia",
+                false
+            ],
+            [
+                "Tsukime",
+                false
+            ],
+            [
+                "lelxdme",
+                false
+            ],
+            [
+                "RemIscute07",
+                false
+            ],
+            [
+                "uadfb75t6hst",
+                false
+            ],
+            [
+                "yiu2",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Hungary",
+        "flag_code": "HU",
+        "last_seed": "50th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "burhac",
+                false
+            ],
+            [
+                "ffelix",
+                false
+            ],
+            [
+                "raven_waffles",
+                false
+            ],
+            [
+                "RiSe",
+                false
+            ],
+            [
+                "RRolanDD",
+                false
+            ],
+            [
+                "StalkerHUN",
+                false
+            ],
+            [
+                "Szamurajpalanta",
+                false
+            ],
+            [
+                "TibO123",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Indonesia",
+        "flag_code": "ID",
+        "last_seed": "17th",
+        "last_placement": "25-32nd",
+        "played_before": true,
+        "last_year": [
+            [
+                "fnayR",
+                false
+            ],
+            [
+                "Xicyte",
+                false
+            ],
+            [
+                "SDKO",
+                false
+            ],
+            [
+                "akebono",
+                false
+            ],
+            [
+                "Fullburn",
+                false
+            ],
+            [
+                "im a cute bunny",
+                false
+            ],
+            [
+                "Kozakura-",
+                false
+            ],
+            [
+                "retot",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Ireland",
+        "flag_code": "IE",
+        "last_seed": "43rd",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "KSTBAD",
+                false
+            ],
+            [
+                "obrown",
+                false
+            ],
+            [
+                "HEAVENLY MOON",
+                false
+            ],
+            [
+                "KaiWhen",
+                false
+            ],
+            [
+                "Shattered0_0",
+                false
+            ],
+            [
+                "Vubii",
+                false
+            ],
+            [
+                "when joke",
+                false
+            ],
+            [
+                "YesntMesnt",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Israel",
+        "flag_code": "IL",
+        "last_seed": "44th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "snowfort",
+                false
+            ],
+            [
+                "F3n1X",
+                false
+            ],
+            [
+                "Flyco",
+                false
+            ],
+            [
+                "Kusanali",
+                false
+            ],
+            [
+                "WhitePixel_",
+                false
+            ],
+            [
+                "wreckzl",
+                false
+            ],
+            [
+                "_Maxim_",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Italy",
+        "flag_code": "IT",
+        "last_seed": "32nd",
+        "last_placement": "17-24th",
+        "played_before": true,
+        "last_year": [
+            [
+                "[duke]",
+                false
+            ],
+            [
+                "dyrecoz",
+                false
+            ],
+            [
+                "frewayk",
+                false
+            ],
+            [
+                "FuibaFuyu",
+                false
+            ],
+            [
+                "Kyrichu",
+                false
+            ],
+            [
+                "mhh",
+                false
+            ],
+            [
+                "piccio",
+                false
+            ],
+            [
+                "sqdnerd",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Japan",
+        "flag_code": "JP",
+        "last_seed": "11th",
+        "last_placement": "9-12th",
+        "played_before": true,
+        "last_year": [
+            [
+                "EZDT",
+                false
+            ],
+            [
+                "kotomori_",
+                false
+            ],
+            [
+                "morimori",
+                false
+            ],
+            [
+                "yoshi-mk2",
+                false
+            ],
+            [
+                "amanon_no",
+                false
+            ],
+            [
+                "Baltea",
+                false
+            ],
+            [
+                "ScautTheGamer",
+                false
+            ],
+            [
+                "stone_bream",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Kazakhstan",
+        "flag_code": "KZ",
+        "last_seed": "33rd",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "K1rrubieL",
+                false
+            ],
+            [
+                "[Enderman2010]",
+                false
+            ],
+            [
+                "argentum_m",
+                false
+            ],
+            [
+                "JustShade",
+                false
+            ],
+            [
+                "MrHakcer",
+                false
+            ],
+            [
+                "shuna",
+                false
+            ],
+            [
+                "meganoob616",
+                false
+            ],
+            [
+                "Zigzagmanich",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Kuwait",
+        "flag_code": "KW",
+        "last_seed": "49th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "-Snake",
+                false
+            ],
+            [
+                "Bisuke",
+                false
+            ],
+            [
+                "_sola",
+                false
+            ],
+            [
+                "-Anonymous",
+                false
+            ],
+            [
+                "CyberToothLion",
+                false
+            ],
+            [
+                "KHAFx",
+                false
+            ],
+            [
+                "Pokin",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Latvia",
+        "flag_code": "LV",
+        "last_seed": "55th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "EsPadodos",
+                false
+            ],
+            [
+                "M I S H A",
+                false
+            ],
+            [
+                "NekoMeganG",
+                false
+            ],
+            [
+                "Voxargenteae",
+                false
+            ],
+            [
+                "cheechaa",
+                false
+            ],
+            [
+                "MrixSu",
+                false
+            ],
+            [
+                "xCyano_",
+                false
+            ],
+            [
+                "Zevzs",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Lithuania",
+        "flag_code": "LT",
+        "last_seed": "45th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "HatsuKeiae",
+                false
+            ],
+            [
+                "-KitEKat-",
+                false
+            ],
+            [
+                "bozislavas",
+                false
+            ],
+            [
+                "DAZQ",
+                false
+            ],
+            [
+                "evaldaszzzz",
+                false
+            ],
+            [
+                "NiZY",
+                false
+            ],
+            [
+                "priSter",
+                false
+            ],
+            [
+                "Sunless_",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Malaysia",
+        "flag_code": "MY",
+        "last_seed": "28th",
+        "last_placement": "25-32nd",
+        "played_before": true,
+        "last_year": [
+            [
+                "DuoX",
+                false
+            ],
+            [
+                "Shocola",
+                false
+            ],
+            [
+                "heyimcrunchy",
+                false
+            ],
+            [
+                "Blethz",
+                false
+            ],
+            [
+                "Cryolien",
+                false
+            ],
+            [
+                "GG_com2016",
+                false
+            ],
+            [
+                "Hu_Ai",
+                false
+            ],
+            [
+                "okiari",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Mexico",
+        "flag_code": "MX",
+        "last_seed": "36th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "[Toni]",
+                false
+            ],
+            [
+                "Sazul",
+                false
+            ],
+            [
+                "-[TacoTrash]-",
+                false
+            ],
+            [
+                "-Line-",
+                false
+            ],
+            [
+                "ChunkyGoatMilk",
+                false
+            ],
+            [
+                "kevinm31",
+                false
+            ],
+            [
+                "MrAlpacus",
+                false
+            ],
+            [
+                "Roller-",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Netherlands",
+        "flag_code": "NL",
+        "last_seed": "1st",
+        "last_placement": "3rd",
+        "played_before": true,
+        "last_year": [
+            [
+                "UC1",
+                false
+            ],
+            [
+                "UC2",
+                false
+            ],
+            [
+                "UC3",
+                false
+            ],
+            [
+                "UC4",
+                false
+            ],
+            [
+                "UC5",
+                false
+            ],
+            [
+                "UC6",
+                false
+            ],
+            [
+                "UC7",
+                false
+            ],
+            [
+                "UC8",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "New Zealand",
+        "flag_code": "NZ",
+        "last_seed": "42nd",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "[ O Y O] baa",
+                false
+            ],
+            [
+                "dasher1505",
+                false
+            ],
+            [
+                "davidoe",
+                false
+            ],
+            [
+                "Goofster",
+                false
+            ],
+            [
+                "Kerbcarus",
+                false
+            ],
+            [
+                "Koo998",
+                false
+            ],
+            [
+                "Moxytone",
+                false
+            ],
+            [
+                "weetbix man",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Norway",
+        "flag_code": "NO",
+        "last_seed": "56th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "Ctski",
+                false
+            ],
+            [
+                "Bismarck",
+                false
+            ],
+            [
+                "Chrisse",
+                false
+            ],
+            [
+                "DLF_ferozz",
+                false
+            ],
+            [
+                "IceCold",
+                false
+            ],
+            [
+                "m r v",
+                false
+            ],
+            [
+                "Norwegian Vaxei",
+                false
+            ],
+            [
+                "Zoomuno",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Peru",
+        "flag_code": "PE",
+        "last_seed": "27th",
+        "last_placement": "25-32nd",
+        "played_before": true,
+        "last_year": [
+            [
+                "-Kairy-",
+                false
+            ],
+            [
+                "SomeBoi",
+                false
+            ],
+            [
+                "-Yuuu",
+                false
+            ],
+            [
+                "AkaiSenpai",
+                false
+            ],
+            [
+                "Loham",
+                false
+            ],
+            [
+                "Miqt",
+                false
+            ],
+            [
+                "Rulz",
+                false
+            ],
+            [
+                "Takodachi",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Philippines",
+        "flag_code": "PH",
+        "last_seed": "7th",
+        "last_placement": "9-12th",
+        "played_before": true,
+        "last_year": [
+            [
+                "NathanSS",
+                false
+            ],
+            [
+                "Xyphox",
+                false
+            ],
+            [
+                "[Shua]",
+                false
+            ],
+            [
+                "Akezaris",
+                false
+            ],
+            [
+                "LeFerraille",
+                false
+            ],
+            [
+                "okirema",
+                false
+            ],
+            [
+                "seeeen11l1",
+                false
+            ],
+            [
+                "Yukixo",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Poland",
+        "flag_code": "PL",
+        "last_seed": "13th",
+        "last_placement": "5-6th",
+        "played_before": true,
+        "last_year": [
+            [
+                "Hotring",
+                false
+            ],
+            [
+                "Makise Kurisu",
+                false
+            ],
+            [
+                "Yuki Minakami",
+                false
+            ],
+            [
+                "BabyChickenPL",
+                false
+            ],
+            [
+                "TilerXk",
+                false
+            ],
+            [
+                "-BocheN-",
+                false
+            ],
+            [
+                "Agent5d",
+                false
+            ],
+            [
+                "Nutricula",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Portugal",
+        "flag_code": "PT",
+        "last_seed": "35th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "iceGOD",
+                false
+            ],
+            [
+                "Stickmano",
+                false
+            ],
+            [
+                "Mihail223",
+                false
+            ],
+            [
+                "_Foxy",
+                false
+            ],
+            [
+                "e n v y",
+                false
+            ],
+            [
+                "Iofjnarbosq",
+                false
+            ],
+            [
+                "m t g",
+                false
+            ],
+            [
+                "peter king",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "R\u00e9union",
+        "flag_code": "RE",
+        "last_seed": "58th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "Allbm",
+                false
+            ],
+            [
+                "Nesrya",
+                false
+            ],
+            [
+                "Numero_Zer0e",
+                false
+            ],
+            [
+                "shinytra",
+                false
+            ],
+            [
+                "- Kessy -",
+                false
+            ],
+            [
+                "Mito Mashiro",
+                false
+            ],
+            [
+                "Taimutorabera",
+                false
+            ],
+            [
+                "XeKr",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Romania",
+        "flag_code": "RO",
+        "last_seed": "39th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "AlexBelea",
+                false
+            ],
+            [
+                "_Silvian",
+                false
+            ],
+            [
+                "bossuromaniei",
+                false
+            ],
+            [
+                "IIANTONIOII",
+                false
+            ],
+            [
+                "jqvi",
+                false
+            ],
+            [
+                "Korinna",
+                false
+            ],
+            [
+                "Olts",
+                false
+            ],
+            [
+                "Sephy_YT",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Russian Federation",
+        "flag_code": "RU",
+        "last_seed": "2nd",
+        "last_placement": "2nd",
+        "played_before": true,
+        "last_year": [
+            [
+                "kirndy",
+                false
+            ],
+            [
+                "ImaginaryVaxei",
+                false
+            ],
+            [
+                "MakiBrony",
+                false
+            ],
+            [
+                "DanFi",
+                false
+            ],
+            [
+                "Filtrator",
+                false
+            ],
+            [
+                "hrds",
+                false
+            ],
+            [
+                "Light135",
+                false
+            ],
+            [
+                "N7TR0",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Serbia",
+        "flag_code": "RS",
+        "last_seed": "47th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "-Chubby-",
+                false
+            ],
+            [
+                "chepy",
+                false
+            ],
+            [
+                "sxrvyr",
+                false
+            ],
+            [
+                "EndMePlease",
+                false
+            ],
+            [
+                "Linneal",
+                false
+            ],
+            [
+                "Matija",
+                false
+            ],
+            [
+                "Milos_179",
+                false
+            ],
+            [
+                "youngphil",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Singapore",
+        "flag_code": "SG",
+        "last_seed": "5th",
+        "last_placement": "7-8th",
+        "played_before": true,
+        "last_year": [
+            [
+                "DVDthe1st",
+                false
+            ],
+            [
+                "Baechuu",
+                false
+            ],
+            [
+                "Touruu",
+                false
+            ],
+            [
+                "AppleTier",
+                false
+            ],
+            [
+                "Can Never FC",
+                false
+            ],
+            [
+                "CopyPasted",
+                false
+            ],
+            [
+                "hollowknees",
+                false
+            ],
+            [
+                "nvwrii",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Slovakia",
+        "flag_code": "SK",
+        "last_seed": "20th",
+        "last_placement": "17-24th",
+        "played_before": true,
+        "last_year": [
+            [
+                "-MiGo-",
+                false
+            ],
+            [
+                "Lexbalker",
+                false
+            ],
+            [
+                "EnchantedSpider",
+                false
+            ],
+            [
+                "-Seam-",
+                false
+            ],
+            [
+                "Dugyy",
+                false
+            ],
+            [
+                "Fliper 79",
+                false
+            ],
+            [
+                "Seviade",
+                false
+            ],
+            [
+                "zex-",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "South Korea",
+        "flag_code": "KR",
+        "last_seed": "15th",
+        "last_placement": "13-16th",
+        "played_before": true,
+        "last_year": [
+            [
+                "yhsphd",
+                false
+            ],
+            [
+                "A BCDe",
+                false
+            ],
+            [
+                "Soramon",
+                false
+            ],
+            [
+                "-Ruby",
+                false
+            ],
+            [
+                "-[Chex]-",
+                false
+            ],
+            [
+                "-Yuyuko-",
+                false
+            ],
+            [
+                "Loopins",
+                false
+            ],
+            [
+                "NEW GOD",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Spain",
+        "flag_code": "ES",
+        "last_seed": "31st",
+        "last_placement": "25-32nd",
+        "played_before": true,
+        "last_year": [
+            [
+                "-zilva-",
+                false
+            ],
+            [
+                "AngelXC",
+                false
+            ],
+            [
+                "Sakorii",
+                false
+            ],
+            [
+                "- Sprite -",
+                false
+            ],
+            [
+                "Edrran",
+                false
+            ],
+            [
+                "ESCRUPULILLO",
+                false
+            ],
+            [
+                "oshino-",
+                false
+            ],
+            [
+                "Palodex",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Sweden",
+        "flag_code": "SE",
+        "last_seed": "24th",
+        "last_placement": "17-24th",
+        "played_before": true,
+        "last_year": [
+            [
+                "Sigge",
+                false
+            ],
+            [
+                "EdiChii",
+                false
+            ],
+            [
+                "InfraGhozt",
+                false
+            ],
+            [
+                "-HeadHunter-",
+                false
+            ],
+            [
+                "Ederulo",
+                false
+            ],
+            [
+                "Klappy",
+                false
+            ],
+            [
+                "Lightningfox",
+                false
+            ],
+            [
+                "yumetsu",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Switzerland",
+        "flag_code": "CH",
+        "last_seed": "46th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "_Ene",
+                false
+            ],
+            [
+                "gg_boi",
+                false
+            ],
+            [
+                "Seltor",
+                false
+            ],
+            [
+                "Zacatel",
+                false
+            ],
+            [
+                "-Azure",
+                false
+            ],
+            [
+                "amatsukaUto",
+                false
+            ],
+            [
+                "kokonokokoro",
+                false
+            ],
+            [
+                "xeladir",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Taiwan",
+        "flag_code": "TW",
+        "last_seed": "6th",
+        "last_placement": "9-12th",
+        "played_before": true,
+        "last_year": [
+            [
+                "Yue0423",
+                false
+            ],
+            [
+                "Yue0424",
+                false
+            ],
+            [
+                "Yue0425",
+                false
+            ],
+            [
+                "Yue0426",
+                false
+            ],
+            [
+                "Yue0427",
+                false
+            ],
+            [
+                "Yue0428",
+                false
+            ],
+            [
+                "Yue0429",
+                false
+            ],
+            [
+                "Yue0430",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Thailand",
+        "flag_code": "TH",
+        "last_seed": "26th",
+        "last_placement": "17-24th",
+        "played_before": true,
+        "last_year": [
+            [
+                "Simple-",
+                false
+            ],
+            [
+                "Bird Thongchai",
+                false
+            ],
+            [
+                "Moca Aoba",
+                false
+            ],
+            [
+                "- PPKM -",
+                false
+            ],
+            [
+                "NekoShabeta",
+                false
+            ],
+            [
+                "Vixera",
+                false
+            ],
+            [
+                "krakenlord420",
+                false
+            ],
+            [
+                "TzArtifactz",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "T\u00fcrkiye",
+        "flag_code": "TR",
+        "last_seed": "48th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "-- Waffle --",
+                false
+            ],
+            [
+                "Batu",
+                false
+            ],
+            [
+                "-Cyda",
+                false
+            ],
+            [
+                "Arson1st",
+                false
+            ],
+            [
+                "Atakan",
+                false
+            ],
+            [
+                "Sinyan",
+                false
+            ],
+            [
+                "Soroic",
+                false
+            ],
+            [
+                "Zybit",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Ukraine",
+        "flag_code": "UA",
+        "last_seed": "29th",
+        "last_placement": "13-16th",
+        "played_before": true,
+        "last_year": [
+            [
+                "BlackJack",
+                false
+            ],
+            [
+                "Unavel",
+                false
+            ],
+            [
+                "blane",
+                false
+            ],
+            [
+                "Holast",
+                false
+            ],
+            [
+                "Igorko",
+                false
+            ],
+            [
+                "Shurgot",
+                false
+            ],
+            [
+                "VonnieDonnie",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "United Arab Emirates",
+        "flag_code": "AE",
+        "last_seed": "57th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "FinzuMyMommy",
+                false
+            ],
+            [
+                "VoidHero",
+                false
+            ],
+            [
+                "1Latif",
+                false
+            ],
+            [
+                "Ayaya5",
+                false
+            ],
+            [
+                "GC5",
+                false
+            ],
+            [
+                "kstnh",
+                false
+            ],
+            [
+                "Rossito8",
+                false
+            ],
+            [
+                "Wackayy",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "United Kingdom",
+        "flag_code": "GB",
+        "last_seed": "12th",
+        "last_placement": "17-24th",
+        "played_before": true,
+        "last_year": [
+            [
+                "Humsterlol",
+                false
+            ],
+            [
+                "Fluxey",
+                false
+            ],
+            [
+                "furytail",
+                false
+            ],
+            [
+                "NinoMyAngel",
+                false
+            ],
+            [
+                "polski1",
+                false
+            ],
+            [
+                "topeks",
+                false
+            ],
+            [
+                "velcro shoes",
+                false
+            ],
+            [
+                "Wingo",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "United States",
+        "flag_code": "US",
+        "last_seed": "8th",
+        "last_placement": "5-6th",
+        "played_before": true,
+        "last_year": [
+            [
+                "Azurium",
+                false
+            ],
+            [
+                "Pangetism",
+                false
+            ],
+            [
+                "Unique",
+                false
+            ],
+            [
+                "Heony",
+                false
+            ],
+            [
+                "jellium",
+                false
+            ],
+            [
+                "KatFood",
+                false
+            ],
+            [
+                "Kisoi",
+                false
+            ],
+            [
+                "richp2k",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Uruguay",
+        "flag_code": "UY",
+        "last_seed": "51st",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "Lolasinlol",
+                false
+            ],
+            [
+                "Scramzi",
+                false
+            ],
+            [
+                "Vlauz",
+                false
+            ],
+            [
+                "Rami12890",
+                false
+            ],
+            [
+                "finalevening",
+                false
+            ],
+            [
+                "Hanabi-",
+                false
+            ],
+            [
+                "LittleFede",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Vietnam",
+        "flag_code": "VN",
+        "last_seed": "9th",
+        "last_placement": "25-32nd",
+        "played_before": true,
+        "last_year": [
+            [
+                "Fakazki",
+                false
+            ],
+            [
+                "[Geno]",
+                false
+            ],
+            [
+                "updraft",
+                false
+            ],
+            [
+                "-Kiyoko-",
+                false
+            ],
+            [
+                "Kriatix",
+                false
+            ],
+            [
+                "Shadowkingxx",
+                false
+            ],
+            [
+                "Sonocchoz",
+                false
+            ],
+            [
+                "Utahmi",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     }
 ]

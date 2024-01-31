@@ -1,0 +1,206 @@
+[
+    {
+        "country_name": "Argentina",
+        "flag_code": "AR",
+        "last_seed": "1",
+        "last_placement": "5-6th",
+        "played_before": true,
+        "last_year": [
+            [
+                "Keyz",
+                false
+            ],
+            [
+                "Vexion",
+                false
+            ],
+            [
+                "N4me",
+                false
+            ],
+            [
+                "[Snow",
+                false
+            ],
+            [
+                "blaxxxter",
+                false
+            ],
+            [
+                "Bubon_",
+                false
+            ],
+            [
+                "FD3S 13B-REW",
+                false
+            ],
+            [
+                "Mikelito069",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Australia",
+        "flag_code": "AU",
+        "last_seed": "3",
+        "last_placement": "2nd",
+        "played_before": true,
+        "last_year": [
+            [
+                "Toaru",
+                false
+            ],
+            [
+                "Trainjumper",
+                false
+            ],
+            [
+                "YGOkid8",
+                false
+            ],
+            [
+                "-Kirigiri",
+                false
+            ],
+            [
+                "AllBlue",
+                false
+            ],
+            [
+                "Supernye",
+                false
+            ],
+            [
+                "Woop",
+                false
+            ],
+            [
+                "YelloJello",
+                false
+            ]
+        ],
+        "current_year": [
+            "Fairy Bread",
+            "Vegemite",
+            "Kangaroo",
+            "Mrekk",
+            "Naur",
+            "Down Under",
+            "Alligator",
+            "Emu"
+        ]
+    },
+    {
+        "country_name": "Austria",
+        "flag_code": "AT",
+        "last_seed": "DNQ",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "Leycia",
+                false
+            ],
+            [
+                "Volki",
+                false
+            ],
+            [
+                "Farmist Fan",
+                false
+            ],
+            [
+                "gadse",
+                false
+            ],
+            [
+                "JungspylieSushi",
+                false
+            ],
+            [
+                "SadBoi42",
+                false
+            ],
+            [
+                "Teppi Fangirl",
+                false
+            ],
+            [
+                "z11a",
+                false
+            ]
+        ],
+        "current_year": [
+            "AustrianPlayer1",
+            "AustrianPlayer2",
+            "AustrianPlayer3",
+            "AustrianPlayer4",
+            "AustrianPlayer5",
+            "AustrianPlayer6",
+            "AustrianPlayer7",
+            "AustrianPlayer8"
+        ]
+    },
+    {
+        "country_name": "Belarus",
+        "flag_code": "BY",
+        "last_seed": "DNP",
+        "last_placement": "DNP",
+        "played_before": true,
+        "last_year": [
+            [
+                "Yuuka",
+                false
+            ],
+            [
+                "TibyEmb",
+                false
+            ],
+            [
+                "Wexxxxxy",
+                false
+            ],
+            [
+                "xunev",
+                false
+            ],
+            [
+                "Cringe lad",
+                false
+            ],
+            [
+                "Decheg_777",
+                false
+            ],
+            [
+                "RemTouk",
+                false
+            ],
+            [
+                "Tepe6oHbka",
+                false
+            ]
+        ],
+        "current_year": [
+            "BelarusPlayer1",
+            "BelarusPlayer2",
+            "BelarusPlayer3",
+            "BelarusPlayer4",
+            "BelarusPlayer5",
+            "BelarusPlayer6",
+            "BelarusPlayer7",
+            "BelarusPlayer8"
+        ]
+    }
+]

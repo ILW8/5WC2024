@@ -3,6 +3,13 @@ let playerData
 let controlPanelSectionTwo = document.getElementById("controlPanelSectionTwo")
 
 let currentTeamLocation = 0
+
+let setPastName = document.getElementById("pastviewName");
+let setPastFlag = document.getElementById("pastviewFlag");
+
+let setPreviewName = document.getElementById("previewName");
+let setPreviewFlag = document.getElementById("previewFlag");
+
 let setTeamName = document.getElementById("currentTeamName");
 let setTeamFlag = document.getElementById("currentTeamFlag");
 let caster1 = document.getElementById("caster1");
@@ -27,9 +34,10 @@ let getplayerData = new Promise(async (resolve, reject) => {
 getplayerData.then(playerData => {
     for (var i = 0; i < playerData.length; i++) {
         let teamObject = []
-        teamObject.push(playerData[i].country_name)
         teamObject.push(playerData[i].flag_code)
+        teamObject.push(playerData[i].country_name)
         predictionTeams.push(teamObject)
+        console.log(teamObject)
     }
 
     // Create Select List
@@ -47,10 +55,18 @@ getplayerData.then(playerData => {
     selectList.setAttribute("size",`${selectList.childElementCount}`)
     controlPanelSectionTwo.append(selectList)
 
+    // Set Previous Country Preview
+    setPastName.innerText = predictionTeams[predictionTeams.length - 1][1]
+    setPastFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${predictionTeams[predictionTeams.length - 1][0]}-200.png")`;
+
+    // Set Next Country Preview
+    setPreviewName.innerText = predictionTeams[currentTeamLocation + 1][1]
+    setPreviewFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${predictionTeams[currentTeamLocation + 1][0]}-200.png")`;
+
     // Set First Country
-    setTeamName.innerText = predictionTeams[currentTeamLocation][0];
+    setTeamName.innerText = predictionTeams[currentTeamLocation][1];
     //setTeamFlag.style.backgroundImage = `url("static/flags/${predictionTeams[currentTeamLocation]}.png")`;
-    setTeamFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${predictionTeams[currentTeamLocation][1]}-200.png")`;
+    setTeamFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${predictionTeams[currentTeamLocation][0]}-200.png")`;
     console.log(predictionTeams);
     document.getElementById(`${predictionTeams[currentTeamLocation]}SelectOption`).selected = true
 
@@ -175,17 +191,55 @@ function generateRoster() {
 function teamDisplayleft(){
     currentTeamLocation = currentTeamLocation - 1;
     if (currentTeamLocation < 0) {currentTeamLocation = (predictionTeams.length - 1)};
-    setTeamName.innerText = predictionTeams[currentTeamLocation][0];
-    setTeamFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${predictionTeams[currentTeamLocation][1]}-200.png")`;
+
+    if (currentTeamLocation == 0) {
+        setPastName.innerText = predictionTeams[predictionTeams.length - 1][1];
+        setPastFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${predictionTeams[predictionTeams.length - 1][0]}-200.png")`;
+    }
+    else {
+        setPastName.innerText = predictionTeams[currentTeamLocation - 1][1];
+        setPastFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${predictionTeams[currentTeamLocation - 1][0]}-200.png")`;
+    }
+    
+    setTeamName.innerText = predictionTeams[currentTeamLocation][1];
+    setTeamFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${predictionTeams[currentTeamLocation][0]}-200.png")`;
     document.getElementById(`${predictionTeams[currentTeamLocation]}SelectOption`).selected = true
+    
+    if (currentTeamLocation == (predictionTeams.length - 1)) {
+        setPreviewName.innerText = predictionTeams[0][1];
+        setPreviewFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${predictionTeams[0][0]}-200.png")`;
+    }
+    else {
+        setPreviewName.innerText = predictionTeams[currentTeamLocation + 1][1];
+        setPreviewFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${predictionTeams[currentTeamLocation + 1][0]}-200.png")`;
+    }
     generateRoster()
 }
 function teamDisplayright(){
     currentTeamLocation = currentTeamLocation + 1;
     if (currentTeamLocation > (predictionTeams.length - 1)) {currentTeamLocation = 0};
-    setTeamName.innerText = predictionTeams[currentTeamLocation][0];
-    setTeamFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${predictionTeams[currentTeamLocation][1]}-200.png")`;
+
+    if (currentTeamLocation == 0){
+        setPastName.innerText = predictionTeams[predictionTeams.length - 1][1];
+        setPastFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${predictionTeams[predictionTeams.length - 1][0]}-200.png")`;
+    }
+    else {
+        setPastName.innerText = predictionTeams[currentTeamLocation - 1][1];
+        setPastFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${predictionTeams[currentTeamLocation - 1][0]}-200.png")`;
+    }
+    
+    setTeamName.innerText = predictionTeams[currentTeamLocation][1];
+    setTeamFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${predictionTeams[currentTeamLocation][0]}-200.png")`;
     document.getElementById(`${predictionTeams[currentTeamLocation]}SelectOption`).selected = true
+
+    if (currentTeamLocation == (predictionTeams.length - 1)) {
+        setPreviewName.innerText = predictionTeams[0][1];
+        setPreviewFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${predictionTeams[0][0]}-200.png")`;
+    }
+    else {
+        setPreviewName.innerText = predictionTeams[currentTeamLocation + 1][1];
+        setPreviewFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${predictionTeams[currentTeamLocation + 1][0]}-200.png")`;
+    }
     generateRoster()
 }
 
@@ -274,8 +328,8 @@ function dnqPlaceRowCheckImageSize(container) {
 function standardCheckImageSize(container) {
     if (container.length <= 7) {
         for (var i = 0; i < container.length; i++) {
-            container[i].style.width = "45px"
-            container[i].style.height = "32.4px"
+            container[i].style.width = "80px"
+            container[i].style.height = "70px"
         }
     } else if (container.length == 8) {
         for (var i = 0; i < container.length; i++) {
@@ -309,7 +363,8 @@ function changeFlagToLocation(number) {
     let newTierListImage = document.createElement("div")
     if (number == 33) newTierListImage.classList.add("tierListBottomRowImage")
     else newTierListImage.classList.add("tierListStandardRowImage")
-    newTierListImage.style.backgroundImage = `url('static/flags/${selectedFlag}.png')`
+    console.log(selectedFlag)
+    newTierListImage.style.backgroundImage = `url("https://osuflags.omkserver.nl/${selectedFlag[0]+selectedFlag[1]}-200.png")`
     newTierListImage.setAttribute("id",`${selectedFlag}TierListImage`)
     let imageAppendedInto;
 
