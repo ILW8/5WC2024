@@ -12,6 +12,7 @@
     --DTColour-60: rgb(14, 93, 102);
     --FMColour-60: rgb(102, 25, 74);
     --TBColour-60: rgb(14, 102, 28);
+    --white-60: rgb(102, 102, 102);
   
     --NMColour-80: rgb(34, 34, 34);
     --HDColour-80: rgb(51, 29, 7);
@@ -19,9 +20,14 @@
     --DTColour-80: rgb(7, 46, 51);
     --FMColour-80: rgb(51, 12, 37);
     --TBColour-80: rgb(7, 51, 14);
+    --white-80: rgb(51, 51, 51);
 
     --mainRed: rgb(254, 36, 86);
     --mainBlue: rgb(36, 196, 254);
+
+    --protectColour: rgb(145, 70, 255);
+    --banColour: rgb(254, 36, 86);
+    --pickColour: rgb(150, 195, 71);
 }
 
 #main { background-image: url("static/background.png"); }
@@ -170,7 +176,7 @@
 
 /* --- Card Containers --- */
 #FiveNMMapContainer { 
-    top: 10px; left: 158px; 
+    top: 30px; left: 158px; 
     width: 3580px;
 }
 .ThreeCardNormalContainer {
@@ -178,22 +184,22 @@
     width: 1680px;
     display: flex; justify-content: space-between;
 }
-#SixNMMapContainer1 { top: 10px; left: 158px; }
-#SixNMMapContainer2 { top: 10px; left: 2050px; }
-#HDMapContainer { top: 374px; left: 158px; }
-#HRMapContainer { top: 374px; left: 2050px; }
+#SixNMMapContainer1 { top: 30px; left: 158px; }
+#SixNMMapContainer2 { top: 30px; left: 2050px; }
+#HDMapContainer { top: 394px; left: 158px; }
+#HRMapContainer { top: 394px; left: 2050px; }
 .DTandFMMapContainer {
     position: absolute; left: 158px;
     width: 2285px;
     display: flex; justify-content: space-between;
 }
-#DTMapContainer { top: 737px; }
-#FMMapContainer { top: 1098px; }
+#DTMapContainer { top: 757px; }
+#FMMapContainer { top: 1118px; }
 
 /* --- Map Card Containers --- */
 .mapCard {
     position: relative;
-    height: 304px;
+    height: 264px;
     border-radius: 17px 17px 0 0;
 }
 .normalMapCard { width: 474px;  }
@@ -201,9 +207,53 @@
 .bottom3MapsMapCard { width: 658px; }
 .fm2MapsMapCard { width: 1032px; }
 #TBContainer {
-    position: absolute; top: 796px; left: 2739px;
-    width: 955px; height: 608px;
+    position: absolute; top: 836px; left: 2739px;
+    width: 955px; height: 528px;
     border-radius: 17px 17px 0 0;
+}
+
+
+/* --- Pick Ban Protect Elements --- */
+.pickBanProtectElement {
+    position: absolute; top: -46px;
+    width: inherit; height: 36px;
+    border-radius: 18px;
+    background-color: var(--pickColour);
+    box-shadow: 0 0 20px var(--pickColour);
+}
+#tiebreakerTriggeredElement {
+    top: -92px;
+    height: 72px;
+    border-radius: 36px;
+    background-color: transparent;
+    box-shadow: 0 0 20px transparent;
+}
+/* Pick Ban Protect Flag */
+.pickBanProtectFlag {
+    position: absolute; top: 50%; left: 15px; transform: translateY(-50%);
+    width: 41.5px; height: 30px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://osuflags.omkserver.nl/AU-42.png")
+}
+/* Pick Ban Protecxt Text */
+.pickBanProtectText {
+    position: absolute; left: 70px; top: 50%; transform: translateY(-40%);
+    font-size: 30px;
+    letter-spacing: 2.5px;
+}
+#tiebreakerTriggeredText {
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -40%);
+    width: max-content;
+    font-size: 60px;
+    letter-spacing: 10px;
+    text-shadow: 0 0 20px var(--TBColour-60),
+                 0 0 30px var(--TBColour-80);
+    color: var(--TBColour)
+}
+/* Pick Ban Protecxt SVG */
+.pickBanProtectSVG {
+    position: absolute; right: 15px; top: 50%; transform: translateY(-50%);
 }
 
 /* --- Map Card Rectangles --- */
@@ -222,14 +272,14 @@
 
 /* --- Map Card Images --- */
 .mapCardImage {
-    position: absolute; width: 100%; height: 200px;
+    position: absolute; width: 100%; height: 160px;
     border-radius: inherit;
     background-size: cover;
     background-position: center;
     overflow: hidden;
 }
 #tbMapCardImage {
-    height: 403px;
+    height: 320px;
 }
 .mapCardLayer {
     position: absolute; width: 100%; height: 100%;
@@ -239,7 +289,7 @@
 
 /* --- Map Card Name --- */
 .mapCardName {
-    position: relative; top: 219px;
+    position: relative; top: 179px;
     font-size: 50px;
     letter-spacing: 0.4px;
     white-space: nowrap;
@@ -248,19 +298,19 @@
     width: 100%;
 }
 #tbMapCardName {
-    top: 438px;
+    top: 358px;
     font-size: 100px;
     letter-spacing: 0.8px;
 }
 
 /* --- Map Card Difficulty --- */
 .normalMapCardDifficulty {
-    position: absolute; top: 263px;
+    position: absolute; top: 223px;
     font-size: 36px;
     letter-spacing: 1.3px;
 }
 #tbMapCardDifficulty {
-    position: absolute; top: 526px;
+    position: absolute; top: 446px;
     font-size: 72px;
     letter-spacing: 2.6px;
 }

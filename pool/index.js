@@ -41,10 +41,28 @@ const tbMapCardNameEl = document.getElementById("tbMapCardName")
 const tbMapCardDifficultyEl = document.getElementById("tbMapCardDifficulty")
 
 const containers = [FiveNMMapContainerEl, SixNMMapContainer2El, HDMapContainerEl, HRMapContainerEl, DTMapContainerEl, FMMapContainerEl]
+// Taken from font-awesome
+const svgs = {
+    protect: `<svg class="pickBanProtectSVG" xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="0 0 512 512"><path fill="#ffffff" d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0z"/></svg>`,
+    ban: `<svg class="pickBanProtectSVG" xmlns="http://www.w3.org/2000/svg" height="32" width="24" viewBox="0 0 384 512"><path fill="#ffffff" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>`,
+    pick: `<svg class="pickBanProtectSVG" xmlns="http://www.w3.org/2000/svg" height="32" width="28" viewBox="0 0 448 512"><path fill="#ffffff" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>`
+}
 
 function createMapCard(currentMap, cardClass, nameClass, container) {
     const newMapCard = document.createElement("div")
     newMapCard.classList.add("mapCard", cardClass)
+
+    const pickBanProtectElement = document.createElement("div")
+    pickBanProtectElement.classList.add("pickBanProtectElement")
+
+    const pickBanProtectFlag = document.createElement("div")
+    pickBanProtectFlag.classList.add("pickBanProtectFlag")
+
+    const pickBanProtectText = document.createElement("div")
+    pickBanProtectText.innerText = "PICK"
+    pickBanProtectText.classList.add("pickBanProtectText")
+    pickBanProtectElement.append(pickBanProtectFlag, pickBanProtectText)
+    pickBanProtectElement.innerHTML += svgs["pick"]
 
     const newMapCardRectangle = document.createElement("div")
     newMapCardRectangle.classList.add("mapCardRectangle")
@@ -71,7 +89,7 @@ function createMapCard(currentMap, cardClass, nameClass, container) {
     mapCardDifficulty.innerText = currentMap.difficultyname
 
     mapCardImage.append(mapCardImageLayer, mapCardMod)
-    newMapCard.append(newMapCardRectangle, mapCardImage, mapCardName, mapCardDifficulty)
+    newMapCard.append(pickBanProtectElement, newMapCardRectangle, mapCardImage, mapCardName, mapCardDifficulty)
     container.append(newMapCard)
 }
 
@@ -206,7 +224,6 @@ socket.onmessage = async (event) => {
 
     // Chat Stuff
     // This is also mostly taken from Victim Crasher: https://github.com/VictimCrasher/static/tree/master/WaveTournament
-        
     if (chatLen !== data.tourney.manager.chat.length) {
         (chatLen === 0 || chatLen > data.tourney.manager.chat.length) ? (chatContainer.innerHTML = "", chatLen = 0) : null;
         const fragment = document.createDocumentFragment()
