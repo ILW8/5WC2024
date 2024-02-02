@@ -352,3 +352,53 @@
 .unknown { color: yellow; }
 .left { color: var(--mainRed); }
 .right { color: var(--mainBlue); }
+
+/* ----- SIDE BAR ----- */
+#sideBar {
+    position: absolute; top: 0; left: 3840px;
+    width: 500px; height: 2160px;
+    background-color: rgb(25,23,23);
+    color: white;
+    font-family: "Coluna Rounded";
+}
+.sideBarButton {
+    width: 400px;
+    font-family: "Coluna Rounded";
+    border: 5px solid white;
+    border-radius: 37.5px;
+    background-color: transparent;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+.sideBarButton:active {
+    background-color: white;
+    color: rgb(25,23,23);
+}
+/* --- Next Action --- */
+#nextPickerSection {
+    position: absolute; top: 50px; left: 50px;
+    width: 400px;
+}
+#nextPickerText {
+    width: inherit;
+    font-size: 55px;
+}
+#nextPickerTeam {
+    font-size: 120px;
+    color: var(--mainBlue)
+}
+.nextPickerButton {
+    height: 75px;
+    margin: 10px 0;
+    line-height: 75px;
+}
+/* --- Side Bar Button --- */
+#toggleAutoPickButton {
+    position: absolute; top: 500px; left: 50px;
+    height: 200px;  
+    border-color: var(--pickColour);
+    line-height: 200px;
+}
+#toggleAutoPickButton:active { border-color: white; }
+#toggleAutoPickText { color: var(--pickColour) }
