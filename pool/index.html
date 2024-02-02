@@ -105,11 +105,11 @@
     <div id="sideBar">
         <section id="nextPickerSection">
             <div id="nextPickerText">Auto Next Picker: </div>
-            <div id="nextPickerTeam">BLUE TEAM</div>
-            <button class="sideBarButton nextPickerButton" id="nextPickerRed">Set Red Team</button>
-            <button class="sideBarButton nextPickerButton" id="nextPickerBlue">Set Blue team</button>
+            <div id="nextPickerTeam">RED TEAM</div>
+            <button class="sideBarButton nextPickerButton" id="nextPickerRed" onclick="setNextPicker('Red')">Set Red Pick</button>
+            <button class="sideBarButton nextPickerButton" id="nextPickerBlue" onclick="setNextPicker('Blue')">Set Blue Pick</button>
         </section>
-        <button class="sideBarButton" id="toggleAutoPickButton">Toggle Autopick: <span id="toggleAutoPickText">ON</span></button>
+        <button class="sideBarButton" id="toggleAutoPickButton" onclick="toggleAutoPick()">Toggle Autopick: <span id="toggleAutoPickText">OFF</span></button>
     </div>
     <script src="../shared/deps/sponsors.js"></script>
     <script src="index.js"></script>

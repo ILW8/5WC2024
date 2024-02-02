@@ -52,6 +52,7 @@ function createMapCard(currentMap, cardClass, nameClass, container) {
 	// Create new card
     const newMapCard = document.createElement("div")
     newMapCard.classList.add("mapCard", cardClass)
+    newMapCard.setAttribute("id", currentMap.beatmapID)
     newMapCard.addEventListener("click", function (event) {
 		event.preventDefault()
 		handleTeamAction(event, currentRedTeamCode, this)
@@ -188,6 +189,29 @@ allCountriesXhr.onload = function () {
 }
 allCountriesXhr.send()
 
+// Side Bar
+// Next Picker
+const nextPickerTeam = document.getElementById("nextPickerTeam")
+function setNextPicker(colour) {
+    nextPickerTeam.innerText = `${colour.toUpperCase()} TEAM`
+    nextPickerTeam.style.color = `var(--main${colour})`
+    console.log(`var(--main${colour})`)
+}
+// Toggle Autopick
+const toggleAutoPickButton = document.getElementById("toggleAutoPickButton")
+const toggleAutoPickText = document.getElementById("toggleAutoPickText")
+function toggleAutoPick() {
+    if (toggleAutoPickText.innerText == "ON") {
+        toggleAutoPickButton.style.borderColor = "var(--banColour)"
+        toggleAutoPickText.style.color = "var(--banColour)"
+        toggleAutoPickText.innerText = "OFF"
+    } else if (toggleAutoPickText.innerText == "OFF") {
+        toggleAutoPickButton.style.borderColor = "var(--pickColour)"
+        toggleAutoPickText.style.color = "var(--pickColour)"
+        toggleAutoPickText.innerText = "ON"
+    }
+}
+
 // Team Data
 const redTeamFlagEl = document.getElementById("redTeamFlag")
 const redTeamNameEl = document.getElementById("redTeamName")
@@ -209,6 +233,9 @@ let currentBlueStars = 0
 // Chat 
 const chatContainer = document.getElementById("chatContainer")
 let chatLen
+
+// Map Changes
+let beatmapID
 
 socket.onmessage = async (event) => {
     const data = JSON.parse(event.data)
@@ -329,5 +356,22 @@ socket.onmessage = async (event) => {
         chatContainer.append(fragment)
         chatLen = data.tourney.manager.chat.length;
         chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+
+    if (beatmapID !== data.menu.bm.id && data.menu.bm.id !== 0) { 
+        beatmapID = data.menu.bm.id
+
+        const targetElement = document.getElementById(`${beatmapID}`);
+
+        if (document.contains(targetElement) && toggleAutoPickText.innerText == "ON") {
+            if (nextPickerTeam.innerText == "RED TEAM") {
+                targetElement.click()
+                setNextPicker('Blue')
+            } else if (nextPickerTeam.innerText == "BLUE TEAM") {
+                const contextMenuEvent = new Event('contextmenu');
+                targetElement.dispatchEvent(contextMenuEvent)
+                setNextPicker('Red')
+            }
+        }
     }
 }

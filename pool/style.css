@@ -386,7 +386,7 @@
 }
 #nextPickerTeam {
     font-size: 120px;
-    color: var(--mainBlue)
+    color: var(--mainRed)
 }
 .nextPickerButton {
     height: 75px;
@@ -397,8 +397,7 @@
 #toggleAutoPickButton {
     position: absolute; top: 500px; left: 50px;
     height: 200px;  
-    border-color: var(--pickColour);
+    border-color: var(--banColour);
     line-height: 200px;
 }
-#toggleAutoPickButton:active { border-color: white; }
-#toggleAutoPickText { color: var(--pickColour) }
+#toggleAutoPickText { color: var(--banColour) }
