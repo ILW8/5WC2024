@@ -401,3 +401,6 @@
     line-height: 200px;
 }
 #toggleAutoPickText { color: var(--banColour) }
+
+/* ----- SCROLLBAR -----*/
+::-webkit-scrollbar { display: none; }
