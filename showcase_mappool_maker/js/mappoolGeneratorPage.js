@@ -15,6 +15,24 @@ function mappoolGeneratorPageDisplay(modAbb, modNum) {
     mappoolGeneratorPage.style.display = "block";
     mappoolTemplateGeneratorPage.style.display = "none";
 
+    let modHeader = document.createElement("h1");
+    modHeader.innerText = "Round name"; 
+    modHeader.setAttribute("class","mappoolGeneratorPageModHeader");
+    mappoolGeneratorPage.append(modHeader)
+
+    const wrapperRound = document.createElement("div");
+    wrapperRound.setAttribute("class","mappoolGeneratorPageWrapper");
+    wrapperRound.style.display = "flex";
+    wrapperRound.style.justifyContent = "center";
+
+    const roundName = document.createElement("input")
+    roundName.setAttribute("id", "roundName")
+    roundName.setAttribute("placeholder", "Round of 64")
+    roundName.classList.add("poolGenerator")
+    roundName.style.textAlign = "center"
+    wrapperRound.append(roundName)
+    mappoolGeneratorPage.append(wrapperRound)
+
     // Make a div for the buttons below
     let indivInputsDiv = document.createElement("div");
     indivInputsDiv.classList.add("mappoolGeneratorPageButtonDiv")
@@ -33,11 +51,17 @@ function mappoolGeneratorPageDisplay(modAbb, modNum) {
     textAreaDiv.append(textAreaBox);
     mappoolGeneratorPage.append(textAreaDiv);
 
+    // API Key
+    const wrapperAPI = document.createElement("div");
+    wrapperAPI.setAttribute("class","mappoolGeneratorPageWrapper");
+    wrapperAPI.style.display = "flex";
+    wrapperAPI.style.justifyContent = "center";
+
     let apiKeyInput = document.createElement("input")
     apiKeyInput.setAttribute("id", "apiKeyInput")
     apiKeyInput.setAttribute("placeholder", "API Key")
-    apiKeyInput.classList.add("templateContentPosition")
-    textAreaDiv.append(apiKeyInput)
+    wrapperAPI.append(apiKeyInput)
+    mappoolGeneratorPage.append(wrapperAPI)
 
     // Previous Page Button
     let previousPageButton = generatePreviousPageButton("backToMappoolModGeneratorPage()");
@@ -136,7 +160,12 @@ function turnIntoJSONAndDownload(mapIDArray, mapReplayArray, modIDArray) {
 
     for (var i = 0; i < mapIDArray.length; i++) requestMapData(mapIDArray[i], apiKey, modIDArray[i], mapReplayArray[i])
 
-    const mappoolDL = "data:text/json;charset=utf-8,"+encodeURIComponent(JSON.stringify(beatmaps));
+    const json = {
+        roundName: document.getElementById("roundName").value.trim(),
+        beatmaps: beatmaps
+    }
+
+    const mappoolDL = "data:text/json;charset=utf-8,"+encodeURIComponent(JSON.stringify(json));
     let mappoolAnchorElem = document.createElement("a");
     mappoolAnchorElem.setAttribute("id", "downloadMappool");
     mappoolAnchorElem.setAttribute("href", mappoolDL);
@@ -193,12 +222,12 @@ function requestMapData(mapid, api, modid, replay) {
                 singleMap.mapper = map.creator
                 singleMap.modid = modid
                 singleMap.replayer = replay
-                singleMap.sr = map.difficultyrating
-                singleMap.cs = map.diff_size
-                singleMap.ar = map.diff_approach
-                singleMap.od = map.diff_overall
-                singleMap.bpm = map.bpm
-                singleMap.len = map.total_length
+                singleMap.sr = parseFloat(map.difficultyrating)
+                singleMap.cs = parseFloat(map.diff_size)
+                singleMap.ar = parseFloat(map.diff_approach)
+                singleMap.od = parseFloat(map.diff_overall)
+                singleMap.bpm = parseFloat(map.bpm)
+                singleMap.len = parseFloat(map.total_length)
                 if (mapMod.includes("dt")) {
                     singleMap.bpm = map.bpm * 1.5
                     if (map.diff_approach <= 5) {singleMap.ar = (1800-((1800 - map.diff_approach)*2/3))/120;}
