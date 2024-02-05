@@ -7,6 +7,10 @@
 
     <link rel="stylesheet" href="../shared/shared.css">
     <link rel="stylesheet" href="style.css">
+
+    <script src="../shared/deps/countUp.js"></script>
+    <script src="../shared/deps/reconnecting-websocket.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
 </head>
 <body>
     <div id="main">
@@ -30,10 +34,17 @@
 
             <img id="logo" src="../shared/static/logo.png">
         </section>
+        <section id="bottom">
+            <div id="line"></div>
+            <div id="chatRectangle"></div>
+            <div id="chatText">CHAT</div>
+            <div id="chatContainer">
+                <div class="chatContainer" id="tournamentChatContainer"></div>
+                <div class="chatContainer" id="twitchChatContainer"></div>
+            </div>
+        </section>
     </div>
 
-    <script src="../shared/deps/countUp.js"></script>
-    <script src="../shared/deps/reconnecting-websocket.min.js"></script>
     <script src="index.js"></script>
 </body>
 </html>

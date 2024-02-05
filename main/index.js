@@ -76,6 +76,14 @@ let currentBlueStars = 0
 // Map Changes
 let beatmapID
 
+// Chat 
+const chatContainer = document.getElementById("chatContainer")
+const tournamentChatContainer = document.getElementById("tournamentChatContainer")
+let chatLen
+
+// Score visibility
+let scoreVisible
+
 socket.onmessage = async (event) => {
     const data = JSON.parse(event.data)
     console.log(data)
@@ -139,4 +147,109 @@ socket.onmessage = async (event) => {
         createStarImages(redTeamStarsEl, currentRedStars, currentFirstTo, "red_star.png", "white_star.png")
         createStarImages(blueTeamStarsEl, currentFirstTo - currentBlueStars, currentFirstTo, "white_star.png", "blue_star.png")
     }
+
+    // Score visibility
+    if (scoreVisible !== data.tourney.manager.bools.scoreVisible) {
+        scoreVisible = data.tourney.manager.bools.scoreVisible
+
+        if (scoreVisible) {
+            chatContainer.style.width = "610px";
+            twitchChatContainer.style.opacity = 1
+            tournamentChatContainer.style.opacity = 0
+        } else {
+            chatContainer.style.width = "1220px";
+            twitchChatContainer.style.opacity = 0
+            tournamentChatContainer.style.opacity = 1
+        }
+    }
+
+    // Chat Stuff
+    // This is also mostly taken from Victim Crasher: https://github.com/VictimCrasher/static/tree/master/WaveTournament
+    if (scoreVisible) {
+
+    } else {
+        if (chatLen !== data.tourney.manager.chat.length) {
+            (chatLen === 0 || chatLen > data.tourney.manager.chat.length) ? (tournamentChatContainer.innerHTML = "", chatLen = 0) : null;
+            const fragment = document.createDocumentFragment()
+    
+            for (let i = chatLen; i < data.tourney.manager.chat.length; i++) {
+                const chatColour = data.tourney.manager.chat[i].team
+    
+                // Chat message container
+                const chatMessageContainer = document.createElement("div")
+                chatMessageContainer.classList.add("chatMessageContainer")
+    
+                // Time
+                const chatDisplayTime = document.createElement("div")
+                chatDisplayTime.classList.add("chatDisplayTime")
+                chatDisplayTime.innerText = data.tourney.manager.chat[i].time
+    
+                // Whole Message
+                const chatDisplayWholeMessage = document.createElement("div")
+                chatDisplayWholeMessage.classList.add("chatDisplayWholeMessage")  
+                
+                // Name
+                const chatDisplayName = document.createElement("span")
+                chatDisplayName.classList.add("chatDisplayName", chatColour)
+                chatDisplayName.innerText = data.tourney.manager.chat[i].name + ": "
+    
+                // Message
+                const chatDisplayMessage = document.createElement("span")
+                chatDisplayMessage.classList.add("chatDisplayMessage")
+                chatDisplayMessage.innerText = data.tourney.manager.chat[i].messageBody
+    
+                chatDisplayWholeMessage.append(chatDisplayName, chatDisplayMessage)
+                chatMessageContainer.append(chatDisplayTime, chatDisplayWholeMessage)
+                fragment.append(chatMessageContainer)
+            }
+    
+            tournamentChatContainer.append(fragment)
+            chatLen = data.tourney.manager.chat.length;
+            tournamentChatContainer.scrollTop = tournamentChatContainer.scrollHeight;
+        }
+    }
 }
+
+// Twitch Chat
+const twitchChatContainer = document.getElementById("twitchChatContainer")
+const badgeTypes = ["broadcaster", "mod", "vip", "founder", "subscriber"]
+ComfyJS.onChat = ( user, message, flags, self, extra ) => {
+    // Set up message container
+    const twitchChatMessageContainer = document.createElement("div")
+    twitchChatMessageContainer.classList.add("chatMessageContainer", "twitchChatMessageContainer")
+
+    // Flags
+    const flagIconsContainer = document.createElement("div")
+    flagIconsContainer.classList.add("flagIconsContainer")
+
+    // Individual flags
+    badgeTypes.forEach(badgeType => {
+        if (flags[badgeType]) {
+            const flagImage = document.createElement("img")
+            flagImage.classList.add("flagImage")
+            flagImage.setAttribute("src", `../shared/static/twitch_badges/${badgeType}.png`)
+            flagIconsContainer.append(flagImage)
+        }
+    })
+
+    // Only append flagIconsContainer if it has child elements
+    if (flagIconsContainer.childElementCount > 0) {
+        twitchChatMessageContainer.append(flagIconsContainer)
+    }
+
+    // Message user
+    const messageUser = document.createElement("div")
+    messageUser.classList.add("messageDetail", "messageUser")
+    messageUser.innerText = `${user}:`
+
+    // Message
+    const chatMessage = document.createElement("div")
+    chatMessage.classList.add("messageDetail", "chatMessage")
+    chatMessage.innerText = message
+
+    // Append everything together
+    twitchChatMessageContainer.append(messageUser, chatMessage)
+    twitchChatContainer.append(twitchChatMessageContainer)
+    twitchChatContainer.scrollTop = twitchChatContainer.scrollHeight
+}
+ComfyJS.Init("stagetournaments")

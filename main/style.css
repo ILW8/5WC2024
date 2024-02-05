@@ -63,3 +63,65 @@
     position: absolute; top: 88px; right: 86px;
     width: 400px;
 }
+
+/* ----- BOTTOM SECTION ----- */
+#bottom {
+    height: 425px;
+}
+/* --- Chat --- */
+#chatContainer {
+    height: 370px;
+    transition: 500ms ease-in-out;
+}
+.chatContainer {
+    position: absolute; top: 0; left: 0;
+    width: inherit; height: inherit;
+    transition: 500ms ease-in-out;
+}
+#tournamentChatContainer { opacity: 1; }
+#twitchChatContainer { opacity: 0; }
+.chatMessageContainer {
+    margin-left: 50px;
+    margin-top: 7.5px;
+    margin-bottom: 5.5px;
+    font-size: 36px;
+}
+.chatDisplayTime {
+    color: darkgray;
+    width: 11%;
+}
+.chatDisplayWholeMessage { width: 89%; }
+.chatDisplayMessage {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+.bot { color: hotpink;}
+.unknown { color: yellow; }
+.left { color: var(--mainRed); }
+.right { color: var(--mainBlue); }
+
+/* Twitch Chat */
+.twitchChatMessageContainer {
+    margin-left: 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.flagIconsContainer { display: flex; }
+.flagImage {
+    width: 40px; height: 40px;
+    margin-right: 10px;
+}
+.messageDetail {
+    line-height: 40px;
+    font-size: 35px;
+    letter-spacing: 2px;
+}
+.messageUser {
+    color:rgb(255, 145, 170);
+    margin-right: 20px;
+}
+.chatMessage {
+    color: white;
+    letter-spacing: 2px;
+}
