@@ -9,6 +9,7 @@ socket.onerror = error => { console.log("Socket Error: ", error) }
 const nowPlayingMapSlide = document.getElementById("nowPlayingMapSlide")
 let allMapSlots = nowPlayingMapSlide.children
 let showcaseMaps
+let showcaseMapsArray
 let currentMapSlot = 0
 let toMapSlot = 0
 let mapSlotDifference = 0
@@ -20,18 +21,22 @@ const getMaps = new Promise(async resolve => {
     xhr.open("GET", `http://127.0.0.1:24050/5WC2024/_data/showcaseBeatmaps.json`, false)
     xhr.onload = function () {
         if (this.status == 404) return
-        if (this.status == 200) showcaseMaps = JSON.parse(this.responseText)
+        if (this.status == 200) {
+            showcaseMaps = JSON.parse(this.responseText)
+            document.getElementById("roundName").innerText = showcaseMaps.roundName
+            showcaseMapsArray = showcaseMaps.beatmaps
+        }
     }
     xhr.send()
-    resolve(showcaseMaps)
+    resolve(showcaseMapsArray)
 })
-getMaps.then(showcaseMaps => {
-    for (let i = 0; i < showcaseMaps.length; i++) {
+getMaps.then(showcaseMapsArray => {
+    for (let i = 0; i < showcaseMapsArray.length; i++) {
         const newMapTitle = document.createElement("div")
-        const newSongName = showcaseMaps[i].songName.replace(/ /g, "_")
-        const newSongDifficulty = showcaseMaps[i].difficulty.replace(/ /g, "_")
+        const newSongName = showcaseMapsArray[i].songName.replace(/ /g, "_")
+        const newSongDifficulty = showcaseMapsArray[i].difficulty.replace(/ /g, "_")
         newMapTitle.setAttribute("id", `${newSongName}_${newSongDifficulty}`)
-        newMapTitle.innerText = showcaseMaps[i].modid.toUpperCase()
+        newMapTitle.innerText = showcaseMapsArray[i].modid.toUpperCase()
         
         if (i == 0) newMapTitle.classList.add("mapSlideCurrent")
         else if (i == 1) newMapTitle.classList.add("mapSlideRight")

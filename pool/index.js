@@ -14,6 +14,7 @@ mapDataXhr.onload = function () {
     if (this.status == 404) return
     if (this.status == 200) {
         mapData = JSON.parse(this.responseText)
+        document.cookie = `currentRound=${mapData.roundName}; path=/`
         beatmapsData = mapData.beatmaps
         modOrderData = mapData.modOrder
     }
@@ -173,6 +174,10 @@ function handleTeamAction(event, teamCode, element) {
 	pickBanProtectElement.children[1].innerText = pickBanProtectString.toUpperCase()
 	if (pickBanProtectElement.childElementCount > 2) pickBanProtectElement.children[2].remove()
 	pickBanProtectElement.innerHTML += svgs[pickBanProtectString]
+
+    // Set cookie
+    if (teamCode === currentRedTeamCode) document.cookie = "currentTeamPick=red; path=/"
+    else document.cookie = "currentTeamPick=blue; path=/"
 }
 
 // Load country data
@@ -191,7 +196,6 @@ const nextPickerTeam = document.getElementById("nextPickerTeam")
 function setNextPicker(colour) {
     nextPickerTeam.innerText = `${colour.toUpperCase()} TEAM`
     nextPickerTeam.style.color = `var(--main${colour})`
-    console.log(`var(--main${colour})`)
 }
 // Toggle Autopick
 const toggleAutoPickButton = document.getElementById("toggleAutoPickButton")
