@@ -15,3 +15,128 @@ function getCookie(cname) {
     }
     return "";
 }
+
+// Socket Events
+// Credits: VictimCrasher - https://github.com/VictimCrasher/static/tree/master/WaveTournament
+const socket = new ReconnectingWebSocket("ws://" + location.host + "/ws")
+socket.onopen = () => { console.log("Successfully Connected") }
+socket.onclose = event => { console.log("Socket Closed Connection: ", event); socket.send("Client Closed!") }
+socket.onerror = error => { console.log("Socket Error: ", error) }
+
+// Load Mappool
+let mapData
+let beatmapsData
+let modOrderData
+let mapDataXhr = new XMLHttpRequest()
+mapDataXhr.open("GET", "http://127.0.0.1:24050/5WC2024/_data/beatmaps.json", false)
+mapDataXhr.onload = function () {
+    if (this.status == 404) return
+    if (this.status == 200) {
+        mapData = JSON.parse(this.responseText)
+        document.cookie = `currentRound=${mapData.roundName}; path=/`
+        beatmapsData = mapData.beatmaps
+        modOrderData = mapData.modOrder
+    }
+}
+mapDataXhr.send()
+
+// Set mappool
+let allBeatmaps = []
+for (let i = 0; i < modOrderData.length; i++) allBeatmaps[i] = beatmapsData.filter(map => map.mod == modOrderData[i])
+for (let i = 0; i < allBeatmaps.length; i++) allBeatmaps[i].sort((map1, map2) => map1.order - map2.order)
+
+// Load country data
+let allCountries
+let allCountriesXhr = new XMLHttpRequest()
+allCountriesXhr.open("GET", "http://127.0.0.1:24050/5WC2024/_data/countries.json", false)
+allCountriesXhr.onload = function () {
+    if (this.status == 404) return
+    if (this.status == 200) allCountries = JSON.parse(this.responseText)
+}
+allCountriesXhr.send()
+
+// Team Data
+const redTeamFlagEl = document.getElementById("redTeamFlag")
+const redTeamNameEl = document.getElementById("redTeamName")
+const blueTeamNameEl = document.getElementById("blueTeamName")
+const blueTeamFlagEl = document.getElementById("blueTeamFlag")
+let currentRedTeam, currentBlueTeam
+let currentRedTeamCode, currentBlueTeamCode
+
+// Team Stars
+const redTeamStarsEl = document.getElementById("redTeamStars")
+const teamMiddleStarLeftEl = document.getElementById("teamMiddleStarLeft")
+const blueTeamStarsEl = document.getElementById("blueTeamStars")
+const teamMiddleStarRightEl = document.getElementById("teamMiddleStarRight")
+let currentBestOf = 0
+let currentFirstTo = 0
+let currentRedStars = 0
+let currentBlueStars = 0
+
+// Map Changes
+let beatmapID
+
+socket.onmessage = async (event) => {
+    const data = JSON.parse(event.data)
+    console.log(data)
+
+    // Update team data
+    function updateTeamData(teamFlagEl, teamNameEl, currentTeam) {
+        teamNameEl.innerText = currentTeam
+    
+        // Check if team name is anything
+        if (currentTeam === "") {
+            teamFlagEl.style.display = "none"
+            return
+        }
+
+        // Check for ISO country code
+        for (let i = 0; i < allCountries.length; i++) {
+            if (currentTeam.toLowerCase() === allCountries[i].name.toLowerCase()) {
+                teamFlagEl.style.display = "block"
+                if (currentTeam == currentRedTeam) currentRedTeamCode = allCountries[i].code
+                else if (currentTeam == currentBlueTeam) currentBlueTeamCode = allCountries[i].code
+                teamFlagEl.style.backgroundImage = `url("https://osuflags.omkserver.nl/${allCountries[i].code}-181.png")`
+                break
+            }
+        }
+    }
+    // Update red and blue teams
+    if (currentRedTeam !== data.tourney.manager.teamName.left) {
+        currentRedTeam = data.tourney.manager.teamName.left
+        updateTeamData(redTeamFlagEl, redTeamNameEl, currentRedTeam)
+    }
+    if (currentBlueTeam !== data.tourney.manager.teamName.right) {
+        currentBlueTeam = data.tourney.manager.teamName.right
+        updateTeamData(blueTeamFlagEl, blueTeamNameEl, currentBlueTeam)
+    }
+
+    // Update star information
+    if (currentBestOf !== data.tourney.manager.bestOF ||
+        currentRedStars !== data.tourney.manager.stars.left ||
+        currentBlueStars !== data.tourney.manager.stars.right) {
+
+		// Set star information
+        currentBestOf = data.tourney.manager.bestOF
+        currentFirstTo = Math.ceil(currentBestOf / 2)
+        currentRedStars = data.tourney.manager.stars.left
+        currentBlueStars = data.tourney.manager.stars.right
+
+        // Middle elements
+        teamMiddleStarLeftEl.innerText = currentRedStars
+        teamMiddleStarRightEl.innerText = currentBlueStars
+        redTeamStarsEl.innerHTML = ""
+
+        // Create star images
+        function createStarImages(starElement, start, end, leftStarSrc, rightStarSrc) {
+            starElement.innerHTML = ""
+            for (let i = 0; i < end; i++) {
+                const starImage = document.createElement("img");
+                starImage.setAttribute("src", `static/${i < start ? leftStarSrc : rightStarSrc}`);
+                starElement.append(starImage)
+            }
+        }
+        createStarImages(redTeamStarsEl, currentRedStars, currentFirstTo, "red_star.png", "white_star.png")
+        createStarImages(blueTeamStarsEl, currentFirstTo - currentBlueStars, currentFirstTo, "white_star.png", "blue_star.png")
+    }
+}
