@@ -13,7 +13,7 @@ let currentMapSlot = 0
 let toMapSlot = 0
 let mapSlotDifference = 0
 let animTime
-const sleep = ms => new Promise(res => setTimeout(res, ms))
+const directions = ["InvisibleLeft", "ExtremeLeft", "Left", "Current", "Right", "InvisibleRight"]
 
 const getMaps = new Promise(async resolve => {
     const xhr = new XMLHttpRequest()
@@ -41,7 +41,7 @@ getMaps.then(showcaseMaps => {
 })
 
 // Current map
-let currentSongTitle, currentSongDifficulty
+let currentSongTitle, currentSongDifficulty, currentMd5
 let isMapFound = false
 const replayerEl = document.getElementById("replayer")
 const nowPlayingMapEl = document.getElementById("nowPlayingMap")
@@ -78,9 +78,10 @@ socket.onmessage = async (event) => {
     const data = JSON.parse(event.data)
     console.log(data)
 
-    if (currentSongTitle !== data.menu.bm.metadata.title || currentSongDifficulty !== data.menu.bm.metadata.difficulty) {
+    if (currentSongTitle !== data.menu.bm.metadata.title || currentMd5 !== data.menu.bm.md5) {
         currentSongTitle = data.menu.bm.metadata.title
         currentSongDifficulty = data.menu.bm.metadata.difficulty
+        currentMd5 = data.menu.bm.md5
         isMapFound = false
 
         // set background image
@@ -132,43 +133,25 @@ socket.onmessage = async (event) => {
         // Calculate difference between number of slots
         mapSlotDifference = Math.abs(currentMapSlot - toMapSlot)
 
-        // Moving to next maps
+        // Moving to next maps in carousel
+        function animateMapSlot(searchMap, classesToRemove, classesToAdd) {
+            if (document.body.contains(searchMap)) {
+                searchMap.classList.remove(classesToRemove)
+                classesToAdd.forEach(classAdd => searchMap.classList.add(classAdd))
+                searchMap.style.animationDuration = `${animTime}ms`
+            }
+        }
         if (currentMapSlot < toMapSlot) {
             for (let i = 0; i < mapSlotDifference; i++) {
                 removeAnimationClasses()
                 animTime = Math.round(1000 / Math.abs(currentMapSlot - toMapSlot))
 
-                let searchMap = allMapSlots[currentMapSlot - 2]
-                if (document.body.contains(searchMap)) {
-                    searchMap.classList.remove("mapSlideExtremeLeft")
-                    searchMap.classList.add("fromExtremeLeftToInvisibleLeft", "mapSlideInvisibleLeft")
-                    searchMap.style.animationDuration = `${animTime}ms`
-                }
+                for (let j = -2; j <= 2; j++) {
+                    const searchMap = allMapSlots[currentMapSlot + j]
+                    const fromClass = `mapSlide${directions[j + 3]}`
+                    const toClasses = [`from${directions[j + 3]}To${directions[j + 2]}`, `mapSlide${directions[j + 2]}`]
 
-                searchMap = allMapSlots[currentMapSlot - 1]
-                if (document.body.contains(searchMap)) {
-                    searchMap.classList.remove("mapSlideLeft")
-                    searchMap.classList.add("fromLeftToExtremeLeft", "mapSlideExtremeLeft")
-                    searchMap.style.animationDuration = `${animTime}ms`
-                }
-
-                searchMap = allMapSlots[currentMapSlot]
-                searchMap.classList.remove("mapSlideCurrent")
-                searchMap.classList.add("fromCurrentToLeft", "mapSlideLeft")
-                searchMap.style.animationDuration = `${animTime}ms`
-
-                searchMap = allMapSlots[currentMapSlot + 1]
-                if (document.body.contains(searchMap)) {
-                    searchMap.classList.remove("mapSlideRight")
-                    searchMap.classList.add("fromRightToCurrent", "mapSlideCurrent")
-                    searchMap.style.animationDuration = `${animTime}ms`
-                }
-
-                searchMap = allMapSlots[currentMapSlot + 2]
-                if (document.body.contains(searchMap)) {
-                    searchMap.classList.remove("mapSlideInvisibleRight")
-                    searchMap.classList.add("fromInvisibleRightToRight", "mapSlideRight")
-                    searchMap.style.animationDuration = `${animTime}ms`
+                    animateMapSlot(searchMap, fromClass, toClasses)
                 }
 
                 await sleep(animTime)
@@ -179,37 +162,12 @@ socket.onmessage = async (event) => {
                 removeAnimationClasses()
                 animTime = Math.round(1000 / Math.abs(currentMapSlot - toMapSlot))
 
-                let searchMap = allMapSlots[currentMapSlot + 1]
-                if (document.body.contains(searchMap)) {
-                    searchMap.classList.remove("mapSlideRight")
-                    searchMap.classList.add("fromRightToInvisibleRight", "mapSlideInvisibleRight")
-                    searchMap.style.animationDuration = `${animTime}ms`
-                }
+                for (let j = 1; j >= -3; j--) {
+                    const searchMap = allMapSlots[currentMapSlot + j]
+                    const fromClass = `mapSlide${directions[directions.length - 3 + j]}`
+                    const toClasses = [`from${directions[directions.length - 3 + j]}To${directions[directions.length - 2 + j]}`, `mapSlide${directions[directions.length - 2 + j]}`]
 
-                searchMap = allMapSlots[currentMapSlot]
-                searchMap.classList.remove("mapSlideCurrent")
-                searchMap.classList.add("fromCurrentToRight", "mapSlideRight")   
-                searchMap.style.animationDuration = `${animTime}ms`
-                
-                searchMap = allMapSlots[currentMapSlot - 1]
-                if (document.body.contains(searchMap)) {
-                    searchMap.classList.remove("mapSlideLeft")
-                    searchMap.classList.add("fromLeftToCurrent", "mapSlideCurrent")
-                    searchMap.style.animationDuration = `${animTime}ms`
-                }
-
-                searchMap = allMapSlots[currentMapSlot - 2]
-                if (document.body.contains(searchMap)) {
-                    searchMap.classList.remove("mapSlideExtremeLeft")
-                    searchMap.classList.add("fromExtremeLeftToLeft", "mapSlideLeft")
-                    searchMap.style.animationDuration = `${animTime}ms`
-                }
-
-                searchMap = allMapSlots[currentMapSlot - 3]
-                if (document.body.contains(searchMap)) {
-                    searchMap.classList.remove("mapSlideInvisibleLeft")
-                    searchMap.classList.add("fromInvisibleLeftToExtremeLeft", "mapSlideExtremeLeft")
-                    searchMap.style.animationDuration = `${animTime}ms`
+                    animateMapSlot(searchMap, fromClass, toClasses)
                 }
 
                 await sleep(animTime)
@@ -304,18 +262,12 @@ function nowPlayingDetailTextSlide(element) {
 
 // Remove All Animation Classes
 function removeAnimationClasses() {
-    new Promise((resolve, reject) => {
+    new Promise((resolve) => {
         for (let i = 0; i < allMapSlots.length; i++) {
-            allMapSlots[i].classList.remove("fromInvisibleLeftToExtremeLeft")
-            allMapSlots[i].classList.remove("fromExtremeLeftToLeft")
-            allMapSlots[i].classList.remove("fromLeftToCurrent")
-            allMapSlots[i].classList.remove("fromCurrentToRight")
-            allMapSlots[i].classList.remove("fromRightToInvisibleRight")
-            allMapSlots[i].classList.remove("fromExtremeLeftToInvisibleLeft")
-            allMapSlots[i].classList.remove("fromLeftToExtremeLeft")
-            allMapSlots[i].classList.remove("fromCurrentToLeft")
-            allMapSlots[i].classList.remove("fromRightToCurrent")
-            allMapSlots[i].classList.remove("fromInvisibleRightToRight")
+            for (let j = 0; j < directions.length - 1; j++) {
+                allMapSlots[i].classList.remove(`from${directions[j]}To${directions[j + 1]}`)
+                allMapSlots[i].classList.remove(`from${directions[j + 1]}To${directions[j]}`)
+            }
         }
         resolve(showcaseMaps)
     })
