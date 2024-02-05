@@ -1,5 +1,6 @@
 :root {
     --mainRed: rgb(254, 36, 86);
+    --mainBlue: rgb(36, 196, 254);
 }
 
 @font-face {

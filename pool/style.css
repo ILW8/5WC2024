@@ -22,9 +22,6 @@
     --TBColour-80: rgb(7, 51, 14);
     --white-80: rgb(51, 51, 51);
 
-    --mainRed: rgb(254, 36, 86);
-    --mainBlue: rgb(36, 196, 254);
-
     --protectColour: rgb(145, 70, 255);
     --banColour: rgb(254, 36, 86);
     --pickColour: rgb(150, 195, 71);
@@ -79,15 +76,13 @@
 .teamLeftDetail { left: 212px; }
 .teamRightDetail { right: 212px; }
 #redTeamBar { background-color: var(--mainRed); }
-#blueTeamBar {
-    right: 212px;
-    background-color: var(--mainBlue);
-}
+#blueTeamBar { background-color: var(--mainBlue); }
 /* Team Name */
 .teamName {
     position: absolute; top: 28px; 
     font-size: 63px;
     letter-spacing: 2px;
+    text-wrap: nowrap;
 }
 /* Team Stars */
 .teamStars { position: absolute; top: 97px; }

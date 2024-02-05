@@ -1,1 +1,65 @@
 #main { background-image: url("static/background.png"); }
+
+/* ----- TOP SECTION ----- */
+/* --- Round Name --- */
+#roundName {
+    position: absolute; top: 105px; left: 165px;
+    font-size: 95px;
+}
+/* --- Team Sections --- */
+/* Team Section */
+.teamSection {
+    position: absolute; top: 64px;
+    width: 550px; height: 125px;
+}
+#redTeam { left: 750px; }
+#blueTeam { right: 750px; }
+/* Team Flag */
+.teamFlag {
+    width: 237px; height: 171PX;
+    border-radius: 27px;
+    background-position: center;
+    background-size: cover;
+}
+#blueTeamFlag { position: absolute; top: 0; right: 0; }
+/* Team Bar */
+.teamBar {
+    position: absolute; top: 6px;
+    width: 252px; height: 27px;
+    border-radius: 27px;
+}
+.teamLeftDetail { left: 269px; }
+.teamRightDetail { right: 269px; }
+#redTeamBar { background-color: var(--mainRed); }
+#blueTeamBar { background-color: var(--mainBlue); }
+/* Team Name */
+.teamName {
+    position: absolute; top: 46px;
+    font-size: 79px;
+    letter-spacing: 0.2px;
+    text-wrap: nowrap;
+}
+/* Team Stars */
+.teamStars { 
+    display: flex;
+    position: absolute; top: 144px; 
+}
+.teamStars > * { 
+    margin-right: 17.1px;
+    width: 28.8px; height: 27px;
+}
+#blueTeamStars > * {
+    margin-left: 17.1px;
+    margin-right: 0;
+}
+/* --- Middle Score --- */
+#teamMiddleStar {
+    position: absolute; top: 80px; left: 50%; transform:translateX(-50%);
+    font-size: 140px;
+}
+#teamMiddleStarDash { margin: 0 180px; }
+/* --- Logo --- */
+#logo {
+    position: absolute; top: 88px; right: 86px;
+    width: 400px;
+}
