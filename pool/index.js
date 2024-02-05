@@ -5,27 +5,23 @@ socket.onopen = () => { console.log("Successfully Connected") }
 socket.onclose = event => { console.log("Socket Closed Connection: ", event); socket.send("Client Closed!") }
 socket.onerror = error => { console.log("Socket Error: ", error) }
 
-// Load mappool data
-let modOrder
-let modOrderXhr = new XMLHttpRequest()
-modOrderXhr.open("GET", "http://127.0.0.1:24050/5WC2024/_data/modOrder.json", false)
-modOrderXhr.onload = function () {
+let mapData
+let beatmapsData
+let modOrderData
+let mapDataXhr = new XMLHttpRequest()
+mapDataXhr.open("GET", "http://127.0.0.1:24050/5WC2024/_data/beatmaps.json", false)
+mapDataXhr.onload = function () {
     if (this.status == 404) return
-    if (this.status == 200) modOrder = JSON.parse(this.responseText)
+    if (this.status == 200) {
+        mapData = JSON.parse(this.responseText)
+        beatmapsData = mapData.beatmaps
+        modOrderData = mapData.modOrder
+    }
 }
-modOrderXhr.send()
-
-let allMaps
-let allMapsXhr = new XMLHttpRequest()
-allMapsXhr.open("GET", "http://127.0.0.1:24050/5WC2024/_data/beatmaps.json", false)
-allMapsXhr.onload = function () {
-    if (this.status == 404) return
-    if (this.status == 200) allMaps = JSON.parse(this.responseText)
-}
-allMapsXhr.send()
+mapDataXhr.send()
 
 let allBeatmaps = []
-for (let i = 0; i < modOrder.length; i++) allBeatmaps[i] = allMaps.filter(x => x.mod.toLowerCase() == modOrder[i].toLowerCase())
+for (let i = 0; i < modOrderData.length; i++) allBeatmaps[i] = beatmapsData.filter(map => map.mod == modOrderData[i])
 // sort maps by order
 for (let i = 0; i < allBeatmaps.length; i++) allBeatmaps[i].sort((map1, map2) => map1.order - map2.order)
 
@@ -288,32 +284,17 @@ socket.onmessage = async (event) => {
         teamMiddleStarRightEl.innerText = currentBlueStars
         redTeamStarsEl.innerHTML = ""
 
-		// Set star images
-		// Red Team
-        let i
-        for (i = 0; i < currentRedStars; i++) {
-            const starImage = document.createElement("img")
-            starImage.setAttribute("src", "static/red_star.png")
-            redTeamStarsEl.append(starImage)
+        // Create star images
+        function createStarImages(starElement, start, end, leftStarSrc, rightStarSrc) {
+            starElement.innerHTML = ""
+            for (let i = 0; i < end; i++) {
+                const starImage = document.createElement("img");
+                starImage.setAttribute("src", `static/${i < start ? leftStarSrc : rightStarSrc}`);
+                starElement.append(starImage)
+            }
         }
-        for (i; i < currentFirstTo; i++) {
-            const starImage = document.createElement("img")
-            starImage.setAttribute("src", "static/white_star.png")
-            redTeamStarsEl.append(starImage)
-        }
-
-		// Blue Team
-        blueTeamStarsEl.innerHTML = ""
-        for (i = 0; i < currentFirstTo - currentBlueStars; i++) {
-            const starImage = document.createElement("img")
-            starImage.setAttribute("src", "static/white_star.png")
-            blueTeamStarsEl.append(starImage)
-        }
-        for (i; i < currentFirstTo; i++) {
-            const starImage = document.createElement("img")
-            starImage.setAttribute("src", "static/blue_star.png")
-            blueTeamStarsEl.append(starImage)
-        }
+        createStarImages(redTeamStarsEl, currentRedStars, currentFirstTo, "red_star.png", "white_star.png")
+        createStarImages(blueTeamStarsEl, currentFirstTo - currentBlueStars, currentFirstTo, "white_star.png", "blue_star.png")
     }
 
     // Chat Stuff
