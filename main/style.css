@@ -211,3 +211,16 @@
     font-size: 54px;
     margin-left: 10px;
 }
+/* --- Picked by --- */
+#pickedByText {
+    position: absolute; top: 41px; right: 379px;
+    font-size: 68px;
+    letter-spacing: -1px;
+}
+#pickedByFlag {
+    position: absolute; top: 43px; right: 38px;
+    height: 73px; width: 101px;
+    border-radius: 16px;
+    background-size: cover;
+    background-position: center;
+}

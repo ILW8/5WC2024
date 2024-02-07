@@ -104,7 +104,7 @@ socket.onmessage = async (event) => {
                 teamFlagEl.style.display = "block"
                 if (currentTeam == currentRedTeam) currentRedTeamCode = allCountries[i].code
                 else if (currentTeam == currentBlueTeam) currentBlueTeamCode = allCountries[i].code
-                teamFlagEl.style.backgroundImage = `url("https://osuflags.omkserver.nl/${allCountries[i].code}-181.png")`
+                teamFlagEl.style.backgroundImage = `url("https://osuflags.omkserver.nl/${allCountries[i].code}-237.png")`
                 break
             }
         }
