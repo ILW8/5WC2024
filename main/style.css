@@ -190,3 +190,24 @@
     position: absolute; top: 278px; left: 50%; transform: translateX(-50%);
     font-size: 73px;
 }
+/* --- Sponsors --- */
+#sponsors {
+    position: absolute; top: 271px; left: 1000px;
+    height: 77px;
+}
+#momokaiSponsor {
+    position: absolute; top: unset; left: unset;
+    height: 77px;
+}
+#bluebunnySponsorImage { height: 77px; }
+#blueberrySponsor {
+    position: absolute; top: unset; left: unset;
+    height: 52px;
+    display: flex;
+}
+#bluebunnySponsorText {
+    font-family: Montserrat;
+    line-height: 77px;
+    font-size: 54px;
+    margin-left: 10px;
+}
