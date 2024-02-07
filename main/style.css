@@ -224,3 +224,59 @@
     background-size: cover;
     background-position: center;
 }
+/* --- Now Playing --- */
+#nowPlaying {
+    position: absolute; right: 0; bottom: 0;
+}
+/* Now Playing Banner */
+#nowPlayingBanner {
+    position: absolute; bottom: 221px; right: 0;
+    width: 217px; height: 56px;
+    border-radius: 10px 0 0 10px;
+    background-color: var(--mainRed);
+}
+#nowPlayingText {
+    margin: 9px 0 0 16px;
+    font-size: 35px;
+}
+/* Now Playing Image */
+#nowPlayingImage {
+    position: absolute; bottom: 44px; right: 39px;
+    width: 534px; height: 205px;
+    border-radius: 8px;
+    background-image: url("https://assets.ppy.sh/beatmaps/1505664/covers/cover.jpg?");
+    background-size: cover;
+    background-position: center;
+}
+#nowPlayingLayer {
+    position: absolute; top: 0; left: 0;
+    width: inherit; height: inherit;
+    border-radius: inherit;
+    background-color: rgba(0,0,0,0.5);
+}
+/* Now Playing Stats */
+#nowPlayingStats {
+    position: absolute; bottom: 0; left: 0;
+    width: inherit; height: 70px;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: space-evenly;
+}
+#nowPlayingStats > * {
+    font-size: 40px;
+    line-height: 75px;
+    letter-spacing: 2px;
+}
+#nowPlayingStatsSR { color: gold; }
+/* Now Playing Song and Difficulty */
+#nowPlayingSongName {
+    position: absolute; bottom: 105px; right: 627px;
+    font-size: 75px;
+    letter-spacing: -0.8px;
+    width: max-content;
+}
+#nowPlayingDifficultyName {
+    position: absolute; bottom: 54px; right: 627px;
+    font-size: 49px;
+    letter-spacing: -0.8px;
+}
