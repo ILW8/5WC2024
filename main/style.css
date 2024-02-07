@@ -1,7 +1,4 @@
-#main { 
-    background-color: black;
-    background-image: url("static/background.png"); 
-}
+#main {  background-image: url("static/background.png"); }
 
 /* ----- TOP SECTION ----- */
 /* --- Round Name --- */
@@ -177,4 +174,19 @@
     transform: translateX(-50%); width: 7px; height: 7px;
     border-radius: 50%;
     background-color: white;
+}
+/* --- Playing Scores --- */
+.playingScore {
+    position: absolute; top: 52px;
+    font-size: 143px;
+}
+#playingScoreRed { left: 1183px; transform: translateX(-50%); }
+#playingScoreBlue { right: 1183px; transform: translateX(50%); }
+#scoreText {
+    position: absolute; top: 80px; left: 50%; transform: translateX(-50%);
+    font-size: 91px;
+}
+#playingScoreDifference {
+    position: absolute; top: 278px; left: 50%; transform: translateX(-50%);
+    font-size: 73px;
 }
