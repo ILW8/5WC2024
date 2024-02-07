@@ -1,4 +1,7 @@
-#main { background-image: url("static/background.png"); }
+#main { 
+    background-color: black;
+    background-image: url("static/background.png"); 
+}
 
 /* ----- TOP SECTION ----- */
 /* --- Round Name --- */
@@ -124,4 +127,54 @@
 .chatMessage {
     color: white;
     letter-spacing: 2px;
+}
+
+/* --- Moving Score Bars --- */
+#movingScoreBars {
+    position: absolute; top: -5px;
+    width: inherit; height: 18px;
+}
+/* Moving Score Bar Colours */
+.movingScoreBar {
+    position: absolute; 
+    width: 1920px; height: inherit;
+}
+#movingScoreBarRed { right: 50%; }
+#movingScoreBarBlue { left: 50%; }
+/* Moving Score Bar Arrows */
+.movingScoreBarArrow {
+    position: absolute;
+    height: 18px;
+}
+#movingScoreBarRedArrow {
+    right: 967px;
+    transform: scaleX(-1);
+}
+#movingScoreBarBlueArrow { left: 967px; }
+/* Moving Score Bar Rectangles */
+.movingScoreBarRectangle {
+    position: absolute;
+    width: 936px; height: inherit;
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 7px 9px, 7px 0%);
+    border-radius: 0 18px 18px 0;
+}
+#movingScoreBarRedRectangle {
+    right: 27px;
+    background-color: var(--mainRed);
+    transform: scaleX(-1);
+}
+#movingScoreBarBlueRectangle {
+    left: 27px;
+    background-color: var(--mainBlue);
+}
+/* Moving Score Bar Star */
+#movingScoreBarStar {
+    position: absolute; top: -19px; left: 50%; transform: translateX(-50%);
+}
+/* Moving Score Bar Circle */
+#movingScoreBarCircle {
+    position: absolute; top: 65px; left: 50%;
+    transform: translateX(-50%); width: 7px; height: 7px;
+    border-radius: 50%;
+    background-color: white;
 }
