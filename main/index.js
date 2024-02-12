@@ -81,8 +81,45 @@ const chatContainer = document.getElementById("chatContainer")
 const tournamentChatContainer = document.getElementById("tournamentChatContainer")
 let chatLen
 
-// Score visibility
+// Scores
 let scoreVisible
+const playingScores = document.getElementById("playingScores")
+const playingScoreRed = document.getElementById("playingScoreRed")
+const playingScoreBlue = document.getElementById("playingScoreBlue")
+const playingScoreDifference = document.getElementById("playingScoreDifference")
+let currentRedScore = 0
+let currentBlueScore = 0
+let currentScoreDifference = 0
+let scoreAnimation = {
+    playingScoreRed: new CountUp(playingScoreRed, 0, 0, 0, 0.2, { useEasing: true, useGrouping: true, separator: ",", decimal: "." }),
+    playingScoreBlue: new CountUp(playingScoreBlue, 0, 0, 0, 0.2, { useEasing: true, useGrouping: true, separator: ",", decimal: "." }),
+    playingScoreDifference: new CountUp(playingScoreDifference, 0, 0, 0, 0.2, { useEasing: true, useGrouping: true, separator: ",", decimal: "." })
+}
+
+// Moving score bars
+const movingScoreBarRed = document.getElementById("movingScoreBarRed")
+const movingScoreBarBlue = document.getElementById("movingScoreBarBlue")
+const movingScoreBarRedRectangle = document.getElementById("movingScoreBarRedRectangle")
+const movingScoreBarBlueRectangle = document.getElementById("movingScoreBarBlueRectangle")
+const movingScoreBarRedArrow = document.getElementById("movingScoreBarRedArrow")
+const movingScoreBarBlueArrow = document.getElementById("movingScoreBarBlueArrow")
+
+// Main Red Colours 
+const mainRedRed = 254
+const mainRedGreen = 36
+const mainRedBlue = 86
+// Main Blue Colours
+const mainBlueRed = 36
+const mainBlueGreen = 196
+const mainBlueBlue = 254
+// Main Red Colours Inverse
+const mainRedRedInverse = 255 - mainRedRed
+const mainRedGreenInverse = 255 - mainRedGreen
+const mainRedBlueInverse = 255 - mainRedBlue
+// Main Blue Colours Inverse
+const mainBlueRedInverse = 255 - mainBlueRed
+const mainBlueGreenInverse = 255 - mainBlueGreen
+const mainBlueBlueInverse = 255 - mainBlueBlue
 
 socket.onmessage = async (event) => {
     const data = JSON.parse(event.data)
@@ -153,20 +190,81 @@ socket.onmessage = async (event) => {
         scoreVisible = data.tourney.manager.bools.scoreVisible
 
         if (scoreVisible) {
-            chatContainer.style.width = "610px";
+            chatContainer.style.width = "610px"
             twitchChatContainer.style.opacity = 1
             tournamentChatContainer.style.opacity = 0
+
+            playingScores.style.opacity = 1
+            movingScoreBarRed.style.opacity = 1
+            movingScoreBarBlue.style.opacity = 1
         } else {
-            chatContainer.style.width = "1220px";
+            chatContainer.style.width = "1220px"
             twitchChatContainer.style.opacity = 0
             tournamentChatContainer.style.opacity = 1
+
+            playingScores.style.opacity = 0
+            movingScoreBarRed.style.opacity = 0
+            movingScoreBarBlue.style.opacity = 0
         }
     }
 
     // Chat Stuff
     // This is also mostly taken from Victim Crasher: https://github.com/VictimCrasher/static/tree/master/WaveTournament
     if (scoreVisible) {
+        currentRedScore = 0
+        currentBlueScore = 0
+        currentScoreDifference = 0
 
+        // Set scores
+        let i = 0
+        for (i; i < data.tourney.ipcClients.length / 2; i++) {
+            currentRedScore += data.tourney.ipcClients[i].gameplay.score * (data.tourney.ipcClients[i].gameplay.mods.str.contains("EZ")) ? 1.75 : 1
+        }
+        for (i; i < data.tourney.ipcClients.length; i++) {
+            currentBlueScore += data.tourney.ipcClients[i].gameplay.score * (data.tourney.ipcClients[i].gameplay.mods.str.contains("EZ")) ? 1.75 : 1
+        }
+
+        // Update scores
+        scoreAnimation.playingScoreRed.update(currentRedScore)
+        scoreAnimation.playingScoreBlue.update(currentBlueScore)
+        scoreAnimation.playingScoreDifference.update(currentScoreDifference)
+
+        // Update score bar and difference
+        const movingScoreBarDifferencePercent = currentScoreDifference / 1500000
+        const movingScoreBarRectangleWidth = movingScoreBarDifferencePercent * 936
+        if (movingScoreBarRectangleWidth > 936) movingScoreBarRectangleWidth = 936
+        const movingScoreBarArrowPositionHorizontal = movingScoreBarRectangleWidth + 31
+        if (currentRedScore > currentBlueScore) {
+            // Moving score bar
+            movingScoreBarRed.style.display = "block"
+            movingScoreBarBlue.style.display = "none"
+
+            movingScoreBarRedArrow.style.right = `${movingScoreBarArrowPositionHorizontal}px`
+            movingScoreBarRedRectangle.style.width = `${movingScoreBarRectangleWidth}px`
+            playingScoreDifference.style.color = `rgb(
+                ${Math.round(255 - (movingScoreBarDifferencePercent * mainRedRedInverse))}, 
+                ${Math.round(255 - (movingScoreBarDifferencePercent * mainRedGreenInverse))},
+                ${Math.round(255 - (movingScoreBarDifferencePercent * mainRedBlueInverse))})`
+
+        } else if (currentRedScore == currentBlueScore) {
+            // Moving score bar
+            movingScoreBarRed.style.display = "none"
+            movingScoreBarBlue.style.display = "none"
+
+            // Difference
+            playingScoreDifference.style.color = "white"
+        } else if (currentRedScore < currentBlueScore) {
+            // Moving score bar
+            movingScoreBarRed.style.display = "none"
+            movingScoreBarBlue.style.display = "block"
+
+            movingScoreBarBlueArrow.style.left = `${movingScoreBarArrowPositionHorizontal}px`
+            movingScoreBarBlueRectangle.style.width = `${movingScoreBarRectangleWidth}px`
+            playingScoreDifference.style.color = `rgb(
+                ${Math.round(255 - (movingScoreBarDifferencePercent * mainBlueRedInverse))}, 
+                ${Math.round(255 - (movingScoreBarDifferencePercent * mainBlueGreenInverse))},
+                ${Math.round(255 - (movingScoreBarDifferencePercent * mainBlueBlueInverse))})`
+        }
     } else {
         if (chatLen !== data.tourney.manager.chat.length) {
             (chatLen === 0 || chatLen > data.tourney.manager.chat.length) ? (tournamentChatContainer.innerHTML = "", chatLen = 0) : null;
