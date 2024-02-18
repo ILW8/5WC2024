@@ -127,20 +127,17 @@ allBeatmaps.forEach((maps, i) => {
         maps.forEach(map => createMapCard(map, (maps.length === 2) ? "fm2MapsMapCard" : "bottom3MapsMapCard", (maps.length === 2) ? "fm2MapsMapCardName" : "bottom3MapsMapCardName", FMMapContainerEl))
     } else if (i === 5) {
 		// TB
-        maps.forEach(map => {
-			TBContainerEl.setAttribute("id", map.beatmapID)
-            tbMapCardImageEl.style.backgroundImage = `url("${map.imgURL}")`
-            tbMapCardNameEl.innerText = `${map.artist} - ${map.songName}`
-            tbMapCardDifficultyEl.innerText = map.difficultyname
-
-			TBContainerEl.addEventListener("click", function (event) {
-				event.preventDefault()
-				handleTeamAction(event, currentRedTeamCode, this)
-			})
-			TBContainerEl.addEventListener("contextmenu", function (event) {
-				event.preventDefault()
-				handleTeamAction(event, currentBlueTeamCode, this)
-			})
+        TBContainerEl.setAttribute("id", maps[0].beatmapID)
+        tbMapCardImageEl.style.backgroundImage = `url("${maps[0].imgURL}")`
+        tbMapCardNameEl.innerText = `${maps[0].artist} - ${maps[0].songName}`
+        tbMapCardDifficultyEl.innerText = maps[0].difficultyname
+        TBContainerEl.addEventListener("click", function (event) {
+            event.preventDefault()
+            handleTeamAction(event, currentRedTeamCode, this)
+        })
+        TBContainerEl.addEventListener("contextmenu", function (event) {
+            event.preventDefault()
+            handleTeamAction(event, currentBlueTeamCode, this)
         })
     }
 })

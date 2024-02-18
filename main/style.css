@@ -218,6 +218,9 @@
     margin-left: 10px;
 }
 /* --- Picked by --- */
+#pickedBy {
+    display: none;
+}
 #pickedByText {
     position: absolute; top: 47px; right: 200px;
     font-size: 70px;
@@ -229,7 +232,6 @@
     border-radius: 16px;
     background-size: cover;
     background-position: center;
-    background-image: url("https://osuflags.omkserver.nl/AU-126.png")
 }
 /* --- Now Playing --- */
 #nowPlaying {
@@ -286,7 +288,59 @@
     bottom: 105px;
     font-size: 75px;
 }
-#nowPlayingDifficultyName {
+#nowPlayingArtistName {
     bottom: 54px;
     font-size: 49px;
 }
+
+/* ----- SIDE BAR ----- */
+#sideBar {
+    position: absolute; top: 0; left: 3840px;
+    width: 500px; height: 2160px;
+    background-color: rgb(25,23,23);
+    color: white;
+    font-family: "Coluna Rounded";
+}
+.sideBarButton {
+    width: 400px;
+    font-family: "Coluna Rounded";
+    border: 5px solid white;
+    border-radius: 37.5px;
+    background-color: transparent;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+.sideBarButton:active {
+    background-color: white;
+    color: rgb(25,23,23);
+}
+/* --- Next Action --- */
+#currentPickerSection {
+    position: absolute; top: 50px; left: 50px;
+    width: 400px;
+}
+#currentPickerText {
+    width: inherit;
+    font-size: 55px;
+}
+#currentPickerTeam {
+    font-size: 120px;
+    color: var(--mainRed)
+}
+.currentPickerButton {
+    height: 75px;
+    margin: 10px 0;
+    line-height: 75px;
+}
+/* --- Side Bar Button --- */
+#toggleAutoPickButton {
+    position: absolute; top: 500px; left: 50px;
+    height: 200px;  
+    border-color: var(--banColour);
+    line-height: 200px;
+}
+#toggleAutoPickText { color: var(--banColour) }
+
+/* ----- SCROLLBAR -----*/
+::-webkit-scrollbar { display: none; }

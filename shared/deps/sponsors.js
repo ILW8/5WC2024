@@ -16,7 +16,7 @@ function startInterval() {
         currentSponsorIndex++
     }, 6000)
 }
-startInterval();
+startInterval()
 setInterval(function() {
     startInterval()
 }, 120000)

@@ -89,9 +89,18 @@
                     <div id="nowPlayingText">NOW PLAYING</div>
                 </div>
                 <div class="nowPlayingSongDetails" id="nowPlayingSongName">Kono Sekai wa Bokura wo Matteita</div>
-                <div class="nowPlayingSongDetails" id="nowPlayingDifficultyName">Misty Rain</div>
+                <div class="nowPlayingSongDetails" id="nowPlayingArtistName">Misty Rain</div>
             </div>
         </section>
+
+        <div id="sideBar">
+            <section id="currentPickerSection">
+                <div id="currentPickerText">Auto Current Picker: </div>
+                <div id="currentPickerTeam"></div>
+                <button class="sideBarButton currentPickerButton" id="currentPickerRed" onclick="setCurrentPicker('red')">Set Red Pick</button>
+                <button class="sideBarButton currentPickerButton" id="currentPickerBlue" onclick="setCurrentPicker('blue')">Set Blue Pick</button>
+            </section>
+        </div>
     </div>
 
     <script src="index.js"></script>

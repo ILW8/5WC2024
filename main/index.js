@@ -4,6 +4,9 @@ setInterval(() => {
     roundNameEl.innerText = getCookie("currentRound")
 }, 500)
 
+// Sleep
+const sleep = ms => new Promise(res => setTimeout(res, ms))
+
 // Get Cookie
 function getCookie(cname) {
     let name = cname + "="
@@ -26,7 +29,6 @@ socket.onerror = error => { console.log("Socket Error: ", error) }
 // Load Mappool
 let mapData
 let beatmapsData
-let modOrderData
 let mapDataXhr = new XMLHttpRequest()
 mapDataXhr.open("GET", "http://127.0.0.1:24050/5WC2024/_data/beatmaps.json", false)
 mapDataXhr.onload = function () {
@@ -35,15 +37,30 @@ mapDataXhr.onload = function () {
         mapData = JSON.parse(this.responseText)
         document.cookie = `currentRound=${mapData.roundName}; path=/`
         beatmapsData = mapData.beatmaps
-        modOrderData = mapData.modOrder
     }
 }
 mapDataXhr.send()
 
-// Set mappool
-let allBeatmaps = []
-for (let i = 0; i < modOrderData.length; i++) allBeatmaps[i] = beatmapsData.filter(map => map.mod == modOrderData[i])
-for (let i = 0; i < allBeatmaps.length; i++) allBeatmaps[i].sort((map1, map2) => map1.order - map2.order)
+// Find map from mappool
+function findMapInMappool(beatmapID) {
+    for (let i = 0; i < beatmapsData.length; i++) {
+        if (beatmapID == beatmapsData[i].beatmapID) return beatmapsData[i]
+    }
+    return
+}
+
+// Now Playing
+const nowPlayingImage = document.getElementById("nowPlayingImage")
+const nowPlayingSongName = document.getElementById("nowPlayingSongName")
+const nowPlayingArtistName = document.getElementById("nowPlayingArtistName")
+const nowPlayingStatsSRNumber = document.getElementById("nowPlayingStatsSRNumber")
+const nowPlayingStatsARNumber = document.getElementById("nowPlayingStatsARNumber")
+const nowPlayingStatsODNumber = document.getElementById("nowPlayingStatsODNumber")
+const nowPlayingStatsCSNumber = document.getElementById("nowPlayingStatsCSNumber")
+let currentSR, currentAR, currentOD, currentCS
+let mapTitle, mapMd5
+let mappoolMapDataFound
+let triggerStatShowingFunction = false
 
 // Load country data
 let allCountries
@@ -120,6 +137,34 @@ const mainRedBlueInverse = 255 - mainRedBlue
 const mainBlueRedInverse = 255 - mainBlueRed
 const mainBlueGreenInverse = 255 - mainBlueGreen
 const mainBlueBlueInverse = 255 - mainBlueBlue
+
+// Picked By
+const pickedBy = document.getElementById("pickedBy")
+const pickedByText = document.getElementById("pickedByText")
+const pickedByFlag = document.getElementById("pickedByFlag")
+
+// Setting current picker
+setCurrentPicker("none")
+function setCurrentPicker(teamColour) {
+    // if tiebreaker, nothing happens
+    if (pickedByText === "TIEBREAKER") return
+
+    // Set cookie
+    document.cookie = `currentTeamPick=${teamColour}; path=/`
+
+    if (teamColour === "red") {
+        pickedBy.style.display = "block"
+        pickedByFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${currentRedTeamCode}-126.png")`
+    } else if (teamColour === "blue") {
+        pickedBy.style.display = "block"
+        pickedByFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${currentBlueTeamCode}-126.png")`
+    } else if (teamColour === "none") {
+        pickedBy.style.display = "none"
+    }
+}
+setInterval(() => {
+    setCurrentPicker(getCookie("currentTeamPick"))
+}, 500)
 
 socket.onmessage = async (event) => {
     const data = JSON.parse(event.data)
@@ -208,20 +253,20 @@ socket.onmessage = async (event) => {
         }
     }
 
-    // Chat Stuff
-    // This is also mostly taken from Victim Crasher: https://github.com/VictimCrasher/static/tree/master/WaveTournament
     if (scoreVisible) {
+        // All things related to scores
         currentRedScore = 0
         currentBlueScore = 0
         currentScoreDifference = 0
 
         // Set scores
-        let i = 0
-        for (i; i < data.tourney.ipcClients.length / 2; i++) {
-            currentRedScore += data.tourney.ipcClients[i].gameplay.score * (data.tourney.ipcClients[i].gameplay.mods.str.contains("EZ")) ? 1.75 : 1
-        }
-        for (i; i < data.tourney.ipcClients.length; i++) {
-            currentBlueScore += data.tourney.ipcClients[i].gameplay.score * (data.tourney.ipcClients[i].gameplay.mods.str.contains("EZ")) ? 1.75 : 1
+        for (let i = 0; i < data.tourney.ipcClients.length; i++) {
+            const client = data.tourney.ipcClients[i]
+            const scoreMultiplier = client.gameplay.mods.str.includes("EZ") ? 1.75 : 1
+            const score = client.gameplay.score * scoreMultiplier
+        
+            if (i < data.tourney.ipcClients.length / 2) currentRedScore += score
+            else currentBlueScore += score
         }
 
         // Update scores
@@ -231,9 +276,10 @@ socket.onmessage = async (event) => {
 
         // Update score bar and difference
         const movingScoreBarDifferencePercent = currentScoreDifference / 1500000
-        const movingScoreBarRectangleWidth = movingScoreBarDifferencePercent * 936
-        if (movingScoreBarRectangleWidth > 936) movingScoreBarRectangleWidth = 936
+        const movingScoreBarRectangleWidth = Math.min(movingScoreBarDifferencePercent * 936, 936)
         const movingScoreBarArrowPositionHorizontal = movingScoreBarRectangleWidth + 31
+
+        let scoreBarColour
         if (currentRedScore > currentBlueScore) {
             // Moving score bar
             movingScoreBarRed.style.display = "block"
@@ -241,18 +287,17 @@ socket.onmessage = async (event) => {
 
             movingScoreBarRedArrow.style.right = `${movingScoreBarArrowPositionHorizontal}px`
             movingScoreBarRedRectangle.style.width = `${movingScoreBarRectangleWidth}px`
-            playingScoreDifference.style.color = `rgb(
-                ${Math.round(255 - (movingScoreBarDifferencePercent * mainRedRedInverse))}, 
-                ${Math.round(255 - (movingScoreBarDifferencePercent * mainRedGreenInverse))},
-                ${Math.round(255 - (movingScoreBarDifferencePercent * mainRedBlueInverse))})`
 
+            scoreBarColour = [
+                255 - Math.round(movingScoreBarDifferencePercent * mainRedRedInverse),
+                255 - Math.round(movingScoreBarDifferencePercent * mainRedGreenInverse),
+                255 - Math.round(movingScoreBarDifferencePercent * mainRedBlueInverse)
+            ]
         } else if (currentRedScore == currentBlueScore) {
             // Moving score bar
             movingScoreBarRed.style.display = "none"
             movingScoreBarBlue.style.display = "none"
-
-            // Difference
-            playingScoreDifference.style.color = "white"
+            scoreBarColour = [255,255,255]
         } else if (currentRedScore < currentBlueScore) {
             // Moving score bar
             movingScoreBarRed.style.display = "none"
@@ -260,12 +305,17 @@ socket.onmessage = async (event) => {
 
             movingScoreBarBlueArrow.style.left = `${movingScoreBarArrowPositionHorizontal}px`
             movingScoreBarBlueRectangle.style.width = `${movingScoreBarRectangleWidth}px`
-            playingScoreDifference.style.color = `rgb(
-                ${Math.round(255 - (movingScoreBarDifferencePercent * mainBlueRedInverse))}, 
-                ${Math.round(255 - (movingScoreBarDifferencePercent * mainBlueGreenInverse))},
-                ${Math.round(255 - (movingScoreBarDifferencePercent * mainBlueBlueInverse))})`
+            scoreBarColour = [
+                255 - Math.round(movingScoreBarDifferencePercent * mainBlueRedInverse),
+                255 - Math.round(movingScoreBarDifferencePercent * mainBlueGreenInverse),
+                255 - Math.round(movingScoreBarDifferencePercent * mainBlueBlueInverse)
+            ]
         }
+
+        playingScoreDifference.style.color = `rgb(${scoreBarColour.join(', ')})`
     } else {
+        // Chat Stuff
+        // This is also mostly taken from Victim Crasher: https://github.com/VictimCrasher/static/tree/master/WaveTournament
         if (chatLen !== data.tourney.manager.chat.length) {
             (chatLen === 0 || chatLen > data.tourney.manager.chat.length) ? (tournamentChatContainer.innerHTML = "", chatLen = 0) : null;
             const fragment = document.createDocumentFragment()
@@ -306,6 +356,71 @@ socket.onmessage = async (event) => {
             tournamentChatContainer.scrollTop = tournamentChatContainer.scrollHeight;
         }
     }
+
+    // Beatmap data
+    if (mapTitle !== data.menu.bm.metadata.title || mapMd5 !== data.menu.bm.md5) {
+        await sleep(500)
+        mapTitle = data.menu.bm.metadata.title
+        mapMd5 = data.menu.bm.md5
+
+        nowPlayingImage.style.backgroundImage = `url("https://assets.ppy.sh/beatmaps/${data.menu.bm.set}/covers/cover.jpg")`
+        nowPlayingSongName.innerText = mapTitle
+        nowPlayingArtistName.innerText = data.menu.bm.metadata.artist
+
+        mappoolMapDataFound = undefined
+        statsTimeoutSet = false
+        if (beatmapsData) mappoolMapData = findMapInMappool(data.menu.bm.id)
+        if (mappoolMapData) {
+            pickedBy.style.display = "block"
+
+            currentSR = Math.round(parseFloat(mappoolMapData.difficultyrating) * 100) / 100
+            currentAR = mappoolMapData.ar
+            currentOD = mappoolMapData.od
+            currentCS = mappoolMapData.cs
+
+            nowPlayingStatsSRNumber.innerText = currentSR
+            nowPlayingStatsARNumber.innerText = currentAR
+            nowPlayingStatsODNumber.innerText = currentOD
+            nowPlayingStatsCSNumber.innerText = currentCS
+
+            // Check whether to display picked by
+            if (mappoolMapData.mod == "TB") {
+                pickedByText.innerText = "TIEBREAKER"
+                pickedByFlag.style.display = "none"
+            }
+            else {
+                pickedByText.innerText = "PICKED BY"
+                pickedByFlag.style.display = "block"
+            }
+        } 
+        else {
+            pickedBy.style.display = "none"
+        }
+    }
+
+    // If map is not found
+    if (!mappoolMapDataFound) {
+        triggerStatShowingFunction
+        if (currentSR !== data.menu.bm.stats.SR) {
+            currentSR = data.menu.bm.stats.SR
+            nowPlayingStatsSRNumber.innerText = currentSR
+        }
+        if (currentAR !== data.menu.bm.stats.AR) {
+            currentAR = data.menu.bm.stats.AR
+            nowPlayingStatsARNumber.innerText = currentAR
+        }
+        if (currentOD !== data.menu.bm.stats.OD) {
+            currentOD = data.menu.bm.stats.OD
+            nowPlayingStatsODNumber.innerText = currentOD
+        }
+        if (currentCS !== data.menu.bm.stats.CS) {
+            currentCS = data.menu.bm.stats.CS
+            nowPlayingStatsCSNumber.innerText = currentCS
+        }
+    }
+
+    // Triggering picker
+
 }
 
 // Twitch Chat
