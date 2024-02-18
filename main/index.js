@@ -50,14 +50,16 @@ function findMapInMappool(beatmapID) {
 }
 
 // Now Playing
-const nowPlayingImage = document.getElementById("nowPlayingImage")
+const nowPlaying = document.getElementById("nowPlaying")
+const nowPlayingMod = document.getElementById("nowPlayingMod")
 const nowPlayingSongName = document.getElementById("nowPlayingSongName")
 const nowPlayingArtistName = document.getElementById("nowPlayingArtistName")
 const nowPlayingStatsSRNumber = document.getElementById("nowPlayingStatsSRNumber")
 const nowPlayingStatsARNumber = document.getElementById("nowPlayingStatsARNumber")
 const nowPlayingStatsODNumber = document.getElementById("nowPlayingStatsODNumber")
 const nowPlayingStatsCSNumber = document.getElementById("nowPlayingStatsCSNumber")
-let currentSR, currentAR, currentOD, currentCS
+const nowPlayingStatsBPMNumber = document.getElementById("nowPlayingStatsBPMNumber")
+let currentSR, currentAR, currentOD, currentCS, currentBPM
 let mapTitle, mapMd5
 let mappoolMapDataFound
 let triggerStatShowingFunction = false
@@ -153,10 +155,8 @@ function setCurrentPicker(teamColour) {
     document.cookie = `currentTeamPick=${teamColour}; path=/`
 
     if (teamColour === "red") {
-        pickedBy.style.display = "block"
         pickedByFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${currentRedTeamCode}-126.png")`
     } else if (teamColour === "blue") {
-        pickedBy.style.display = "block"
         pickedByFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${currentBlueTeamCode}-126.png")`
     } else if (teamColour === "none") {
         pickedBy.style.display = "none"
@@ -357,35 +357,46 @@ socket.onmessage = async (event) => {
         }
     }
 
+    function addRemoveSlide(element, text) {
+        element.innerText = text
+        if (element.getBoundingClientRect().width > 700) element.classList.add("nowPlayingSongWrap")
+        else element.classList.remove("nowPlayingSongWrap")
+    }
+
     // Beatmap data
     if (mapTitle !== data.menu.bm.metadata.title || mapMd5 !== data.menu.bm.md5) {
         await sleep(500)
         mapTitle = data.menu.bm.metadata.title
         mapMd5 = data.menu.bm.md5
 
-        nowPlayingImage.style.backgroundImage = `url("https://assets.ppy.sh/beatmaps/${data.menu.bm.set}/covers/cover.jpg")`
-        nowPlayingSongName.innerText = mapTitle
-        nowPlayingArtistName.innerText = data.menu.bm.metadata.artist
+        nowPlaying.style.backgroundImage = `url("https://assets.ppy.sh/beatmaps/${data.menu.bm.set}/covers/cover.jpg")`
+        addRemoveSlide(nowPlayingSongName, mapTitle)
+        addRemoveSlide(nowPlayingArtistName, data.menu.bm.metadata.artist)
 
         mappoolMapDataFound = undefined
         statsTimeoutSet = false
         if (beatmapsData) mappoolMapData = findMapInMappool(data.menu.bm.id)
         if (mappoolMapData) {
             pickedBy.style.display = "block"
+            nowPlayingMod.style.display = "block"
+            nowPlayingMod.innerText = `${mappoolMapData.mod}${mappoolMapData.order}`
 
             currentSR = Math.round(parseFloat(mappoolMapData.difficultyrating) * 100) / 100
             currentAR = mappoolMapData.ar
             currentOD = mappoolMapData.od
             currentCS = mappoolMapData.cs
+            currentBPM = mappoolMapData.bpm
 
             nowPlayingStatsSRNumber.innerText = currentSR
             nowPlayingStatsARNumber.innerText = currentAR
             nowPlayingStatsODNumber.innerText = currentOD
             nowPlayingStatsCSNumber.innerText = currentCS
+            nowPlayingStatsBPMNumber.innerText = currentBPM
 
             // Check whether to display picked by
             if (mappoolMapData.mod == "TB") {
                 pickedByText.innerText = "TIEBREAKER"
+                pickedByText.style.right = "157px"
                 pickedByFlag.style.display = "none"
             }
             else {
@@ -395,6 +406,7 @@ socket.onmessage = async (event) => {
         } 
         else {
             pickedBy.style.display = "none"
+            nowPlayingMod.style.display = "none"
         }
     }
 
@@ -416,6 +428,10 @@ socket.onmessage = async (event) => {
         if (currentCS !== data.menu.bm.stats.CS) {
             currentCS = data.menu.bm.stats.CS
             nowPlayingStatsCSNumber.innerText = currentCS
+        }
+        if (currentBPM !== data.menu.bm.stats.BPM.min) {
+            currentBPM = data.menu.bm.stats.BPM.min
+            nowPlayingStatsBPMNumber.innerText = currentBPM
         }
     }
 

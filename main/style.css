@@ -218,7 +218,7 @@
     margin-left: 10px;
 }
 /* --- Now Playing New --- */
-#nowPlayingNew {
+#nowPlaying {
     position: absolute; right: 0;
     width: 850px; height: inherit;
     background-position: center;
@@ -228,7 +228,7 @@
     position: absolute; top: 0; left: 0;
     width: inherit; height: inherit;
     border-radius: inherit;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.7);
 }
 /* Now Playing Mod */
 #nowPlayingMod {
@@ -263,7 +263,7 @@
 /* Now Playing Song Name */
 #nowPlayingSongNameWrapper { top: 162px; }
 #nowPlayingSongName { font-size: 75px; }
-.nowPlayingSongNameWrap {
+.nowPlayingSongWrap {
     transform: translate(700px);
     animation: displaySlide 12s linear infinite;
 }
