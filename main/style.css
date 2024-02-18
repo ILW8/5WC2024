@@ -217,45 +217,12 @@
     font-size: 54px;
     margin-left: 10px;
 }
-/* --- Picked by --- */
-#pickedBy {
-    display: none;
-}
-#pickedByText {
-    position: absolute; top: 47px; right: 200px;
-    font-size: 70px;
-    letter-spacing: -1px;
-}
-#pickedByFlag {
-    position: absolute; top: 43px; right: 38px;
-    width: 126px; height: 91px; 
-    border-radius: 16px;
-    background-size: cover;
+/* --- Now Playing New --- */
+#nowPlayingNew {
+    position: absolute; right: 0;
+    width: 850px; height: inherit;
     background-position: center;
-}
-/* --- Now Playing --- */
-#nowPlaying {
-    position: absolute; right: 0; bottom: 0;
-}
-/* Now Playing Banner */
-#nowPlayingBanner {
-    position: absolute; bottom: 181px; right: 0;
-    width: 247px; height: 76px;
-    border-radius: 10px 0 0 10px;
-    background-color: var(--mainRed);
-}
-#nowPlayingText {
-    margin: 13px 0 0 16px;
-    font-size: 50px;
-}
-/* Now Playing Image */
-#nowPlayingImage {
-    position: absolute; bottom: 44px; right: 39px;
-    width: 650px; height: 205px;
-    border-radius: 8px;
-    background-image: url("https://assets.ppy.sh/beatmaps/1505664/covers/cover.jpg?");
     background-size: cover;
-    background-position: center;
 }
 #nowPlayingLayer {
     position: absolute; top: 0; left: 0;
@@ -263,35 +230,69 @@
     border-radius: inherit;
     background-color: rgba(0,0,0,0.5);
 }
+/* Now Playing Mod */
+#nowPlayingMod {
+    position: absolute; top: 45px; left: 64px;
+    font-size: 64px;
+}
+/* Now Playing Picked By */
+#pickedBy { display: none; }
+#pickedByText {
+    position: absolute; top: 43px; right: 157px; 
+    font-size: 66px;
+    letter-spacing: -0.5px;
+}
+#pickedByFlag {
+    position: absolute; top: 43px; right: 38px;
+    width: 101px; height: 73px; 
+    border-radius: 16px;
+    background-size: cover;
+    background-position: center;
+}
+/* Now Playing Song Name and Artist */
+.nowPlayingSongDetails {
+    position: absolute; left: 50%; transform: translateX(-50%);
+    width: 700px; height: 96px; 
+    overflow: hidden;
+    text-align: center;
+}
+.nowPlayingSongDetailsText {
+    display: inline-block;
+    white-space: nowrap;
+}
+/* Now Playing Song Name */
+#nowPlayingSongNameWrapper { top: 162px; }
+#nowPlayingSongName { font-size: 75px; }
+.nowPlayingSongNameWrap {
+    transform: translate(700px);
+    animation: displaySlide 12s linear infinite;
+}
+@keyframes displaySlide {
+    0% {transform: translate(0px);}
+    11% {transform: translate(0px);}
+    80% { transform: translate(calc(-100% + 700px)); }
+    100% { transform: translate(calc(-100% + 700px)); }
+}
+/* Now Playing Song Difficulty */
+#nowPlayingArtistWrapper { top: 236px; }
+#nowPlayingArtistName {
+    font-size: 58px;
+    letter-spacing: 3px;
+}
+/* Now Playing Stats */
 /* Now Playing Stats */
 #nowPlayingStats {
     position: absolute; bottom: 0; left: 0;
     width: inherit; height: 80px;
-    background-color: rgba(0,0,0,0.5);
     display: flex;
     justify-content: space-evenly;
 }
 #nowPlayingStats > * {
-    font-size: 50px;
+    font-size: 55px;
     line-height: 85px;
     letter-spacing: 2px;
 }
 #nowPlayingStatsSR { color: gold; }
-/* Now Playing Song and Difficulty */
-.nowPlayingSongDetails {
-    position: absolute;
-    right: 743px;
-    letter-spacing: -0.8px;
-    width: max-content;
-}
-#nowPlayingSongName {
-    bottom: 105px;
-    font-size: 75px;
-}
-#nowPlayingArtistName {
-    bottom: 54px;
-    font-size: 49px;
-}
 
 /* ----- SIDE BAR ----- */
 #sideBar {
