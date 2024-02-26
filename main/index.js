@@ -228,6 +228,15 @@ socket.onmessage = async (event) => {
         }
         createStarImages(redTeamStarsEl, currentRedStars, currentFirstTo, "red_star.png", "white_star.png")
         createStarImages(blueTeamStarsEl, currentFirstTo - currentBlueStars, currentFirstTo, "white_star.png", "blue_star.png")
+
+        // Set winner information
+        if (currentRedStars == currentFirstTo) {
+            document.cookie = `currentWinner=${currentRedTeamCode}; path=/`
+        } else if (currentBlueStars == currentFirstTo) {
+            document.cookie = `currentWinner=${currentBlueTeamCode}; path=/`
+        } else {
+            document.cookie = `currentWinner=none; path=/`
+        }
     }
 
     // Score visibility

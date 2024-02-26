@@ -8,7 +8,7 @@
 /* ----- COSMETICS ----- */
 #leftGrayRectangle {
     position: absolute; top: 0; left: 0;
-    width: 283px; height: 100%;
+    width: 283px; height: 1824px;
     background-color: rgb(41, 41, 41);
 }
 /* ----- NOW PLAYING ----- */
@@ -29,7 +29,7 @@
     width: 1292px; height: 241px;
     background-size: cover;
     background-position: center;
-    /* background-color: var(--mainDarkBackground); */
+    background-color: var(--mainDarkBackground);
     border-radius: 0 20px 20px 0;
 }
 /* Now Playing Image */
@@ -57,9 +57,6 @@
 }
 
 /* Country Flag */
-/* 8px between edge and red*/
-/* red is 6px large */
-/* 30px between edge and other edge */
 #countryFlag {
     position: absolute; top: 661px; left: 165px;
     background-color: rgb(30, 30, 30);
