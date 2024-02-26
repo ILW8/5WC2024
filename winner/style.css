@@ -37,23 +37,40 @@
     position: absolute; top: 3px;
     width: 609px; height: 238px;
     border-radius: 0 8px 8px 0;
+    background-position: center;
+    background-size: cover;
 }
 #nowPlayingImageLayer {
     position: absolute; top: 0; left: 0;
     width: inherit; height: inherit;
-    background-color: rgb(0,0,0,0.4);
+    background-color: rgb(0,0,0,0.2);
     border-radius: inherit;
 }
 /* Now Playing Song and Difficulty Name */
-#nowPlayingSongName {
-    position: absolute; top: 45px; left: 657px;
-    font-size: 79px;
+.nowPlayingDetailsWrapper {
+    position: absolute; left: 657px;
     letter-spacing: -0.4px;
+    overflow: hidden;
+    width: 600px;
 }
-#nowPlayingArtistName {
-    position: absolute; top: 131px; left: 657px;
+#nowPlayingSongNameWrapper {
+    top: 45px;
+    font-size: 79px;
+}
+#nowPlayingArtistNameWrapper {
+    top: 131px;
     font-size: 62px;
-    letter-spacing: -0.4px;
+}
+.nowPlayingDetails {
+    display: inline-block;
+    width: max-content;
+}
+.textSlide { animation: textSlide 12s linear infinite; }
+@keyframes textSlide {
+    0% { transform: translate(0px) }
+    11% {transform: translate(0px) }
+    89% { transform: translate(calc(-100% + 600px)) }
+    100% { transform: translate(calc(-100% + 600px)) }
 }
 
 /* Country Flag */

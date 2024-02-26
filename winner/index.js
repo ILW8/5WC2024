@@ -22,6 +22,14 @@ const nowPlayingArtistName = document.getElementById("nowPlayingArtistName")
 let currentNowPlayingMd5
 let currentNowPlayingSongName
 
+function addRemoveTextSlide(element) {
+    if (element.getBoundingClientRect().width > 600) {
+        element.classList.add("textSlide")
+        return
+    }
+    element.classList.remove("textSlide")
+}
+
 socket.onmessage = event => {
     const data = JSON.parse(event.data)
     
@@ -30,14 +38,14 @@ socket.onmessage = event => {
         currentNowPlayingMd5 = data.menu.bm.md5
 
         // set now playing image
-        const currentImage = data.menu.bm.path.full.replace(/#/g,'%23').replace(/%/g,'%25').replace(/\\/g,'/').replace(/'/g, "\\'")
-        nowPlayingImage.style.backgroundImage = `url('http://${location.host}/Songs/${currentImage}?a=${Math.random(10000)}')`
+        nowPlayingImage.style.backgroundImage = `url("https://assets.ppy.sh/beatmaps/${data.menu.bm.set}/covers/cover.jpg")`
 
-        // Set song name
+        // Set song and artist name
         nowPlayingSongName.innerText = currentNowPlayingSongName
-
-        // Set artist name
         nowPlayingArtistName.innerText = data.menu.bm.metadata.artist
+
+        addRemoveTextSlide(nowPlayingSongName)
+        addRemoveTextSlide(nowPlayingArtistName)
     }
 }
 
