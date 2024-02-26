@@ -1,1 +1,114 @@
-#main {  background-image: url("static/background.png"); }
+:root {
+    --mainDarkBackground: rgb(23,23,23);
+    --playerNamesWidth: 2342px;
+}
+
+#main { background-image: url("static/background.png"); }
+
+/* ----- NOW PLAYING ----- */
+/* --- Now Playing Text --- */
+#nowPlayingTextRectangle {
+    position: absolute; top: 52px;
+    width: 419px; height: 98px;
+    background-color: var(--mainRed);
+    border-radius: 0 10px 10px 0;
+}
+#nowPlayingText {
+    position: absolute; top: 12px; left: 117px;
+    font-size: 67px;
+}
+/* --- Now Playing Box --- */
+#nowPlayingBox {
+    position: absolute; top: 163px;
+    width: 1292px; height: 241px;
+    background-size: cover;
+    background-position: center;
+    /* background-color: var(--mainDarkBackground); */
+    border-radius: 0 20px 20px 0;
+}
+/* Now Playing Image */
+#nowPlayingImage {
+    position: absolute; top: 3px;
+    width: 609px; height: 238px;
+    border-radius: 0 8px 8px 0;
+}
+#nowPlayingImageLayer {
+    position: absolute; top: 0; left: 0;
+    width: inherit; height: inherit;
+    background-color: rgb(0,0,0,0.4);
+    border-radius: inherit;
+}
+/* Now Playing Song and Difficulty Name */
+#nowPlayingSongName {
+    position: absolute; top: 45px; left: 657px;
+    font-size: 79px;
+    letter-spacing: -0.4px;
+}
+#nowPlayingArtistName {
+    position: absolute; top: 131px; left: 657px;
+    font-size: 62px;
+    letter-spacing: -0.4px;
+}
+
+/* Country Flag */
+/* 8px between edge and red*/
+/* red is 6px large */
+/* 30px between edge and other edge */
+#countryFlag {
+    position: absolute; top: 661px; left: 165px;
+    background-color: rgb(30, 30, 30);
+    width: 1000px; height: 739px;
+    border-radius: 70px;
+}
+#countryFlagRedBorder {
+    position: absolute; top: 8px; left: 8px;
+    width: 984px; height: 723px;
+    background-color: var(--mainRed);
+    border-radius: inherit;
+}
+#countryFlagInnerBorder {
+    position: absolute; top: 14px; left: 14px;
+    width: 972px; height: 711px;
+    background-color: rgb(30, 30, 30);
+    border-radius: inherit;
+}
+#countryFlagImage {
+    position: absolute; top: 30px; left: 30px;
+    width: 940px; height: 679px;
+    border-radius: inherit;
+    background-image: url("https://osuflags.omkserver.nl/AU-1000.png");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Logo */
+#logo {
+    position: absolute; top: 181px; right: 239px;
+    width: 513px;
+}
+/* Round Name */
+#roundName {
+    position: absolute; top: 455px; right: 279px;
+    font-size: 150px;
+}
+/* Country Name */
+#countryName {
+    position: absolute; top: 655px; right: 272px;
+    font-size: 375px;
+    letter-spacing: -1.5px;
+}
+
+/* Player Name */
+#playerNames {
+    position: absolute; top: 1094px; right: 281px;
+    font-size: 150px;
+    width: var(--playerNamesWidth);
+    display: flex;
+    flex-wrap: wrap;
+    letter-spacing: -1px;
+}
+#playerNames > * {
+    width: calc(var(--playerNamesWidth) / 2);
+    text-align: right;
+    height: 158px;
+}
