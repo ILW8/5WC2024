@@ -83,6 +83,7 @@
     font-size: 63px;
     letter-spacing: 2px;
     text-wrap: nowrap;
+    display: inline-block;
 }
 /* Team Stars */
 .teamStars { position: absolute; top: 97px; }

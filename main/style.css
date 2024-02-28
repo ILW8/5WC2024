@@ -38,7 +38,7 @@
     font-size: 88px;
     letter-spacing: 0.2px;
     text-wrap: nowrap;
-    
+    display: inline-block;
 }
 /* Team Stars */
 .teamStars { 
@@ -129,6 +129,7 @@
 .chatMessage {
     color: white;
     letter-spacing: 2px;
+    word-wrap: break-word;
 }
 
 /* --- Moving Score Bars --- */
@@ -187,9 +188,11 @@
 .playingScore {
     position: absolute; top: 52px;
     font-size: 143px;
+    width: 960px;
+    text-align: center;
 }
-#playingScoreRed { left: 1183px; transform: translateX(-50%); }
-#playingScoreBlue { right: 1183px; transform: translateX(50%); }
+#playingScoreRed { left: 960px; }
+#playingScoreBlue { right: 960px; }
 #scoreText {
     position: absolute; top: 80px; left: 50%; transform: translateX(-50%);
     font-size: 91px;

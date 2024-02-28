@@ -298,6 +298,7 @@ socket.onmessage = async (event) => {
         // Update score bar and difference
         const movingScoreBarDifferencePercent = currentScoreDifference / 1500000
         const movingScoreBarRectangleWidth = Math.min(movingScoreBarDifferencePercent * 936, 936)
+        if (movingScoreBarRectangleWidth < 30) movingScoreBarRectangleWidth = 30
         const movingScoreBarArrowPositionHorizontal = movingScoreBarRectangleWidth + 31
 
         let scoreBarColour

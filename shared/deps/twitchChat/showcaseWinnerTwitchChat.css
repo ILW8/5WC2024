@@ -31,4 +31,5 @@
 .chatMessage {
     color: white;
     letter-spacing: 2px;
+    word-wrap: break-word;
 }

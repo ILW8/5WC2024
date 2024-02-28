@@ -148,7 +148,7 @@ function handleTeamAction(event, teamCode, element) {
 	const pickBanProtectElement = element.children[0]
 
 	// Remove map
-	if (event.altKey) {		
+	if (event.shiftKey) {		
 		pickBanProtectElement.style.display = "none"
 		return
 	}
@@ -162,7 +162,7 @@ function handleTeamAction(event, teamCode, element) {
 	// Pick ban Protect String
 	let pickBanProtectString
 	if (event.ctrlKey) pickBanProtectString = "ban"
-    else if (event.shiftKey) pickBanProtectString = "protect"
+    else if (event.altKey) pickBanProtectString = "protect"
     else pickBanProtectString = "pick"
 
 	// Apply information

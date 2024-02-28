@@ -116,6 +116,7 @@
     position: absolute; top: 655px; right: 272px;
     font-size: 375px;
     letter-spacing: -1.5px;
+    display: inline-block;
 }
 
 /* Player Name */
