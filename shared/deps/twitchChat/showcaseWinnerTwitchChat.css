@@ -11,8 +11,8 @@
 #twitchChatContainer::-webkit-scrollbar { display: none; }
 .twitchChatMessageContainer {
     margin-left: 50px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .flagIconsContainer { display: flex; }
 .flagImage {
@@ -21,7 +21,7 @@
 }
 .messageDetail {
     line-height: 50px;
-    font-size: 45px;
+    font-size: 36px;
     letter-spacing: 2px;
 }
 .messageUser {
