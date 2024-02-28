@@ -7,13 +7,24 @@ socket.onerror = error => { console.log("Socket Error: ", error) }
 
 // Load country data
 let allCountries
-let allCountriesXhr = new XMLHttpRequest()
-allCountriesXhr.open("GET", "http://127.0.0.1:24050/5WC2024/_data/countries.json", false)
-allCountriesXhr.onload = function () {
-    if (this.status == 404) return
-    if (this.status == 200) allCountries = JSON.parse(this.responseText)
-}
-allCountriesXhr.send()
+fetch("http://127.0.0.1:24050/5WC2024/_data/countries.json")
+    .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok')
+        return response.json()
+    })
+    .then(data => allCountries = data)
+    .catch(error => console.error('Error:', error) )
+
+// Load player data
+let allPlayers
+fetch("http://127.0.0.1:24050/5WC2024/_data/players.json")
+    .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok')
+        return response.json()
+    })
+    .then(data => allPlayers = data.output)
+    .catch(error => console.error('Error:', error) )
+
 
 // Now playing
 const nowPlayingImage = document.getElementById("nowPlayingImage")
@@ -69,19 +80,38 @@ let currentCountryCode
 
 // Round information
 const roundName = document.getElementById("roundName")
+const playerNames = document.getElementById("playerNames")
 setInterval(() => {
 
     // Set new country
     let newCountryCode = getCookie("currentWinner")
-    if (newCountryCode !== "none" && currentCountryCode !== newCountryCode) {
+    if (newCountryCode !== "none" && currentCountryCode !== newCountryCode && allCountries && allPlayers) {
         currentCountryCode = newCountryCode
+
+        // Set country flag
         countryFlagImage.style.backgroundImage = `url("https://osuflags.omkserver.nl/${newCountryCode}-1000.png")`
 
+        // Set country name
         for (let i = 0; i < allCountries.length; i++) {
-            if (allCountries[i].code == currentCountryCode) {
+            if (allCountries[i].code === currentCountryCode) {
                 countryNameFirstLetter.innerText = allCountries[i].name[0]
                 countryNameRest.innerText = allCountries[i].name.substring(1)
                 break
+            }
+        }
+
+        // Reset country players
+        for (let i = 0; i < playerNames.childElementCount; i++) {
+            playerNames.children[i].innerText = ""
+        }
+
+        // Set country players
+        let playerCounter = 0
+        for (let i = 0; i < allPlayers.length; i++) {
+            if (playerCounter >= 8) break
+            if (allPlayers[i].osu_flag === currentCountryCode) {
+                playerCounter++
+                document.getElementById(`playerName${playerCounter}`).innerText = allPlayers[i].osu_username
             }
         }
     }
