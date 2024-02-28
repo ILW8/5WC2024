@@ -146,18 +146,29 @@ const pickedByText = document.getElementById("pickedByText")
 const pickedByFlag = document.getElementById("pickedByFlag")
 
 // Setting current picker
+const currentPickerRed = document.getElementById("currentPickerRed")
+const currentPickerBlue = document.getElementById("currentPickerBlue")
 setCurrentPicker("none")
 function setCurrentPicker(teamColour) {
+    // reset colours
+    currentPickerRed.style.color = "white"
+    currentPickerRed.style.borderColor = "white"
+    currentPickerBlue.style.color = "white"
+    currentPickerBlue.style.borderColor = "white"
+
     // if tiebreaker, nothing happens
     if (pickedByText === "TIEBREAKER") return
 
     // Set cookie
     document.cookie = `currentTeamPick=${teamColour}; path=/`
-
     if (teamColour === "red") {
         pickedByFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${currentRedTeamCode}-126.png")`
+        currentPickerRed.style.color = "var(--mainRed)"
+        currentPickerRed.style.borderColor = "var(--mainRed)"
     } else if (teamColour === "blue") {
         pickedByFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${currentBlueTeamCode}-126.png")`
+        currentPickerBlue.style.color = "var(--mainBlue)"
+        currentPickerBlue.style.borderColor = "var(--mainBlue)"
     } else if (teamColour === "none") {
         pickedBy.style.display = "none"
     }
