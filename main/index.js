@@ -277,6 +277,7 @@ socket.onmessage = async (event) => {
             if (i < data.tourney.ipcClients.length / 2) currentRedScore += score
             else currentBlueScore += score
         }
+        currentScoreDifference = Math.abs(currentRedScore - currentBlueScore)
 
         // Update scores
         scoreAnimation.playingScoreRed.update(currentRedScore)
