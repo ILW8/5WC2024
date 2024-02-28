@@ -32,7 +32,8 @@ getMaps.then(showcaseMapsArray => {
         const newSongName = showcaseMapsArray[i].songName.replace(/ /g, "_")
         const newSongDifficulty = showcaseMapsArray[i].difficulty.replace(/ /g, "_")
         newMapTitle.setAttribute("id", `${newSongName}_${newSongDifficulty}`)
-        newMapTitle.innerText = showcaseMapsArray[i].modid.toUpperCase()
+        if (showcaseMapsArray[i].modid.toUpperCase().includes("TB")) newMapTitle.innerText = "TB"
+        else newMapTitle.innerText = showcaseMapsArray[i].modid.toUpperCase()
         
         if (i == 0) newMapTitle.classList.add("mapSlideCurrent")
         else if (i == 1) newMapTitle.classList.add("mapSlideRight")

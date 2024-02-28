@@ -408,6 +408,7 @@ socket.onmessage = async (event) => {
                 pickedByText.innerText = "TIEBREAKER"
                 pickedByText.style.right = "157px"
                 pickedByFlag.style.display = "none"
+                nowPlayingMod.innerText = mappoolMapData.mod
             }
             else {
                 pickedByText.innerText = "PICKED BY"
