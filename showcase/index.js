@@ -16,20 +16,15 @@ let mapSlotDifference = 0
 let animTime
 const directions = ["InvisibleLeft", "ExtremeLeft", "Left", "Current", "Right", "InvisibleRight"]
 
-const getMaps = new Promise(async resolve => {
-    const xhr = new XMLHttpRequest()
-    xhr.open("GET", `http://127.0.0.1:24050/5WC2024/_data/showcaseBeatmaps.json`, false)
-    xhr.onload = function () {
-        if (this.status == 404) return
-        if (this.status == 200) {
-            showcaseMaps = JSON.parse(this.responseText)
-            document.getElementById("roundName").innerText = showcaseMaps.roundName
-            showcaseMapsArray = showcaseMaps.beatmaps
-        }
-    }
-    xhr.send()
-    resolve(showcaseMapsArray)
-})
+const getMaps = fetch("http://127.0.0.1:24050/5WC2024/_data/showcaseBeatmaps.json")
+    .then(response => {
+        if (!response.ok) throw new Error(`Failed to fetch showcase beatmaps: ${response.status}`)
+        return response.json()
+    })
+    .then(showcaseMaps => {
+        document.getElementById("roundName").innerText = showcaseMaps.roundName
+        return showcaseMaps.beatmaps
+    })
 getMaps.then(showcaseMapsArray => {
     for (let i = 0; i < showcaseMapsArray.length; i++) {
         const newMapTitle = document.createElement("div")

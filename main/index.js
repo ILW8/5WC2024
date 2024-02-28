@@ -26,20 +26,20 @@ socket.onopen = () => { console.log("Successfully Connected") }
 socket.onclose = event => { console.log("Socket Closed Connection: ", event); socket.send("Client Closed!") }
 socket.onerror = error => { console.log("Socket Error: ", error) }
 
-// Load Mappool
+// Load mappool
 let mapData
 let beatmapsData
-let mapDataXhr = new XMLHttpRequest()
-mapDataXhr.open("GET", "http://127.0.0.1:24050/5WC2024/_data/beatmaps.json", false)
-mapDataXhr.onload = function () {
-    if (this.status == 404) return
-    if (this.status == 200) {
-        mapData = JSON.parse(this.responseText)
+
+fetch("http://127.0.0.1:24050/5WC2024/_data/beatmaps.json")
+    .then(response => {
+        if (!response.ok) throw new Error(`Failed to fetch beatmaps data: ${response.status}`)
+        return response.json()
+    })
+    .then(data => {
+        mapData = data
         document.cookie = `currentRound=${mapData.roundName}; path=/`
         beatmapsData = mapData.beatmaps
-    }
-}
-mapDataXhr.send()
+    })
 
 // Find map from mappool
 function findMapInMappool(beatmapID) {

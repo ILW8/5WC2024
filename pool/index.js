@@ -5,26 +5,65 @@ socket.onopen = () => { console.log("Successfully Connected") }
 socket.onclose = event => { console.log("Socket Closed Connection: ", event); socket.send("Client Closed!") }
 socket.onerror = error => { console.log("Socket Error: ", error) }
 
+// Load mappool
 let mapData
 let beatmapsData
 let modOrderData
-let mapDataXhr = new XMLHttpRequest()
-mapDataXhr.open("GET", "http://127.0.0.1:24050/5WC2024/_data/beatmaps.json", false)
-mapDataXhr.onload = function () {
-    if (this.status == 404) return
-    if (this.status == 200) {
-        mapData = JSON.parse(this.responseText)
-        document.cookie = `currentRound=${mapData.roundName}; path=/`
-        beatmapsData = mapData.beatmaps
-        modOrderData = mapData.modOrder
-    }
-}
-mapDataXhr.send()
-
 let allBeatmaps = []
-for (let i = 0; i < modOrderData.length; i++) allBeatmaps[i] = beatmapsData.filter(map => map.mod == modOrderData[i])
-// sort maps by order
-for (let i = 0; i < allBeatmaps.length; i++) allBeatmaps[i].sort((map1, map2) => map1.order - map2.order)
+fetch("http://127.0.0.1:24050/5WC2024/_data/beatmaps.json")
+    .then(response => {
+        if (!response.ok) throw new Error(`Failed to fetch beatmaps data: ${response.status}`)
+        return response.json()
+    })
+    .then(data => {
+        // Extract data
+        const { roundName, beatmaps: beatmapsData, modOrder: modOrderData } = data
+
+        // Set cookie
+        document.cookie = `currentRound=${roundName}; path=/`
+
+        // Sort by mod, then by order
+        const allBeatmaps = modOrderData.map(mod => beatmapsData.filter(map => map.mod === mod).sort((map1, map2) => map1.order - map2.order))
+
+        // Create map cards
+        allBeatmaps.forEach((maps, i) => {
+            if (i === 0 && maps.length === 5) {
+                // 5 Map NM
+                maps.forEach(map => createMapCard(map, "nmExtendedMapCard", "nmExtendedMapCardName", FiveNMMapContainerEl))
+            } else if (i === 0 && maps.length === 6) {
+                // 6 Map NM
+                const [container1, container2] = [maps.slice(0, 3), maps.slice(3)]
+                container1.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", SixNMMapContainer1El))
+                container2.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", SixNMMapContainer2El))
+            } else if (i === 1 || i === 2) {
+                // HD / HR
+                maps.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", i === 1? HDMapContainerEl : HRMapContainerEl))
+            } else if (i === 3) {
+                // DT
+                maps.forEach(map => {
+                    createMapCard(map, maps.length === 3? "bottom3MapsMapCard" : "normalMapCard", maps.length === 3? "bottom3MapsMapCardName" : "normalMapCardName", DTMapContainerEl)
+                })
+            } else if (i === 4) {
+                // FM
+                maps.forEach(map => createMapCard(map, maps.length === 2 ? "fm2MapsMapCard" : "bottom3MapsMapCard", maps.length === 2 ? "fm2MapsMapCardName" : "bottom3MapsMapCardName", FMMapContainerEl))
+            } else if (i === 5) {
+                // TB
+                const tbMap = maps[0]
+                TBContainerEl.setAttribute("id", tbMap.beatmapID)
+                tbMapCardImageEl.style.backgroundImage = `url("${tbMap.imgURL}")`
+                tbMapCardNameEl.innerText = `${tbMap.artist} - ${tbMap.songName}`
+                tbMapCardDifficultyEl.innerText = tbMap.difficultyname
+                TBContainerEl.addEventListener("click", event => {
+                    event.preventDefault()
+                    handleTeamAction(event, currentRedTeamCode, this)
+                })
+                TBContainerEl.addEventListener("contextmenu", event => {
+                    event.preventDefault()
+                    handleTeamAction(event, currentBlueTeamCode, this)
+                })
+            }
+        })
+    })
 
 const FiveNMMapContainerEl = document.getElementById("FiveNMMapContainer")
 const SixNMMapContainer1El = document.getElementById("SixNMMapContainer1")
@@ -104,43 +143,6 @@ function createMapCard(currentMap, cardClass, nameClass, container) {
     newMapCard.append(pickBanProtectElement, newMapCardRectangle, mapCardImage, mapCardName, mapCardDifficulty)
     container.append(newMapCard)
 }
-allBeatmaps.forEach((maps, i) => {
-    if (i === 0 && maps.length === 5) {
-		// 5 Map NM
-        maps.forEach(map => createMapCard(map, "nmExtendedMapCard", "nmExtendedMapCardName", FiveNMMapContainerEl))
-    } else if (i === 0 && maps.length === 6) {
-		// 6 Map NM
-        const container1 = maps.slice(0, 3)
-        const container2 = maps.slice(3)
-        container1.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", SixNMMapContainer1El))
-        container2.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", SixNMMapContainer2El))
-    } else if (i === 1 || i === 2) {
-		// HD / HR
-        maps.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", (i === 1)? HDMapContainerEl : HRMapContainerEl))
-    } else if (i === 3) {
-		// DT
-        maps.forEach(map => {
-            createMapCard(map, (maps.length === 3)? "bottom3MapsMapCard" : "normalMapCard", (maps.length === 3)? "bottom3MapsMapCardName" : "normalMapCardName", DTMapContainerEl)
-        })
-    } else if (i === 4) {
-		// FM
-        maps.forEach(map => createMapCard(map, (maps.length === 2) ? "fm2MapsMapCard" : "bottom3MapsMapCard", (maps.length === 2) ? "fm2MapsMapCardName" : "bottom3MapsMapCardName", FMMapContainerEl))
-    } else if (i === 5) {
-		// TB
-        TBContainerEl.setAttribute("id", maps[0].beatmapID)
-        tbMapCardImageEl.style.backgroundImage = `url("${maps[0].imgURL}")`
-        tbMapCardNameEl.innerText = `${maps[0].artist} - ${maps[0].songName}`
-        tbMapCardDifficultyEl.innerText = maps[0].difficultyname
-        TBContainerEl.addEventListener("click", function (event) {
-            event.preventDefault()
-            handleTeamAction(event, currentRedTeamCode, this)
-        })
-        TBContainerEl.addEventListener("contextmenu", function (event) {
-            event.preventDefault()
-            handleTeamAction(event, currentBlueTeamCode, this)
-        })
-    }
-})
 // Red Team
 function handleTeamAction(event, teamCode, element) {
 	const pickBanProtectElement = element.children[0]
