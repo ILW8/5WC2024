@@ -80,6 +80,7 @@
     position: absolute; top: 0; left: 0;
     width: inherit; height: inherit;
     transition: 500ms ease-in-out;
+    overflow-y: scroll;
 }
 #tournamentChatContainer { opacity: 1; }
 #twitchChatContainer { opacity: 0; }

@@ -373,8 +373,11 @@ socket.onmessage = async (event) => {
             }
     
             tournamentChatContainer.append(fragment)
-            chatLen = data.tourney.manager.chat.length;
-            tournamentChatContainer.scrollTop = tournamentChatContainer.scrollHeight;
+            chatLen = data.tourney.manager.chat.length
+            tournamentChatContainer.scrollTo({
+                top: tournamentChatContainer.scrollHeight,
+                behavior: 'smooth'
+            })
         }
     }
 
