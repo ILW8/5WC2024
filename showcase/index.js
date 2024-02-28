@@ -26,6 +26,7 @@ const getMaps = fetch("http://127.0.0.1:24050/5WC2024/_data/showcaseBeatmaps.jso
         return showcaseMaps.beatmaps
     })
 getMaps.then(showcaseMapsArray => {
+    showcaseMaps = showcaseMapsArray
     for (let i = 0; i < showcaseMapsArray.length; i++) {
         const newMapTitle = document.createElement("div")
         const newSongName = showcaseMapsArray[i].songName.replace(/ /g, "_")
@@ -178,8 +179,8 @@ socket.onmessage = async (event) => {
 
     if (!isMapFound) {
         replayerEl.style.display = "none"
-        if (currentSR !== data.menu.bm.stats.SR) {
-            currentSR = data.menu.bm.stats.SR
+        if (currentSR !== data.menu.bm.stats.fullSR) {
+            currentSR = data.menu.bm.stats.fullSR
             starRatingNumberEl.innerText = currentSR
         }
         if (currentCS !== data.menu.bm.stats.CS) {
