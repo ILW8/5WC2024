@@ -78,7 +78,6 @@ window.onload = function () {
 
 socket.onmessage = async (event) => {
     const data = JSON.parse(event.data)
-    console.log(data)
 
     if (currentSongTitle !== data.menu.bm.metadata.title || currentMd5 !== data.menu.bm.md5) {
         currentSongTitle = data.menu.bm.metadata.title
@@ -349,3 +348,7 @@ let configProgress = {
 		animation: { duration: 0 }
 	}
 }
+
+// Join stagetournaments
+ComfyJS.Init( "stagetournaments" )
+document.cookie = `currentChannel=241444981; path=/`
