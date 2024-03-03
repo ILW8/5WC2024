@@ -103,8 +103,10 @@ function generateRoster() {
             let playersFromLastYearNotInThisYear = []
             let playersFromLastYearAndThisYear = []
             let playersFromLastYear = []
-            let lastyearseed = document.getElementById("lastyearplacement");
-            lastyearseed.innerHTML = `Last Year: ${playerData[i].last_seed}`;
+            let lastyearplacement = document.getElementById("lastyearplacement");
+            lastyearplacement.innerHTML = `<span style="color:#f52453">Placement:</span> ${playerData[i].last_placement}`;
+            let lastyearseeding = document.getElementById("lastyearseeding");
+            lastyearseeding.innerHTML = `<span style="color:#f52453">Seeding:</span> ${playerData[i].last_seed}`;
 
             for (var j = 0; j < playerData[i].last_year.length; j++) {
                 playersFromLastYear.push(playerData[i].last_year[j][0])
@@ -288,6 +290,7 @@ let seventoeightPlaceRowImages = seventoeightPlaceRow.children
 let ninetotwelvePlaceRowImages = ninetotwelvePlaceRow.children
 let thirteentosixteenPlaceRowImages = thirteentosixteenPlaceRow.children
 let twentyfivetothrirtytwoPlaceRowImages = twentyfivetothrirtytwoPlaceRow.children
+let seventeentotwentyfourPlaceRowImages = seventeentotwentyfourPlaceRow.children
 let dnqPlaceRowImages = dnqPlaceRow.children
 
 function dnqPlaceRowCheckImageSize(container) {
