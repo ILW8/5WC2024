@@ -88,7 +88,7 @@ function predictionClear(){
 }
 
 function generateRoster() {
-
+    console.log("generating rosters")
     let rightbox = document.querySelectorAll('.rightbox')
     if (rightbox.length > 0) rightbox.forEach(element => element.remove())
     let pointer = document.querySelectorAll('.pointer')
@@ -99,7 +99,7 @@ function generateRoster() {
     let currentTeam = predictionTeams[currentTeamLocation]
     for (var i = 0; i < playerData.length; i++) {
         // Creating Green Boxes
-        if (currentTeam == playerData[i].country_name) {
+        if (currentTeam[1] == playerData[i].country_name) {
             let playersFromLastYearNotInThisYear = []
             let playersFromLastYearAndThisYear = []
             let playersFromLastYear = []
@@ -118,14 +118,14 @@ function generateRoster() {
                 rightBox.classList.add("rightbox")
                 rightBox.setAttribute("id",`rightPlayer${j+1}`)
                 rightBox.innerText = playerData[i].current_year[j]
-                rightBox.style.top = `${10 + j * 60}px`
+                rightBox.style.top = `${10 + j * 81.5}px`
                 compareBox.append(rightBox)
 
                 if (!playersFromLastYear.includes(playerData[i].current_year[j])) {
                     let pointer = document.createElement("div")
                     pointer.classList.add("pointer")
                     pointer.setAttribute("id",`pointer${j+1}`)
-                    pointer.style.top = `${25 + j * 60}px`
+                    pointer.style.top = `${35 + j * 81.5}px`
                     compareBox.append(pointer)
                 }
             }
@@ -140,7 +140,7 @@ function generateRoster() {
                 leftBox.classList.add("leftbox")
                 leftBox.setAttribute("id",`leftPlayer${j+1}`)
                 leftBox.innerText = playersFromLastYearNotInThisYear[redBoxCounter]
-                leftBox.style.top = `${10 + j * 60}px`
+                leftBox.style.top = `${10 + j * 81.5}px`
                 compareBox.append(leftBox)
                 redBoxCounter++
 
@@ -148,7 +148,7 @@ function generateRoster() {
                 let pointer = document.createElement("div")
                 pointer.classList.add("pointer")
                 pointer.setAttribute("id",`pointer${j+1}`)
-                pointer.style.top = `${25 + j * 60}px`
+                pointer.style.top = `${35 + j * 81.5}px`
                 compareBox.append(pointer)
             }
             // When they are not there
@@ -160,7 +160,7 @@ function generateRoster() {
                     leftBox.classList.add("leftbox")
                     leftBox.setAttribute("id",`leftPlayer${j+1}`)
                     leftBox.innerText = playersFromLastYearNotInThisYear[redBoxCounter]
-                    leftBox.style.top = `${10 + (currentNo + k)* 60}px`
+                    leftBox.style.top = `${10 + (currentNo + k)* 81.5}px`
                     compareBox.append(leftBox)
                     redBoxCounter++
 
@@ -168,7 +168,7 @@ function generateRoster() {
                     let pointer = document.createElement("div")
                     pointer.classList.add("pointer")
                     pointer.setAttribute("id",`pointer${j+1}`)
-                    pointer.style.top = `${25 + j * 60}px`
+                    pointer.style.top = `${35 + j * 81.5}px`
                     compareBox.append(pointer)
                 }
             }
@@ -282,25 +282,29 @@ let seventeentotwentyfourPlaceRow = document.getElementById("seventeentotwentyfo
 let twentyfivetothrirtytwoPlaceRow = document.getElementById("twentyfivetothrirtytwoPlaceRow")
 let dnqPlaceRow = document.getElementById("dnqPlaceRow")
 
-let seventeentotwentyfourPlaceRowImages = seventeentotwentyfourPlaceRow.children
+
+let fivetosixPlaceRowImages = fivetosixPlaceRow.children
+let seventoeightPlaceRowImages = seventoeightPlaceRow.children
+let ninetotwelvePlaceRowImages = ninetotwelvePlaceRow.children
+let thirteentosixteenPlaceRowImages = thirteentosixteenPlaceRow.children
 let twentyfivetothrirtytwoPlaceRowImages = twentyfivetothrirtytwoPlaceRow.children
 let dnqPlaceRowImages = dnqPlaceRow.children
 
 function dnqPlaceRowCheckImageSize(container) {
-    if (container.length <= 5) {
+    /*if (container.length <= 5) {
         for (var i = 0; i < container.length; i++) {
             container[i].style.width = "70px"
-            container[i].style.height = "50.4px"
+            container[i].style.height = "55px"
         }
     } else if (container.length == 6) {
         for (var i = 0; i < container.length; i++) {
             container[i].style.width = "60px"
-            container[i].style.height = "43.2px"
+            container[i].style.height = "50px"
         }
     } else if (container.length == 7) {
         for (var i = 0; i < container.length; i++) {
             container[i].style.width = "50px"
-            container[i].style.height = "36px"
+            container[i].style.height = "40px"
         }
     } else if (container.length == 8) {
         for (var i = 0; i < container.length; i++) {
@@ -322,29 +326,64 @@ function dnqPlaceRowCheckImageSize(container) {
             container[i].style.width = "30px"
             container[i].style.height = "21.6px"
         }
+    } */
+    if (container.length <= 5) {
+        for (var i = 0; i < container.length; i++) {
+            container[i].style.width = "70px"
+            container[i].style.height = "55px"
+        }
+    } else if (container.length == 6) {
+        for (var i = 0; i < container.length; i++) {
+            container[i].style.width = "60px"
+            container[i].style.height = "50px"
+        }
+    } else if (container.length == 7) {
+        for (var i = 0; i < container.length; i++) {
+            container[i].style.width = "50px"
+            container[i].style.height = "40px"
+        }
+    } 
+    else if (container.length <= 16) {
+        for (var i = 0; i < container.length; i++) {
+            container[i].style.width = "45px"
+            container[i].style.height = "35px"
+        }
+    } 
+    else {
+        for (var i = 0; i < container.length; i++) {
+            container[i].style.width = "30px"
+            container[i].style.height = "25px"
+        }
     }
 }
 
 function standardCheckImageSize(container) {
-    if (container.length <= 7) {
+    if (container.length <= 5) {
         for (var i = 0; i < container.length; i++) {
-            container[i].style.width = "80px"
-            container[i].style.height = "70px"
+            container[i].style.width = "70px"
+            container[i].style.height = "55px"
         }
-    } else if (container.length == 8) {
+    } else if (container.length == 6) {
         for (var i = 0; i < container.length; i++) {
-            container[i].style.width = "40px"
-            container[i].style.height = "29.6px"
+            container[i].style.width = "60px"
+            container[i].style.height = "50px"
         }
-    } else if (container.length == 9) {
+    } else if (container.length == 7) {
         for (var i = 0; i < container.length; i++) {
-            container[i].style.width = "35px"
-            container[i].style.height = "25.2px"
+            container[i].style.width = "50px"
+            container[i].style.height = "40px"
         }
-    } else {
+    } 
+    else if (container.length <= 16) {
+        for (var i = 0; i < container.length; i++) {
+            container[i].style.width = "45px"
+            container[i].style.height = "35px"
+        }
+    } 
+    else {
         for (var i = 0; i < container.length; i++) {
             container[i].style.width = "30px"
-            container[i].style.height = "21.6px"
+            container[i].style.height = "25px"
         }
     }
 }
@@ -388,6 +427,10 @@ function changeFlagToLocation(number) {
     if (number == 33) dnqPlaceRowCheckImageSize(dnqPlaceRowImages)
     else if (number == 25) standardCheckImageSize(twentyfivetothrirtytwoPlaceRowImages)
     else if (number == 17) standardCheckImageSize(seventeentotwentyfourPlaceRowImages)
+    else if (number == 13) standardCheckImageSize(thirteentosixteenPlaceRowImages)
+    else if (number == 9) standardCheckImageSize(ninetotwelvePlaceRowImages)
+    else if (number == 7) standardCheckImageSize(seventoeightPlaceRowImages)
+    else if (number == 5) standardCheckImageSize(fivetosixPlaceRowImages)
 
     if (previousImageParentElement == dnqPlaceRow) dnqPlaceRowCheckImageSize(dnqPlaceRowImages)
     else if (previousImageParentElement == twentyfivetothrirtytwoPlaceRow) standardCheckImageSize(twentyfivetothrirtytwoPlaceRowImages)
@@ -417,5 +460,15 @@ function removeFlag(number) {
             selectedFlag.remove()
             break
         }
+    }
+
+    switch (number) {
+        case 5: standardCheckImageSize(fivetosixPlaceRowImages); break;
+        case 7: standardCheckImageSize(seventoeightPlaceRowImages); break;
+        case 9: standardCheckImageSize(ninetotwelvePlaceRowImages); break;
+        case 13: standardCheckImageSize(thirteentosixteenPlaceRowImages); break;
+        case 17: standardCheckImageSize(seventeentotwentyfourPlaceRowImages); break;
+        case 25: standardCheckImageSize(twentyfivetothrirtytwoPlaceRowImages); break;
+        case 33: dnqPlaceRowCheckImageSize(dnqPlaceRowImages); break;
     }
 }

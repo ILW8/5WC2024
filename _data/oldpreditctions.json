@@ -36,18 +36,18 @@
             ],
             [
                 "Mikelito069",
-                true
+                false
             ]
         ],
         "current_year": [
-            "Mikelito069",
-            "Rodr1h-",
-            "Fib_02",
-            "Alokas",
-            "TheARGovernment",
-            "M A T O I",
-            "Nxtcho",
-            "-Maxi-"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -63,7 +63,7 @@
             ],
             [
                 "Trainjumper",
-                true
+                false
             ],
             [
                 "YGOkid8",
@@ -79,11 +79,11 @@
             ],
             [
                 "Supernye",
-                true
+                false
             ],
             [
-                "Naoi Rei",
-                true
+                "Woop",
+                false
             ],
             [
                 "YelloJello",
@@ -91,14 +91,14 @@
             ]
         ],
         "current_year": [
-            "TheTopaz",
-            "Naoi Rei",
-            "hayley",
-            "UnwaryTuba77",
-            "Trainjumper",
-            "Fault",
-            "Supernye",
-            "loveleft"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -122,7 +122,7 @@
             ],
             [
                 "gadse",
-                true
+                false
             ],
             [
                 "JungspylieSushi",
@@ -142,14 +142,14 @@
             ]
         ],
         "current_year": [
-            "Floflorian",
-            "gadse",
-            "studya",
-            "KAAAL",
-            "Ayoukiro",
-            "HwangOnWheels",
-            "JustBecause",
-            "hakashii"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -173,7 +173,7 @@
             ],
             [
                 "xunev",
-                true
+                false
             ],
             [
                 "Cringe lad",
@@ -185,7 +185,7 @@
             ],
             [
                 "RemTouk",
-                true
+                false
             ],
             [
                 "Tepe6oHbka",
@@ -193,14 +193,14 @@
             ]
         ],
         "current_year": [
-            "xunev",
-            "RemTouk",
-            "Neonith",
-            "durashcka",
-            "sh1z0idik",
-            "Yudek",
-            "Bekus",
-            "-serko-"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -220,11 +220,11 @@
             ],
             [
                 "arnevdh",
-                true
+                false
             ],
             [
-                "Kaja",
-                true
+                "KajaSumthing",
+                false
             ],
             [
                 "floppaosu",
@@ -232,26 +232,73 @@
             ],
             [
                 "Kayziix",
-                true
+                false
             ],
             [
                 "MentalMoose",
                 false
             ],
             [
-                "OptimismJR",
-                true
+                "Z3nix",
+                false
             ]
         ],
         "current_year": [
-            "FADED THAN A HO",
-            "Koni",
-            "Kaja",
-            "OptimismJR",
-            "Kayziix",
-            "Bl1tz_OwO",
-            "Gigatn",
-            "arnevdh"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Bolivia",
+        "flag_code": "BO",
+        "last_seed": "53rd",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "-Rizu",
+                false
+            ],
+            [
+                "Ganthar",
+                false
+            ],
+            [
+                "Im_Emilio",
+                false
+            ],
+            [
+                "Jhozhe",
+                false
+            ],
+            [
+                "Pankeso",
+                false
+            ],
+            [
+                "SammyM4t",
+                false
+            ],
+            [
+                "ZETAJOTA",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -263,7 +310,7 @@
         "last_year": [
             [
                 "DoTrO",
-                true
+                false
             ],
             [
                 "Kyulke",
@@ -275,7 +322,7 @@
             ],
             [
                 "999kalel999",
-                true
+                false
             ],
             [
                 "iFactor",
@@ -283,7 +330,7 @@
             ],
             [
                 "KakirM",
-                true
+                false
             ],
             [
                 "luscajooj",
@@ -295,50 +342,14 @@
             ]
         ],
         "current_year": [
-            "KakirM",
-            "Yelan",
-            "zStormk19",
-            "DoTrO",
-            "T-Light",
-            "999kalel999",
-            "Sunda3",
-            "thacer"
-        ]
-    },
-    {
-        "country_name": "Brunei",
-        "flag_code": "BN",
-        "last_seed": "DNP",
-        "last_placement": "DNP",
-        "played_before": false,
-        "last_year": [],
-        "current_year": [
-            "FourCan",
-            "rafs",
-            "glitchtrrp",
-            "Blight-kun",
-            "Saraishii",
-            "Fused1376",
-            "Epixia",
-            "erutobi"
-        ]
-    },
-    {
-        "country_name": "Bulgaria",
-        "flag_code": "BG",
-        "last_seed": "DNP",
-        "last_placement": "DNP",
-        "played_before": false,
-        "last_year": [],
-        "current_year": [
-            "Prahosnika",
-            "Rengmain",
-            "Hanabi -",
-            "LazerDynamiX",
-            "robatrt",
-            "RioMisstery",
-            "MyAngelLumei",
-            "Ivanix"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -354,7 +365,7 @@
             ],
             [
                 "Birchman",
-                true
+                false
             ],
             [
                 "FluffyEcho",
@@ -362,7 +373,7 @@
             ],
             [
                 "Jolly Ranchers",
-                true
+                false
             ],
             [
                 "Kevorc",
@@ -370,11 +381,11 @@
             ],
             [
                 "Lexic",
-                true
+                false
             ],
             [
                 "ploot",
-                true
+                false
             ],
             [
                 "Speed of Snail",
@@ -382,14 +393,14 @@
             ]
         ],
         "current_year": [
-            "ploot",
-            "Jolly Ranchers",
-            "Acer",
-            "FetherFall",
-            "Lexic",
-            "ExiaXD",
-            "Birchman",
-            "jykca"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -409,7 +420,7 @@
             ],
             [
                 "l Akemi l",
-                true
+                false
             ],
             [
                 "- Kaze-",
@@ -421,11 +432,11 @@
             ],
             [
                 "Nevzz",
-                true
+                false
             ],
             [
                 "Siiphs",
-                true
+                false
             ],
             [
                 "SwENeMbO",
@@ -433,14 +444,14 @@
             ]
         ],
         "current_year": [
-            "Lasseh",
-            "Siiphs",
-            "l Akemi l",
-            "Nevzz",
-            "Paxyh",
-            "dekay",
-            "Yumbtah",
-            "Shiny Froakie"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -456,7 +467,7 @@
             ],
             [
                 "gxytcgxytc",
-                true
+                false
             ],
             [
                 "Dnwings",
@@ -480,18 +491,18 @@
             ],
             [
                 "WorthlessPlayer",
-                true
+                false
             ]
         ],
         "current_year": [
-            "Knd",
-            "Sand-Star",
-            "gxytcgxytc",
-            "Ask to Wind",
-            "WorthlessPlayer",
-            "No rank",
-            "Trolloli",
-            "Aporia"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -503,7 +514,7 @@
         "last_year": [
             [
                 "hlv",
-                true
+                false
             ],
             [
                 "Phel",
@@ -519,7 +530,7 @@
             ],
             [
                 "xSalcedo",
-                true
+                false
             ],
             [
                 "Pinwii",
@@ -535,30 +546,14 @@
             ]
         ],
         "current_year": [
-            "hlv",
-            "ChukiTheWolf",
-            "- scubi -",
-            "confYYdent_",
-            "MyAngelEve",
-            "Naberuu",
-            "Strxwberrymilk",
-            "xSalcedo"
-        ]
-    },
-    {
-        "country_name": "Croatia",
-        "flag_code": "HR",
-        "last_seed": "DNP",
-        "last_placement": "DNP",
-        "played_before": false,
-        "last_year": [],
-        "current_year": [
-            "jakov",
-            "tigiexe",
-            "JebacMama69",
-            "MarinoX",
-            "BoNeStY_",
-            "Cigla"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -578,7 +573,7 @@
             ],
             [
                 "dad0ja",
-                true
+                false
             ],
             [
                 "parno abuser",
@@ -602,14 +597,14 @@
             ]
         ],
         "current_year": [
-            "dad0ja",
-            "Eiko Tsukimi",
-            "--Corpse--",
-            "Kem_",
-            "Fordor",
-            "Ryugene",
-            "Andysaur_",
-            "Vojta99"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -632,8 +627,8 @@
                 false
             ],
             [
-                "[raz]",
-                true
+                "razzrat",
+                false
             ],
             [
                 "[THEDUCK]",
@@ -645,22 +640,22 @@
             ],
             [
                 "PandaguinDK",
-                true
+                false
             ],
             [
                 "tjukas",
-                true
+                false
             ]
         ],
         "current_year": [
-            "-Dever",
-            "stealfth",
-            "tjukas",
-            "Lothjon",
-            "Cromalia",
-            "PandaguinDK",
-            "[raz]",
-            "progaa"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -687,12 +682,12 @@
                 false
             ],
             [
-                "KimikaTachibana",
-                true
+                "Lamy-",
+                false
             ],
             [
-                "CAPTAIN ESTONIA",
-                true
+                "megahello",
+                false
             ],
             [
                 "Randver",
@@ -700,18 +695,18 @@
             ],
             [
                 "sprei",
-                true
+                false
             ]
         ],
         "current_year": [
-            "CAPTAIN ESTONIA",
-            "Pallid3",
-            "kaimokene",
-            "KimikaTachibana",
-            "EvilGamings",
-            "sprei",
-            "Mullimees",
-            "Matu12313123"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -727,7 +722,7 @@
             ],
             [
                 "CPU_Cartel",
-                true
+                false
             ],
             [
                 "Jerezz",
@@ -755,14 +750,14 @@
             ]
         ],
         "current_year": [
-            "daoxide",
-            "Stemuu",
-            "Kyttis",
-            "Jokupoika24",
-            "CPU_Cartel",
-            "L3nnu",
-            "EsRiku",
-            "ilkka"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -774,7 +769,7 @@
         "last_year": [
             [
                 "Drakkles",
-                true
+                false
             ],
             [
                 "____________",
@@ -789,12 +784,12 @@
                 false
             ],
             [
-                "XiaoMyMommy",
-                true
+                "Draxarta",
+                false
             ],
             [
                 "MyzeJD",
-                true
+                false
             ],
             [
                 "Nuage",
@@ -806,14 +801,14 @@
             ]
         ],
         "current_year": [
-            "Jiuchu",
-            "MyzeJD",
-            "XiaoMyMommy",
-            "Adrean",
-            "Punkysteria",
-            "Hardstcukc 2",
-            "Drakkles",
-            "Ryshult"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -841,7 +836,7 @@
             ],
             [
                 "-Jayden",
-                true
+                false
             ],
             [
                 "Boden",
@@ -853,18 +848,18 @@
             ],
             [
                 "POLANDTRUCKER13",
-                true
+                false
             ]
         ],
         "current_year": [
-            "jaaysfa",
-            "EulaFootEnjoyer",
-            "Th1",
-            "Christiaaan",
-            "POLANDTRUCKER13",
-            "Kurumi--",
-            "Cerelydra",
-            "-Jayden"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -875,16 +870,16 @@
         "played_before": true,
         "last_year": [
             [
-                "Serafeim",
-                true
+                "TSM L9 PAOK[HR]",
+                false
             ],
             [
                 "snap",
-                true
+                false
             ],
             [
                 "[Teo]",
-                true
+                false
             ],
             [
                 "Erilya",
@@ -896,11 +891,11 @@
             ],
             [
                 "BilboNP",
-                true
+                false
             ],
             [
                 "KittyLikeme",
-                true
+                false
             ],
             [
                 "Knee Cutter",
@@ -908,14 +903,57 @@
             ]
         ],
         "current_year": [
-            "snap",
-            "W1nn1e",
-            "BilboNP",
-            "KittyLikeme",
-            "Serafeim",
-            "Faylie",
-            "xlepas",
-            "[Teo]"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
+        ]
+    },
+    {
+        "country_name": "Guatemala",
+        "flag_code": "GT",
+        "last_seed": "52nd",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "a1496366rhc",
+                false
+            ],
+            [
+                "Chuerk UwU",
+                false
+            ],
+            [
+                "GrxOmg10",
+                false
+            ],
+            [
+                "OreoMishi",
+                false
+            ],
+            [
+                "Ricardo93",
+                false
+            ],
+            [
+                "Tishin",
+                false
+            ]
+        ],
+        "current_year": [
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -943,7 +981,7 @@
             ],
             [
                 "lelxdme",
-                true
+                false
             ],
             [
                 "RemIscute07",
@@ -959,14 +997,14 @@
             ]
         ],
         "current_year": [
-            "AbbeyChan6203",
-            "RiceballUwU",
-            "lelxdme",
-            "Piggice",
-            "Twistedreality",
-            "MeowZero_Emilia",
-            "Ayaneruuu",
-            "- kouyuu -"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -982,11 +1020,11 @@
             ],
             [
                 "ffelix",
-                true
+                false
             ],
             [
                 "raven_waffles",
-                true
+                false
             ],
             [
                 "RiSe",
@@ -1006,36 +1044,18 @@
             ],
             [
                 "TibO123",
-                true
+                false
             ]
         ],
         "current_year": [
-            "ffelix",
-            "TibO123",
-            "HyBer",
-            "nyarvis",
-            "Nidasimno",
-            "balloon_",
-            "worst hu player",
-            "raven_waffles"
-        ]
-    },
-    {
-        "country_name": "India",
-        "flag_code": "IN",
-        "last_seed": "DNP",
-        "last_placement": "DNP",
-        "played_before": false,
-        "last_year": [],
-        "current_year": [
-            "ArtoriaMyAngel",
-            "Juggernaut",
-            "OsuMaster1290",
-            "KurumiTokisaki0",
-            "wRoNk",
-            "dard",
-            "Speshimen",
-            "zmecha"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1047,7 +1067,7 @@
         "last_year": [
             [
                 "fnayR",
-                true
+                false
             ],
             [
                 "Xicyte",
@@ -1055,7 +1075,7 @@
             ],
             [
                 "SDKO",
-                true
+                false
             ],
             [
                 "akebono",
@@ -1075,18 +1095,18 @@
             ],
             [
                 "retot",
-                true
+                false
             ]
         ],
         "current_year": [
-            "honeymint",
-            "fnayR",
-            "Icun",
-            "retot",
-            "-Rizie",
-            "Bunan-",
-            "mymeatfelloff",
-            "SDKO"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1098,7 +1118,7 @@
         "last_year": [
             [
                 "KSTBAD",
-                true
+                false
             ],
             [
                 "obrown",
@@ -1130,14 +1150,14 @@
             ]
         ],
         "current_year": [
-            "PoSharTo",
-            "KSTBAD",
-            "rbk",
-            "Sensta",
-            "nat",
-            "Twig583",
-            "Vanti",
-            "don_chan"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1157,7 +1177,7 @@
             ],
             [
                 "Flyco",
-                true
+                false
             ],
             [
                 "Kusanali",
@@ -1168,8 +1188,8 @@
                 false
             ],
             [
-                "sosuu",
-                true
+                "wreckzl",
+                false
             ],
             [
                 "_Maxim_",
@@ -1177,14 +1197,14 @@
             ]
         ],
         "current_year": [
-            "LayUp",
-            "Flyco",
-            "ChaosEater",
-            "Osh3r212",
-            "IlayOwO",
-            "sosuu",
-            "decordy_",
-            "the boss bob"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1204,7 +1224,7 @@
             ],
             [
                 "frewayk",
-                true
+                false
             ],
             [
                 "FuibaFuyu",
@@ -1228,14 +1248,14 @@
             ]
         ],
         "current_year": [
-            "frewayk",
-            "Poof",
-            "Loreriv",
-            "SIMONETRAPANI",
-            "lia27",
-            "-Poggi-",
-            "gionuaS",
-            "Proioxis"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1251,7 +1271,7 @@
             ],
             [
                 "kotomori_",
-                true
+                false
             ],
             [
                 "morimori",
@@ -1279,14 +1299,14 @@
             ]
         ],
         "current_year": [
-            "RAiMEi_BOTTliUM",
-            "Jerryyy",
-            "_Hachikun_",
-            "skit_3980",
-            "Tsubaban",
-            "kotomori_",
-            "Toxicat",
-            "Heil__"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1305,8 +1325,8 @@
                 false
             ],
             [
-                "MyAngelhwtochko",
-                true
+                "argentum_m",
+                false
             ],
             [
                 "JustShade",
@@ -1330,32 +1350,61 @@
             ]
         ],
         "current_year": [
-            "Po1SoN3SS",
-            "MyAngelhwtochko",
-            "ItzZeroIce",
-            "MapuXyaH4uk",
-            "rxys",
-            "naraxx",
-            "Sykezs",
-            "ShamiruKi"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
-        "country_name": "Kyrgyzstan",
-        "flag_code": "KG",
-        "last_seed": "DNP",
-        "last_placement": "DNP",
-        "played_before": false,
-        "last_year": [],
+        "country_name": "Kuwait",
+        "flag_code": "KW",
+        "last_seed": "49th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "-Snake",
+                false
+            ],
+            [
+                "Bisuke",
+                false
+            ],
+            [
+                "_sola",
+                false
+            ],
+            [
+                "-Anonymous",
+                false
+            ],
+            [
+                "CyberToothLion",
+                false
+            ],
+            [
+                "KHAFx",
+                false
+            ],
+            [
+                "Pokin",
+                false
+            ]
+        ],
         "current_year": [
-            "ded24lol",
-            "RInatGM",
-            "akenao",
-            "benztruckz",
-            "heartpart",
-            "SiIva",
-            "TSUBEKA",
-            "Razak_"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1399,14 +1448,14 @@
             ]
         ],
         "current_year": [
-            "TheBigDrop",
-            "olivers31",
-            "kuriumn",
-            "Xerxony",
-            "taiglem",
-            "Hellldestroer",
-            "kola kao",
-            "Sqlslammer_LV"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1433,8 +1482,8 @@
                 false
             ],
             [
-                "PakaZ",
-                true
+                "evaldaszzzz",
+                false
             ],
             [
                 "NiZY",
@@ -1446,18 +1495,18 @@
             ],
             [
                 "Sunless_",
-                true
+                false
             ]
         ],
         "current_year": [
-            "Mancis",
-            "tnt",
-            "Gabytex",
-            "Sunless_",
-            "ramojusd",
-            "_eLSe_",
-            "Arijus",
-            "PakaZ"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1469,7 +1518,7 @@
         "last_year": [
             [
                 "DuoX",
-                true
+                false
             ],
             [
                 "Shocola",
@@ -1481,7 +1530,7 @@
             ],
             [
                 "Blethz",
-                true
+                false
             ],
             [
                 "Cryolien",
@@ -1489,11 +1538,11 @@
             ],
             [
                 "GG_com2016",
-                true
+                false
             ],
             [
                 "Hu_Ai",
-                true
+                false
             ],
             [
                 "okiari",
@@ -1501,14 +1550,14 @@
             ]
         ],
         "current_year": [
-            "Blethz",
-            "Floth",
-            "GG_com2016",
-            "VenDService",
-            "Hu_Ai",
-            "daro",
-            "milo Penguin",
-            "DuoX"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1520,7 +1569,7 @@
         "last_year": [
             [
                 "[Toni]",
-                true
+                false
             ],
             [
                 "Sazul",
@@ -1532,7 +1581,7 @@
             ],
             [
                 "-Line-",
-                true
+                false
             ],
             [
                 "ChunkyGoatMilk",
@@ -1540,7 +1589,7 @@
             ],
             [
                 "kevinm31",
-                true
+                false
             ],
             [
                 "MrAlpacus",
@@ -1548,18 +1597,18 @@
             ],
             [
                 "Roller-",
-                true
+                false
             ]
         ],
         "current_year": [
-            "kevinm31",
-            "-Line-",
-            "[Toni]",
-            "chiliawa52",
-            "Muffin5k",
-            "Roller-",
-            "Agamalpa",
-            "daviddv"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1570,7 +1619,7 @@
         "played_before": true,
         "last_year": [
             [
-                "oob",
+                "UC1",
                 false
             ],
             [
@@ -1578,39 +1627,39 @@
                 false
             ],
             [
-                "Seleen",
+                "UC3",
                 false
             ],
             [
-                "ecksedee",
+                "UC4",
                 false
             ],
             [
-                "Cheesyeet",
+                "UC5",
                 false
             ],
             [
-                "UnveiledGolem",
+                "UC6",
                 false
             ],
             [
-                "Nibl",
+                "UC7",
                 false
             ],
             [
-                "Just Lucan",
-                true
+                "UC8",
+                false
             ]
         ],
         "current_year": [
-            "CMeFly",
-            "Just Lucan",
-            "Heavymetal4life",
-            "PotjeNutella",
-            "Devrimon",
-            "faze-dank",
-            "Stellamaris",
-            "blexdark"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1622,7 +1671,7 @@
         "last_year": [
             [
                 "[ O Y O] baa",
-                true
+                false
             ],
             [
                 "dasher1505",
@@ -1634,7 +1683,7 @@
             ],
             [
                 "Goofster",
-                true
+                false
             ],
             [
                 "Kerbcarus",
@@ -1646,7 +1695,7 @@
             ],
             [
                 "Moxytone",
-                true
+                false
             ],
             [
                 "weetbix man",
@@ -1654,14 +1703,14 @@
             ]
         ],
         "current_year": [
-            "ges",
-            "[ O Y O] baa",
-            "Neavako",
-            "Moxytone",
-            "Tulza",
-            "- Snowz -",
-            "Thumb",
-            "Goofster"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1673,11 +1722,11 @@
         "last_year": [
             [
                 "Ctski",
-                true
+                false
             ],
             [
                 "Bismarck",
-                true
+                false
             ],
             [
                 "Chrisse",
@@ -1693,7 +1742,7 @@
             ],
             [
                 "m r v",
-                true
+                false
             ],
             [
                 "Norwegian Vaxei",
@@ -1705,14 +1754,14 @@
             ]
         ],
         "current_year": [
-            "Bismarck",
-            "lol-ok",
-            "m r v",
-            "Utlending",
-            "toti",
-            "-Gaz",
-            "Ksyro_",
-            "Ctski"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1724,11 +1773,11 @@
         "last_year": [
             [
                 "-Kairy-",
-                true
+                false
             ],
             [
                 "SomeBoi",
-                true
+                false
             ],
             [
                 "-Yuuu",
@@ -1747,8 +1796,8 @@
                 false
             ],
             [
-                "Anita Max Wyn",
-                true
+                "Rulz",
+                false
             ],
             [
                 "Takodachi",
@@ -1756,14 +1805,14 @@
             ]
         ],
         "current_year": [
-            "zecutor",
-            "SomeBoi",
-            "old fart",
-            "Anita Max Wyn",
-            "SIGMA MALE",
-            "SapeSape",
-            "-Kairy-",
-            "dakiwii"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1783,7 +1832,7 @@
             ],
             [
                 "[Shua]",
-                true
+                false
             ],
             [
                 "Akezaris",
@@ -1791,7 +1840,7 @@
             ],
             [
                 "LeFerraille",
-                true
+                false
             ],
             [
                 "okirema",
@@ -1799,7 +1848,7 @@
             ],
             [
                 "seeeen11l1",
-                true
+                false
             ],
             [
                 "Yukixo",
@@ -1807,14 +1856,14 @@
             ]
         ],
         "current_year": [
-            "LeFerraille",
-            "MPDisplay",
-            "Zorokii",
-            "Aryuii",
-            "GabberSS",
-            "[Shua]",
-            "ZaNy_",
-            "seeeen11l1"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1842,11 +1891,11 @@
             ],
             [
                 "TilerXk",
-                true
+                false
             ],
             [
                 "-BocheN-",
-                true
+                false
             ],
             [
                 "Agent5d",
@@ -1854,18 +1903,18 @@
             ],
             [
                 "Nutricula",
-                true
+                false
             ]
         ],
         "current_year": [
-            "LewusekX44",
-            "lys",
-            "Asriel",
-            "-BocheN-",
-            "TilerXk",
-            "Quartal",
-            "Nutricula",
-            "squarem"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1877,7 +1926,7 @@
         "last_year": [
             [
                 "iceGOD",
-                true
+                false
             ],
             [
                 "Stickmano",
@@ -1889,7 +1938,7 @@
             ],
             [
                 "_Foxy",
-                true
+                false
             ],
             [
                 "e n v y",
@@ -1909,14 +1958,14 @@
             ]
         ],
         "current_year": [
-            "iceGOD",
-            "_Foxy",
-            "ILLKID13",
-            "J P",
-            "Astravan",
-            "ReDLinE-",
-            "MakiDonalds Jr",
-            "held"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1932,7 +1981,7 @@
             ],
             [
                 "Nesrya",
-                true
+                false
             ],
             [
                 "Numero_Zer0e",
@@ -1940,7 +1989,7 @@
             ],
             [
                 "shinytra",
-                true
+                false
             ],
             [
                 "- Kessy -",
@@ -1960,13 +2009,14 @@
             ]
         ],
         "current_year": [
-            "shinytra",
-            "Bukuo",
-            "-Alto-",
-            "ZabaSama",
-            "Nesrya",
-            "byo",
-            "Ekowo"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -1978,7 +2028,7 @@
         "last_year": [
             [
                 "AlexBelea",
-                true
+                false
             ],
             [
                 "_Silvian",
@@ -1994,30 +2044,30 @@
             ],
             [
                 "jqvi",
-                true
+                false
             ],
             [
                 "Korinna",
-                true
+                false
             ],
             [
                 "Olts",
                 false
             ],
             [
-                "swagDIVIN",
-                true
+                "Sephy_YT",
+                false
             ]
         ],
         "current_year": [
-            "AlexBelea",
-            "jqvi",
-            "_Nino_",
-            "pessi555",
-            "sorinica17",
-            "Korinna",
-            "mishifuari",
-            "swagDIVIN"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -2061,32 +2111,65 @@
             ]
         ],
         "current_year": [
-            "Ice Shark",
-            "shadevr",
-            "miageto",
-            "Bobyr",
-            "Konetto",
-            "Meowzarte",
-            "B4rISka",
-            "mija-"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
-        "country_name": "Saudi Arabia",
-        "flag_code": "SA",
-        "last_seed": "DNP",
-        "last_placement": "DNP",
-        "played_before": false,
-        "last_year": [],
+        "country_name": "Serbia",
+        "flag_code": "RS",
+        "last_seed": "47th",
+        "last_placement": "DNQ",
+        "played_before": true,
+        "last_year": [
+            [
+                "-Chubby-",
+                false
+            ],
+            [
+                "chepy",
+                false
+            ],
+            [
+                "sxrvyr",
+                false
+            ],
+            [
+                "EndMePlease",
+                false
+            ],
+            [
+                "Linneal",
+                false
+            ],
+            [
+                "Matija",
+                false
+            ],
+            [
+                "Milos_179",
+                false
+            ],
+            [
+                "youngphil",
+                false
+            ]
+        ],
         "current_year": [
-            "CallMeRed",
-            "Phresh",
-            "Rone",
-            "MoonCubed",
-            "Raydrick",
-            "_________",
-            "3BDOOO",
-            "[Cookez_Fan]"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -2098,11 +2181,11 @@
         "last_year": [
             [
                 "DVDthe1st",
-                true
+                false
             ],
             [
                 "Baechuu",
-                true
+                false
             ],
             [
                 "Touruu",
@@ -2110,7 +2193,7 @@
             ],
             [
                 "AppleTier",
-                true
+                false
             ],
             [
                 "Can Never FC",
@@ -2118,11 +2201,11 @@
             ],
             [
                 "CopyPasted",
-                true
+                false
             ],
             [
                 "hollowknees",
-                true
+                false
             ],
             [
                 "nvwrii",
@@ -2130,14 +2213,14 @@
             ]
         ],
         "current_year": [
-            "DVDthe1st",
-            "CopyPasted",
-            "JokThree",
-            "Junkmaniac",
-            "hollowknees",
-            "Baechuu",
-            "m0fum0fu",
-            "AppleTier"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -2149,7 +2232,7 @@
         "last_year": [
             [
                 "-MiGo-",
-                true
+                false
             ],
             [
                 "Lexbalker",
@@ -2157,7 +2240,7 @@
             ],
             [
                 "EnchantedSpider",
-                true
+                false
             ],
             [
                 "-Seam-",
@@ -2169,7 +2252,7 @@
             ],
             [
                 "Fliper 79",
-                true
+                false
             ],
             [
                 "Seviade",
@@ -2181,32 +2264,14 @@
             ]
         ],
         "current_year": [
-            "-MiGo-",
-            "Puvis",
-            "Vilory",
-            "Centaurix",
-            "kuya nya",
-            "Aerlyn",
-            "EnchantedSpider",
-            "Fliper 79"
-        ]
-    },
-    {
-        "country_name": "South Africa",
-        "flag_code": "ZA",
-        "last_seed": "DNP",
-        "last_placement": "DNP",
-        "played_before": false,
-        "last_year": [],
-        "current_year": [
-            "DragonMage",
-            "Tjoma",
-            "Artix",
-            "Rophone",
-            "Adam40505",
-            "IssaKun_",
-            "Sir Qumm",
-            "25 pringles"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -2218,7 +2283,7 @@
         "last_year": [
             [
                 "yhsphd",
-                true
+                false
             ],
             [
                 "A BCDe",
@@ -2250,14 +2315,14 @@
             ]
         ],
         "current_year": [
-            "kailburn",
-            "Pale Citrus",
-            "[ ] [ ]",
-            "yhsphd",
-            "ch0co",
-            "Civil oath",
-            "HDJump",
-            "Pieris"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -2269,15 +2334,15 @@
         "last_year": [
             [
                 "-zilva-",
-                true
+                false
             ],
             [
                 "AngelXC",
-                true
+                false
             ],
             [
                 "Sakorii",
-                true
+                false
             ],
             [
                 "- Sprite -",
@@ -2297,18 +2362,18 @@
             ],
             [
                 "Palodex",
-                true
+                false
             ]
         ],
         "current_year": [
-            "-zilva-",
-            "- Izayoi -",
-            "MusicDropZ",
-            "Palodex",
-            "AngelXC",
-            "AitorAmu",
-            "Sakorii",
-            "Rumpowl"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -2328,11 +2393,11 @@
             ],
             [
                 "InfraGhozt",
-                true
+                false
             ],
             [
                 "-HeadHunter-",
-                true
+                false
             ],
             [
                 "Ederulo",
@@ -2340,7 +2405,7 @@
             ],
             [
                 "Klappy",
-                true
+                false
             ],
             [
                 "Lightningfox",
@@ -2348,18 +2413,18 @@
             ],
             [
                 "yumetsu",
-                true
+                false
             ]
         ],
         "current_year": [
-            "Svizza",
-            "Klappy",
-            "Villee",
-            "mmeowmeowmeowme",
-            "-HeadHunter-",
-            "yumetsu",
-            "[ Couch ] Milk",
-            "InfraGhozt"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -2370,12 +2435,12 @@
         "played_before": true,
         "last_year": [
             [
-                "Shadow 2",
-                true
+                "_Ene",
+                false
             ],
             [
                 "gg_boi",
-                true
+                false
             ],
             [
                 "Seltor",
@@ -2383,7 +2448,7 @@
             ],
             [
                 "Zacatel",
-                true
+                false
             ],
             [
                 "-Azure",
@@ -2395,22 +2460,22 @@
             ],
             [
                 "kokonokokoro",
-                true
+                false
             ],
             [
                 "xeladir",
-                true
+                false
             ]
         ],
         "current_year": [
-            "xeladir",
-            "BAGE",
-            "Shadow 2",
-            "Depito",
-            "gg_boi",
-            "Zacatel",
-            "Neox420",
-            "kokonokokoro"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -2421,24 +2486,24 @@
         "played_before": true,
         "last_year": [
             [
-                "Rainty",
+                "Yue0423",
                 false
             ],
             [
-                "Rayter-",
-                true
+                "Yue0424",
+                false
             ],
             [
-                "Zefkiel",
-                true
+                "Yue0425",
+                false
             ],
             [
-                "Meow_Son",
-                true
+                "Yue0426",
+                false
             ],
             [
-                "Ruyaya",
-                true
+                "Yue0427",
+                false
             ],
             [
                 "Yue0428",
@@ -2446,22 +2511,22 @@
             ],
             [
                 "Yue0429",
-                true
+                false
             ],
             [
-                "Summer_Ouo",
-                true
+                "Yue0430",
+                false
             ]
         ],
         "current_year": [
-            "Summer_Ouo",
-            "Meow_Son",
-            "Zefkiel",
-            "Rayter-",
-            "YoYu",
-            "Ruyaya",
-            "[ RoneKu ]",
-            "Yue0429"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -2481,19 +2546,19 @@
             ],
             [
                 "Moca Aoba",
-                true
+                false
             ],
             [
                 "- PPKM -",
-                true
+                false
             ],
             [
                 "NekoShabeta",
-                true
+                false
             ],
             [
                 "Vixera",
-                true
+                false
             ],
             [
                 "krakenlord420",
@@ -2501,34 +2566,18 @@
             ],
             [
                 "TzArtifactz",
-                true
+                false
             ]
         ],
         "current_year": [
-            "Moca Aoba",
-            "monkerzaza",
-            "TzArtifactz",
-            "Vixera",
-            "Saki Ayase",
-            "- PPKM -",
-            "NekoShabeta",
-            "Abratexz"
-        ]
-    },
-    {
-        "country_name": "Tunisia",
-        "flag_code": "TN",
-        "last_seed": "DNP",
-        "last_placement": "DNP",
-        "played_before": false,
-        "last_year": [],
-        "current_year": [
-            "SkY TN",
-            "lavocado",
-            "mahdisiala",
-            "-Voice-",
-            "Ahmedzerog",
-            "Betz"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -2564,22 +2613,22 @@
             ],
             [
                 "Soroic",
-                true
+                false
             ],
             [
                 "Zybit",
-                true
+                false
             ]
         ],
         "current_year": [
-            "Zybit",
-            "Soroic",
-            "Liery",
-            "Rainres",
-            "Tekaii",
-            "empi-",
-            "AgorelL",
-            "SnakeTwix"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -2591,7 +2640,7 @@
         "last_year": [
             [
                 "BlackJack",
-                true
+                false
             ],
             [
                 "Unavel",
@@ -2619,14 +2668,14 @@
             ]
         ],
         "current_year": [
-            "respective",
-            "Kazuki-",
-            "HLN",
-            "BlackJack",
-            "APTEM",
-            "-Des",
-            "KiberMen",
-            "Zelretch"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -2638,11 +2687,11 @@
         "last_year": [
             [
                 "FinzuMyMommy",
-                true
+                false
             ],
             [
                 "VoidHero",
-                true
+                false
             ],
             [
                 "1Latif",
@@ -2650,7 +2699,7 @@
             ],
             [
                 "Ayaya5",
-                true
+                false
             ],
             [
                 "GC5",
@@ -2665,19 +2714,19 @@
                 false
             ],
             [
-                "wack",
-                true
+                "Wackayy",
+                false
             ]
         ],
         "current_year": [
-            "marshysxn",
-            "Ayaya5",
-            "ghous",
-            "HADES1150",
-            "wack",
-            "HG-Gaming",
-            "VoidHero",
-            "FinzuMyMommy"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -2689,7 +2738,7 @@
         "last_year": [
             [
                 "Humsterlol",
-                true
+                false
             ],
             [
                 "Fluxey",
@@ -2713,22 +2762,22 @@
             ],
             [
                 "velcro shoes",
-                true
+                false
             ],
             [
                 "Wingo",
-                true
+                false
             ]
         ],
         "current_year": [
-            "Humsterlol",
-            "Wingo",
-            "NeoPixel201",
-            "ielia",
-            "velcro shoes",
-            "rubrub",
-            "Niuex",
-            "kuryyyyy"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -2744,7 +2793,7 @@
             ],
             [
                 "Pangetism",
-                true
+                false
             ],
             [
                 "Unique",
@@ -2763,8 +2812,8 @@
                 false
             ],
             [
-                "Stage my mommy",
-                true
+                "Kisoi",
+                false
             ],
             [
                 "richp2k",
@@ -2772,14 +2821,14 @@
             ]
         ],
         "current_year": [
-            "zfr",
-            "gilgamesh815",
-            "Stage my mommy",
-            "hotbread",
-            "meowmeowmmeowme",
-            "tights",
-            "Pangetism",
-            "FILIPINO"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -2791,15 +2840,15 @@
         "last_year": [
             [
                 "Lolasinlol",
-                true
+                false
             ],
             [
                 "Scramzi",
-                true
+                false
             ],
             [
                 "Vlauz",
-                true
+                false
             ],
             [
                 "Rami12890",
@@ -2814,55 +2863,19 @@
                 false
             ],
             [
-                "Haku-",
-                true
+                "LittleFede",
+                false
             ]
         ],
         "current_year": [
-            "Scramzi",
-            "Haku-",
-            "Lolasinlol",
-            "TheUYGovernment",
-            "Miosha",
-            "Vlauz",
-            "Ruffian",
-            "Ryo Mizoguchi"
-        ]
-    },
-    {
-        "country_name": "Uzbekistan",
-        "flag_code": "UZ",
-        "last_seed": "DNP",
-        "last_placement": "DNP",
-        "played_before": false,
-        "last_year": [],
-        "current_year": [
-            "S i d",
-            "REJECTZ",
-            "Shoukko",
-            "x_Broken_x",
-            "tayoshu",
-            "Asmy",
-            "RiseiNoKoe",
-            "Ansh1n"
-        ]
-    },
-    {
-        "country_name": "Venezuela",
-        "flag_code": "VE",
-        "last_seed": "DNP",
-        "last_placement": "DNP",
-        "played_before": false,
-        "last_year": [],
-        "current_year": [
-            "4rou",
-            "Macross Plus",
-            "KingRojasisaac",
-            "YuyuCat",
-            "Darky-",
-            "iJuxn_",
-            "-Hikku-",
-            "Aqytha"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     },
     {
@@ -2890,11 +2903,11 @@
             ],
             [
                 "Kriatix",
-                true
+                false
             ],
             [
-                "raifiu",
-                true
+                "Shadowkingxx",
+                false
             ],
             [
                 "Sonocchoz",
@@ -2906,14 +2919,14 @@
             ]
         ],
         "current_year": [
-            "smthelse",
-            "AuroraDieu",
-            "[Boy]HaiPhong",
-            "Thinhhhh",
-            "s0me",
-            "Kriatix",
-            "raifiu",
-            "tomatohung"
+            "Player 1",
+            "Player 2",
+            "Player 3",
+            "Player 4",
+            "Player 5",
+            "Player 6",
+            "Player 7",
+            "Player 8"
         ]
     }
 ]
