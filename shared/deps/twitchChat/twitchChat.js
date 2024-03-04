@@ -2,6 +2,7 @@
 const twitchChatContainer = document.getElementById("twitchChatContainer")
 const badgeTypes = ["broadcaster", "mod", "vip", "founder", "subscriber"]
 ComfyJS.onChat = ( user, message, flags, self, extra ) => {
+    console.log(extra)
     // Put message in if its the correct ahnenl
     if (getCookie("currentChannel") === extra.roomId) {
         // Set up message container
@@ -44,7 +45,6 @@ ComfyJS.onChat = ( user, message, flags, self, extra ) => {
         twitchChatContainer.append(twitchChatMessageContainer)
         twitchChatContainer.scrollTop = twitchChatContainer.scrollHeight
     }
-
 }
 
 // Delete message
@@ -73,7 +73,7 @@ function getCookie(cname) {
     for(let i = 0; i < ca.length; i++) {
         let c = ca[i]
         while (c.charAt(0) == ' ') c = c.substring(1)
-        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length)
     }
-    return "";
+    return ""
 }
