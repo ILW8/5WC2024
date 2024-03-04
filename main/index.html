@@ -95,11 +95,17 @@
         </section>
 
         <div id="sideBar">
-            <section id="currentPickerSection">
-                <div id="currentPickerText">Auto Current Picker: </div>
+            <section class="navBarSection" id="currentPickerSection">
+                <div class="currentHeaderText">Auto Current Picker: </div>
                 <div id="currentPickerTeam"></div>
                 <button class="sideBarButton currentPickerButton" id="currentPickerRed" onclick="setCurrentPicker('red')">Set Red Pick</button>
                 <button class="sideBarButton currentPickerButton" id="currentPickerBlue" onclick="setCurrentPicker('blue')">Set Blue Pick</button>
+            </section>
+            <section class="navBarSection" id="currentChannelSection">
+                <div class="currentHeaderText">Current Channel</div>
+                <div id="currentChannelName">2nd Channel</div>
+                <button class="sideBarButton currentChannelButton" id="currentPickerRed" onclick="setChannelId(241444981)">First Channel</button>
+                <button class="sideBarButton currentChannelButton" id="currentPickerBlue" onclick="setChannelId(859089711)">Second Channel</button>
             </section>
         </div>
     </div>

@@ -323,19 +323,28 @@
     color: rgb(25,23,23);
 }
 /* --- Next Action --- */
-#currentPickerSection {
-    position: absolute; top: 50px; left: 50px;
+/* Current Section*/
+.navBarSection {
+    position: absolute; left: 50px;
     width: 400px;
 }
-#currentPickerText {
+#currentPickerSection { top: 50px; }
+#currentChannelSection { top: 400px; }
+/* Header Text */
+.currentHeaderText {
     width: inherit;
     font-size: 55px;
 }
+/* Current information */
 #currentPickerTeam {
     font-size: 120px;
     color: var(--mainRed)
 }
-.currentPickerButton {
+#currentChannelName {
+    font-size: 100px;
+}
+/* Buttons */
+.currentPickerButton, .currentChannelButton {
     height: 75px;
     margin: 10px 0;
     line-height: 75px;
