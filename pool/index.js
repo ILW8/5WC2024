@@ -53,14 +53,14 @@ fetch("http://127.0.0.1:24050/5WC2024/_data/beatmaps.json")
                 tbMapCardImageEl.style.backgroundImage = `url("${tbMap.imgURL}")`
                 tbMapCardNameEl.innerText = `${tbMap.artist} - ${tbMap.songName}`
                 tbMapCardDifficultyEl.innerText = tbMap.difficultyname
-                TBContainerEl.addEventListener("click", event => {
+                TBContainerEl.addEventListener("click", function(event) {
                     event.preventDefault()
                     handleTeamAction(event, currentRedTeamCode, this)
                 })
-                TBContainerEl.addEventListener("contextmenu", event => {
+                TBContainerEl.addEventListener("contextmenu", function(event) {
                     event.preventDefault()
                     handleTeamAction(event, currentBlueTeamCode, this)
-                })
+                }.bind(this))
             }
         })
     })
