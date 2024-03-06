@@ -97,10 +97,15 @@ function createMapCard(currentMap, cardClass, nameClass, container) {
 		event.preventDefault()
 		handleTeamAction(event, currentBlueTeamCode, this)
 	})
-    
+
+    // Top pick ban protect container
+    const pickBanProtectContainer = document.createElement("div")
+    pickBanProtectContainer.classList.add("pickBanProtectContainer")
+
 	// Top pick ban protect elements
     const pickBanProtectElement = document.createElement("div")
     pickBanProtectElement.classList.add("pickBanProtectElement")
+    pickBanProtectContainer.append(pickBanProtectElement)
 
     const pickBanProtectFlag = document.createElement("div")
     pickBanProtectFlag.classList.add("pickBanProtectFlag")
@@ -140,21 +145,23 @@ function createMapCard(currentMap, cardClass, nameClass, container) {
 
 	// Append everything together
     mapCardImage.append(mapCardImageLayer, mapCardMod)
-    newMapCard.append(pickBanProtectElement, newMapCardRectangle, mapCardImage, mapCardName, mapCardDifficulty)
+    newMapCard.append(pickBanProtectContainer, newMapCardRectangle, mapCardImage, mapCardName, mapCardDifficulty)
     container.append(newMapCard)
 }
 // Red Team
 function handleTeamAction(event, teamCode, element) {
-	const pickBanProtectElement = element.children[0]
+    const pickBanProtectContainer = element.children[0]
+	const pickBanProtectElement = pickBanProtectContainer.children[0]
+
+    pickBanProtectContainer.classList.remove("pickBanAnimationForwards")
+    pickBanProtectContainer.classList.remove("pickBanAnimationBackwards")
 
 	// Remove map
-	if (event.shiftKey) {		
-		pickBanProtectElement.style.display = "none"
+	if (event.shiftKey) {
+        pickBanProtectContainer.classList.add("pickBanAnimationBackwards")
+        pickBanProtectContainer.style.clipPath = "polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%)"
 		return
 	}
-	
-	// Show block
-	pickBanProtectElement.style.display = "block"
 
 	// Tiebreaker map
 	if (element.id == TBContainerEl.id) return
@@ -173,6 +180,9 @@ function handleTeamAction(event, teamCode, element) {
 	pickBanProtectElement.children[1].innerText = pickBanProtectString.toUpperCase()
 	if (pickBanProtectElement.childElementCount > 2) pickBanProtectElement.children[2].remove()
 	pickBanProtectElement.innerHTML += svgs[pickBanProtectString]
+
+    pickBanProtectContainer.classList.add("pickBanAnimationForwards")
+    pickBanProtectContainer.style.clipPath = "polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%)"
 
     // Set cookie
     if (teamCode === currentRedTeamCode) document.cookie = "currentTeamPick=red; path=/"
