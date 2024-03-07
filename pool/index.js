@@ -5,6 +5,12 @@ socket.onopen = () => { console.log("Successfully Connected") }
 socket.onclose = event => { console.log("Socket Closed Connection: ", event); socket.send("Client Closed!") }
 socket.onerror = error => { console.log("Socket Error: ", error) }
 
+// remove highlighting
+const body = document.getElementsByTagName("body")
+body[0].addEventListener("mousedown", event => {
+    event.preventDefault()
+})
+
 // Load mappool
 let mapData
 let beatmapsData
