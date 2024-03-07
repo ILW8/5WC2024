@@ -39,6 +39,7 @@
     letter-spacing: 0.2px;
     text-wrap: nowrap;
     display: inline-block;
+    width: 600px;
 }
 /* Team Stars */
 .teamStars { 

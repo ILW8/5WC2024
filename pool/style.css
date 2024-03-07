@@ -84,6 +84,7 @@
     letter-spacing: 2px;
     text-wrap: nowrap;
     display: inline-block;
+    width: 500px;
 }
 /* Team Stars */
 .teamStars { position: absolute; top: 97px; }
