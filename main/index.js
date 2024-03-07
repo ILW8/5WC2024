@@ -294,7 +294,7 @@ socket.onmessage = async (event) => {
         scoreAnimation.playingScoreDifference.update(currentScoreDifference)
 
         // Update score bar and difference
-        const movingScoreBarDifferencePercent = currentScoreDifference / 1500000
+        const movingScoreBarDifferencePercent = currentScoreDifference / 1000000
         let movingScoreBarRectangleWidth = Math.min(movingScoreBarDifferencePercent * 936, 936)
         if (movingScoreBarRectangleWidth < 30) movingScoreBarRectangleWidth = 30
         const movingScoreBarArrowPositionHorizontal = movingScoreBarRectangleWidth + 31
@@ -437,8 +437,8 @@ socket.onmessage = async (event) => {
     // If map is not found
     if (!mappoolMapDataFound) {
         triggerStatShowingFunction
-        if (currentSR !== data.menu.bm.stats.SR) {
-            currentSR = data.menu.bm.stats.SR
+        if (currentSR !== data.menu.bm.stats.fullSR) {
+            currentSR = data.menu.bm.stats.fullSR
             nowPlayingStatsSRNumber.innerText = currentSR
         }
         if (currentAR !== data.menu.bm.stats.AR) {
@@ -453,8 +453,8 @@ socket.onmessage = async (event) => {
             currentCS = data.menu.bm.stats.CS
             nowPlayingStatsCSNumber.innerText = currentCS
         }
-        if (currentBPM !== data.menu.bm.stats.BPM.min) {
-            currentBPM = data.menu.bm.stats.BPM.min
+        if (currentBPM !== data.menu.bm.stats.BPM.common) {
+            currentBPM = data.menu.bm.stats.BPM.common
             nowPlayingStatsBPMNumber.innerText = currentBPM
         }
     }
