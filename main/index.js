@@ -400,15 +400,17 @@ socket.onmessage = async (event) => {
         statsTimeoutSet = false
         if (beatmapsData) mappoolMapData = findMapInMappool(data.menu.bm.id)
         if (mappoolMapData) {
+            mappoolMapDataFound = true
+
             pickedBy.style.display = "block"
             nowPlayingMod.style.display = "block"
             nowPlayingMod.innerText = `${mappoolMapData.mod}${mappoolMapData.order}`
 
             currentSR = Math.round(parseFloat(mappoolMapData.difficultyrating) * 100) / 100
-            currentAR = mappoolMapData.ar
-            currentOD = mappoolMapData.od
-            currentCS = mappoolMapData.cs
-            currentBPM = mappoolMapData.bpm
+            currentAR = Math.round(parseFloat(mappoolMapData.ar) * 10 ) / 10
+            currentOD = Math.round(parseFloat(mappoolMapData.od) * 10) / 10
+            currentCS = Math.round(parseFloat(mappoolMapData.cs) * 10) / 10
+            currentBPM = Math.round(parseFloat(mappoolMapData.bpm) * 10) / 10
 
             nowPlayingStatsSRNumber.innerText = currentSR
             nowPlayingStatsARNumber.innerText = currentAR

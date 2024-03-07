@@ -2,6 +2,7 @@
 const twitchChatContainer = document.getElementById("twitchChatContainer")
 const badgeTypes = ["broadcaster", "mod", "vip", "founder", "subscriber"]
 ComfyJS.onChat = ( user, message, flags, self, extra ) => {
+
     // Get rid of nightbot messages
     if (user === "Nightbot") return
 
