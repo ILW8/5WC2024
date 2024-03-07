@@ -41,6 +41,7 @@
     display: inline-block;
     width: 600px;
 }
+#blueTeamName { text-align: right; }
 /* Team Stars */
 .teamStars { 
     display: flex;

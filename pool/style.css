@@ -86,6 +86,7 @@
     display: inline-block;
     width: 500px;
 }
+#blueTeamName { text-align: right; }
 /* Team Stars */
 .teamStars { position: absolute; top: 97px; }
 .teamStars > * { 
