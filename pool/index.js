@@ -153,12 +153,8 @@ function handleTeamAction(event, teamCode, element) {
     const pickBanProtectContainer = element.children[0]
 	const pickBanProtectElement = pickBanProtectContainer.children[0]
 
-    pickBanProtectContainer.classList.remove("pickBanAnimationForwards")
-    pickBanProtectContainer.classList.remove("pickBanAnimationBackwards")
-
 	// Remove map
 	if (event.shiftKey) {
-        pickBanProtectContainer.classList.add("pickBanAnimationBackwards")
         pickBanProtectContainer.style.clipPath = "polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%)"
 		return
 	}
@@ -182,7 +178,6 @@ function handleTeamAction(event, teamCode, element) {
 	pickBanProtectElement.innerHTML += svgs[pickBanProtectString]
 
     pickBanProtectContainer.classList.add("pickBanAnimationForwards")
-    pickBanProtectContainer.style.clipPath = "polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%)"
 
     // Set cookie
     if (teamCode === currentRedTeamCode) document.cookie = "currentTeamPick=red; path=/"
@@ -248,7 +243,6 @@ let beatmapID
 
 socket.onmessage = async (event) => {
     const data = JSON.parse(event.data)
-    console.log(data)
 
     // Update team data
     function updateTeamData(teamFlagEl, teamNameEl, currentTeam) {
