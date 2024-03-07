@@ -2,7 +2,9 @@
 const twitchChatContainer = document.getElementById("twitchChatContainer")
 const badgeTypes = ["broadcaster", "mod", "vip", "founder", "subscriber"]
 ComfyJS.onChat = ( user, message, flags, self, extra ) => {
-    console.log(extra)
+    // Get rid of nightbot messages
+    if (user === "Nightbot") return
+
     // Put message in if its the correct ahnenl
     if (getCookie("currentChannel") === extra.roomId) {
         // Set up message container
