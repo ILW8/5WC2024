@@ -468,6 +468,7 @@ const setChannelId = channelId => {
     else currentChannelName.innerText = "2nd Channel"
     document.cookie = `currentChannel=${channelId}; path=/`
 }
+setChannelId(241444981)
 
 // get cookie information
 setInterval(() => {

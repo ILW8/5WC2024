@@ -133,5 +133,6 @@ const setChannelId = channelId => {
     else currentChannelName.innerText = "2nd Channel"
     document.cookie = `currentChannel=${channelId}; path=/`
 }
+setChannelId(241444981)
 
 ComfyJS.Init( "stagetournaments", null , ["stagetournaments", "stagetournaments2"] )
