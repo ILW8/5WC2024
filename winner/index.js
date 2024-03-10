@@ -22,7 +22,7 @@ fetch("http://127.0.0.1:24050/5WC2024/_data/players.json")
         if (!response.ok) throw new Error('Network response was not ok')
         return response.json()
     })
-    .then(data => allPlayers = data.output)
+    .then(data => allPlayers = data)
     .catch(error => console.error('Error:', error) )
 
 
@@ -108,11 +108,13 @@ setInterval(() => {
         // Set country players
         let playerCounter = 0
         for (let i = 0; i < allPlayers.length; i++) {
-            if (playerCounter >= 8) break
-            if (allPlayers[i].osu_flag === currentCountryCode) {
+            console.log(allPlayers[i].osu_flag, currentCountryCode)
+            if (allPlayers[i].osu_flag!== currentCountryCode) continue
+            for (let j = 0; j < allPlayers[i].players.length; j++) {
                 playerCounter++
-                document.getElementById(`playerName${playerCounter}`).innerText = allPlayers[i].osu_username
+                document.getElementById(`playerName${playerCounter}`).innerText = allPlayers[i].players[j]
             }
+            break
         }
     }
 
