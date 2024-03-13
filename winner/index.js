@@ -108,13 +108,13 @@ setInterval(() => {
         // Set country players
         let playerCounter = 0
         for (let i = 0; i < allPlayers.length; i++) {
-            console.log(allPlayers[i].osu_flag, currentCountryCode)
-            if (allPlayers[i].osu_flag!== currentCountryCode) continue
+            if (allPlayers[i].osu_flag !== currentCountryCode) continue
             for (let j = 0; j < allPlayers[i].players.length; j++) {
                 playerCounter++
                 document.getElementById(`playerName${playerCounter}`).innerText = allPlayers[i].players[j]
+                if (playerCounter >= 8) break
             }
-            break
+            if (playerCounter >= 8) break
         }
     }
 
