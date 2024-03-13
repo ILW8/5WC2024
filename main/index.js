@@ -1,13 +1,8 @@
-
-
+// Twitch Chat
 ComfyJS.Init( "stagetournaments", null , ["stagetournaments", "stagetournaments2"] )
 
 // Round Name
 const roundNameEl = document.getElementById("roundName")
-
-// Sleep
-const sleep = ms => new Promise(res => setTimeout(res, ms))
-
 // Get Cookie
 function getCookie(cname) {
     let name = cname + "="

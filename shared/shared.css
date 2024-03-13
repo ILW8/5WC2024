@@ -71,8 +71,9 @@
     position: absolute; top: 27px; left: 80px;
     font-size: 50px;
     letter-spacing: 1.4px;
+    transition: 750ms ease-in-out
 }
-#sponsors > * { transition: 1s ease-in-out }
+#sponsors > * { transition: 750ms ease-in-out }
 #momokaiSponsor {
     position: absolute; top: 27px; left: 434px;
     height: 52px;
@@ -92,4 +93,13 @@
     line-height: 52px;
     font-size: 38px;
     margin-left: 10px;
+}
+#code5WC, #command {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    font-family: Montserrat;
+    font-size: 42px;
+    width: 700px;
+    text-align: center;
 }
