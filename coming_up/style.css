@@ -142,3 +142,69 @@
     margin: 10px 0;
     line-height: 75px;
 }
+
+/* ----- NOW PLAYING ----- */
+/* --- Now Playing Text --- */
+#nowPlayingTextRectangle {
+    position: absolute; top: 102px;
+    width: 419px; height: 98px;
+    background-color: var(--mainRed);
+    border-radius: 0 10px 10px 0;
+}
+#nowPlayingText {
+    position: absolute; top: 12px; left: 117px;
+    font-size: 67px;
+}
+/* --- Now Playing Box --- */
+#nowPlayingBox {
+    position: absolute; top: 213px;
+    width: 1292px; height: 241px;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--mainDarkBackground);
+    border-radius: 0 20px 20px 0;
+}
+/* Now Playing Image */
+#nowPlayingImage {
+    position: absolute; top: 3px;
+    width: 609px; height: 238px;
+    border-radius: 0 8px 8px 0;
+    background-position: center;
+    background-size: cover;
+}
+#nowPlayingImageLayer {
+    position: absolute; top: 0; left: 0;
+    width: inherit; height: inherit;
+    background-color: rgb(0,0,0,0.2);
+    border-radius: inherit;
+}
+/* Now Playing Song and Difficulty Name */
+.nowPlayingDetailsWrapper {
+    position: absolute; left: 657px;
+    letter-spacing: -0.4px;
+    overflow: hidden;
+    width: 600px;
+}
+#nowPlayingSongNameWrapper {
+    top: 45px;
+    font-size: 79px;
+}
+#nowPlayingArtistNameWrapper {
+    top: 131px;
+    font-size: 62px;
+}
+.nowPlayingDetails {
+    display: inline-block;
+    width: max-content;
+}
+.textSlide { animation: textSlide 12s linear infinite; }
+@keyframes textSlide {
+    0% { transform: translate(0px) }
+    11% {transform: translate(0px) }
+    89% { transform: translate(calc(-100% + 600px)) }
+    100% { transform: translate(calc(-100% + 600px)) }
+}
+
+#bottom {
+    background-color: rgb(20,20,20)
+}

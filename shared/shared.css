@@ -28,7 +28,7 @@
 #line {
     position: absolute; top: 5px;
     width: inherit; height: 4px;
-    color: rgb(130,130,103)
+    background-color: rgb(130,130,103)
 }
 #chatRectangle {
     border-radius: 6px;

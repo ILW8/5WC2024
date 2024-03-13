@@ -48,3 +48,46 @@ let comingup, teams, countries;
 let title = document.getElementById('title');
 let time = document.getElementById('time');
 let timer = document.getElementById('timer');
+
+// Socket Events
+// Credits: VictimCrasher - https://github.com/VictimCrasher/static/tree/master/WaveTournament
+const socket = new ReconnectingWebSocket("ws://" + location.host + "/ws")
+socket.onopen = () => { console.log("Successfully Connected") }
+socket.onclose = event => { console.log("Socket Closed Connection: ", event); socket.send("Client Closed!") }
+socket.onerror = error => { console.log("Socket Error: ", error) }
+
+// Now playing
+const nowPlayingImage = document.getElementById("nowPlayingImage")
+const nowPlayingSongName = document.getElementById("nowPlayingSongName")
+const nowPlayingArtistName = document.getElementById("nowPlayingArtistName")
+let currentNowPlayingMd5
+let currentNowPlayingSongName
+
+function addRemoveTextSlide(element) {
+    if (element.getBoundingClientRect().width > 600) {
+        element.classList.add("textSlide")
+        return
+    }
+    element.classList.remove("textSlide")
+}
+
+socket.onmessage = event => {
+    const data = JSON.parse(event.data)
+    
+    if (currentNowPlayingSongName !== data.menu.bm.metadata.title || currentNowPlayingMd5 !== data.menu.bm.md5) {
+        currentNowPlayingSongName = data.menu.bm.metadata.title
+        currentNowPlayingMd5 = data.menu.bm.md5
+
+        // set now playing image
+        nowPlayingImage.style.backgroundImage = `url("https://assets.ppy.sh/beatmaps/${data.menu.bm.set}/covers/cover.jpg")`
+
+        // Set song and artist name
+        nowPlayingSongName.innerText = currentNowPlayingSongName
+        nowPlayingArtistName.innerText = data.menu.bm.metadata.artist
+
+        addRemoveTextSlide(nowPlayingSongName)
+        addRemoveTextSlide(nowPlayingArtistName)
+    }
+}
+
+ComfyJS.Init( "stagetournaments", null , ["stagetournaments", "stagetournaments2"] )
