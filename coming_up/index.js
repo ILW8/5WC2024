@@ -1,11 +1,12 @@
 // Credit to shdewz for most of this: https://github.com/shdewz/3wc-stream-overlay
 
-let comingup, teams, countries;
+let comingup, teams, countries, beatmaps;
 (async () => {
 	$.ajaxSetup({ cache: false });
 	comingup = await $.getJSON('../_data/coming_up.json');
 	teams = await $.getJSON('../_data/players.json');
     countries = await $.getJSON('../_data/countries.json');
+	beatmaps = await $.getJSON('../_data/beatmaps.json');
 
 	let timer_end = comingup.time - 0 * 60 * 60 * 1000;
 	if (timer_end > Date.now()) {
@@ -23,11 +24,13 @@ let comingup, teams, countries;
 		}, 1000);
 	}
 
+	document.getElementById('roundName').innerHTML = beatmaps.roundName;
+
 	let team_red = teams.find(t => t.team_name == comingup.red_team);
     console.log(teams.find(t => t.team_name == comingup.red_team))
 	if (team_red) {
 		document.getElementById('red-team').innerHTML = team_red.team_name;
-		document.getElementById('red-flag').src = `https://osuflags.omkserver.nl/${team_red.osu_flag}-126.png`;
+		document.getElementById('red-flag').src = `https://osuflags.omkserver.nl/${team_red.osu_flag}-200.png`;
 		for (let i = 0; i < 8; i++) {
 			let player = team_red.players[i] || '';
 			document.getElementById(`red-player-${i + 1}`).innerHTML = player;
@@ -37,7 +40,7 @@ let comingup, teams, countries;
 	let team_blue = teams.find(t => t.team_name == comingup.blue_team);
 	if (team_blue) {
 		document.getElementById('blue-team').innerHTML = team_blue.team_name;
-		document.getElementById('blue-flag').src = `https://osuflags.omkserver.nl/${team_blue.osu_flag}-126.png`;
+		document.getElementById('blue-flag').src = `https://osuflags.omkserver.nl/${team_blue.osu_flag}-200.png`;
 		for (let i = 0; i < 8; i++) {
 			let player = team_blue.players[i] || '';
 			document.getElementById(`blue-player-${i + 1}`).innerHTML = player;
