@@ -158,27 +158,39 @@ function createMapCard(currentMap, cardClass, nameClass, container) {
 function handleTeamAction(event, teamCode, element) {
     console.log(element)
     const pickBanProtectContainer = element.children[0]
+    const pickBanImageLayer = element.children[2].children[0]
 	const pickBanProtectElement = pickBanProtectContainer.children[0]
+
+    pickBanImageLayer.classList.remove("tiebreakerKeyframes")
 
 	// Remove map
 	if (event.shiftKey) {
         pickBanProtectContainer.classList.remove("pickBanAnimationForwards")
         pickBanProtectContainer.style.clipPath = "polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%)"
+        pickBanImageLayer.style.backgroundColor = "rgba(0,0,0,0.5)"
 		return
 	}
 
 	// Tiebreaker map
+    
 	if (element.id == TBContainerEl.id) {
         pickBanProtectContainer.classList.add("pickBanAnimationForwards")
+        pickBanImageLayer.classList.add("tiebreakerKeyframes")
         return
     }
 
-    console.log("hello 2")
 	// Pick ban Protect String
 	let pickBanProtectString
-	if (event.ctrlKey) pickBanProtectString = "ban"
-    else if (event.altKey) pickBanProtectString = "protect"
-    else pickBanProtectString = "pick"
+	if (event.ctrlKey) {
+        pickBanImageLayer.style.backgroundColor = "rgba(0,0,0,0.8)"
+        pickBanProtectString = "ban"
+    } else if (event.altKey) {
+        pickBanImageLayer.style.backgroundColor = "rgba(0,0,0,0.5)"
+        pickBanProtectString = "protect"
+    } else {
+        pickBanImageLayer.style.backgroundColor = "rgba(0,0,0,0.5)"
+        pickBanProtectString = "pick"
+    }
 
 	// Apply information
 	pickBanProtectElement.style.backgroundColor = `var(--${pickBanProtectString}Colour)`
