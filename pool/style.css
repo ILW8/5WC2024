@@ -217,6 +217,11 @@
     width: calc(100% + 40px); height: 76px;
     clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
 }
+#tiebreakerPickBanProtectContainer {
+    position: absolute; top: -132px; left: -40px;
+    width: calc(100% + 80px); height: 152px;
+    clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
+}
 .pickBanProtectElement {
     position: absolute; top: 20px; left: 20px;
     width: calc(100% - 40px); height: 36px;
@@ -232,8 +237,8 @@
     100% { clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 0%) }
 }
 #tiebreakerTriggeredElement {
-    top: -92px;
-    height: 72px;
+    top: 0;
+    height: 144px;
     border-radius: 36px;
     background-color: transparent;
     box-shadow: 0 0 20px transparent;

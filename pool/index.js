@@ -156,18 +156,24 @@ function createMapCard(currentMap, cardClass, nameClass, container) {
 }
 // Red Team
 function handleTeamAction(event, teamCode, element) {
+    console.log(element)
     const pickBanProtectContainer = element.children[0]
 	const pickBanProtectElement = pickBanProtectContainer.children[0]
 
 	// Remove map
 	if (event.shiftKey) {
+        pickBanProtectContainer.classList.remove("pickBanAnimationForwards")
         pickBanProtectContainer.style.clipPath = "polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%)"
 		return
 	}
 
 	// Tiebreaker map
-	if (element.id == TBContainerEl.id) return
+	if (element.id == TBContainerEl.id) {
+        pickBanProtectContainer.classList.add("pickBanAnimationForwards")
+        return
+    }
 
+    console.log("hello 2")
 	// Pick ban Protect String
 	let pickBanProtectString
 	if (event.ctrlKey) pickBanProtectString = "ban"
