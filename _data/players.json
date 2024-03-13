@@ -1,1 +1,925 @@
-[{"country_name":"United States","osu_flag":"US","players":["gilgamesh815","Stage my mommy","zfr","hotbread","meowmeowmmeowme","tights","Pangetism","FILIPINO"]}]
+[
+    {
+      "osu_flag": "FI",
+      "team_name": "Finland",
+      "players": [
+        "daoxide",
+        "Stemuu",
+        "Kyttis",
+        "Jokupoika24",
+        "CPU_Cartel",
+        "L3nnu",
+        "EsRiku",
+        "ilkka"
+      ]
+    },
+    {
+      "osu_flag": "LV",
+      "team_name": "Latvia",
+      "players": [
+        "TheBigDrop",
+        "olivers31",
+        "kuriumn",
+        "Xerxony",
+        "taiglem",
+        "Hellldestroer",
+        "kola kao",
+        "Sqlslammer_LV"
+      ]
+    },
+    {
+      "osu_flag": "BE",
+      "team_name": "Belgium",
+      "players": [
+        "FADED THAN A HO",
+        "Koni",
+        "Kaja",
+        "OptimismJR",
+        "Kayziix",
+        "Bl1tz_OwO",
+        "Gigatn",
+        "arnevdh"
+      ]
+    },
+    {
+      "osu_flag": "TR",
+      "team_name": "Türkiye",
+      "players": [
+        "Zybit",
+        "Soroic",
+        "Liery",
+        "Rainres",
+        "Tekaii",
+        "empi-",
+        "AgorelL",
+        "SnakeTwix"
+      ]
+    },
+    {
+      "osu_flag": "SA",
+      "team_name": "Saudi Arabia",
+      "players": [
+        "CallMeRed",
+        "Phresh",
+        "Rone",
+        "MoonCubed",
+        "Raydrick",
+        "_________",
+        "3BDOOO",
+        "[Cookez_Fan]"
+      ]
+    },
+    {
+      "osu_flag": "IL",
+      "team_name": "Israel",
+      "players": [
+        "LayUp",
+        "Flyco",
+        "ChaosEater",
+        "Osh3r212",
+        "IlayOwO",
+        "sosuu",
+        "decordy_",
+        "the boss bob"
+      ]
+    },
+    {
+      "osu_flag": "CA",
+      "team_name": "Canada",
+      "players": [
+        "ploot",
+        "Jolly Ranchers",
+        "Acer",
+        "FetherFall",
+        "Lexic",
+        "ExiaXD",
+        "Birchman",
+        "jykca"
+      ]
+    },
+    {
+      "osu_flag": "UA",
+      "team_name": "Ukraine",
+      "players": [
+        "respective",
+        "Kazuki-",
+        "HLN",
+        "BlackJack",
+        "APTEM",
+        "-Des",
+        "KiberMen",
+        "Zelretch"
+      ]
+    },
+    {
+      "osu_flag": "HK",
+      "team_name": "Hong Kong",
+      "players": [
+        "AbbeyChan6203",
+        "RiceballUwU",
+        "lelxdme",
+        "Piggice",
+        "Twistedreality",
+        "MeowZero_Emilia",
+        "Ayaneruuu",
+        "- kouyuu -"
+      ]
+    },
+    {
+      "osu_flag": "NO",
+      "team_name": "Norway",
+      "players": [
+        "Bismarck",
+        "lol-ok",
+        "m r v",
+        "FREEWAVE 4",
+        "toti",
+        "-Gaz",
+        "Ksyro_",
+        "Ctski"
+      ]
+    },
+    {
+      "osu_flag": "PT",
+      "team_name": "Portugal",
+      "players": [
+        "iceGOD",
+        "_Foxy",
+        "ILLKID13",
+        "J P",
+        "Astravan",
+        "ReDLinE-",
+        "MakiDonalds Jr",
+        "held"
+      ]
+    },
+    {
+      "osu_flag": "CZ",
+      "team_name": "Czechia",
+      "players": [
+        "dad0ja",
+        "Eiko Tsukimi",
+        "--Corpse--",
+        "Kem_",
+        "Fordor",
+        "Ryugene",
+        "Andysaur_",
+        "Vojta99"
+      ]
+    },
+    {
+      "osu_flag": "DE",
+      "team_name": "Germany",
+      "players": [
+        "jaaysfa",
+        "EulaFootEnjoyer",
+        "Th1",
+        "Christiaaan",
+        "POLANDTRUCKER13",
+        "Kurumi--",
+        "Cerelydra",
+        "-Jayden"
+      ]
+    },
+    {
+      "osu_flag": "BY",
+      "team_name": "Belarus",
+      "players": [
+        "xunev",
+        "RemTouk",
+        "Neonith",
+        "durashcka",
+        "sh1z0idik",
+        "Yudek",
+        "Bekus",
+        "-serko-"
+      ]
+    },
+    {
+      "osu_flag": "PH",
+      "team_name": "Philippines",
+      "players": [
+        "LeFerraille",
+        "MPDisplay",
+        "Zorokii",
+        "Aryuii",
+        "GabberSS",
+        "[Shua]",
+        "ZaNy_",
+        "seeeen11l1"
+      ]
+    },
+    {
+      "osu_flag": "BR",
+      "team_name": "Brazil",
+      "players": [
+        "KakirM",
+        "Yelan",
+        "zStormk19",
+        "DoTrO",
+        "T-Light",
+        "999kalel999",
+        "Sunda3",
+        "thacer"
+      ]
+    },
+    {
+      "osu_flag": "RU",
+      "team_name": "Russian Federation",
+      "players": [
+        "Ice Shark",
+        "shadevr",
+        "miageto",
+        "Bobyr",
+        "Konetto",
+        "Meowzarte",
+        "B4rISka",
+        "mija-"
+      ]
+    },
+    {
+      "osu_flag": "NL",
+      "team_name": "Netherlands",
+      "players": [
+        "CMeFly",
+        "Just Lucan",
+        "Heavymetal4life",
+        "PotjeNutella",
+        "Devrimon",
+        "faze-dank",
+        "Stellamaris",
+        "blexdark"
+      ]
+    },
+    {
+      "osu_flag": "SG",
+      "team_name": "Singapore",
+      "players": [
+        "DVDthe1st",
+        "CopyPasted",
+        "JokThree",
+        "Junkmaniac",
+        "hollowknees",
+        "Baechuu",
+        "m0fum0fu",
+        "AppleTier"
+      ]
+    },
+    {
+      "osu_flag": "EE",
+      "team_name": "Estonia",
+      "players": [
+        "CAPTAIN ESTONIA",
+        "Pallid3",
+        "kaimokene",
+        "KimikaTachibana",
+        "EvilGamings",
+        "sprei",
+        "Mullimees",
+        "Matu12313123"
+      ]
+    },
+    {
+      "osu_flag": "VE",
+      "team_name": "Venezuela",
+      "players": [
+        "4rou",
+        "Macross Plus",
+        "KingRojasisaac",
+        "YuyuCat",
+        "Darky-",
+        "iJuxn_",
+        "-Hikku-",
+        "Aqytha"
+      ]
+    },
+    {
+      "osu_flag": "TW",
+      "team_name": "Taiwan",
+      "players": [
+        "Summer_Ouo",
+        "Meow_Son",
+        "Zefkiel",
+        "Rayter-",
+        "YoYu",
+        "Ruyaya",
+        "[ RoneKu ]",
+        "Yue0429"
+      ]
+    },
+    {
+      "osu_flag": "FR",
+      "team_name": "France",
+      "players": [
+        "Jiuchu",
+        "MyzeJD",
+        "XiaoMyMommy",
+        "Adrean",
+        "Punkysteria",
+        "Hardstcukc 2",
+        "Drakkles",
+        "Ryshult"
+      ]
+    },
+    {
+      "osu_flag": "IE",
+      "team_name": "Ireland",
+      "players": [
+        "PoSharTo",
+        "KSTBAD",
+        "rbk",
+        "Sensta",
+        "nat",
+        "Twig583",
+        "Vanti",
+        "don_chan"
+      ]
+    },
+    {
+      "osu_flag": "GR",
+      "team_name": "Greece",
+      "players": [
+        "snap",
+        "W1nn1e",
+        "BilboNP",
+        "KittyLikeme",
+        "Serafeim",
+        "Faylie",
+        "xlepas",
+        "[Teo]"
+      ]
+    },
+    {
+      "osu_flag": "PL",
+      "team_name": "Poland",
+      "players": [
+        "LewusekX44",
+        "lys",
+        "Asriel",
+        "-BocheN-",
+        "TilerXk",
+        "Quartal",
+        "Nutricula",
+        "squarem"
+      ]
+    },
+    {
+      "osu_flag": "NZ",
+      "team_name": "New Zealand",
+      "players": [
+        "ges",
+        "[ O Y O] baa",
+        "Neavako",
+        "Moxytone",
+        "Tulza",
+        "- Snowz -",
+        "Thumb",
+        "Goofster"
+      ]
+    },
+    {
+      "osu_flag": "RO",
+      "team_name": "Romania",
+      "players": [
+        "AlexBelea",
+        "jqvi",
+        "_Nino_",
+        "pessi555",
+        "sorinica17",
+        "Korinna",
+        "mishifuari",
+        "swagDIVIN"
+      ]
+    },
+    {
+      "osu_flag": "AT",
+      "team_name": "Austria",
+      "players": [
+        "Floflorian",
+        "gadse",
+        "studya",
+        "KAAAL",
+        "Ayoukiro",
+        "HwangOnWheels",
+        "JustBecause",
+        "hakashii"
+      ]
+    },
+    {
+      "osu_flag": "MY",
+      "team_name": "Malaysia",
+      "players": [
+        "Blethz",
+        "Floth",
+        "GG_com2016",
+        "VenDService",
+        "Hu_Ai",
+        "daro",
+        "milo Penguin",
+        "DuoX"
+      ]
+    },
+    {
+      "osu_flag": "GB",
+      "team_name": "United Kingdom",
+      "players": [
+        "Humsterlol",
+        "Wingo",
+        "NeoPixel201",
+        "ielia",
+        "velcro shoes",
+        "rubrub",
+        "Niuex",
+        "kuryyyyy"
+      ]
+    },
+    {
+      "osu_flag": "UY",
+      "team_name": "Uruguay",
+      "players": [
+        "Scramzi",
+        "Haku-",
+        "Lolasinlol",
+        "TheUYGovernment",
+        "Miosha",
+        "Vlauz",
+        "Ruffian",
+        "Ryo Mizoguchi"
+      ]
+    },
+    {
+      "osu_flag": "IN",
+      "team_name": "India",
+      "players": [
+        "ArtoriaMyAngel",
+        "Juggernaut",
+        "OsuMaster1290",
+        "KurumiTokisaki0",
+        "wRoNk",
+        "dard",
+        "Speshimen",
+        "zmecha"
+      ]
+    },
+    {
+      "osu_flag": "ES",
+      "team_name": "Spain",
+      "players": [
+        "-zilva-",
+        "- Izayoi -",
+        "MusicDropZ",
+        "Palodex",
+        "AngelXC",
+        "AitorAmu",
+        "Sakorii",
+        "Rumpowl"
+      ]
+    },
+    {
+      "osu_flag": "CL",
+      "team_name": "Chile",
+      "players": [
+        "Lasseh",
+        "Siiphs",
+        "l Akemi l",
+        "Nevzz",
+        "Paxyh",
+        "dekay",
+        "Yumbtah",
+        "Shiny Froakie"
+      ]
+    },
+    {
+      "osu_flag": "US",
+      "team_name": "United States",
+      "players": [
+        "zfr",
+        "gilgamesh815",
+        "Stage my mommy",
+        "hotbread",
+        "meowmeowmmeowme",
+        "tights",
+        "Pangetism",
+        "FILIPINO"
+      ]
+    },
+    {
+      "osu_flag": "IT",
+      "team_name": "Italy",
+      "players": [
+        "frewayk",
+        "Poof",
+        "Loreriv",
+        "SIMONETRAPANI",
+        "lia27",
+        "-Poggi-",
+        "gionuaS",
+        "Proioxis"
+      ]
+    },
+    {
+      "osu_flag": "DK",
+      "team_name": "Denmark",
+      "players": [
+        "-Dever",
+        "stealfth",
+        "tjukas",
+        "Lothjon",
+        "Cromalia",
+        "PandaguinDK",
+        "[raz]",
+        "progaa"
+      ]
+    },
+    {
+      "osu_flag": "VN",
+      "team_name": "Vietnam",
+      "players": [
+        "smthelse",
+        "AuroraDieu",
+        "[Boy]HaiPhong",
+        "Thinhhhh",
+        "s0me",
+        "Kriatix",
+        "raifiu",
+        "tomatohung"
+      ]
+    },
+    {
+      "osu_flag": "TH",
+      "team_name": "Thailand",
+      "players": [
+        "Moca Aoba",
+        "monkerzaza",
+        "TzArtifactz",
+        "Vixera",
+        "Saki Ayase",
+        "- PPKM -",
+        "NekoShabeta",
+        "Abratexz"
+      ]
+    },
+    {
+      "osu_flag": "AR",
+      "team_name": "Argentina",
+      "players": [
+        "Mikelito069",
+        "Rodr1h-",
+        "Fib_02",
+        "Alokas",
+        "TheARGovernment",
+        "M A T O I",
+        "Nxtcho",
+        "-Maxi-"
+      ]
+    },
+    {
+      "osu_flag": "PE",
+      "team_name": "Peru",
+      "players": [
+        "zecutor",
+        "SomeBoi",
+        "old fart",
+        "Anita Max Wyn",
+        "SIGMA MALE",
+        "SapeSape",
+        "-Kairy-",
+        "dakiwii"
+      ]
+    },
+    {
+      "osu_flag": "SE",
+      "team_name": "Sweden",
+      "players": [
+        "Svizza",
+        "Klappy",
+        "Villee",
+        "mmeowmeowmeowme",
+        "-HeadHunter-",
+        "yumetsu",
+        "[ Couch ] Milk",
+        "InfraGhozt"
+      ]
+    },
+    {
+      "osu_flag": "ZA",
+      "team_name": "South Africa",
+      "players": [
+        "DragonMage",
+        "Tjoma",
+        "Artix",
+        "Rophone",
+        "Adam40505",
+        "IssaKun_",
+        "Sir Qumm",
+        "25 pringles"
+      ]
+    },
+    {
+      "osu_flag": "AU",
+      "team_name": "Australia",
+      "players": [
+        "TheTopaz",
+        "Naoi Rei",
+        "hayley",
+        "UnwaryTuba77",
+        "Trainjumper",
+        "Fault",
+        "Supernye",
+        "loveleft"
+      ]
+    },
+    {
+      "osu_flag": "AE",
+      "team_name": "United Arab Emirates",
+      "players": [
+        "marshysxn",
+        "Ayaya5",
+        "ghous",
+        "HADES1150",
+        "wack",
+        "HG-Gaming",
+        "VoidHero",
+        "FinzuMyMommy"
+      ]
+    },
+    {
+      "osu_flag": "CO",
+      "team_name": "Colombia",
+      "players": [
+        "hlv",
+        "ChukiTheWolf",
+        "- scubi -",
+        "confYYdent_",
+        "MyAngelEve",
+        "Naberuu",
+        "Strxwberrymilk",
+        "xSalcedo"
+      ]
+    },
+    {
+      "osu_flag": "BG",
+      "team_name": "Bulgaria",
+      "players": [
+        "Prahosnika",
+        "Rengmain",
+        "Hanabi -",
+        "LazerDynamiX",
+        "robatrt",
+        "RioMisstery",
+        "MyAngelLumei",
+        "Ivanix"
+      ]
+    },
+    {
+      "osu_flag": "HU",
+      "team_name": "Hungary",
+      "players": [
+        "ffelix",
+        "TibO123",
+        "HyBer",
+        "nyarvis",
+        "Nidasimno",
+        "balloon_",
+        "worst hu player",
+        "raven_waffles"
+      ]
+    },
+    {
+      "osu_flag": "MX",
+      "team_name": "Mexico",
+      "players": [
+        "kevinm31",
+        "-Line-",
+        "[Toni]",
+        "chiliawa52",
+        "Muffin5k",
+        "Roller-",
+        "Agamalpa",
+        "daviddv"
+      ]
+    },
+    {
+      "osu_flag": "CN",
+      "team_name": "China",
+      "players": [
+        "Knd",
+        "Sand-Star",
+        "gxytcgxytc",
+        "Ask to Wind",
+        "WorthlessPlayer",
+        "No rank",
+        "Trolloli",
+        "Aporia"
+      ]
+    },
+    {
+      "osu_flag": "SK",
+      "team_name": "Slovakia",
+      "players": [
+        "-MiGo-",
+        "Puvis",
+        "Vilory",
+        "Centaurix",
+        "kuya nya",
+        "Aerlyn",
+        "EnchantedSpider",
+        "Fliper 79"
+      ]
+    },
+    {
+      "osu_flag": "KZ",
+      "team_name": "Kazakhstan",
+      "players": [
+        "Po1SoN3SS",
+        "MyAngelhwtochko",
+        "ItzZeroIce",
+        "JustRoxy",
+        "rxys",
+        "naraxx",
+        "Sykezs",
+        "ShamiruKi"
+      ]
+    },
+    {
+      "osu_flag": "CH",
+      "team_name": "Switzerland",
+      "players": [
+        "xeladir",
+        "BAGE",
+        "Shadow 2",
+        "Depito",
+        "gg_boi",
+        "Zacatel",
+        "Neox420",
+        "kokonokokoro"
+      ]
+    },
+    {
+      "osu_flag": "KG",
+      "team_name": "Kyrgyzstan",
+      "players": [
+        "ded24lol",
+        "RInatGM",
+        "akenao",
+        "benztruckz",
+        "heartpart",
+        "SiIva",
+        "TSUBEKA",
+        "Razak_"
+      ]
+    },
+    {
+      "osu_flag": "TN",
+      "team_name": "Tunisia",
+      "players": [
+        "SkY TN",
+        "lavocado",
+        "mahdisiala",
+        "-Voice-",
+        "Ahmedzerog",
+        "Betz"
+      ]
+    },
+    {
+      "osu_flag": "BN",
+      "team_name": "Brunei",
+      "players": [
+        "FourCan",
+        "rafs",
+        "glitchtrrp",
+        "Blight-kun",
+        "Saraishii",
+        "Fused1376",
+        "Epixia",
+        "erutobi"
+      ]
+    },
+    {
+      "osu_flag": "JP",
+      "team_name": "Japan",
+      "players": [
+        "RAiMEi_BOTTliUM",
+        "Jerryyy",
+        "_Hachikun_",
+        "skit_3980",
+        "Tsubaban",
+        "kotomori_",
+        "Toxicat",
+        "Heil__"
+      ]
+    },
+    {
+      "osu_flag": "ID",
+      "team_name": "Indonesia",
+      "players": [
+        "honeymint",
+        "fnayR",
+        "Icun",
+        "retot",
+        "-Rizie",
+        "Bunan-",
+        "mymeatfelloff",
+        "SDKO"
+      ]
+    },
+    {
+      "osu_flag": "KR",
+      "team_name": "South Korea",
+      "players": [
+        "kailburn",
+        "Pale Citrus",
+        "[ ] [ ]",
+        "yhsphd",
+        "ch0co",
+        "Civil oath",
+        "HDJump",
+        "Pieris"
+      ]
+    },
+    {
+      "osu_flag": "LT",
+      "team_name": "Lithuania",
+      "players": [
+        "Mancis",
+        "tnt",
+        "Gabytex",
+        "Sunless_",
+        "ramojusd",
+        "_eLSe_",
+        "Arijus",
+        "PakaZ"
+      ]
+    },
+    {
+      "osu_flag": "RE",
+      "team_name": "Réunion",
+      "players": [
+        "shinytra",
+        "Bukuo",
+        "-Alto-",
+        "ZabaSama",
+        "Nesrya",
+        "byo",
+        "Ekowo"
+      ]
+    },
+    {
+      "osu_flag": "IS",
+      "team_name": "Iceland",
+      "players": [
+        "Ash Ketchum",
+        "birkir",
+        "Shiraori Kumoko",
+        "kiriwi",
+        "davidercool"
+      ]
+    },
+    {
+      "osu_flag": "UZ",
+      "team_name": "Uzbekistan",
+      "players": [
+        "S i d",
+        "REJECTZ",
+        "Shoukko",
+        "x_Broken_x",
+        "tayoshu",
+        "Asmy",
+        "RiseiNoKoe",
+        "Ansh1n"
+      ]
+    },
+    {
+      "osu_flag": "MO",
+      "team_name": "Macao",
+      "players": [
+        "-PSC-",
+        "Polyr3x",
+        "sus--cho",
+        "SBHO"
+      ]
+    },
+    {
+      "osu_flag": "PK",
+      "team_name": "Pakistan",
+      "players": [
+        "mcmdonald",
+        "Kanae",
+        "Kisty",
+        "Vanodew",
+        "Shirza"
+      ]
+    },
+    {
+      "osu_flag": "HR",
+      "team_name": "Croatia",
+      "players": [
+        "jakov",
+        "tigiexe",
+        "JebacMama69",
+        "MarinoX",
+        "BoNeStY_",
+        "Cigla"
+      ]
+    }
+  ]

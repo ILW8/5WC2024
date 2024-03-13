@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../shared/shared.css">
+    <link rel="stylesheet" href="../shared/deps/twitchChat/showcaseWinnerTwitchChat.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <script src="../shared/deps/reconnecting-websocket.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+    <script src="../shared/deps/jquery.min.js"></script>
+</head>
+<body>
+    <div id="main">
+        <video src="static/background.webm" loop autoplay id="bg-video"></video>
+        <section id="nowPlaying">
+            <div id="nowPlayingTextRectangle">
+                <div id="nowPlayingText">NOW PLAYING</div>
+            </div>
+            <div id="nowPlayingBox">
+                <div id="nowPlayingImage"><div id="nowPlayingImageLayer"></div></div>
+                <div class="nowPlayingDetailsWrapper" id="nowPlayingSongNameWrapper"><div class="nowPlayingDetails" id="nowPlayingSongName">HIGHER POWER</div></div>
+                <div class="nowPlayingDetailsWrapper" id="nowPlayingArtistNameWrapper"><div class="nowPlayingDetails" id="nowPlayingArtistName">COLDPLAY</div></div>
+            </div>
+        </section>
+        <img id="logo" src="../shared/static/logo.png">
+        <div id="roundName">Round of 32</div>
+        <div id="timer"></div>
+        <div id="match-up">
+            
+            <div class="team">
+                <div class="flag-col red">
+                    <img id="red-flag">
+                </div>
+                <div class="player-col red">
+                    <div class="team-name red" id="red-team"></div>
+                    <div class="player red" id="red-player-1"></div>
+                    <div class="player red" id="red-player-2"></div>
+                    <div class="player red" id="red-player-3"></div>
+                    <div class="player red" id="red-player-4"></div>
+                    <div class="player red" id="red-player-5"></div>
+                    <div class="player red" id="red-player-6"></div>
+                    <div class="player red" id="red-player-7"></div>
+                    <div class="player red" id="red-player-8"></div>
+                </div>
+            </div>
+            <div class="team vs">vs</div>
+            <div class="team">
+                <div class="player-col blue">
+                    <div class="team-name blue" id="blue-team"></div>
+                    <div class="player blue" id="blue-player-1"></div>
+                    <div class="player blue" id="blue-player-2"></div>
+                    <div class="player blue" id="blue-player-3"></div>
+                    <div class="player blue" id="blue-player-4"></div>
+                    <div class="player blue" id="blue-player-5"></div>
+                    <div class="player blue" id="blue-player-6"></div>
+                    <div class="player blue" id="blue-player-7"></div>
+                    <div class="player blue" id="blue-player-8"></div>
+                </div>
+                <div class="flag-col blue">
+                    <img id="blue-flag">
+                </div>
+            </div>
+        </div>
+        <section id="bottom">
+            <div id="line"></div>
+            <div id="chatRectangle"></div>
+            <div id="chatText">CHAT</div>
+            <div id="twitchChatContainer"></div>
+            <div id="sponsoredByContainer">
+                <div id="sponsoredByText">SPONSORED BY</div>
+                <div id="sponsors">
+                    <img id="momokaiSponsor" src="../shared/static/momokai_logo_with_text.png">
+                    <div id="blueberrySponsor">
+                        <img id="bluebunnySponsorImage" src="../shared/static/bluebunny_logo.png">
+                        <div id="bluebunnySponsorText">Bluebunny</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="sideBar">
+        <section id="currentChannelSection">
+            <div id="currentChannel">Current Channel</div>
+            <div id="currentChannelName">1st Channel</div>
+            <button class="sideBarButton currentChannelButton" id="currentPickerRed" onclick="setChannelId(241444981)">First Channel</button>
+            <button class="sideBarButton currentChannelButton" id="currentPickerBlue" onclick="setChannelId(859089711)">Second Channel</button>
+        </section>
+    </div>
+
+    <script src="../shared/deps/twitchChat/twitchChat.js"></script>
+    <script src="../shared/deps/sponsors.js"></script>
+    <script src="../shared/deps/reconnecting-websocket.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
