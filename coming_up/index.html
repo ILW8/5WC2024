@@ -15,12 +15,11 @@
 
     <script src="../shared/deps/reconnecting-websocket.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+    <script src="../shared/deps/jquery.min.js"></script>
 </head>
 <body>
     <div id="main">
-        <section id="cosmetics">
-            <div id="leftGrayRectangle"></div>
-        </section>
+        <video src="static/background.webm" loop autoplay id="bg-video"></video>
         <section id="nowPlaying">
             <div id="nowPlayingTextRectangle">
                 <div id="nowPlayingText">NOW PLAYING</div>
@@ -31,24 +30,45 @@
                 <div class="nowPlayingDetailsWrapper" id="nowPlayingArtistNameWrapper"><div class="nowPlayingDetails" id="nowPlayingArtistName">COLDPLAY</div></div>
             </div>
         </section>
-        <section id="countryFlag">
-            <div id="countryFlagRedBorder"></div>
-            <div id="countryFlagInnerBorder"></div>
-            <div id="countryFlagImage"></div>
-        </section>
         <img id="logo" src="../shared/static/logo.png">
-        <div id="roundName">ROUND OF 16</div>
-        <div id="countryName"><span id="countryNameFirstLetter" style="color: var(--mainRed)">R</span><span id="countryNameRest">USSIAN FEDERATION</span></div>
-        <section id="playerNames">
-            <div id="playerName1">VERYLONGUSERNAME</div>
-            <div id="playerName2">VERYLONGUSERNAME</div>
-            <div id="playerName3">VERYLONGUSERNAME</div>
-            <div id="playerName4">VERYLONGUSERNAME</div>
-            <div id="playerName5">VERYLONGUSERNAME</div>
-            <div id="playerName6">VERYLONGUSERNAME</div>
-            <div id="playerName7">VERYLONGUSERNAME</div>
-            <div id="playerName8">VERYLONGUSERNAME</div>
-        </section>
+        <div id="roundName">Round of 32</div>
+        <div id="timer"></div>
+        <div id="match-up">
+            
+            <div class="team">
+                <div class="flag-col red">
+                    <img id="red-flag">
+                </div>
+                <div class="player-col red">
+                    <div class="team-name red" id="red-team"></div>
+                    <div class="player red" id="red-player-1"></div>
+                    <div class="player red" id="red-player-2"></div>
+                    <div class="player red" id="red-player-3"></div>
+                    <div class="player red" id="red-player-4"></div>
+                    <div class="player red" id="red-player-5"></div>
+                    <div class="player red" id="red-player-6"></div>
+                    <div class="player red" id="red-player-7"></div>
+                    <div class="player red" id="red-player-8"></div>
+                </div>
+            </div>
+            <div class="team vs">vs</div>
+            <div class="team">
+                <div class="player-col blue">
+                    <div class="team-name blue" id="blue-team"></div>
+                    <div class="player blue" id="blue-player-1"></div>
+                    <div class="player blue" id="blue-player-2"></div>
+                    <div class="player blue" id="blue-player-3"></div>
+                    <div class="player blue" id="blue-player-4"></div>
+                    <div class="player blue" id="blue-player-5"></div>
+                    <div class="player blue" id="blue-player-6"></div>
+                    <div class="player blue" id="blue-player-7"></div>
+                    <div class="player blue" id="blue-player-8"></div>
+                </div>
+                <div class="flag-col blue">
+                    <img id="blue-flag">
+                </div>
+            </div>
+        </div>
         <section id="bottom">
             <div id="line"></div>
             <div id="chatRectangle"></div>
