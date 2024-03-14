@@ -35,35 +35,35 @@ fetch("http://127.0.0.1:24050/5WC2024/_data/beatmaps.json")
         allBeatmaps.forEach((maps, i) => {
             if (i === 0 && maps.length === 5) {
                 // 5 Map NM
-                maps.forEach(map => createMapCard(map, "nmExtendedMapCard", "nmExtendedMapCardName", FiveNMMapContainer))
+                maps.forEach(map => createMapCard(map, "nmExtendedMapCard", "nmExtendedMapCardName", FiveNMMapContainerEl))
             } else if (i === 0 && maps.length === 6) {
                 // 6 Map NM
                 const [container1, container2] = [maps.slice(0, 3), maps.slice(3)]
-                container1.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", SixNMMapContainer1))
-                container2.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", SixNMMapContainer2))
+                container1.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", SixNMMapContainer1El))
+                container2.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", SixNMMapContainer2El))
             } else if (i === 1 || i === 2) {
                 // HD / HR
-                maps.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", i === 1? HDMapContainer: HRMapContainer))
+                maps.forEach(map => createMapCard(map, "normalMapCard", "normalMapCardName", i === 1? HDMapContainerEl : HRMapContainerEl))
             } else if (i === 3) {
                 // DT
                 maps.forEach(map => {
-                    createMapCard(map, maps.length === 3? "bottom3MapsMapCard" : "normalMapCard", maps.length === 3? "bottom3MapsMapCardName" : "normalMapCardName", DTMapContainer)
+                    createMapCard(map, maps.length === 3? "bottom3MapsMapCard" : "normalMapCard", maps.length === 3? "bottom3MapsMapCardName" : "normalMapCardName", DTMapContainerEl)
                 })
             } else if (i === 4) {
                 // FM
-                maps.forEach(map => createMapCard(map, maps.length === 2 ? "fm2MapsMapCard" : "bottom3MapsMapCard", maps.length === 2 ? "fm2MapsMapCardName" : "bottom3MapsMapCardName", FMMapContainer))
+                maps.forEach(map => createMapCard(map, maps.length === 2 ? "fm2MapsMapCard" : "bottom3MapsMapCard", maps.length === 2 ? "fm2MapsMapCardName" : "bottom3MapsMapCardName", FMMapContainerEl))
             } else if (i === 5) {
                 // TB
                 const tbMap = maps[0]
-                TBContainer.setAttribute("id", tbMap.beatmapID)
-                tbMapCardImage.style.backgroundImage = `url("${tbMap.imgURL}")`
-                tbMapCardName.innerText = `${tbMap.artist} - ${tbMap.songName}`
-                tbMapCardDifficulty.innerText = tbMap.difficultyname
-                TBContainer.addEventListener("click", function(event) {
+                TBContainerEl.setAttribute("id", tbMap.beatmapID)
+                tbMapCardImageEl.style.backgroundImage = `url("${tbMap.imgURL}")`
+                tbMapCardNameEl.innerText = `${tbMap.artist} - ${tbMap.songName}`
+                tbMapCardDifficultyEl.innerText = tbMap.difficultyname
+                TBContainerEl.addEventListener("click", function(event) {
                     event.preventDefault()
                     handleTeamAction(event, currentRedTeamCode, this)
                 })
-                TBContainer.addEventListener("contextmenu", function(event) {
+                TBContainerEl.addEventListener("contextmenu", function(event) {
                     event.preventDefault()
                     handleTeamAction(event, currentBlueTeamCode, this)
                 }.bind(this))
@@ -71,19 +71,19 @@ fetch("http://127.0.0.1:24050/5WC2024/_data/beatmaps.json")
         })
     })
 
-const FiveNMMapContainer= document.getElementById("FiveNMMapContainer")
-const SixNMMapContainer1= document.getElementById("SixNMMapContainer1")
-const SixNMMapContainer2= document.getElementById("SixNMMapContainer2")
-const HDMapContainer= document.getElementById("HDMapContainer")
-const HRMapContainer= document.getElementById("HRMapContainer")
-const DTMapContainer= document.getElementById("DTMapContainer")
-const FMMapContainer= document.getElementById("FMMapContainer")
-const TBContainer= document.getElementsByClassName("TBContainer")[0]
-const tbMapCardImage= document.getElementById("tbMapCardImage")
-const tbMapCardName= document.getElementById("tbMapCardName")
-const tbMapCardDifficulty= document.getElementById("tbMapCardDifficulty")
+const FiveNMMapContainerEl = document.getElementById("FiveNMMapContainer")
+const SixNMMapContainer1El = document.getElementById("SixNMMapContainer1")
+const SixNMMapContainer2El = document.getElementById("SixNMMapContainer2")
+const HDMapContainerEl = document.getElementById("HDMapContainer")
+const HRMapContainerEl = document.getElementById("HRMapContainer")
+const DTMapContainerEl = document.getElementById("DTMapContainer")
+const FMMapContainerEl = document.getElementById("FMMapContainer")
+const TBContainerEl = document.getElementsByClassName("TBContainer")[0]
+const tbMapCardImageEl = document.getElementById("tbMapCardImage")
+const tbMapCardNameEl = document.getElementById("tbMapCardName")
+const tbMapCardDifficultyEl = document.getElementById("tbMapCardDifficulty")
 
-const containers = [FiveNMMapContainer, SixNMMapContainer2, HDMapContainer, HRMapContainer, DTMapContainer, FMMapContainerEl]
+const containers = [FiveNMMapContainerEl, SixNMMapContainer2El, HDMapContainerEl, HRMapContainerEl, DTMapContainerEl, FMMapContainerEl]
 // Taken from font-awesome
 const svgs = {
     protect: `<svg class="pickBanProtectSVG" xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="0 0 512 512"><path fill="#ffffff" d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0z"/></svg>`,
@@ -173,7 +173,7 @@ function handleTeamAction(event, teamCode, element) {
 
 	// Tiebreaker map
     
-	if (element.id == TBContainer.id) {
+	if (element.id == TBContainerEl.id) {
         pickBanProtectContainer.classList.add("pickBanAnimationForwards")
         pickBanImageLayer.classList.add("tiebreakerKeyframes")
         return
@@ -241,18 +241,18 @@ function toggleAutoPick() {
 }
 
 // Team Data
-const redTeamFlag= document.getElementById("redTeamFlag")
-const redTeamName= document.getElementById("redTeamName")
-const blueTeamName= document.getElementById("blueTeamName")
-const blueTeamFlag= document.getElementById("blueTeamFlag")
+const redTeamFlagEl = document.getElementById("redTeamFlag")
+const redTeamNameEl = document.getElementById("redTeamName")
+const blueTeamNameEl = document.getElementById("blueTeamName")
+const blueTeamFlagEl = document.getElementById("blueTeamFlag")
 let currentRedTeam, currentBlueTeam
 let currentRedTeamCode, currentBlueTeamCode
 
 // Team Stars
-const redTeamStars= document.getElementById("redTeamStars")
-const teamMiddleStarLeft= document.getElementById("teamMiddleStarLeft")
-const blueTeamStars= document.getElementById("blueTeamStars")
-const teamMiddleStarRight= document.getElementById("teamMiddleStarRight")
+const redTeamStarsEl = document.getElementById("redTeamStars")
+const teamMiddleStarLeftEl = document.getElementById("teamMiddleStarLeft")
+const blueTeamStarsEl = document.getElementById("blueTeamStars")
+const teamMiddleStarRightEl = document.getElementById("teamMiddleStarRight")
 let currentBestOf = 0
 let currentFirstTo = 0
 let currentRedStars = 0
@@ -269,22 +269,22 @@ socket.onmessage = async (event) => {
     const data = JSON.parse(event.data)
 
     // Update team data
-    function updateTeamData(teamFlag, teamName, currentTeam) {
-        teamName.innerText = currentTeam
+    function updateTeamData(teamFlagEl, teamNameEl, currentTeam) {
+        teamNameEl.innerText = currentTeam
     
         // Check if team name is anything
         if (currentTeam === "") {
-            teamFlag.style.display = "none"
+            teamFlagEl.style.display = "none"
             return
         }
 
         // Check for ISO country code
         for (let i = 0; i < allCountries.length; i++) {
             if (currentTeam.toLowerCase() === allCountries[i].name.toLowerCase()) {
-                teamFlag.style.display = "block"
+                teamFlagEl.style.display = "block"
 				if (currentTeam == currentRedTeam) currentRedTeamCode = allCountries[i].code
 				else if (currentTeam == currentBlueTeam) currentBlueTeamCode = allCountries[i].code
-                teamFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${allCountries[i].code}-181.png")`
+                teamFlagEl.style.backgroundImage = `url("https://osuflags.omkserver.nl/${allCountries[i].code}-181.png")`
                 break
             }
         }
@@ -292,11 +292,11 @@ socket.onmessage = async (event) => {
 	// Update red and blue teams
     if (currentRedTeam !== data.tourney.manager.teamName.left) {
         currentRedTeam = data.tourney.manager.teamName.left
-        updateTeamData(redTeamFlag, redTeamName, currentRedTeam)
+        updateTeamData(redTeamFlagEl, redTeamNameEl, currentRedTeam)
     }
     if (currentBlueTeam !== data.tourney.manager.teamName.right) {
         currentBlueTeam = data.tourney.manager.teamName.right
-        updateTeamData(blueTeamFlag, blueTeamName, currentBlueTeam)
+        updateTeamData(blueTeamFlagEl, blueTeamNameEl, currentBlueTeam)
     }
 
     // Update star information
@@ -311,9 +311,9 @@ socket.onmessage = async (event) => {
         currentBlueStars = data.tourney.manager.stars.right
 
         // Middle elements
-        teamMiddleStarLeft.innerText = currentRedStars
-        teamMiddleStarRight.innerText = currentBlueStars
-        redTeamStars.innerHTML = ""
+        teamMiddleStarLeftEl.innerText = currentRedStars
+        teamMiddleStarRightEl.innerText = currentBlueStars
+        redTeamStarsEl.innerHTML = ""
 
         // Create star images
         function createStarImages(starElement, start, end, leftStarSrc, rightStarSrc) {
@@ -324,8 +324,8 @@ socket.onmessage = async (event) => {
                 starElement.append(starImage)
             }
         }
-        createStarImages(redTeamStars, currentRedStars, currentFirstTo, "red_star.png", "white_star.png")
-        createStarImages(blueTeamStars, currentFirstTo - currentBlueStars, currentFirstTo, "white_star.png", "blue_star.png")
+        createStarImages(redTeamStarsEl, currentRedStars, currentFirstTo, "red_star.png", "white_star.png")
+        createStarImages(blueTeamStarsEl, currentFirstTo - currentBlueStars, currentFirstTo, "white_star.png", "blue_star.png")
     }
 
     // Chat Stuff
