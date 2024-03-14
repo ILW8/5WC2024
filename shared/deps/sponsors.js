@@ -12,7 +12,6 @@ function startInterval() {
 
         if (sponsors.childElementCount <= currentSponsorIndex) currentSponsorIndex = 0
         const currentSponsor = sponsors.children[currentSponsorIndex]
-        console.log("Current Sponsor Index: " + currentSponsorIndex)
 
         if (document.contains(sponsoredByText) && currentSponsorIndex === 0) sponsoredByText.style.opacity = 1
 
