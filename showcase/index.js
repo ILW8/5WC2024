@@ -45,21 +45,21 @@ getMaps.then(showcaseMapsArray => {
 // Current map
 let currentSongTitle, currentSongDifficulty, currentMd5
 let isMapFound = false
-const replayerEl = document.getElementById("replayer")
-const nowPlayingMapEl = document.getElementById("nowPlayingMap")
-const replayerUsernameEl = document.getElementById("replayerUsername")
-const nowPlayingMapSongNameEl = document.getElementById("nowPlayingMapSongName")
-const nowPlayingMapDifficultyNameEl = document.getElementById("nowPlayingMapDifficultyName")
-const nowPlayingMapMapperNameEl = document.getElementById("nowPlayingMapMapperName")
+const replayer = document.getElementById("replayer")
+const nowPlayingMap = document.getElementById("nowPlayingMap")
+const replayerUsername = document.getElementById("replayerUsername")
+const nowPlayingMapSongName = document.getElementById("nowPlayingMapSongName")
+const nowPlayingMapDifficultyName = document.getElementById("nowPlayingMapDifficultyName")
+const nowPlayingMapMapperName = document.getElementById("nowPlayingMapMapperName")
 let currentSR, currentCS, currentAR, currentOD, currentMinBPM, currentMaxBPM, currentLen
-const starRatingNumberEl = document.getElementById("starRatingNumber")
-const circleSizeNumberEl = document.getElementById("circleSizeNumber")
-const approachRateNumberEl = document.getElementById("approachRateNumber")
-const overallDifficultyNumberEl = document.getElementById("overallDifficultyNumber")
-const bpmNumberMinEl = document.getElementById("bpmNumberMin")
-const bpmDashEl = document.getElementById("bpmDash")
-const bpmNumberMaxEl = document.getElementById("bpmNumberMax")
-const lengthNumberEl = document.getElementById("lengthNumber")
+const starRatingNumber = document.getElementById("starRatingNumber")
+const circleSizeNumber = document.getElementById("circleSizeNumber")
+const approachRateNumber = document.getElementById("approachRateNumber")
+const overallDifficultyNumber = document.getElementById("overallDifficultyNumber")
+const bpmNumberMin = document.getElementById("bpmNumberMin")
+const bpmDash = document.getElementById("bpmDash")
+const bpmNumberMax = document.getElementById("bpmNumberMax")
+const lengthNumber = document.getElementById("lengthNumber")
 
 // Strains
 const progressChart = document.getElementById("progress")
@@ -87,17 +87,17 @@ socket.onmessage = async (event) => {
 
         // set background image
         const currentImage = data.menu.bm.path.full.replace(/#/g,'%23').replace(/%/g,'%25').replace(/\\/g,'/').replace(/'/g, "\\'")
-        nowPlayingMapEl.style.backgroundImage = `url('http://${location.host}/Songs/${currentImage}?a=${Math.random(10000)}')`
+        nowPlayingMap.style.backgroundImage = `url('http://${location.host}/Songs/${currentImage}?a=${Math.random(10000)}')`
 
         // set song name / difficulty / mapper
-        nowPlayingMapSongNameEl.innerText = `${data.menu.bm.metadata.artist} - ${currentSongTitle}`
-        nowPlayingMapDifficultyNameEl.innerText = `[${currentSongDifficulty}]`
-        nowPlayingMapMapperNameEl.innerText = data.menu.bm.metadata.mapper
+        nowPlayingMapSongName.innerText = `${data.menu.bm.metadata.artist} - ${currentSongTitle}`
+        nowPlayingMapDifficultyName.innerText = `[${currentSongDifficulty}]`
+        nowPlayingMapMapperName.innerText = data.menu.bm.metadata.mapper
 
         // set textSlide class
-        nowPlayingDetailTextSlide(nowPlayingMapSongNameEl)
-        nowPlayingDetailTextSlide(nowPlayingMapDifficultyNameEl)
-        nowPlayingDetailTextSlide(nowPlayingMapMapperNameEl)
+        nowPlayingDetailTextSlide(nowPlayingMapSongName)
+        nowPlayingDetailTextSlide(nowPlayingMapDifficultyName)
+        nowPlayingDetailTextSlide(nowPlayingMapMapperName)
 
         for (let i = 0; i < showcaseMaps.length; i++) {
             if (currentSongTitle == showcaseMaps[i].songName && currentSongDifficulty == showcaseMaps[i].difficulty) {
@@ -106,8 +106,8 @@ socket.onmessage = async (event) => {
                 isMapFound = true
 
                 // set replayer name
-                replayerEl.style.display = "block"
-                replayerUsernameEl.innerText = showcaseMaps[i].replayer.toUpperCase()
+                replayer.style.display = "block"
+                replayerUsername.innerText = showcaseMaps[i].replayer.toUpperCase()
 
                 // Set main stats
                 currentSR = Math.round(parseFloat(showcaseMaps[i].sr * 100)) / 100
@@ -117,16 +117,16 @@ socket.onmessage = async (event) => {
                 currentMinBPM = showcaseMaps[i].bpm
                 currentMaxBPM = showcaseMaps[i].bpm
 
-                starRatingNumberEl.innerText = `${currentSR}*`
-                circleSizeNumberEl.innerText = currentCS
-                approachRateNumberEl.innerText = currentAR
-                overallDifficultyNumberEl.innerText = currentOD
+                starRatingNumber.innerText = `${currentSR}*`
+                circleSizeNumber.innerText = currentCS
+                approachRateNumber.innerText = currentAR
+                overallDifficultyNumber.innerText = currentOD
                 setBPMStats()
 
                 // Length
                 currentLen = parseInt(showcaseMaps[i].len)
                 const secondsCounter = currentLen % 60
-                lengthNumberEl.innerText = `${Math.floor(currentLen / 60)}:${(secondsCounter < 10) ? '0': ''}${secondsCounter}`
+                lengthNumber.innerText = `${Math.floor(currentLen / 60)}:${(secondsCounter < 10) ? '0': ''}${secondsCounter}`
                 break
             }
         }
@@ -178,22 +178,22 @@ socket.onmessage = async (event) => {
     }
 
     if (!isMapFound) {
-        replayerEl.style.display = "none"
+        replayer.style.display = "none"
         if (currentSR !== data.menu.bm.stats.fullSR) {
             currentSR = data.menu.bm.stats.fullSR
-            starRatingNumberEl.innerText = currentSR
+            starRatingNumber.innerText = currentSR
         }
         if (currentCS !== data.menu.bm.stats.CS) {
             currentCS = data.menu.bm.stats.CS
-            circleSizeNumberEl.innerText = currentCS
+            circleSizeNumber.innerText = currentCS
         }
         if (currentAR !== data.menu.bm.stats.AR) {
             currentAR = data.menu.bm.stats.AR
-            approachRateNumberEl.innerText = currentAR
+            approachRateNumber.innerText = currentAR
         }
         if (currentOD !== data.menu.bm.stats.OD) {
             currentOD = data.menu.bm.stats.OD
-            overallDifficultyNumberEl.innerText = currentOD
+            overallDifficultyNumber.innerText = currentOD
         }
         if (currentMinBPM !== data.menu.bm.stats.BPM.min || currentMaxBPM !== data.menu.bm.stats.BPM.max) {
             currentMinBPM = data.menu.bm.stats.BPM.min
@@ -205,7 +205,7 @@ socket.onmessage = async (event) => {
         if (currentLen !== currentSeconds) {
             currentLen = currentSeconds
             const secondsCounter = currentLen % 60
-            lengthNumberEl.innerText = `${Math.floor(currentLen / 60)}:${(secondsCounter < 10) ? '0': ''}${secondsCounter}`
+            lengthNumber.innerText = `${Math.floor(currentLen / 60)}:${(secondsCounter < 10) ? '0': ''}${secondsCounter}`
         }
     }
 
@@ -278,15 +278,15 @@ function removeAnimationClasses() {
 function setBPMStats() {
     currentMinBPM = Math.round(currentMinBPM * 100) / 100
     currentMaxBPM = Math.round(currentMaxBPM * 100) / 100
-    bpmNumberMinEl.innerText = currentMinBPM
-    bpmNumberMaxEl.innerText = currentMaxBPM
+    bpmNumberMin.innerText = currentMinBPM
+    bpmNumberMax.innerText = currentMaxBPM
 
     if (currentMinBPM == currentMaxBPM) {
-        bpmDashEl.style.display = "none"
-        bpmNumberMaxEl.style.display = "none"
+        bpmDash.style.display = "none"
+        bpmNumberMax.style.display = "none"
     } else {
-        bpmDashEl.style.display = "inline"
-        bpmNumberMaxEl.style.display = "inline"
+        bpmDash.style.display = "inline"
+        bpmNumberMax.style.display = "inline"
     }
 }
 

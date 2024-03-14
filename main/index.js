@@ -2,7 +2,7 @@
 ComfyJS.Init( "stagetournaments", null , ["stagetournaments", "stagetournaments2"] )
 
 // Round Name
-const roundNameEl = document.getElementById("roundName")
+const roundName = document.getElementById("roundName")
 // Get Cookie
 function getCookie(cname) {
     let name = cname + "="
@@ -71,18 +71,18 @@ allCountriesXhr.onload = function () {
 allCountriesXhr.send()
 
 // Team Data
-const redTeamFlagEl = document.getElementById("redTeamFlag")
-const redTeamNameEl = document.getElementById("redTeamName")
-const blueTeamNameEl = document.getElementById("blueTeamName")
-const blueTeamFlagEl = document.getElementById("blueTeamFlag")
+const redTeamFlag = document.getElementById("redTeamFlag")
+const redTeamName = document.getElementById("redTeamName")
+const blueTeamName = document.getElementById("blueTeamName")
+const blueTeamFlag = document.getElementById("blueTeamFlag")
 let currentRedTeam, currentBlueTeam
 let currentRedTeamCode, currentBlueTeamCode
 
 // Team Stars
-const redTeamStarsEl = document.getElementById("redTeamStars")
-const teamMiddleStarLeftEl = document.getElementById("teamMiddleStarLeft")
-const blueTeamStarsEl = document.getElementById("blueTeamStars")
-const teamMiddleStarRightEl = document.getElementById("teamMiddleStarRight")
+const redTeamStars = document.getElementById("redTeamStars")
+const teamMiddleStarLeft = document.getElementById("teamMiddleStarLeft")
+const blueTeamStars = document.getElementById("blueTeamStars")
+const teamMiddleStarRight = document.getElementById("teamMiddleStarRight")
 let currentBestOf = 0
 let currentFirstTo = 0
 let currentRedStars = 0
@@ -175,22 +175,22 @@ socket.onmessage = async (event) => {
     console.log(data)
 
     // Update team data
-    function updateTeamData(teamFlagEl, teamNameEl, currentTeam) {
-        teamNameEl.innerText = currentTeam
+    function updateTeamData(teamFlag, teamName, currentTeam) {
+        teamName.innerText = currentTeam
     
         // Check if team name is anything
         if (currentTeam === "") {
-            teamFlagEl.style.display = "none"
+            teamFlag.style.display = "none"
             return
         }
 
         // Check for ISO country code
         for (let i = 0; i < allCountries.length; i++) {
             if (currentTeam.toLowerCase() === allCountries[i].name.toLowerCase()) {
-                teamFlagEl.style.display = "block"
+                teamFlag.style.display = "block"
                 if (currentTeam == currentRedTeam) currentRedTeamCode = allCountries[i].code
                 else if (currentTeam == currentBlueTeam) currentBlueTeamCode = allCountries[i].code
-                teamFlagEl.style.backgroundImage = `url("https://osuflags.omkserver.nl/${allCountries[i].code}-237.png")`
+                teamFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${allCountries[i].code}-237.png")`
                 break
             }
         }
@@ -198,11 +198,11 @@ socket.onmessage = async (event) => {
     // Update red and blue teams
     if (currentRedTeam !== data.tourney.manager.teamName.left) {
         currentRedTeam = data.tourney.manager.teamName.left
-        updateTeamData(redTeamFlagEl, redTeamNameEl, currentRedTeam)
+        updateTeamData(redTeamFlag, redTeamName, currentRedTeam)
     }
     if (currentBlueTeam !== data.tourney.manager.teamName.right) {
         currentBlueTeam = data.tourney.manager.teamName.right
-        updateTeamData(blueTeamFlagEl, blueTeamNameEl, currentBlueTeam)
+        updateTeamData(blueTeamFlag, blueTeamName, currentBlueTeam)
     }
 
     // Update star information
@@ -217,9 +217,9 @@ socket.onmessage = async (event) => {
         currentBlueStars = data.tourney.manager.stars.right
 
         // Middle elements
-        teamMiddleStarLeftEl.innerText = currentRedStars
-        teamMiddleStarRightEl.innerText = currentBlueStars
-        redTeamStarsEl.innerHTML = ""
+        teamMiddleStarLeft.innerText = currentRedStars
+        teamMiddleStarRight.innerText = currentBlueStars
+        redTeamStars.innerHTML = ""
 
         // Create star images
         function createStarImages(starElement, start, end, leftStarSrc, rightStarSrc) {
@@ -230,8 +230,8 @@ socket.onmessage = async (event) => {
                 starElement.append(starImage)
             }
         }
-        createStarImages(redTeamStarsEl, currentRedStars, currentFirstTo, "red_star.png", "white_star.png")
-        createStarImages(blueTeamStarsEl, currentFirstTo - currentBlueStars, currentFirstTo, "white_star.png", "blue_star.png")
+        createStarImages(redTeamStars, currentRedStars, currentFirstTo, "red_star.png", "white_star.png")
+        createStarImages(blueTeamStars, currentFirstTo - currentBlueStars, currentFirstTo, "white_star.png", "blue_star.png")
 
         // Set winner information
         if (currentRedStars == currentFirstTo) {
@@ -468,7 +468,7 @@ setChannelId(241444981)
 // get cookie information
 setInterval(() => {
     // set round name
-    roundNameEl.innerText = getCookie("currentRound")
+    roundName.innerText = getCookie("currentRound")
 
     // Set twitch channel
     setChannelId(getCookie("currentChannel"))
