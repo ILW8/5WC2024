@@ -122,17 +122,4 @@ setInterval(() => {
     let newRound = getCookie("currentRound")
     if (roundName.innerText !== newRound) roundName.innerText = newRound
 
-    // Set twitch channel
-    setChannelId(getCookie("currentChannel"))
 }, 500)
-
-// Set twitch channel
-const currentChannelName = document.getElementById("currentChannelName")
-const setChannelId = channelId => {
-    if (channelId == 241444981) currentChannelName.innerText = "1st Channel"
-    else currentChannelName.innerText = "2nd Channel"
-    document.cookie = `currentChannel=${channelId}; path=/`
-}
-setChannelId(241444981)
-
-ComfyJS.Init( "stagetournaments", null , ["stagetournaments", "stagetournaments2"] )

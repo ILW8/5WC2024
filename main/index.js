@@ -1,6 +1,3 @@
-// Twitch Chat
-ComfyJS.Init( "stagetournaments", null , ["stagetournaments", "stagetournaments2"] )
-
 // Round Name
 const roundName = document.getElementById("roundName")
 // Get Cookie
@@ -456,22 +453,10 @@ socket.onmessage = async (event) => {
     }
 }
 
-// Set twitch channel
-const currentChannelName = document.getElementById("currentChannelName")
-const setChannelId = channelId => {
-    if (channelId == 241444981) currentChannelName.innerText = "1st Channel"
-    else currentChannelName.innerText = "2nd Channel"
-    document.cookie = `currentChannel=${channelId}; path=/`
-}
-setChannelId(241444981)
-
 // get cookie information
 setInterval(() => {
     // set round name
     roundName.innerText = getCookie("currentRound")
-
-    // Set twitch channel
-    setChannelId(getCookie("currentChannel"))
 
     // Set current picker
     setCurrentPicker(getCookie("currentTeamPick"))

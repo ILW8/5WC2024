@@ -331,7 +331,6 @@
     width: 400px;
 }
 #currentPickerSection { top: 50px; }
-#currentChannelSection { top: 400px; }
 /* Header Text */
 .currentHeaderText {
     width: inherit;
@@ -342,11 +341,8 @@
     font-size: 120px;
     color: var(--mainRed)
 }
-#currentChannelName {
-    font-size: 100px;
-}
 /* Buttons */
-.currentPickerButton, .currentChannelButton {
+.currentPickerButton {
     height: 75px;
     margin: 10px 0;
     line-height: 75px;

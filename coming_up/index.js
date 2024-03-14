@@ -92,5 +92,3 @@ socket.onmessage = event => {
         addRemoveTextSlide(nowPlayingArtistName)
     }
 }
-
-ComfyJS.Init( "stagetournaments", null , ["stagetournaments", "stagetournaments2"] )
