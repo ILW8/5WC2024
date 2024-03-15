@@ -52,6 +52,27 @@ let title = document.getElementById('title');
 let time = document.getElementById('time');
 let timer = document.getElementById('timer');
 
+// Set twitch channel
+const currentChannelName = document.getElementById("currentChannelName")
+const setChannelId = channelId => {
+    if (channelId == 241444981) currentChannelName.innerText = "1st Channel"
+    else currentChannelName.innerText = "2nd Channel"
+    document.cookie = `currentChannel=${channelId}; path=/`
+}
+setChannelId(241444981)
+
+// get cookie information
+setInterval(() => {
+    // set round name
+    roundNameEl.innerText = getCookie("currentRound")
+
+    // Set twitch channel
+    setChannelId(getCookie("currentChannel"))
+
+    // Set current picker
+    setCurrentPicker(getCookie("currentTeamPick"))
+}, 500)
+
 // Socket Events
 // Credits: VictimCrasher - https://github.com/VictimCrasher/static/tree/master/WaveTournament
 const socket = new ReconnectingWebSocket("ws://" + location.host + "/ws")
