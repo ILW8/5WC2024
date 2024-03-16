@@ -5,6 +5,79 @@ socket.onopen = () => { console.log("Successfully Connected") }
 socket.onclose = event => { console.log("Socket Closed Connection: ", event); socket.send("Client Closed!") }
 socket.onerror = error => { console.log("Socket Error: ", error) }
 
+
+const TourneyState = {
+    "Initialising": 0,
+    "Idle": 1,
+    "WaitingForClients": 2,
+    "Playing": 3,
+    "Ranking": 4,
+}
+
+
+const sceneCollection = document.getElementById("sceneCollection");
+let autoadvance_button = document.getElementById('autoAdvanceButton');
+let autoadvance_timer_container = document.getElementById('autoAdvanceTimer');
+let autoadvance_timer_label = document.getElementById('autoAdvanceTimerLabel');
+let autoadvance_timer_time = new CountUp('autoAdvanceTimerTime', 10, 0, 1, 10, {useEasing: false, suffix: 's'});
+autoadvance_timer_container.style.opacity = '0';
+
+let enableAutoAdvance = false;
+let sceneTransitionTimeoutID;
+let lastState;
+const gameplay_scene_name = "Gameplay";
+const mappool_scene_name = "Mappool";
+let selectedMapsTransitionTimeout = {};
+const pick_to_transition_delay_ms = 10000;
+
+
+const switchAutoAdvance = () => {
+    if (enableAutoAdvance) {
+        enableAutoAdvance = false;
+        autoadvance_button.innerHTML = 'AUTO ADVANCE: OFF';
+        autoadvance_button.style.backgroundColor = '#fc9f9f';
+    }
+    else {
+        enableAutoAdvance = true;
+        autoadvance_button.innerHTML = 'AUTO ADVANCE: ON';
+        autoadvance_button.style.backgroundColor = '#9ffcb3';
+    }
+}
+
+
+const obsGetCurrentScene = window.obsstudio?.getCurrentScene ?? (() => {
+});
+const obsGetScenes = window.obsstudio?.getScenes ?? (() => {
+});
+const obsSetCurrentScene = window.obsstudio?.setCurrentScene ?? (() => {
+});
+
+
+obsGetScenes(scenes => {
+    for (const scene of scenes) {
+        let clone = document.getElementById("sceneButtonTemplate").content.cloneNode(true);
+        let buttonNode = clone.querySelector('div');
+        buttonNode.id = `scene__${scene}`;
+        buttonNode.textContent = `GO TO: ${scene}`;
+        buttonNode.onclick = function() { obsSetCurrentScene(scene); };
+        sceneCollection.appendChild(clone);
+    }
+
+    obsGetCurrentScene((scene) => {
+        document.getElementById(`scene__${scene.name}`).classList.add("activeScene");
+    });
+});
+
+window.addEventListener('obsSceneChanged', function(event) {
+    let activeButton = document.getElementById(`scene__${event.detail.name}`);
+
+    for (const scene of sceneCollection.children) {
+        scene.classList.remove("activeScene");
+    }
+    activeButton.classList.add("activeScene");
+});
+
+
 // remove highlighting
 const body = document.getElementsByTagName("body")
 body[0].addEventListener("mousedown", event => {
@@ -156,7 +229,8 @@ function createMapCard(currentMap, cardClass, nameClass, container) {
 }
 // Red Team
 function handleTeamAction(event, teamCode, element) {
-    console.log(element)
+    console.log(element);
+    console.log(teamCode);
     const pickBanProtectContainer = element.children[0]
     const pickBanImageLayer = element.children[2].children[0]
 	const pickBanProtectElement = pickBanProtectContainer.children[0]
@@ -206,6 +280,29 @@ function handleTeamAction(event, teamCode, element) {
     // Set cookie
     if (teamCode === currentRedTeamCode) document.cookie = "currentTeamPick=red; path=/"
     else document.cookie = "currentTeamPick=blue; path=/"
+
+    // perform auto transition
+
+    if (enableAutoAdvance) {
+        // idempotent on pick team code (none/red/blue). Consider making it idempotent on pick state? (not picked/picked)
+        if (selectedMapsTransitionTimeout[element.id]?.teamCode !== teamCode) {
+            clearTimeout(selectedMapsTransitionTimeout[element.id]?.timeoutId)
+            selectedMapsTransitionTimeout[element.id] = {
+                teamCode: teamCode,
+                timeoutId: setTimeout(() => {
+                    obsSetCurrentScene(gameplay_scene_name);
+                    autoadvance_timer_container.style.opacity = '0';
+                }, pick_to_transition_delay_ms)
+            };
+
+            autoadvance_timer_time = new CountUp('autoAdvanceTimerTime',
+                pick_to_transition_delay_ms/1000, 0, 1, pick_to_transition_delay_ms/1000,
+                {useEasing: false, suffix: 's'});
+            autoadvance_timer_time.start();
+            autoadvance_timer_container.style.opacity = '1';
+            autoadvance_timer_label.textContent = `Switching to ${gameplay_scene_name} in`;
+        }
+    }
 }
 
 // Load country data
@@ -246,7 +343,8 @@ const redTeamNameEl = document.getElementById("redTeamName")
 const blueTeamNameEl = document.getElementById("blueTeamName")
 const blueTeamFlagEl = document.getElementById("blueTeamFlag")
 let currentRedTeam, currentBlueTeam
-let currentRedTeamCode, currentBlueTeamCode
+let currentRedTeamCode = "blue"
+let currentBlueTeamCode = "red"
 
 // Team Stars
 const redTeamStarsEl = document.getElementById("redTeamStars")
@@ -267,6 +365,28 @@ let beatmapID
 
 socket.onmessage = async (event) => {
     const data = JSON.parse(event.data)
+
+    /**
+     * switch to mappool scene after ranking screen
+     */
+    {
+        let newState = data.tourney.manager.ipcState;
+        if (enableAutoAdvance) {
+            if (lastState === TourneyState.Ranking && newState === TourneyState.Idle) {
+                sceneTransitionTimeoutID = setTimeout(() => {
+                    obsGetCurrentScene((scene) => {
+                        if (scene.name !== gameplay_scene_name)  // e.g. on winner screen
+                            return
+                        obsSetCurrentScene(mappool_scene_name);
+                    });
+                }, 2000);
+            }
+            if (lastState !== newState && newState !== TourneyState.Idle) {
+                clearTimeout(sceneTransitionTimeoutID);
+            }
+        }
+        lastState = newState;
+    }
 
     // Update team data
     function updateTeamData(teamFlagEl, teamNameEl, currentTeam) {

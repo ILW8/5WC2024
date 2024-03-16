@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
     <script src="../shared/deps/reconnecting-websocket.min.js"></script>
+    <script src="../shared/deps/countUp.js"></script>
 </head>
 <body>
     <div id="main">
@@ -114,6 +115,24 @@
             <button class="sideBarButton nextPickerButton" id="nextPickerBlue" onclick="setNextPicker('Blue')">Set Blue Pick</button>
         </section>
         <button class="sideBarButton" id="toggleAutoPickButton" onclick="toggleAutoPick()">Toggle Autopick: <span id="toggleAutoPickText">OFF</span></button>
+
+        <div id="extra-stuff">
+            <hr>
+            <div id="autoAdvanceButton" class="pickButton switchPickButton" onclick="switchAutoAdvance()">AUTO ADVANCE: OFF</div>
+            <div id="autoAdvanceTimer" class="controlLabel">
+                <span id="autoAdvanceTimerLabel">Switching to __SCENE__ in</span> <span id="autoAdvanceTimerTime"></span>
+            </div>
+
+            <br>
+            <br>
+            <div class="controlLabel">Scenes<br>(click to override)</div>
+            <br>
+            <div id="sceneCollection">
+                <template id="sceneButtonTemplate">
+                    <div class="sceneButton switchPickButton">SWITCH TO __SCENE_NAME__</div>
+                </template>
+            </div>
+        </div>
     </div>
     <script src="../shared/deps/sponsors.js"></script>
     <script src="index.js"></script>

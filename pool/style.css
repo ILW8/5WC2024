@@ -428,3 +428,56 @@
 
 /* ----- SCROLLBAR -----*/
 ::-webkit-scrollbar { display: none; }
+
+
+#extra-stuff {
+    position: absolute; top: 727px; left: 50px;
+}
+
+.controlLabel {
+    color: #bfbfbf;
+    font-size: 32px;
+    font-family: sans-serif;
+}
+
+.sceneButton {
+    width: 360px;
+    height: 64px;
+    margin-bottom: 12px;
+    letter-spacing: normal;
+    font-family: sans-serif;
+    padding-left: 8px;
+    font-size: 32px;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    justify-content: left;
+    color: var(--red);
+}
+
+.activeScene {
+    background-color: #3a8f29!important;
+}
+
+.pickButton {
+    width: 360px;
+    height: 40px;
+    margin-bottom: 12px;
+    font-family: 'Helvetica Now';
+    font-size: 28px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.switchPickButton {
+    color: #202020;
+    background-color: #e6e6e6;
+    cursor: pointer;
+}
+
+.switchPickButton:hover {
+    color: #202020;
+    background-color: #bebebe;
+}
