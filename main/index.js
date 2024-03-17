@@ -3,17 +3,6 @@ ComfyJS.Init( "stagetournaments", null , ["stagetournaments", "stagetournaments2
 
 // Round Name
 const roundNameEl = document.getElementById("roundName")
-// Get Cookie
-function getCookie(cname) {
-    let name = cname + "="
-    let ca = document.cookie.split(';')
-    for(let i = 0; i < ca.length; i++) {
-        let c = ca[i]
-        while (c.charAt(0) == ' ') c = c.substring(1)
-        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
-    }
-    return "";
-}
 
 // Socket Events
 // Credits: VictimCrasher - https://github.com/VictimCrasher/static/tree/master/WaveTournament
@@ -145,30 +134,7 @@ const pickedByFlag = document.getElementById("pickedByFlag")
 const currentPickerRed = document.getElementById("currentPickerRed")
 const currentPickerBlue = document.getElementById("currentPickerBlue")
 setCurrentPicker("none")
-function setCurrentPicker(teamColour) {
-    // reset colours
-    currentPickerRed.style.color = "white"
-    currentPickerRed.style.borderColor = "white"
-    currentPickerBlue.style.color = "white"
-    currentPickerBlue.style.borderColor = "white"
 
-    // if tiebreaker, nothing happens
-    if (pickedByText === "TIEBREAKER") return
-
-    // Set cookie
-    document.cookie = `currentTeamPick=${teamColour}; path=/`
-    if (teamColour === "red") {
-        pickedByFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${currentRedTeamCode}-126.png")`
-        currentPickerRed.style.color = "var(--mainRed)"
-        currentPickerRed.style.borderColor = "var(--mainRed)"
-    } else if (teamColour === "blue") {
-        pickedByFlag.style.backgroundImage = `url("https://osuflags.omkserver.nl/${currentBlueTeamCode}-126.png")`
-        currentPickerBlue.style.color = "var(--mainBlue)"
-        currentPickerBlue.style.borderColor = "var(--mainBlue)"
-    } else if (teamColour === "none") {
-        pickedBy.style.display = "none"
-    }
-}
 
 socket.onmessage = async (event) => {
     const data = JSON.parse(event.data)
@@ -456,14 +422,8 @@ socket.onmessage = async (event) => {
     }
 }
 
-// Set twitch channel
+// register current channel text element for update
 const currentChannelName = document.getElementById("currentChannelName")
-const setChannelId = channelId => {
-    if (channelId == 241444981) currentChannelName.innerText = "1st Channel"
-    else currentChannelName.innerText = "2nd Channel"
-    document.cookie = `currentChannel=${channelId}; path=/`
-}
-setChannelId(241444981)
 
 // get cookie information
 setInterval(() => {

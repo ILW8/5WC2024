@@ -122,7 +122,7 @@
 .leftSideModRectangle {
     left: 0;
     width: 32px; height: 53px;
-    border-radius: 0px 5px 5px 0px;
+    border-radius: 0 5px 5px 0;
 }
 #NMRectangle {
     top: 95px; 
@@ -383,11 +383,11 @@
     width: 500px; height: 2160px;
     background-color: rgb(25,23,23);
     color: white;
-    font-family: "Coluna Rounded";
+    font-family: "Coluna Rounded", sans-serif;
 }
 .sideBarButton {
     width: 400px;
-    font-family: "Coluna Rounded";
+    font-family: "Coluna Rounded", sans-serif;
     border: 5px solid white;
     border-radius: 37.5px;
     background-color: transparent;
@@ -409,7 +409,7 @@
     font-size: 55px;
 }
 #nextPickerTeam {
-    font-size: 120px;
+    font-size: 72px;
     color: var(--mainRed)
 }
 .nextPickerButton {
@@ -419,10 +419,10 @@
 }
 /* --- Side Bar Button --- */
 #toggleAutoPickButton {
-    position: absolute; top: 500px; left: 50px;
-    height: 200px;  
+    position: absolute; top: 420px; left: 50px;
+    height: 96px;
     border-color: var(--banColour);
-    line-height: 200px;
+    line-height: 96px;
 }
 #toggleAutoPickText { color: var(--banColour) }
 
@@ -431,7 +431,7 @@
 
 
 #extra-stuff {
-    position: absolute; top: 727px; left: 50px;
+    position: absolute; top: 1280px; left: 50px;
 }
 
 .controlLabel {
@@ -480,4 +480,34 @@
 .switchPickButton:hover {
     color: #202020;
     background-color: #bebebe;
+}
+
+
+/* --- twitch chat and current picker control --- */
+/* Current Section*/
+.navBarSection {
+    position: absolute; left: 50px;
+    width: 400px;
+}
+#currentPickerSection { top: 560px; }
+#currentChannelSection { top: 920px; }
+/* Header Text */
+.currentHeaderText {
+    width: inherit;
+    font-size: 55px;
+}
+/* Current information */
+#currentPickerTeam {
+    font-size: 64px;
+    color: var(--mainRed)
+}
+#currentChannelName {
+    font-size: 64px;
+}
+
+/* Buttons */
+.currentPickerButton, .currentChannelButton {
+    height: 75px;
+    margin: 10px 0;
+    line-height: 75px;
 }

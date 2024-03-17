@@ -5,6 +5,30 @@ socket.onopen = () => { console.log("Successfully Connected") }
 socket.onclose = event => { console.log("Socket Closed Connection: ", event); socket.send("Client Closed!") }
 socket.onerror = error => { console.log("Socket Error: ", error) }
 
+// register current channel text element for update
+const currentChannelName = document.getElementById("currentChannelName")
+
+// update states according to cookies
+setInterval(() => {
+    // Set twitch channel
+    setChannelId(getCookie("currentChannel"))
+
+    // Set current picker
+    setCurrentPicker(getCookie("currentTeamPick"))
+}, 500)
+
+/**
+ * james: I'd eventually refactor `setCurrentPicker` so that it doesn't rely on these variables to be present, but for
+ * now I'm just going to copy-paste this stuff over and worry about it later
+ */
+// Picked By
+const pickedBy = document.getElementById("pickedBy")
+const pickedByText = document.getElementById("pickedByText")
+const pickedByFlag = document.getElementById("pickedByFlag")
+
+// Setting current picker
+const currentPickerRed = document.getElementById("currentPickerRed")
+const currentPickerBlue = document.getElementById("currentPickerBlue")
 
 const TourneyState = {
     "Initialising": 0,

@@ -14,6 +14,7 @@
 
     <script src="../shared/deps/reconnecting-websocket.min.js"></script>
     <script src="../shared/deps/countUp.js"></script>
+    <script src="../shared/utils.js"></script>
 </head>
 <body>
     <div id="main">
@@ -115,6 +116,20 @@
             <button class="sideBarButton nextPickerButton" id="nextPickerBlue" onclick="setNextPicker('Blue')">Set Blue Pick</button>
         </section>
         <button class="sideBarButton" id="toggleAutoPickButton" onclick="toggleAutoPick()">Toggle Autopick: <span id="toggleAutoPickText">OFF</span></button>
+
+        <section class="navBarSection" id="currentPickerSection">
+            <div class="currentHeaderText">Current Picker: </div>
+            <div id="currentPickerTeam"></div>
+            <button class="sideBarButton currentPickerButton" id="currentPickerRed" onclick="setCurrentPicker('red')">Set Red Pick</button>
+            <button class="sideBarButton currentPickerButton" id="currentPickerBlue" onclick="setCurrentPicker('blue')">Set Blue Pick</button>
+        </section>
+
+        <section class="navBarSection" id="currentChannelSection">
+            <div class="currentHeaderText">Current Channel</div>
+            <div id="currentChannelName">1st Channel</div>
+            <button class="sideBarButton currentChannelButton" onclick="setChannelId(241444981)">First Channel</button>
+            <button class="sideBarButton currentChannelButton" onclick="setChannelId(859089711)">Second Channel</button>
+        </section>
 
         <div id="extra-stuff">
             <hr>
