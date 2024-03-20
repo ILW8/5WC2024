@@ -136,7 +136,7 @@
 
 /* --- Moving Score Bars --- */
 #movingScoreBars {
-    position: absolute; top: -5px;
+    position: absolute; top: 0px;
     width: inherit; height: 18px;
 }
 /* Moving Score Bar Colours */
