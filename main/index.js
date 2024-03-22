@@ -248,8 +248,8 @@ socket.onmessage = async (event) => {
         scoreVisible = data.tourney.manager.bools.scoreVisible
 
         if (scoreVisible) {
-            chatContainer.style.width = "820px"
-            chatContainer.style.left = "90px"
+            chatContainer.style.width = "910px"
+            chatContainer.style.left = "0px"
             twitchChatContainer.style.opacity = 1
             tournamentChatContainer.style.opacity = 0
 
