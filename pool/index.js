@@ -228,7 +228,7 @@ function setNextPicker(colour) {
 // Toggle Autopick
 const toggleAutoPickButton = document.getElementById("toggleAutoPickButton")
 const toggleAutoPickText = document.getElementById("toggleAutoPickText")
-let hasAutopicked = true
+let hasAutopicked = false
 let currentIpcState
 function toggleAutoPick() {
     if (toggleAutoPickText.innerText == "ON") {
@@ -395,7 +395,7 @@ socket.onmessage = async (event) => {
     if (currentIpcState !== data.tourney.manager.ipcState) {
         currentIpcState = data.tourney.manager.ipcState
 
-        if (ipcState === 4) {
+        if (currentIpcState === 4) {
             hasAutopicked = false
         }
     }
