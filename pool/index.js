@@ -379,6 +379,7 @@ socket.onmessage = async (event) => {
         const targetElement = document.getElementById(`${beatmapID}`);
 
         if (document.contains(targetElement) && toggleAutoPickText.innerText == "ON" && !hasAutopicked) {
+            hasAutopicked = true
             if (nextPickerTeam.innerText == "RED TEAM") {
                 targetElement.click()
                 setNextPicker('Blue')
