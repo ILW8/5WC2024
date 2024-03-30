@@ -214,7 +214,8 @@ socket.onmessage = async (event) => {
         scoreVisible = data.tourney.manager.bools.scoreVisible
 
         if (scoreVisible) {
-            chatContainer.style.width = "610px"
+            chatContainer.style.width = "910px"
+            chatContainer.style.left = "0px"
             twitchChatContainer.style.opacity = 1
             tournamentChatContainer.style.opacity = 0
 
@@ -223,6 +224,7 @@ socket.onmessage = async (event) => {
             movingScoreBarBlue.style.opacity = 1
         } else {
             chatContainer.style.width = "1220px"
+            chatContainer.style.left = "300px"
             twitchChatContainer.style.opacity = 0
             tournamentChatContainer.style.opacity = 1
 
@@ -255,7 +257,7 @@ socket.onmessage = async (event) => {
         scoreAnimation.playingScoreDifference.update(currentScoreDifference)
 
         // Update score bar and difference
-        const movingScoreBarDifferencePercent = currentScoreDifference / 1000000
+        const movingScoreBarDifferencePercent = Math.min(currentScoreDifference / 1000000, 1)
         let movingScoreBarRectangleWidth = Math.min(Math.pow(movingScoreBarDifferencePercent, 0.5) * 0.8 * 936, 936)
         const movingScoreBarArrowPositionHorizontal = movingScoreBarRectangleWidth + 31
 

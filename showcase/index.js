@@ -98,7 +98,7 @@ socket.onmessage = async (event) => {
         nowPlayingDetailTextSlide(nowPlayingMapSongNameEl)
         nowPlayingDetailTextSlide(nowPlayingMapDifficultyNameEl)
         nowPlayingDetailTextSlide(nowPlayingMapMapperNameEl)
-
+        console.log(showcaseMaps)
         for (let i = 0; i < showcaseMaps.length; i++) {
             if (currentSongTitle == showcaseMaps[i].songName && currentSongDifficulty == showcaseMaps[i].difficulty) {
                 // set to map slot for map slot scrolling
@@ -108,14 +108,27 @@ socket.onmessage = async (event) => {
                 // set replayer name
                 replayerEl.style.display = "block"
                 replayerUsernameEl.innerText = showcaseMaps[i].replayer.toUpperCase()
-
+                console.log(i)
                 // Set main stats
-                currentSR = Math.round(parseFloat(showcaseMaps[i].sr * 100)) / 100
-                currentCS = Math.round(parseFloat(showcaseMaps[i].cs) * 10) / 10
-                currentAR = Math.round(parseFloat(showcaseMaps[i].ar) * 10) / 10
-                currentOD = Math.round(parseFloat(showcaseMaps[i].od) * 10) / 10
-                currentMinBPM = showcaseMaps[i].bpm
-                currentMaxBPM = showcaseMaps[i].bpm
+                if (i == 16 || i == 17) {
+                    console.log("manual stats")
+                    currentSR = showcaseMaps[i].sr
+                    currentCS = showcaseMaps[i].cs
+                    currentAR = showcaseMaps[i].ar
+                    currentOD = showcaseMaps[i].od
+                    currentMinBPM = showcaseMaps[i].bpm
+                    currentMaxBPM = showcaseMaps[i].bpm
+                }
+                else {
+                    console.log("normal stats")
+                    currentSR = Math.round(parseFloat(showcaseMaps[i].sr * 100)) / 100
+                    currentCS = Math.round(parseFloat(showcaseMaps[i].cs) * 10) / 10
+                    currentAR = Math.round(parseFloat(showcaseMaps[i].ar) * 10) / 10
+                    currentOD = Math.round(parseFloat(showcaseMaps[i].od) * 10) / 10
+                    currentMinBPM = showcaseMaps[i].bpm
+                    currentMaxBPM = showcaseMaps[i].bpm
+                }
+                
 
                 starRatingNumberEl.innerText = `${currentSR}*`
                 circleSizeNumberEl.innerText = currentCS

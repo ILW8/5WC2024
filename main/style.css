@@ -77,6 +77,9 @@
 #chatContainer {
     height: 370px;
     transition: 500ms ease-in-out;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
 }
 .chatContainer {
     position: absolute; top: 0; left: 0;
@@ -136,7 +139,7 @@
 
 /* --- Moving Score Bars --- */
 #movingScoreBars {
-    position: absolute; top: -5px;
+    position: absolute; top: 0px;
     width: inherit; height: 18px;
 }
 /* Moving Score Bar Colours */
