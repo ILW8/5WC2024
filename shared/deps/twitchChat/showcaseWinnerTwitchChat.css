@@ -1,5 +1,5 @@
 /* --- Twitch Chat --- */
- #twitchChatContainer {
+#twitchChatContainer {
     position: absolute; bottom: 25px; left: 300px;
     width: 1220px; height: 280px;
     border-radius: 50px;
