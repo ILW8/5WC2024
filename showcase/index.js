@@ -110,7 +110,7 @@ socket.onmessage = async (event) => {
                 replayerUsernameEl.innerText = showcaseMaps[i].replayer.toUpperCase()
                 console.log(i)
                 // Set main stats
-                if (i == 16 || i == 17) {
+                if (i == 16 || i == 17 || i == 18) {
                     console.log("manual stats")
                     currentSR = showcaseMaps[i].sr
                     currentCS = showcaseMaps[i].cs
