@@ -349,6 +349,8 @@ function setNextPicker(colour) {
 // Toggle Autopick
 const toggleAutoPickButton = document.getElementById("toggleAutoPickButton")
 const toggleAutoPickText = document.getElementById("toggleAutoPickText")
+let hasAutopicked = false
+let currentIpcState
 function toggleAutoPick() {
     if (toggleAutoPickText.innerText == "ON") {
         toggleAutoPickButton.style.borderColor = "var(--banColour)"
@@ -389,6 +391,7 @@ let beatmapID
 
 socket.onmessage = async (event) => {
     const data = JSON.parse(event.data)
+    console.log(data)
 
     /**
      * switch to mappool scene after ranking screen
@@ -519,7 +522,8 @@ socket.onmessage = async (event) => {
 
         const targetElement = document.getElementById(`${beatmapID}`);
 
-        if (document.contains(targetElement) && toggleAutoPickText.innerText == "ON") {
+        if (document.contains(targetElement) && toggleAutoPickText.innerText == "ON" && !hasAutopicked) {
+            hasAutopicked = true
             if (nextPickerTeam.innerText == "RED TEAM") {
                 targetElement.click()
                 setNextPicker('Blue')
@@ -528,6 +532,15 @@ socket.onmessage = async (event) => {
                 targetElement.dispatchEvent(contextMenuEvent)
                 setNextPicker('Red')
             }
+        }
+    }
+
+    // Autopicking
+    if (currentIpcState !== data.tourney.manager.ipcState) {
+        currentIpcState = data.tourney.manager.ipcState
+
+        if (currentIpcState === 4) {
+            hasAutopicked = false
         }
     }
 }
