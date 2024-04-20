@@ -30,5 +30,7 @@
     { "name": "Ukraine", "code": "UA" },
     { "name": "United Kingdom", "code": "GB" },
     { "name": "United States", "code": "US" },
-    { "name": "Vietnam", "code": "VN" }
+    { "name": "Vietnam", "code": "VN" },
+    { "name": "Stage", "code": "IM"},
+    { "name": "Robert", "code": "AQ"}
 ]
